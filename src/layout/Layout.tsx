@@ -9,13 +9,13 @@ import Footer from './Footer';
 
 // library.add(fab, faBars, faTimes, faSun, faMoon, faMeteor, faMugHot, faNewspaper);
 
-export default function Layout({ children }: { children: any }): JSX.Element {
+export default function Layout({ children, theme, toggleTheme }: { children: any; theme: any; toggleTheme: any }): JSX.Element {
 	// const [theme, toggleTheme] = useDarkMode();
 	// const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
 	return (
 		<div className='flex flex-col min-h-full'>
-			<Header />
+			<Header theme={theme} toggleTheme={toggleTheme} />
 			{children}
 			<Footer className='mt-auto' />
 		</div>
