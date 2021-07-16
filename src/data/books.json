@@ -1,0 +1,20 @@
+[
+	{
+		"id": "book-1",
+		"title": "The 7 Habits of Highly Effective People",
+		"author": "Stephen R. Covey",
+		"slug": "/library/books/7-habits",
+		"thumbnail": "",
+		"cover": "",
+		"isRead": true
+	},
+	{
+		"id": "book-2",
+		"title": "Grit",
+		"author": "Angela Duckworth",
+		"slug": "/library/books/grit",
+		"thumbnail": "",
+		"cover": "",
+		"isRead": true
+	}
+]

@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		@apply h-full bg-lightestGray dark:bg-darkGrey dark:text-white;
+	}
+
+	#__next {
+		@apply h-full bg-lightestGray dark:bg-darkGrey dark:text-white;
+	}
+}
