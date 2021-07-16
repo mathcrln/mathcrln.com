@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Container from '@/layout/Container';
 import Layout from '@/layout/Layout';
+
 export default function About({ theme, toggleTheme }: { theme: any; toggleTheme: any }): JSX.Element {
 	return (
 		<Layout theme={theme} toggleTheme={toggleTheme}>
