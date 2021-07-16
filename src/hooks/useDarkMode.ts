@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import useMedia from './useMedia';
 
-const useDarkMode = (): Readonly<[string, (action: 'toggle' | 'auto') => void]> => {
+const useDarkMode = (): Readonly<[string, (action: 'toggle' | 'auto') => void, boolean]> => {
 	const [theme, setTheme] = useState<string>('light');
+	const [componentMounted, setComponentMounted] = useState(false);
 
 	const prefersDarkMode = useMedia(['(prefers-color-scheme: dark)'], [true], false);
 
@@ -44,9 +45,10 @@ const useDarkMode = (): Readonly<[string, (action: 'toggle' | 'auto') => void]> 
 			setTheme('light');
 			document.documentElement.classList.remove('dark');
 		}
+		setComponentMounted(true);
 	}, [prefersDarkMode]);
 
-	return [theme, toggleTheme];
+	return [theme, toggleTheme, componentMounted];
 };
 
 export default useDarkMode;
