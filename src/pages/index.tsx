@@ -12,7 +12,8 @@ export default function Home(): JSX.Element {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<Container>
-				<div
+                <div>Hello World</div> 
+				{/* <div
 					className='text-center pt-4 mt-16'
 					style={{ backgroundImage: 'url(/lines.png)', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}
 				>
@@ -125,11 +126,8 @@ export default function Home(): JSX.Element {
 							<div className='grid lg:grid-cols-[1fr,1fr,1fr] md:grid-cols-[1fr,1fr] gap-10 '>
 								<Link href='/playground' passHref>
 									<a>
-										<div
-											className='dark:bg-darkGrey  rounded-lg p-4 flex flex-col justify-center'
-											style={{ boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.68)' }}
-										>
-											<h3 className='text-md mb-2'>Best Accessibility Pratices for Web Developers</h3>
+										<div className='dark:bg-darkGrey  rounded-lg p-4 flex flex-col justify-center shadow-xl'>
+											<h3 className='text-md mb-2'>Best Accessibility Pratices HERE for Web Developers</h3>
 											<div>
 												<span className='text-[#69AE22]'>
 													<span role='img' className='mr-1' aria-label='plant'>
@@ -147,10 +145,7 @@ export default function Home(): JSX.Element {
 								</Link>
 								<Link href='/playground' passHref>
 									<a>
-										<div
-											className='dark:bg-darkGrey rounded-lg p-4 h-full flex flex-col justify-center'
-											style={{ boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.68)' }}
-										>
+										<div className='dark:bg-darkGrey rounded-lg p-4 h-full flex flex-col justify-center shadow-xl'>
 											<h3 className='text-md mb-2'>Mona Lisa isn’t who you think she is</h3>
 											<div>
 												<span className='text-[#69AE22]'>
@@ -169,10 +164,7 @@ export default function Home(): JSX.Element {
 								</Link>
 								<Link href='/playground' passHref>
 									<a>
-										<div
-											className='dark:bg-darkGrey  rounded-lg p-4 flex flex-col justify-center'
-											style={{ boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.68)' }}
-										>
+										<div className='dark:bg-darkGrey  rounded-lg p-4 flex flex-col justify-center shadow-xl h-full'>
 											<h3 className='text-md mb-2'>Best Accessibility Pratices for Web Developers</h3>
 											<div>
 												<span className='text-[#69AE22]'>
@@ -191,10 +183,7 @@ export default function Home(): JSX.Element {
 								</Link>
 								<Link href='/playground' passHref>
 									<a>
-										<div
-											className='dark:bg-darkGrey  rounded-lg p-4 flex flex-col justify-center'
-											style={{ boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.68)' }}
-										>
+										<div className='dark:bg-darkGrey  rounded-lg p-4 flex flex-col justify-center shadow-xl border-opacity-10 border border-primary-light dark:border-primary-dark dark:border-opacity-10'>
 											<h3 className='text-md mb-2'>Best Accessibility Pratices for Web Developers</h3>
 											<div>
 												<span className='text-[#69AE22]'>
@@ -213,10 +202,7 @@ export default function Home(): JSX.Element {
 								</Link>
 								<Link href='/playground' passHref>
 									<a>
-										<div
-											className='dark:bg-darkGrey  rounded-lg p-4 h-full flex flex-col justify-center'
-											style={{ boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.68)' }}
-										>
+										<div className='dark:bg-darkGrey  rounded-lg p-4 h-full flex flex-col justify-center shadow-xl border-opacity-10 border border-primary-light'>
 											<h3 className='text-md mb-2'>Mona Lisa isn’t who you think she is</h3>
 											<div>
 												<span className='text-[#69AE22]'>
@@ -235,11 +221,8 @@ export default function Home(): JSX.Element {
 								</Link>
 								<Link href='/playground' passHref>
 									<a>
-										<div
-											className='dark:bg-darkGrey  rounded-lg p-4 h-full flex flex-col justify-center'
-											style={{ boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.68)' }}
-										>
-											<h3 className='text-md mb-2'>Mona Lisa isn’t who you think she is</h3>
+										<div className='dark:bg-darkGrey  rounded-lg p-4 h-full flex flex-col justify-center shadow-xl border-opacity-10 border border-primary-light'>
+											<h3 className='text-md mb-2'>Mona Lisa isn’t who you think she is THERE</h3>
 											<div>
 												<span className='text-[#69AE22]'>
 													<span role='img' className='mr-1' aria-label='plant'>
@@ -258,7 +241,7 @@ export default function Home(): JSX.Element {
 							</div>
 						</section>
 					</div>
-				</main>
+				</main> */}
 			</Container>
 		</div>
 	);
