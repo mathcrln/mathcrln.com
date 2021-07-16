@@ -6,9 +6,9 @@ import Layout from 'src/layout/Layout';
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 	return (
 		<>
-			<Layout>
-				<Component {...pageProps} />
-			</Layout>
+			{/* <Layout> */}
+			<Component {...pageProps} />
+			{/* </Layout> */}
 		</>
 	);
 }
