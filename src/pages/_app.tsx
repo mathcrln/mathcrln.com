@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app';
 import '@/styles/globals.css';
 import React from 'react';
-import Layout from 'src/layout/Layout';
+
 import useDarkMode from '@/hooks/useDarkMode';
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
@@ -12,9 +12,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 
 	return (
 		<>
-			<Layout theme={theme} toggleTheme={toggleTheme}>
-				<Component {...pageProps} />
-			</Layout>
+			<Component {...pageProps} theme={theme} toggleTheme={toggleTheme} />
 		</>
 	);
 }
