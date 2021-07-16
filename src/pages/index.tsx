@@ -97,7 +97,7 @@ export default function Home(): JSX.Element {
 										style={{ boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.68)' }}
 										className='rounded-lg shadow-lg'
 									>
-										<Image src='/book-sample.jpg' alt='' height={454} width={301} className='rounded-lg ' />
+										{/* <Image src='/book-sample.jpg' alt='' height={454} width={301} className='rounded-lg ' /> */}
 										{/* <img src='/book-sample.jpg' alt='' className='rounded-lg shadow-lg' /> */}
 										{/* <div
 											className='h-96  bg-primary-light rounded-lg shadow-lg'
