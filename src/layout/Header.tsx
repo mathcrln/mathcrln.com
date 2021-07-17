@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import Logo from '@/components/assets/Logo';
-import Moon from '@/components/assets/Moon';
-import Sun from '@/components/assets/Sun';
-import useDarkMode from '@/hooks/useDarkMode';
+// import Moon from '@/components/assets/Moon';
+// import Sun from '@/components/assets/Sun';
+// import useDarkMode from '@/hooks/useDarkMode';
 import Container from './Container';
 import Navigation from './Navigation';
 
 export default function Header(): JSX.Element {
-	const [theme, setTheme] = useDarkMode();
+	// const [theme, setTheme] = useDarkMode();
 
 	return (
 		<header className='sticky top-0 bg-lightestGray dark:bg-darkGrey z-50'>
@@ -23,9 +23,9 @@ export default function Header(): JSX.Element {
 
 				<div className='flex'>
 					<Navigation />
-					<button type='button' className='ml-4 w-5 ' onClick={() => setTheme('toggle')}>
+					{/* <button type='button' className='ml-4 w-5 ' onClick={() => setTheme('toggle')}>
 						{theme === 'dark' ? <Sun /> : <Moon />}
-					</button>
+					</button> */}
 				</div>
 			</Container>
 		</header>

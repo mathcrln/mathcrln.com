@@ -8,7 +8,7 @@ module.exports = {
 		'src/layout/**/*.{js,ts,jsx,tsx}',
 		'src/styles/**/*.{scss, css}',
 	],
-	darkMode: 'class',
+	darkMode: 'media',
 	theme: {
 		colors: {
 			gray: colors.coolGray,
