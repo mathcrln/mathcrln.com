@@ -19,7 +19,7 @@ const useMedia = (queries: string[], values: boolean[], defaultValue: boolean): 
 		);
 		return () =>
 			mediaQueryLists.forEach((mql) =>
-				mql.addEventListener('change', () => {
+				mql.removeEventListener('change', () => {
 					handler();
 				})
 			);
