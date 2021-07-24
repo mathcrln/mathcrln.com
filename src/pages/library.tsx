@@ -1,5 +1,25 @@
 import Head from 'next/head';
 import Container from '@/layout/Container';
+import BookCard from '@/components/library/BookCard';
+
+const BOOK = [
+	{
+		title: 'The 7 Habits of Highly Effective People',
+		author: 'Stephen R. Covey',
+	},
+	{
+		title: 'Grit',
+		author: 'Angela Duckworth',
+	},
+	{
+		title: 'Getting things done',
+		author: 'David Allen',
+	},
+	{
+		title: 'How we learn',
+		author: 'Benedict Carey',
+	},
+];
 
 export default function Library(): JSX.Element {
 	return (
@@ -16,6 +36,12 @@ export default function Library(): JSX.Element {
 						Here are some of the books I have enjoyed and learned from lately.
 					</p>
 				</div>
+
+				<main className='mt-16 grid lg:grid-cols-[1fr,1fr,1fr,1fr]'>
+					{BOOK.map((book) => (
+						<BookCard key={book.title} book={book} />
+					))}
+				</main>
 			</Container>
 		</div>
 	);

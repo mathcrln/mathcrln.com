@@ -1,6 +1,60 @@
 import Head from 'next/head';
 import Container from '@/layout/Container';
+import ProjectCard from '@/components/projects/ProjectCard';
+import { IProjectCard } from '@/components/projects/types/project.type';
 
+const PROJECTS: IProjectCard[] = [
+	{
+		id: '1',
+		title: 'Nova | Smile Every Morning',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate aliquet leo, et mollis arcu venenatis ut. Curabitur dignissim turpis nec vestibulum.',
+		coverURL: '/martinique.jpg',
+		tags: ['Design', 'Code', 'Marketing'],
+		slug: 'nova',
+	},
+	{
+		id: '2',
+		title: 'Jerry, this very portfolio!',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate aliquet leo, et mollis arcu venenatis ut. Curabitur dignissim turpis nec vestibulum.',
+		coverURL: '/mathieu.jpg',
+		slug: 'jerry',
+	},
+	{
+		id: '3',
+		title: 'Life Is Mine',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate aliquet leo, et mollis arcu venenatis ut. Curabitur dignissim turpis nec vestibulum.',
+		coverURL: '/martinique.jpg',
+		tags: ['UI', 'UX', 'Code'],
+		slug: 'lifeismine',
+	},
+	{
+		id: '4',
+		title: 'Jane Goodall Institute',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate aliquet leo, et mollis arcu venenatis ut. Curabitur dignissim turpis nec vestibulum.',
+		coverURL: '/martinique.jpg',
+		slug: 'jane-goodall',
+	},
+	{
+		id: '5',
+		title: 'GitHub Jobs API',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate aliquet leo, et mollis arcu venenatis ut. Curabitur dignissim turpis nec vestibulum.',
+		coverURL: '/martinique.jpg',
+		slug: 'jobs-api',
+	},
+	{
+		id: '6',
+		title: 'Dine Restaurant',
+		description:
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate aliquet leo, et mollis arcu venenatis ut. Curabitur dignissim turpis nec vestibulum.',
+		coverURL: '/martinique.jpg',
+		slug: 'dine',
+	},
+];
 export default function Playground(): JSX.Element {
 	return (
 		<div>
@@ -17,6 +71,34 @@ export default function Playground(): JSX.Element {
 						If you’re curious, here are a few project I worked on recently.
 					</p>
 				</div>
+				<main className='my-20'>
+					<div className='grid lg:grid-cols-[2fr,1fr] gap-10'>
+						<div
+							className=' h-80 rounded-lg relative bg-no-repeat bg-cover'
+							style={{ backgroundImage: `url('/mathieu.jpg')` }}
+						>
+							<div className='absolute bottom-3 left-3 bg-gray-900 px-5 py-2 rounded-lg'>Featured</div>
+						</div>
+						<div className='text-center space-y-5'>
+							<h2 className='text-3xl font-bold'>Farmer’s Market</h2>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate aliquet leo, et
+								mollis arcu venenatis ut. Curabitur dignissim turpis nec vestibulum.
+							</p>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate aliquet leo, et
+								mollis arcu venenatis ut. Curabitur dignissim turpis nec vestibulum.
+							</p>
+							<p>with React, Node JS, MongoDB</p>
+						</div>
+					</div>
+
+					<div className=' mt-16 grid lg:grid-cols-[1fr,1fr,1fr] gap-16'>
+						{PROJECTS.map((project) => (
+							<ProjectCard key={project.id} project={project} />
+						))}
+					</div>
+				</main>
 			</Container>
 		</div>
 	);

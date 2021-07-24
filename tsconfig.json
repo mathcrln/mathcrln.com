@@ -21,7 +21,8 @@
 			"@/lib/*": ["./src/lib/*"],
 			"@/hooks/*": ["./src/hooks/*"],
 			"@/utils/*": ["./src/utils/*"],
-			"@/styles/*": ["./src/styles/*"]
+			"@/styles/*": ["./src/styles/*"],
+			"@/public/*": ["public/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

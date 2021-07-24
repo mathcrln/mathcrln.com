@@ -1,7 +1,12 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Container from '@/layout/Container';
-import Image from 'next/image';
+import BookCard from '@/components/library/BookCard';
+
+const BOOK = {
+	title: 'The 7 Habits of Highly Effective People ',
+	author: 'Stephen R. Covey',
+};
 
 export default function Home(): JSX.Element {
 	return (
@@ -93,22 +98,23 @@ export default function Home(): JSX.Element {
 							<p className='mt-2 mb-4 font-thin'>On design, code and creativity.</p>
 							<Link href='/playground' passHref>
 								<a>
-									<div
+									<BookCard book={BOOK} />
+									{/* <div
 										style={{ boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.68)' }}
 										className='rounded-lg shadow-lg'
 									>
 										<Image src='/book-sample.jpg' alt='' height={454} width={301} className='rounded-lg ' />
 										{/* <img src='/book-sample.jpg' alt='' className='rounded-lg shadow-lg' /> */}
-										{/* <div
+									{/* <div
 											className='h-96  bg-primary-light rounded-lg shadow-lg'
 											style={{
 												backgroundImage: 'url(https://source.unsplash.com/450x222/?book)',
 												backgroundSize: 'cover',
 											}}
 										/> */}
-									</div>
+									{/* </div>
 									<h3 className='mt-5 font-bold text-md'>The 7 Habits of Highly Effective People</h3>
-									<p>Stephen R. Covey</p>
+									<p>Stephen R. Covey</p> */}
 								</a>
 							</Link>
 						</section>
