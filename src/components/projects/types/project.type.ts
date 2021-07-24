@@ -1,8 +1,9 @@
 export type IProjectCard = {
-	title: string;
+	name: string;
 	id: string;
 	description: string;
-	coverURL: string;
-	tags?: string[];
+	cover?: { url: string; height: number; width: number; alternativeText?: string };
+	tags?: { name: string }[];
+	skills?: { name: string; icon: { url: string; height: number; width: number } }[];
 	slug: string;
 };
