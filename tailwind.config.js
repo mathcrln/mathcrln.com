@@ -36,6 +36,9 @@ module.exports = {
 				lightestGray: '#FAFAFA',
 				white: '#FFFFFF',
 			},
+			backgroundImage: {
+				lines: "url('/lines.png')",
+			},
 		},
 	},
 	variants: {

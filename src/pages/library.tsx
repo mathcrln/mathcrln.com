@@ -1,23 +1,62 @@
 import Head from 'next/head';
 import Container from '@/layout/Container';
 import BookCard from '@/components/library/BookCard';
+import PageHeader from '@/components/shared/PageHeader';
 
 const BOOK = [
 	{
 		title: 'The 7 Habits of Highly Effective People',
 		author: 'Stephen R. Covey',
+		cover: {
+			url: '/book-sample.jpg',
+			height: 454,
+			width: 301,
+		},
 	},
 	{
-		title: 'Grit',
-		author: 'Angela Duckworth',
+		title: 'Steal like an artist',
+		author: 'Austin Kleon',
+		cover: {
+			url: '/book.jpg',
+			height: 454,
+			width: 301,
+		},
 	},
 	{
 		title: 'Getting things done',
 		author: 'David Allen',
+		cover: {
+			url: '/book.jpg',
+			height: 454,
+			width: 301,
+		},
 	},
 	{
 		title: 'How we learn',
 		author: 'Benedict Carey',
+		cover: {
+			url: '/book.jpg',
+			height: 454,
+			width: 301,
+		},
+	},
+	{
+		title: 'How we learn',
+		author: 'Benedict Carey',
+		cover: {
+			url: '/book.jpg',
+			height: 454,
+			width: 301,
+		},
+	},
+	{
+		title: 'How we learn',
+		author: 'Benedict Carey',
+		cover: {
+			url: '/book.jpg',
+			height: 454,
+			width: 301,
+		},
 	},
 ];
 
@@ -30,14 +69,8 @@ export default function Library(): JSX.Element {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<Container>
-				<div className='text-center pt-4 mt-5'>
-					<h1 className='text-3xl md:text-5xl font-semibold'>Library</h1>
-					<p className='text-lg md:text-xl font-extralight my-4 text-[#CCCCCC]'>
-						Here are some of the books I have enjoyed and learned from lately.
-					</p>
-				</div>
-
-				<main className='mt-16 grid lg:grid-cols-[1fr,1fr,1fr,1fr]'>
+				<PageHeader title='Library' intro='Here are some of the books I have enjoyed and learned from lately.' />
+				<main className='mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5 gap-10'>
 					{BOOK.map((book) => (
 						<BookCard key={book.title} book={book} />
 					))}

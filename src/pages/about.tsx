@@ -3,6 +3,7 @@ import Container from '@/layout/Container';
 import Image from 'next/image';
 import mathieu from '@/public/mathieu.jpg';
 import martinique from '@/public/martinique.jpg';
+import PageHeader from '@/components/shared/PageHeader';
 
 export default function About(): JSX.Element {
 	return (
@@ -13,12 +14,15 @@ export default function About(): JSX.Element {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<Container>
-				<div className='text-center pt-4 mt-5'>
-					<h1 className='text-3xl md:text-5xl font-semibold'>Who am I?</h1>
-					<p className='text-lg md:text-xl font-extralight my-4 text-[#CCCCCC]'>
-						If you and I are to become friends, <br /> I guess it’s about time I introduce myself.
-					</p>
-				</div>
+				<PageHeader
+					title='Who am I?'
+					intro={
+						<span>
+							If you and I are to become friends, <br className='hidden md:inline' />I guess it’s about time I
+							introduce myself.
+						</span>
+					}
+				/>
 
 				<div className=' mx-auto my-20 lg:max-w-[1200px]'>
 					<div className='grid lg:grid-cols-[1fr,1fr] gap-10 items-center'>
