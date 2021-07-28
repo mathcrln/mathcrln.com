@@ -7,7 +7,7 @@ import FeaturedProjectCard from '@/components/projects/FeaturedProjectCard';
 import ProjectGrid from '@/components/projects/ProjectGrid';
 import PageHeader from '@/components/shared/PageHeader';
 
-export default function Playground({
+export default function Projects({
 	featured,
 	allProjects,
 }: {
@@ -32,7 +32,7 @@ export default function Playground({
 						</span>
 					}
 				/>
-				<main className='my-20'>
+				<main className='my-20 space-y-24'>
 					{featured && <FeaturedProjectCard featured={featured} />}
 					{allProjects && <ProjectGrid projects={allProjects} />}
 				</main>

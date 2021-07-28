@@ -10,7 +10,9 @@ export default function ProjectMetadata({ project, className }: { project: IProj
 				{project.skills &&
 					project?.skills?.map((skill: any) => (
 						<div key={skill?.name} className='flex items-center space-x-1'>
-							<Image src={skill.icon.url} height={18} width={18} layout='fixed' alt={skill.name} />
+							{skill?.icon && (
+								<Image src={skill?.icon?.url} height={18} width={18} layout='fixed' alt={skill?.name} />
+							)}
 							<span>{skill?.name}</span>
 						</div>
 					))}

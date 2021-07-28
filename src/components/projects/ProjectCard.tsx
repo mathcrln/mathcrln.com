@@ -8,7 +8,7 @@ export default function ProjectCard({ project }: { project: IProjectCard }): JSX
 
 	return (
 		<article>
-			<Link href={`/playground/${slug}`} passHref>
+			<Link href={`/projects/${slug}`} passHref>
 				<a>
 					<ImageCard cover={cover} tags={tags} />
 				</a>

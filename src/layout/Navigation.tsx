@@ -22,9 +22,9 @@ export default function Navigation(): JSX.Element {
 		<nav className='flex dark:text-white flex-wrap'>
 			<NavLink href='/'>Home</NavLink>
 			<NavLink href='/about'>About</NavLink>
-			<NavLink href='/articles'>Articles</NavLink>
-			<NavLink href='/library'>Library</NavLink>
-			<NavLink href='/playground'>Playground</NavLink>
+			{/* <NavLink href='/articles'>Articles</NavLink>
+			<NavLink href='/library'>Library</NavLink> */}
+			<NavLink href='/projects'>Projects</NavLink>
 		</nav>
 	);
 }

@@ -14,7 +14,6 @@ module.exports = {
 			gray: colors.coolGray,
 			blue: colors.sky,
 			red: colors.rose,
-			pink: colors.fuchsia,
 		},
 		fontFamily: {
 			sans: ['Mulish', 'ui-sans-serif', 'system-ui'],

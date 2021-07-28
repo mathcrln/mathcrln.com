@@ -3,7 +3,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 class MyDocument extends Document {
 	render(): JSX.Element {
 		return (
-			<Html>
+			<Html lang='en' className='h-full'>
 				<Head>
 					<link rel='preconnect' href='https://fonts.googleapis.com' />
 					<link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='true' />

@@ -1,24 +1,24 @@
 import Head from 'next/head';
-import Link from 'next/link';
+// import Link from 'next/link';
 import Container from '@/layout/Container';
-import BookCard from '@/components/library/BookCard';
+// import BookCard from '@/components/library/BookCard';
 import PageHeader from '@/components/shared/PageHeader';
-import { IProjectCard } from 'src/types/projects';
+// import { IProjectCard } from 'src/types/projects';
 import { FEATURED_PROJECT, PROJECTS_EXCEPT_LAST } from '@/graphql/queries/projects';
 import client from '@/graphql/apollo-client';
-import ImageCard from '@/components/shared/ImageCard';
+// import ImageCard from '@/components/shared/ImageCard';
 
-const BOOK = {
-	title: 'The 7 Habits of Highly Effective People',
-	author: 'Stephen R. Covey',
-	cover: {
-		url: '/book.jpg',
-		height: 454,
-		width: 301,
-	},
-};
+// const BOOK = {
+// 	title: 'The 7 Habits of Highly Effective People',
+// 	author: 'Stephen R. Covey',
+// 	cover: {
+// 		url: '/book.jpg',
+// 		height: 454,
+// 		width: 301,
+// 	},
+// };
 
-export default function Home({ featured }: { featured: IProjectCard }): JSX.Element {
+export default function Home(): JSX.Element {
 	return (
 		<div>
 			<Head>
@@ -34,13 +34,22 @@ export default function Home({ featured }: { featured: IProjectCard }): JSX.Elem
 				/>
 
 				<main>
-					<div className='grid lg:grid-cols-[1fr,2fr] gap-10 '>
+					{/* <div className='grid lg:grid-cols-[1fr,2fr] gap-10 '>
 						<section>
 							<h2 className='text-2xl font-bold'>Latest posts</h2>
 							<p className='mt-2 mb-4 font-thin'>On design, code and creativity.</p>
 							<Link href='/playground' passHref>
 								<a>
-									<ImageCard cover={{ url: 'https://source.unsplash.com/450x222/?write' }} />
+									<div className='relative hover:.test:translate-y-10 pb-10'>
+										<div className='test absolute w-full h-[105%] top-0 bg-primary-light rounded-xl transition duration-1000 ease-in-out transform hover:translate-y-10  '>
+											Jerry{' '}
+										</div>
+										<ImageCard
+											cover={{ url: 'https://source.unsplash.com/450x222/?write' }}
+											tags={[{ name: "Mona Lisa isn't who you think she is" }]}
+											className='h-80'
+										/>
+									</div>
 
 									<h3 className='mt-5 font-bold text-md'>Jerry, Personal Portfolio</h3>
 								</a>
@@ -49,17 +58,18 @@ export default function Home({ featured }: { featured: IProjectCard }): JSX.Elem
 						<section className=''>
 							<h2 className='text-2xl font-bold'>What I've been working on</h2>
 							<p className='mt-2 mb-4 font-thin'>Here is the last project I had fun with.</p>
-							<ImageCard cover={featured.cover} />
+							<ImageCard cover={featured.cover} tags={[{ name: 'Jerry, Personal Portfolio' }]} className='h-80' />
 						</section>
-					</div>
-					<div className='my-32 md:w-2/6 mx-auto'>
+					</div> */}
+					<div className='my-32 md:w-4/6 lg:w-3/6 mx-auto'>
 						<p className='text-2xl font-bold italic mb-2 text-center'>
-							Here, a quote that particularly inspires me and that is very very long.
+							"The most important ingredient we put into any relationship is not what we say or what we do, but what
+							we are."
 						</p>
-						<p className='text-right'>- The author</p>
+						<p className='text-right'>- Stephen R. Covey</p>
 					</div>
 					<div className='grid lg:grid-cols-[1fr,4fr] md:grid-cols-[1fr,2fr] sm:grid-cols-[1fr,1fr] gap-10 '>
-						<section>
+						{/* <section>
 							<h2 className='text-2xl font-bold'>
 								Library{' '}
 								<span role='img' aria-label='book'>
@@ -70,26 +80,10 @@ export default function Home({ featured }: { featured: IProjectCard }): JSX.Elem
 							<Link href='/playground' passHref>
 								<a>
 									<BookCard book={BOOK} />
-									{/* <div
-										style={{ boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.68)' }}
-										className='rounded-lg shadow-lg'
-									>
-										<Image src='/book-sample.jpg' alt='' height={454} width={301} className='rounded-lg ' />
-										{/* <img src='/book-sample.jpg' alt='' className='rounded-lg shadow-lg' /> */}
-									{/* <div
-											className='h-96  bg-primary-light rounded-lg shadow-lg'
-											style={{
-												backgroundImage: 'url(https://source.unsplash.com/450x222/?book)',
-												backgroundSize: 'cover',
-											}}
-										/> */}
-									{/* </div>
-									<h3 className='mt-5 font-bold text-md'>The 7 Habits of Highly Effective People</h3>
-									<p>Stephen R. Covey</p> */}
 								</a>
 							</Link>
-						</section>
-						<section className=''>
+						</section> */}
+						{/* <section className=''>
 							<h2 className='text-2xl font-bold'>
 								Seeding ideas
 								<span role='img' className='ml-1' aria-label='plant'>
@@ -233,7 +227,7 @@ export default function Home({ featured }: { featured: IProjectCard }): JSX.Elem
 									</a>
 								</Link>
 							</div>
-						</section>
+						</section> */}
 					</div>
 				</main>
 			</Container>

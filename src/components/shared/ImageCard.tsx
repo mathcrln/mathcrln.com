@@ -15,7 +15,7 @@ export default function ImageCard({
 }): JSX.Element {
 	return (
 		<div
-			className={`${className} rounded-lg relative transition duration-1000 ease-in-out transform hover:-translate-y-1 hover:scale-105 `}
+			className={`${className} rounded-lg relative transition duration-1000 ease-in-out transform hover:-translate-y-1 hover:scale-[1.025] `}
 		>
 			{!height && !width && <Image src={cover?.url} alt='' layout='fill' objectFit='cover' className='rounded-lg' />}
 
