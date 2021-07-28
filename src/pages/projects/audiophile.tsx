@@ -60,7 +60,7 @@ export default function Project({ project }: { project: any }): JSX.Element {
 					<div className='my-24'>
 						{/* <h2 className='text-5xl font-thin mx-auto my-10'>Case Study</h2> */}
 						<div className='grid gap-10 | md:grid-cols-[1fr,4fr] | xl:grid-cols-[1fr,2fr,1fr]'>
-							<div className='space-y-2  | self-start md:border-r md:w-[170px] md:pr-5 md:max-w-[300px] md:sticky md:top-80 | xl:pr-8 xl:w-[250px] | border-primary-light dark:border-primary-dark'>
+							<div className='space-y-2 bg-gray-900 p-6 -mx-5 | md:bg-transparent self-start md:border-r md:w-[170px] md:p-0 md:pr-4 mx:mx-0 md:max-w-[300px] md:sticky md:top-80 | xl:pr-8 xl:w-[250px] | border-primary-light dark:border-primary-dark'>
 								<p className='font-bold text-primary-light  dark:text-primary-dark '>Project purpose and goals</p>
 								<p>Web Stack and Explanation</p>
 								<p>Problems and thought process</p>
@@ -98,7 +98,7 @@ export default function Project({ project }: { project: any }): JSX.Element {
 								<div className='my-20'>
 									<ImageCard cover={project.cover} className='h-[600px]' />
 								</div>
-								<div className='my-10 space-y-3'>
+								<div className='mt-10 space-y-3'>
 									<h2 className='text-3xl font-bold pb-3'>Web Stack and Explanation</h2>
 									<p>
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et odio sed mi posuere
@@ -153,9 +153,9 @@ export default function Project({ project }: { project: any }): JSX.Element {
 							</div>
 						</div>
 					</div>
-					<div className='my:20 md:my-32 md:w-4/6 mx-auto'>
+					<div className='my:20 md:my-32 lg:w-5/6 xl:w-4/6 mx-auto'>
 						<h2 className='text-4xl  font-bold mb-14'>See more projects</h2>
-						<div className=' grid md:grid-cols-2 gap-28'>
+						<div className=' grid md:grid-cols-2 gap-10 xl:gap-28'>
 							<div>
 								<ImageCard cover={project.cover} className='h-80' />
 								<h3 className='text-2xl font-bold mt-6 mb-3'>Audiophile</h3>
