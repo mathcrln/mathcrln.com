@@ -1,6 +1,6 @@
 import Logo from '@/components/assets/Logo';
 import Link from 'next/link';
-import { FOOTER_LINKS } from '@/data/LINKS';
+import { FOOTER_LINKS } from '../data/LINKS';
 import Container from './Container';
 
 export default function Footer({ className = '' }: { className: string }): JSX.Element {
