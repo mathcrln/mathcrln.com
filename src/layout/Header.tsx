@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { LogoLink } from '@/components/assets/Logo';
 import MenuIcon from '@/components/assets/MenuIcon';
-import { NAV_LINKS } from '../data/LINKS';
+import { NAV_LINKS } from '../data/links';
 import Container from './Container';
 import Navigation from './Navigation';
 
