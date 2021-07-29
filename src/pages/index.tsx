@@ -29,8 +29,21 @@ export default function Home(): JSX.Element {
 			<Container>
 				<PageHeader
 					title='Hello, I’m Mathieu Céraline 👋🏾'
-					intro='I’m a Frontend Web Developer and Designer.'
-					className='bg-no-repeat bg-center bg-lines '
+					intro={
+						<span>
+							I’m a Frontend Web Developer, Designer as well as a Software Engineering student at Polytechnique
+							Montréal. You should{' '}
+							<a href='#' className='text-primary-light dark:text-primary-dark'>
+								check out my latest works
+							</a>{' '}
+							or{' '}
+							<a href='' className='text-primary-light dark:text-primary-dark'>
+								learn more about me
+							</a>
+							.
+						</span>
+					}
+					className=''
 				/>
 
 				<main>

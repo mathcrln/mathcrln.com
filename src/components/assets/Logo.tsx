@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Logo({ className = '' }: { className?: string }): JSX.Element {
 	return (
 		<svg className={className} viewBox='0 0 226 254' xmlns='http://www.w3.org/2000/svg'>
@@ -21,6 +23,16 @@ export default function Logo({ className = '' }: { className?: string }): JSX.El
 				className='stroke-current text-primary-light dark:stroke-0'
 			/>
 		</svg>
+	);
+}
+
+export function LogoLink({ href, className = '' }: { href: string; className?: string }): JSX.Element {
+	return (
+		<Link href={href} passHref>
+			<a>
+				<Logo className={className} />
+			</a>
+		</Link>
 	);
 }
 

@@ -1,19 +1,34 @@
-// import { GithubLogo, LinkedinLogo, TwitterLogo } from '@/components/assets/SocialMedia';
-
-// import Logo from '@/components/assets/Logo';
+import Logo from '@/components/assets/Logo';
+import Link from 'next/link';
+import { FOOTER_LINKS } from 'src/data/links';
 import Container from './Container';
 
 export default function Footer({ className = '' }: { className: string }): JSX.Element {
 	return (
-		<footer className={` text-center py-4 ${className}`}>
+		<footer className={`w-full mx-auto py-8   ${className}`}>
 			<Container>
-				<p className='text-center'>©2021, Mathieu Céraline</p>
-				{/* <Logo className='h-10' />
-				<div className='flex space-x-3'>
-					<GithubLogo href='https://github.com/mathcrln' />
-					<LinkedinLogo href='https://linkedin.com/in/mathieu-ceraline' />
-					<TwitterLogo href='https://twitter.com/mathcrln' />
-				</div> */}
+				<hr className='w-full border-1 border-gray-200 dark:border-gray-700 mb-8' />
+				<div className='grid grid-cols-2 text-center | md:text-left md:grid-cols-4 gap-10'>
+					{FOOTER_LINKS.map((column) => (
+						<div key={column.section} className='space-y-3'>
+							<p className='font-bold'>{column.section}</p>
+							{column.links.map((link) => (
+								<p className='text-gray-400' key={link.title}>
+									{link.isInternal ? (
+										<Link href={link.slug}>
+											<a title={link.title}>{link.title}</a>
+										</Link>
+									) : (
+										<a href={link.slug} title={link.title} target='_blank' rel='noreferrer'>
+											{link.title}
+										</a>
+									)}
+								</p>
+							))}
+						</div>
+					))}
+					<Logo className='w-8 place-self-center' />
+				</div>
 			</Container>
 		</footer>
 	);

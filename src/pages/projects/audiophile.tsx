@@ -4,14 +4,13 @@ import client from '@/graphql/apollo-client';
 import Image from 'next/dist/client/image';
 import ImageCard from '@/components/shared/ImageCard';
 import Head from 'next/dist/next-server/lib/head';
+import { serialize } from 'next-mdx-remote/serialize';
+import { MDXRemote } from 'next-mdx-remote';
+import { GithubLogo } from '@/components/assets/SocialMedia';
 
-const PROJECT = {
-	title: 'Audiophile',
-	description:
-		"Forecast is a project I put together after learning the basics of GraphQL. This application was the perfect way to improve my understanding of making queries and managing larger sets of data. In this project, I utilized OpenWeatherMap API to gather the weather data and injected this data based on the user's zip code input.",
-};
+const components = { GithubLogo };
 
-export default function Project({ project }: { project: any }): JSX.Element {
+export default function Project({ project, source }: { project: any; source: any }): JSX.Element {
 	return (
 		<>
 			<Head>
@@ -21,18 +20,18 @@ export default function Project({ project }: { project: any }): JSX.Element {
 			</Head>
 			<div>
 				<Container className='my-14 relative'>
-					<div className='grid md:grid-cols-[3fr,2fr] gap-10 mb-24'>
+					<div className='grid lg:grid-cols-[2fr,2fr] gap-10 mb-20'>
 						<ImageCard cover={project.cover} className='h-80' />
 
 						<div>
-							<div className='mb-10 flex items-center justify-between'>
-								<h1 className='text-3xl md:text-6xl font-extrabold'>{project.name}</h1>
-								<div className=''>
-									<a className='font-thin bg-primary-dark rounded py-2 px-4'>Live Demo</a>
+							<div className='mb-10 flex items-center justify-between flex-wrap'>
+								<h1 className='text-3xl md:text-4xl font-extrabold flex-grow-1 pr-3'>{project.name}</h1>
+								<div className='my-3 flex-0 '>
+									<a className='font-thin bg-primary-dark rounded py-2 px-4 '>Live Demo</a>
 								</div>
 							</div>
 
-							<p className='md:max-w-[750px]  md:text-left mb-4'>{PROJECT.description}</p>
+							<p className='md:max-w-[750px]  md:text-left mb-4'>{project.description}</p>
 
 							<div className='flex flex-wrap flex-1'>
 								{project.skills && <span className='font-bold mr-2 '>Built with</span>}
@@ -60,7 +59,7 @@ export default function Project({ project }: { project: any }): JSX.Element {
 					<div className='my-24'>
 						{/* <h2 className='text-5xl font-thin mx-auto my-10'>Case Study</h2> */}
 						<div className='grid gap-10 | md:grid-cols-[1fr,4fr] | xl:grid-cols-[1fr,2fr,1fr]'>
-							<div className='space-y-2 bg-gray-900 p-6 -mx-5 | md:bg-transparent self-start md:border-r md:w-[170px] md:p-0 md:pr-4 mx:mx-0 md:max-w-[300px] md:sticky md:top-80 | xl:pr-8 xl:w-[250px] | border-primary-light dark:border-primary-dark'>
+							<div className='space-y-2 bg-gray-900 p-6 -mx-5 | md:-mx-0 md:bg-transparent self-start md:border-r md:w-[170px] md:p-0 md:pr-4 mx:mx-0 md:max-w-[300px] md:sticky md:top-80 | xl:pr-8 xl:w-[250px] | border-primary-light dark:border-primary-dark'>
 								<p className='font-bold text-primary-light  dark:text-primary-dark '>Project purpose and goals</p>
 								<p>Web Stack and Explanation</p>
 								<p>Problems and thought process</p>
@@ -68,6 +67,9 @@ export default function Project({ project }: { project: any }): JSX.Element {
 							</div>
 							<div>
 								<div className='space-y-3'>
+									<div className='bg-primary-dark'>
+										<MDXRemote {...source} components={components} />
+									</div>
 									<h2 className='text-3xl font-bold  pb-3'>Project Purpose</h2>
 									<p>
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et odio sed mi posuere
@@ -94,7 +96,6 @@ export default function Project({ project }: { project: any }): JSX.Element {
 										Praesent convallis leo tempus justo vestibulum, vel lacinia purus varius.
 									</p>
 								</div>
-
 								<div className='my-20'>
 									<ImageCard cover={project.cover} className='h-[600px]' />
 								</div>
@@ -180,7 +181,7 @@ export async function getStaticProps(): Promise<any> {
 	const query = await client.query({
 		query: gql`
 			query Project {
-				projects(where: { name: "Jerry" }) {
+				projects(where: { name: "Audiophile E-Commerce" }) {
 					name
 					id
 					content
@@ -208,9 +209,12 @@ export async function getStaticProps(): Promise<any> {
 		`,
 	});
 
+	const mdxSource = await serialize(query.data.projects[0].content || 'No content');
+
 	return {
 		props: {
 			project: query.data.projects[0],
+			source: mdxSource,
 			revalidate: 10,
 		},
 	};

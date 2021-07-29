@@ -9,9 +9,9 @@ export default function PageHeader({
 	className?: string;
 }): JSX.Element {
 	return (
-		<div className={`text-center my-10 md:my-16 mx-auto ${className}`}>
+		<div className={` my-10 md:my-16  ${className}`}>
 			<h1 className='text-3xl md:text-5xl font-semibold'>{title}</h1>
-			<p className='text-lg max-w-2xl mx-auto md:text-xl font-extralight my-4 text-[#CCCCCC]'>{intro}</p>
+			<p className='text-lg max-w-2xl md:text-xl font-extralight my-4 text-[#CCCCCC]'>{intro}</p>
 			{/* <a className='px-6 py-2 inline-block rounded-lg mx-auto text-white text-md bg-gradient-to-br  from-primary-dark  to-[hsla(4,75%,49%,0.95)] '>
 				Get to know me
 			</a> */}

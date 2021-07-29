@@ -32,7 +32,7 @@ export default function Projects({
 						</span>
 					}
 				/>
-				<main className='my-20 space-y-24'>
+				<main className='my-20 space-y-16'>
 					{featured && <FeaturedProjectCard featured={featured} />}
 					{allProjects && <ProjectGrid projects={allProjects} />}
 				</main>
