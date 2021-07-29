@@ -23,7 +23,7 @@ const NAV_LINKS = [
 
 const FOOTER_LINKS = [
 	{
-		section: "What's next?",
+		name: "What's next?",
 		links: [
 			{
 				title: 'Hire me',
@@ -43,7 +43,7 @@ const FOOTER_LINKS = [
 		],
 	},
 	{
-		section: 'Connect',
+		name: 'Connect',
 		links: [
 			{
 				title: 'Twitter',
@@ -63,7 +63,7 @@ const FOOTER_LINKS = [
 		],
 	},
 	{
-		section: 'Resources',
+		name: 'Resources',
 		links: [
 			{
 				title: 'Stack',

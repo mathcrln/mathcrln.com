@@ -13,7 +13,7 @@ export default function NavLink({ href, title, className = '', handler }: LinkPr
 	const router = useRouter();
 	const activeStyles =
 		router.pathname.split('/')[1] === href.split('/')[1]
-			? 'border-b-2 border-primary-light  dark:border-primary-dark font-bold'
+			? 'border-b-2 border-primary-light dark:border-primary-dark font-bold'
 			: 'font-light';
 	// const handleKeyPress =
 	return (

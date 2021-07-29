@@ -17,6 +17,7 @@
 		"paths": {
 			"@/pages/*": ["src/pages/*"],
 			"@/components/*": ["./src/components/*"],
+			"@/data/*": ["./src/data/*"],
 			"@/layout/*": ["./src/layout/*"],
 			"@/graphql/*": ["src/graphql/*"],
 			"@/lib/*": ["src/lib/*"],

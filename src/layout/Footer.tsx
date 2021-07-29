@@ -1,6 +1,6 @@
 import Logo from '@/components/assets/Logo';
 import Link from 'next/link';
-import { FOOTER_LINKS } from 'src/data/links';
+import { FOOTER_LINKS } from '@/data/LINKS';
 import Container from './Container';
 
 export default function Footer({ className = '' }: { className: string }): JSX.Element {
@@ -10,10 +10,10 @@ export default function Footer({ className = '' }: { className: string }): JSX.E
 				<hr className='w-full border-1 border-gray-200 dark:border-gray-700 mb-8' />
 				<div className='grid grid-cols-2 text-center | md:text-left md:grid-cols-4 gap-10'>
 					{FOOTER_LINKS.map((column) => (
-						<div key={column.section} className='space-y-3'>
-							<p className='font-bold'>{column.section}</p>
+						<div key={column.name} className='space-y-3'>
+							<p className='font-bold'>{column.name}</p>
 							{column.links.map((link) => (
-								<p className='text-gray-400' key={link.title}>
+								<p className='text-gray-600 dark:text-gray-400' key={link.title}>
 									{link.isInternal ? (
 										<Link href={link.slug}>
 											<a title={link.title}>{link.title}</a>

@@ -33,11 +33,11 @@ export default function Home(): JSX.Element {
 						<span>
 							I’m a Frontend Web Developer, Designer as well as a Software Engineering student at Polytechnique
 							Montréal. You should{' '}
-							<a href='#' className='text-primary-light dark:text-primary-dark'>
+							<a href='#' className='font-medium text-primary-light dark:text-primary-dark'>
 								check out my latest works
 							</a>{' '}
 							or{' '}
-							<a href='' className='text-primary-light dark:text-primary-dark'>
+							<a href='' className='font-medium text-primary-light dark:text-primary-dark'>
 								learn more about me
 							</a>
 							.
