@@ -6,7 +6,7 @@ import ProjectMetadata from './ProjectMetadata';
 export default function FeaturedProjectCard({ featured }: { featured: IProjectCard }): JSX.Element {
 	return (
 		<article className='grid lg:grid-cols-[2fr,1fr] gap-10'>
-			<Link href={`/playground/${featured.slug}`} passHref>
+			<Link href={`/projects/${featured.slug}`} passHref>
 				<a>
 					<ImageCard cover={featured.cover} className='h-80' />
 				</a>

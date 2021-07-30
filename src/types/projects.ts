@@ -7,3 +7,7 @@ export type IProjectCard = {
 	skills?: { name: string; icon: { url: string; height: number; width: number } }[];
 	slug: string;
 };
+
+export type IProject = IProjectCard & {
+	content: JSON;
+};

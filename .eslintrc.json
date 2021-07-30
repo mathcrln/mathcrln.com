@@ -13,7 +13,7 @@
 		"next/core-web-vitals"
 	],
 	"plugins": ["prettier", "jsx-a11y", "@typescript-eslint"],
-	"parser": "babel-eslint",
+	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
 		"ecmaVersion": 6,
 		"sourceType": "module",

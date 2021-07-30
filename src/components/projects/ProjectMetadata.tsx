@@ -1,5 +1,6 @@
-import Image from 'next/dist/client/image';
 import { IProjectCard } from 'src/types/projects';
+import { ISkill } from 'src/types/skill';
+import Skill from '../shared/Skill';
 
 export default function ProjectMetadata({ project, className }: { project: IProjectCard; className?: string }): JSX.Element {
 	return (
@@ -8,13 +9,8 @@ export default function ProjectMetadata({ project, className }: { project: IProj
 			<p>{project?.description}</p>
 			<div className='flex space-x-6 items-center justify-center'>
 				{project.skills &&
-					project?.skills?.map((skill: any) => (
-						<div key={skill?.name} className='flex items-center space-x-1'>
-							{skill?.icon && (
-								<Image src={skill?.icon?.url} height={18} width={18} layout='fixed' alt={skill?.name} />
-							)}
-							<span>{skill?.name}</span>
-						</div>
+					project?.skills?.map((skill: ISkill) => (
+						<Skill key={skill?.name} skill={skill} className='flex items-center space-x-1' />
 					))}
 			</div>
 		</div>

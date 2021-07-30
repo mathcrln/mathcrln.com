@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { GetStaticProps } from 'next';
 import Container from '@/layout/Container';
 import { IProjectCard } from 'src/types/projects';
 import { FEATURED_PROJECT, PROJECTS_EXCEPT_LAST } from '@/graphql/queries/projects';
@@ -7,17 +8,13 @@ import FeaturedProjectCard from '@/components/projects/FeaturedProjectCard';
 import ProjectGrid from '@/components/projects/ProjectGrid';
 import PageHeader from '@/components/shared/PageHeader';
 
-export default function Projects({
-	featured,
-	allProjects,
-}: {
-	featured: IProjectCard | null;
-	allProjects: IProjectCard[];
-}): JSX.Element {
+type ProjectsProps = { allProjects: IProjectCard[]; featured: IProjectCard };
+
+export default function Projects({ featured, allProjects }: ProjectsProps): JSX.Element {
 	return (
 		<div>
 			<Head>
-				<title>Playground | Mathieu Céraline</title>
+				<title>Playground | Mathieu Céraline</title>
 				<meta name='description' content='The latest projects I played with.' />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
@@ -41,15 +38,15 @@ export default function Projects({
 	);
 }
 
-export async function getStaticProps(): Promise<any> {
-	const featured = await client.query({ query: FEATURED_PROJECT });
-	const allProjects = await client.query({ query: PROJECTS_EXCEPT_LAST });
+export const getStaticProps: GetStaticProps<ProjectsProps & { revalidate: number }> = async () => {
+	const featured: IProjectCard = (await client.query({ query: FEATURED_PROJECT })).data.projects[0];
+	const allProjects: IProjectCard[] = (await client.query({ query: PROJECTS_EXCEPT_LAST })).data.projects;
 
 	return {
 		props: {
-			allProjects: allProjects.data.projects,
-			featured: featured.data.projects[0],
+			allProjects,
+			featured,
 			revalidate: 10,
 		},
 	};
-}
+};

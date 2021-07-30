@@ -1,6 +1,11 @@
+import { IBookCard } from 'src/types/books';
 import ImageCard from '../shared/ImageCard';
 
-export default function BookCard({ book }: { book: any }): JSX.Element {
+type Props = {
+	book: IBookCard;
+};
+
+export default function BookCard({ book }: Props): JSX.Element {
 	const { title, author, cover } = book;
 
 	return (
