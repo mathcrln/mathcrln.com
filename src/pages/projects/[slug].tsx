@@ -8,25 +8,44 @@ import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { ALL_PROJECTS_SLUGS, PROJECT_PAGE } from '@/graphql/queries/projects';
 import Skill from '@/components/shared/Skill';
-import { ISkill } from 'src/types/skill';
-import { IProject } from 'src/types/projects';
+import { ISkill, IProject } from 'src/types';
+import TableOfContents from '@/components/shared/TableOfContents';
+import getTableOfContents, { ITableOfContents } from '@/utils/getTableOfContents';
+import { P, H2, H3 } from '@/components/shared/MDXElements';
 
-function H2({ children }: { children: JSX.Element }) {
-	return <h2 className='text-3xl mt-14 mb-4 font-extrabold first-of-type:mt-0'>{children}</h2>;
-}
-function P({ children }: { children: JSX.Element }) {
-	return <p className='mb-5'>{children}</p>;
-}
+// const test = (src) => {
+// 	const cover = { url: src };
+// 	return <ImageCard cover={cover} className='h-80' />;
+// };
+// const test2 = ({ children }) => {
+// 	if (children.length > 0) {
+// 		children.forEach((child) => {
+// 			console.log(child.props.children);
+// 		});
+// 	}
+// 	// console.log(children);
+// 	// if (children?.props?.mdxType === 'img') {
+// 	// 	console.log('Image', children?.props?.src);
+// 	// } else {
+// 	// 	console.log('Text', children);
+// 	// }
+
+// 	return <ul>{children}</ul>;
+// };
+
 const components = {
 	h2: H2,
+	h3: H3,
 	p: P,
+	// img: test,
 };
 
 type ProjectProps = {
 	project: IProject;
 	source: MDXRemoteSerializeResult;
+	toc: ITableOfContents;
 };
-export default function Project({ project, source }: ProjectProps): JSX.Element {
+export default function Project({ project, source, toc }: ProjectProps): JSX.Element {
 	return (
 		<>
 			<Head>
@@ -69,20 +88,21 @@ export default function Project({ project, source }: ProjectProps): JSX.Element 
 						</div>
 						<div className='my-24'>
 							{/* <h2 className='text-5xl font-thin mx-auto my-10'>Case Study</h2> */}
-							<div className='grid gap-10 | md:grid-cols-[1fr,4fr] '>
-								<div className='space-y-2 bg-gray-900 p-6 -mx-5 | md:-mx-0 md:bg-transparent self-start md:border-r md:w-[170px] md:p-0 md:pr-4 mx:mx-0 md:max-w-[300px] md:sticky md:top-80 | xl:pr-8 xl:w-[250px] | border-primary-light dark:border-primary-dark'>
-									<p className='font-bold text-primary-light  dark:text-primary-dark '>
+							<div className='grid gap-8 | xl:gap-14 md:grid-cols-[1fr,4fr] '>
+								<div className='dark:bg-gray-900 p-6 -mx-5 | md:-mx-0 md:bg-transparent self-start md:border-r md:w-[170px] md:p-0 md:pr-4 mx:mx-0 md:max-w-[300px] md:sticky md:top-80 | xl:pr-8 xl:w-[250px] | border-primary-light dark:border-primary-dark'>
+									{toc.length > 0 && <TableOfContents toc={toc} />}
+
+									{/* <p className='font-bold text-primary-light  dark:text-primary-dark '>
 										Project purpose and goals
 									</p>
 									<p>Web Stack and Explanation</p>
 									<p>Problems and thought process</p>
-									<p>Future Improvements</p>
+									<p>Future Improvements</p> */}
 								</div>
-								<div className='space-y-3'>
-									<div className=''>
-										<MDXRemote {...source} components={components} />
-									</div>
-								</div>
+
+								<article className=''>
+									<MDXRemote {...source} components={components} />
+								</article>
 							</div>
 						</div>
 						{/* <div className='my:20 md:my-32 lg:w-5/6 xl:w-4/6 mx-auto'>
@@ -114,6 +134,7 @@ export default function Project({ project, source }: ProjectProps): JSX.Element 
 		</>
 	);
 }
+
 export const getStaticPaths: GetStaticPaths = async () => {
 	const { projects } = (await client.query({ query: ALL_PROJECTS_SLUGS })).data;
 	const slugs = projects?.map((project: IProject) => `/projects/${project.slug}`);
@@ -127,6 +148,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 type Props = {
 	project: IProject;
 	source: MDXRemoteSerializeResult;
+	toc: ITableOfContents;
 	revalidate: number;
 };
 
@@ -144,12 +166,15 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 		},
 	});
 
-	const mdxSource = await serialize(query.data?.projects[0]?.content || 'No content');
+	const content = query.data?.projects[0]?.content || 'No content';
+	const toc = getTableOfContents(content);
+	const mdxSource = await serialize(content);
 
 	return {
 		props: {
 			project: query.data.projects[0],
 			source: mdxSource,
+			toc,
 			revalidate: 10,
 		},
 	};
