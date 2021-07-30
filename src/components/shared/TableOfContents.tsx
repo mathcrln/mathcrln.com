@@ -1,21 +1,15 @@
 import { IHeading, ITableOfContents } from '@/utils/getTableOfContents';
+import useIntersectionObserver from '@/utils/useIntersectionObserver';
 import Link from 'next/dist/client/link';
-import { SyntheticEvent } from 'react';
+import { useState } from 'react';
+import scrollSmoothly from '@/utils/scrollSmoothly';
 
 export default function TableOfContents({ toc }: { toc: ITableOfContents }): JSX.Element {
-	const scrollSmoothly = (e: SyntheticEvent, heading: IHeading) => {
-		if (e.type === 'click') {
-			e.preventDefault();
-		}
+	const [activeId, setActiveId] = useState('');
+	useIntersectionObserver(setActiveId);
 
-		if (typeof window !== 'undefined' && typeof document != null) {
-			document?.querySelector(`${heading.link}`)?.scrollIntoView({
-				behavior: 'smooth',
-			});
-		}
-	};
 	return (
-		<>
+		<aside>
 			<h2 className='font-bold text-lg'>Table of Contents</h2>
 			<nav aria-label='Table of contents'>
 				{toc &&
@@ -25,9 +19,11 @@ export default function TableOfContents({ toc }: { toc: ITableOfContents }): JSX
 								<a
 									tabIndex={0}
 									role='link'
-									className='mb-0 cursor-pointer hover:text-primary-light dark:hover:text-primary-dark'
-									onClick={(e) => scrollSmoothly(e, heading)}
-									onKeyDown={(e) => scrollSmoothly(e, heading)}
+									className={`mb-0 cursor-pointer hover:text-primary-light dark:hover:text-primary-dark ${
+										activeId === heading.link.substring(1) ? 'font-extrabold dark:text-primary-dark' : ''
+									}`}
+									onClick={(e) => scrollSmoothly(e, heading.link)}
+									onKeyDown={(e) => scrollSmoothly(e, heading.link)}
 								>
 									{heading.title}
 								</a>
@@ -35,6 +31,6 @@ export default function TableOfContents({ toc }: { toc: ITableOfContents }): JSX
 						</p>
 					))}
 			</nav>
-		</>
+		</aside>
 	);
 }
