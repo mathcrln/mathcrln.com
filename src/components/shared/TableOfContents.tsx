@@ -3,10 +3,12 @@ import useIntersectionObserver from '@/utils/useIntersectionObserver';
 import Link from 'next/dist/client/link';
 import { useState } from 'react';
 import scrollSmoothly from '@/utils/scrollSmoothly';
+import initializeObserver from '@/utils/polyfills';
 
 export default function TableOfContents({ toc }: { toc: ITableOfContents }): JSX.Element {
 	const [activeId, setActiveId] = useState('');
 
+	initializeObserver();
 	useIntersectionObserver(setActiveId);
 
 	return (

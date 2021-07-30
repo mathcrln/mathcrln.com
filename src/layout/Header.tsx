@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { LogoLink } from '@/components/assets/Logo';
 import MenuIcon from '@/components/assets/MenuIcon';
-import { NAV_LINKS } from '../data/links';
-import Container from './Container';
+import { NAV_LINKS } from '@/data/links';
+import useDarkMode from '@/hooks/useDarkMode';
 import Navigation from './Navigation';
+import Container from './Container';
 
 export default function Header(): JSX.Element {
-	// const [theme, setTheme] = useDarkMode();
+	const [theme, setTheme] = useDarkMode();
 	const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
 	const handleOpenMenu = () => {
@@ -21,7 +22,13 @@ export default function Header(): JSX.Element {
 		<header className='sticky top-0 bg-white dark:bg-darkGrey z-50 '>
 			<Container className='flex justify-between py-6 md:py-6 '>
 				<LogoLink href='/' className='w-8 hover:filter hover:brightness-90' />
-				<Navigation links={NAV_LINKS} isMobileNavOpen={mobileNavOpen} mobileHandler={handleMobileNavClose} />
+				<Navigation
+					links={NAV_LINKS}
+					isMobileNavOpen={mobileNavOpen}
+					mobileHandler={handleMobileNavClose}
+					theme={theme}
+					toggleTheme={setTheme}
+				/>
 				<MenuIcon handleOpenMenu={handleOpenMenu} menuOpen={mobileNavOpen} />
 			</Container>
 		</header>
