@@ -6,6 +6,7 @@ import scrollSmoothly from '@/utils/scrollSmoothly';
 
 export default function TableOfContents({ toc }: { toc: ITableOfContents }): JSX.Element {
 	const [activeId, setActiveId] = useState('');
+
 	useIntersectionObserver(setActiveId);
 
 	return (
@@ -20,7 +21,7 @@ export default function TableOfContents({ toc }: { toc: ITableOfContents }): JSX
 									tabIndex={0}
 									role='link'
 									className={`mb-0 cursor-pointer hover:text-primary-light dark:hover:text-primary-dark ${
-										activeId === heading.link.substring(1) ? 'font-extrabold dark:text-primary-dark' : ''
+										activeId === heading.link.substring(1) ? 'font-bold dark:text-primary-dark' : ''
 									}`}
 									onClick={(e) => scrollSmoothly(e, heading.link)}
 									onKeyDown={(e) => scrollSmoothly(e, heading.link)}

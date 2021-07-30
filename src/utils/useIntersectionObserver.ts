@@ -6,13 +6,14 @@ interface HeadingRef {
 }
 const useIntersectionObserver = (setActiveId: Dispatch<SetStateAction<string>>): void => {
 	const headingElementsRef = useRef<HeadingRef>({} as HeadingRef);
-
 	useEffect(() => {
+		const article = document.querySelector('article') || document;
+
 		/**
 		 * This determines the zone for when an element is "visible".
 		 * */
 		const rootMarginValue = { rootMargin: '0px 0px -40% 0px' };
-		const headingElements = Array.from(document.querySelectorAll('h2, h3'));
+		const headingElements = Array.from(article.querySelectorAll('h2, h3'));
 
 		const callback = (headings: Array<IntersectionObserverEntry>) => {
 			headingElementsRef.current = headings.reduce((map, headingElement) => {
@@ -28,7 +29,7 @@ const useIntersectionObserver = (setActiveId: Dispatch<SetStateAction<string>>):
 				if (headingElement.isIntersecting) visibleHeadings.push(headingElement);
 			});
 
-			const getIndexFromId = (id: string) => headingElements.findIndex((heading) => heading.id === id);
+			const getIndexFromId = (id: string) => headingElements?.findIndex((heading) => heading.id === id);
 			if (visibleHeadings.length > 0) {
 				setActiveId(visibleHeadings[0].target.id);
 			} else if (visibleHeadings.length > 1) {
