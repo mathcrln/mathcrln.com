@@ -174,7 +174,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 			project: { ...query.data.projects[0], updatedAt: query.data.projects[0].updated_at },
 			source: mdxSource,
 			toc,
-			revalidate: 10,
+			revalidate: 1,
 		},
 	};
 };
