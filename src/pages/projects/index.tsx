@@ -39,8 +39,8 @@ export default function Projects({ featured, allProjects }: ProjectsProps): JSX.
 }
 
 export const getStaticProps: GetStaticProps<ProjectsProps & { revalidate: number }> = async () => {
-	const featured: IProjectCard = (await client.query({ query: FEATURED_PROJECT })).data.projects[0];
-	const allProjects: IProjectCard[] = (await client.query({ query: PROJECTS_EXCEPT_LAST })).data.projects;
+	const featured: IProjectCard = (await client.query({ query: FEATURED_PROJECT })).data.projects[0] || null;
+	const allProjects: IProjectCard[] = (await client.query({ query: PROJECTS_EXCEPT_LAST })).data.projects || null;
 
 	return {
 		props: {

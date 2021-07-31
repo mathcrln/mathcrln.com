@@ -16,11 +16,11 @@
 		scroll-margin-top: 100px;
 	}
 	/* Safari-only */
-	@supports (-webkit-hyphens: none) {
+	/* @supports (-webkit-hyphens: none) {
 		h2,
 		h3 {
 			padding-top: 100px;
 			margin-top: -100px;
 		}
-	}
+	} */
 }

@@ -44,6 +44,7 @@ const PROJECT_PAGE = gql`
 			id
 			content
 			description
+			updated_at
 			cover {
 				height
 				width

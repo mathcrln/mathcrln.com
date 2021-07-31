@@ -1,3 +1,4 @@
+import getStrapiMedia from '@/utils/getStrapiMedia';
 import Link from 'next/dist/client/link';
 import { IProjectCard } from '../../types/projects';
 import ImageCard from '../shared/ImageCard';
@@ -8,7 +9,7 @@ export default function FeaturedProjectCard({ featured }: { featured: IProjectCa
 		<article className='grid lg:grid-cols-[2fr,1fr] gap-10'>
 			<Link href={`/projects/${featured.slug}`} passHref>
 				<a>
-					<ImageCard cover={featured.cover} className='h-80' />
+					<ImageCard cover={getStrapiMedia(featured.cover)} className='h-80' />
 				</a>
 			</Link>
 			<ProjectMetadata project={featured} className='text-center ' />
