@@ -8,13 +8,13 @@ export enum ThemeMode {
 }
 
 export enum Theme {
-	LIGHT,
-	DARK,
+	LIGHT = 'light',
+	DARK = 'dark',
 }
 
-const useDarkMode = (): Readonly<[Theme, ThemeMode, (themeMode: ThemeMode) => void]> => {
+const useDarkMode = (): Readonly<[Theme, ThemeMode | null, (themeMode: ThemeMode) => void]> => {
 	const [theme, setTheme] = useState<Theme>(Theme.LIGHT);
-	const [themeMode, setThemeMode] = useState<ThemeMode>(ThemeMode.SYSTEM);
+	const [themeMode, setThemeMode] = useState<ThemeMode | null>(ThemeMode.SYSTEM);
 
 	const prefersDarkMode = useMedia(['(prefers-color-scheme: dark)'], [true], false);
 
@@ -41,14 +41,23 @@ const useDarkMode = (): Readonly<[Theme, ThemeMode, (themeMode: ThemeMode) => vo
 	};
 
 	useEffect(() => {
-		if (themeMode === ThemeMode.SYSTEM && prefersDarkMode) {
+		const localTheme = window.localStorage.getItem('theme');
+		if (localTheme === Theme.LIGHT) {
+			setThemeMode(ThemeMode.LIGHT);
+			setTheme(Theme.LIGHT);
+			document.documentElement.classList.remove('dark');
+		} else if (localTheme === Theme.DARK) {
+			setThemeMode(ThemeMode.DARK);
+			setTheme(Theme.DARK);
+			document.documentElement.classList.add('dark');
+		} else if (!localTheme && themeMode === ThemeMode.SYSTEM && prefersDarkMode) {
 			document.documentElement.classList.add('dark');
 			setTheme(Theme.DARK);
-		} else if (themeMode === ThemeMode.SYSTEM && !prefersDarkMode) {
+		} else if (!localTheme && themeMode === ThemeMode.SYSTEM && !prefersDarkMode) {
 			document.documentElement.classList.remove('dark');
 			setTheme(Theme.LIGHT);
 		}
-	}, [prefersDarkMode, themeMode]);
+	}, [prefersDarkMode, themeMode, theme]);
 
 	return [theme, themeMode, selectThemeMode];
 };

@@ -1,15 +1,49 @@
-/* eslint-disable jsx-a11y/no-onchange */
-import { ChangeEvent } from 'react';
+import { useState, ChangeEvent } from 'react';
 import Logo from '@/components/assets/Logo';
 import Sun from '@/components/assets/Sun';
 import Moon from '@/components/assets/Moon';
+import SystemComputer from '@/components/assets/Computer';
 import Link from 'next/link';
 import { FOOTER_LINKS } from '@/data/links';
-import useDarkMode, { Theme, ThemeMode } from '@/hooks/useDarkMode';
+import useDarkMode, { ThemeMode } from '@/hooks/useDarkMode';
+import Select from '@/components/shared/CustomElements/Select';
 import Container from './Container';
 
 export default function Footer({ className = '' }: { className: string }): JSX.Element {
-	const [theme, themeMode, selectThemeMode] = useDarkMode();
+	const [, themeMode, selectThemeMode] = useDarkMode();
+	const [language, setLanguage] = useState('FR');
+
+	const languages = [
+		{
+			value: 'FR',
+			title: 'FR',
+			label: 'Français / French',
+			icon: (
+				<span role='img' aria-label='US Flag'>
+					🇫🇷
+				</span>
+			),
+		},
+		{
+			value: 'EN',
+			title: 'EN',
+			label: 'Anglais / English',
+			icon: (
+				<span role='img' aria-label='US Flag'>
+					🇺🇸
+				</span>
+			),
+		},
+	];
+	const themeOptions = [
+		{ value: ThemeMode.SYSTEM, title: 'System', label: 'Follow System Settings', icon: <SystemComputer /> },
+		{ value: ThemeMode.DARK, title: 'Dark', label: 'Activate Dark Mode', icon: <Sun /> },
+		{ value: ThemeMode.LIGHT, title: 'Light', label: 'Activate Light Mode', icon: <Moon /> },
+	];
+	const handleLanguageChange = (e: ChangeEvent<HTMLSelectElement>) => {
+		setLanguage(e.target.value);
+	};
+
 	const handleThemeChange = (e: ChangeEvent<HTMLSelectElement>) => {
 		const mode: ThemeMode = e.target.value as unknown as ThemeMode;
 		selectThemeMode(mode);
@@ -39,30 +73,25 @@ export default function Footer({ className = '' }: { className: string }): JSX.E
 					))}
 					<Logo className='w-8 place-self-center' />
 				</div>
-				<div className='py-4 space-x-2 grid md:grid-cols-3 items-center justify-center'>
-					<p>© 2021 Mathieu Céraline</p>
-					<div className='border text-black dark:text-gray-300  rounded-lg border-gray-300 dark:border-gray-600 px-4 py-2 space-x-1 text-center flex items-center justify-center h-full place-self-center  md:place-self-end focus-within:ring-2 ring-primary-dark'>
-						<span role='img' className='block' aria-label='French Flag'>
-							🇫🇷
-						</span>
-						<select className='appearance-none focus:outline-none  dark:appearance-none '>
-							<option value='1'>FR</option>
-							<option value='1'>EN</option>
-							<option value='1'>ES</option>
-						</select>
-					</div>
-					<div className='border text-black dark:text-gray-300  rounded-lg border-gray-300 dark:border-gray-600 w-28 px-4 py-2 text-center flex space-x-2 items-center justify-center place-self-center  md:place-self-end focus-within:ring-2 ring-primary-dark'>
-						{theme === Theme.LIGHT && <Moon className='' />}
-						{theme === Theme.DARK && <Sun className='' />}
-						<select
-							className='appearance-none focus:outline-none dark:appearance-none'
+				<div className='py-4 space-x-2 mt-4 grid md:grid-cols-3 gap-2 items-center justify-center'>
+					<p>© 2021, Jerry by @mathcrln</p>
+					<div />
+					<div className='flex space-x-2 text-center '>
+						<Select
+							label='Change Language'
+							id='lang-selector'
+							options={languages}
+							selected={language}
+							onChange={handleLanguageChange}
+						/>
+
+						<Select
+							label='Change Color Scheme'
+							id='theme-selector'
+							options={themeOptions}
+							selected={themeMode}
 							onChange={handleThemeChange}
-							value={themeMode}
-						>
-							<option value={ThemeMode.SYSTEM}>System</option>
-							<option value={ThemeMode.LIGHT}>Light</option>
-							<option value={ThemeMode.DARK}>Dark</option>
-						</select>
+						/>
 					</div>
 				</div>
 			</Container>
