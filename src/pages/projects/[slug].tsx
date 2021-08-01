@@ -11,13 +11,14 @@ import Skill from '@/components/shared/Skill';
 import { ISkill, IProject } from 'src/types';
 import TableOfContents from '@/components/shared/TableOfContents';
 import getTableOfContents, { ITableOfContents } from '@/utils/getTableOfContents';
-import { P, H2, H3 } from '@/components/shared/MDXElements';
+import { P, H2, H3, A, UL, LI } from '@/components/shared/MDXElements';
 import smoothscroll from 'smoothscroll-polyfill';
 import relativeDate from 'relative-date';
 import { LinkButton } from '@/components/shared/Button';
 import PageWithLeftSidebar from '@/layout/PageWithLeftSidebar';
 import Sidebar from '@/layout/Sidebar';
 import getStrapiMedia from '@/utils/getStrapiMedia';
+
 // const test = (src) => {
 // 	const cover = { url: src };
 // 	return <ImageCard cover={cover} className='h-80' />;
@@ -42,6 +43,9 @@ const components = {
 	h2: H2,
 	h3: H3,
 	p: P,
+	a: A,
+	ul: UL,
+	li: LI,
 	// img: test,
 };
 
@@ -174,6 +178,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 			project: { ...query.data.projects[0], updatedAt: query.data.projects[0].updated_at },
 			source: mdxSource,
 			toc,
+
 			revalidate: 1,
 		},
 	};

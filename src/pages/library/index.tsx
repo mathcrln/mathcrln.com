@@ -22,42 +22,6 @@ const BOOK = [
 			width: 301,
 		},
 	},
-	{
-		title: 'Getting things done',
-		author: 'David Allen',
-		cover: {
-			url: '/book.jpg',
-			height: 454,
-			width: 301,
-		},
-	},
-	{
-		title: 'How we learn',
-		author: 'Benedict Carey',
-		cover: {
-			url: '/book.jpg',
-			height: 454,
-			width: 301,
-		},
-	},
-	{
-		title: 'How we learn',
-		author: 'Benedict Carey',
-		cover: {
-			url: '/book.jpg',
-			height: 454,
-			width: 301,
-		},
-	},
-	{
-		title: 'How we learn',
-		author: 'Benedict Carey',
-		cover: {
-			url: '/book.jpg',
-			height: 454,
-			width: 301,
-		},
-	},
 ];
 
 export default function Library(): JSX.Element {

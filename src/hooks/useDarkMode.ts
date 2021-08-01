@@ -1,52 +1,56 @@
 import { useState, useEffect } from 'react';
 import useMedia from './useMedia';
 
-const useDarkMode = (): Readonly<[string, (action: 'toggle' | 'auto') => void]> => {
-	const [theme, setTheme] = useState<string>('light');
+export enum ThemeMode {
+	LIGHT = 'light',
+	DARK = 'dark',
+	SYSTEM = 'system',
+}
+
+export enum Theme {
+	LIGHT,
+	DARK,
+}
+
+const useDarkMode = (): Readonly<[Theme, ThemeMode, (themeMode: ThemeMode) => void]> => {
+	const [theme, setTheme] = useState<Theme>(Theme.LIGHT);
+	const [themeMode, setThemeMode] = useState<ThemeMode>(ThemeMode.SYSTEM);
 
 	const prefersDarkMode = useMedia(['(prefers-color-scheme: dark)'], [true], false);
 
-	const toggleTheme = (action: 'toggle' | 'auto') => {
-		// Using the 'media' query
-		if (action === 'auto') {
-			window.localStorage.removeItem('theme');
-			if (prefersDarkMode) {
-				setTheme('dark');
+	const selectThemeMode = (mode: ThemeMode) => {
+		switch (mode) {
+			case ThemeMode.LIGHT:
+				setTheme(Theme.LIGHT);
+				document.documentElement.classList.remove('dark');
+				window.localStorage.setItem('theme', 'light');
+				break;
+			case ThemeMode.DARK:
+				setTheme(Theme.DARK);
 				document.documentElement.classList.add('dark');
-			} else {
-				setTheme('light');
-			}
+				window.localStorage.setItem('theme', 'dark');
+				break;
+			case ThemeMode.SYSTEM:
+				window.localStorage.removeItem('theme');
+				break;
+			default:
+				setTheme(Theme.LIGHT);
+				break;
 		}
-		// Using the button
-		else if (theme === 'light') {
-			window.localStorage.setItem('theme', 'dark');
-			setTheme('dark');
-			document.documentElement.classList.add('dark');
-		} else {
-			window.localStorage.setItem('theme', 'light');
-			setTheme('light');
-			document.documentElement.classList.remove('dark');
-		}
+		setThemeMode(mode);
 	};
 
 	useEffect(() => {
-		const localTheme = window.localStorage.getItem('theme');
-		if (localTheme) {
-			window.localStorage.setItem('theme', localTheme);
-			if (localTheme === 'dark') {
-				document.documentElement.classList.add('dark');
-			}
-			setTheme(localTheme);
-		} else if (prefersDarkMode) {
-			setTheme('dark');
+		if (themeMode === ThemeMode.SYSTEM && prefersDarkMode) {
 			document.documentElement.classList.add('dark');
-		} else {
-			setTheme('light');
+			setTheme(Theme.DARK);
+		} else if (themeMode === ThemeMode.SYSTEM && !prefersDarkMode) {
 			document.documentElement.classList.remove('dark');
+			setTheme(Theme.LIGHT);
 		}
-	}, [prefersDarkMode]);
+	}, [prefersDarkMode, themeMode]);
 
-	return [theme, toggleTheme];
+	return [theme, themeMode, selectThemeMode];
 };
 
 export default useDarkMode;

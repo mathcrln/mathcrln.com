@@ -24,6 +24,8 @@
 	"rules": {
 		"import/no-unresolved": "error",
 		"@typescript-eslint/no-var-requires": "off",
+		"no-shadow": "off", // replaced by ts-eslint rule below
+		"@typescript-eslint/no-shadow": "error",
 		"react/jsx-filename-extension": [
 			1,
 			{

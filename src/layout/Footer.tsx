@@ -1,10 +1,19 @@
+/* eslint-disable jsx-a11y/no-onchange */
+import { ChangeEvent } from 'react';
 import Logo from '@/components/assets/Logo';
+import Sun from '@/components/assets/Sun';
+import Moon from '@/components/assets/Moon';
 import Link from 'next/link';
 import { FOOTER_LINKS } from '@/data/links';
-import Moon from '@/components/assets/Moon';
+import useDarkMode, { Theme, ThemeMode } from '@/hooks/useDarkMode';
 import Container from './Container';
 
 export default function Footer({ className = '' }: { className: string }): JSX.Element {
+	const [theme, themeMode, selectThemeMode] = useDarkMode();
+	const handleThemeChange = (e: ChangeEvent<HTMLSelectElement>) => {
+		const mode: ThemeMode = e.target.value as unknown as ThemeMode;
+		selectThemeMode(mode);
+	};
 	return (
 		<footer className={`w-full mx-auto py-8   ${className}`}>
 			<Container>
@@ -30,24 +39,29 @@ export default function Footer({ className = '' }: { className: string }): JSX.E
 					))}
 					<Logo className='w-8 place-self-center' />
 				</div>
-				<div className='py-4 space-x-2 grid grid-cols-3 items-center'>
+				<div className='py-4 space-x-2 grid md:grid-cols-3 items-center justify-center'>
 					<p>© 2021 Mathieu Céraline</p>
-					<div className='border rounded-lg border-gray-300 w-16 space-x-1 text-center flex items-center justify-center h-full place-self-end'>
+					<div className='border text-black dark:text-gray-300  rounded-lg border-gray-300 dark:border-gray-600 px-4 py-2 space-x-1 text-center flex items-center justify-center h-full place-self-center  md:place-self-end focus-within:ring-2 ring-primary-dark'>
 						<span role='img' className='block' aria-label='French Flag'>
 							🇫🇷
 						</span>
-						<select name='theme' id='theme' className='appearance-none focus:outline-none dark:appearance-none'>
+						<select className='appearance-none focus:outline-none  dark:appearance-none '>
 							<option value='1'>FR</option>
 							<option value='1'>EN</option>
 							<option value='1'>ES</option>
 						</select>
 					</div>
-					<div className='border rounded-lg border-gray-300 w-28 px-4 py-2 text-center flex space-x-2 items-center justify-center group group-focus:ring-2 place-self-end'>
-						<Moon />
-						<select name='theme' id='theme' className='appearance-none focus:outline-none dark:appearance-none'>
-							<option value='system'>System</option>
-							<option value='light'>Light</option>
-							<option value='dark'>Dark</option>
+					<div className='border text-black dark:text-gray-300  rounded-lg border-gray-300 dark:border-gray-600 w-28 px-4 py-2 text-center flex space-x-2 items-center justify-center place-self-center  md:place-self-end focus-within:ring-2 ring-primary-dark'>
+						{theme === Theme.LIGHT && <Moon className='' />}
+						{theme === Theme.DARK && <Sun className='' />}
+						<select
+							className='appearance-none focus:outline-none dark:appearance-none'
+							onChange={handleThemeChange}
+							value={themeMode}
+						>
+							<option value={ThemeMode.SYSTEM}>System</option>
+							<option value={ThemeMode.LIGHT}>Light</option>
+							<option value={ThemeMode.DARK}>Dark</option>
 						</select>
 					</div>
 				</div>
