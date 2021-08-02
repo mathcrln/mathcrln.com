@@ -53,7 +53,7 @@ const useDarkMode = (): Readonly<[Theme, ThemeMode | null, (themeMode: ThemeMode
 		} else if (!localTheme && themeMode === ThemeMode.SYSTEM && prefersDarkMode) {
 			document.documentElement.classList.add('dark');
 			setTheme(Theme.DARK);
-		} else if (!localTheme && themeMode === ThemeMode.SYSTEM && !prefersDarkMode) {
+		} else {
 			document.documentElement.classList.remove('dark');
 			setTheme(Theme.LIGHT);
 		}

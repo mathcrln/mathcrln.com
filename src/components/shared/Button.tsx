@@ -32,7 +32,7 @@ function LinkButton({ title, url, className }: ILinkButton): JSX.Element {
 			</Link>
 		);
 	return (
-		<a href={url} title='title'>
+		<a href={url} title='title' target='_blank' rel='noreferrer'>
 			<Button title={title} className={className} />
 		</a>
 	);

@@ -12,7 +12,7 @@ export default function FeaturedProjectCard({ featured }: { featured: IProjectCa
 					<ImageCard cover={getStrapiMedia(featured.cover)} className='h-80' />
 				</a>
 			</Link>
-			<ProjectMetadata project={featured} className='text-center ' />
+			<ProjectMetadata project={featured} className='' />
 		</article>
 	);
 }

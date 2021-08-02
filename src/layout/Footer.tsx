@@ -49,7 +49,7 @@ export default function Footer({ className = '' }: { className: string }): JSX.E
 		selectThemeMode(mode);
 	};
 	return (
-		<footer className={`w-full mx-auto py-8   ${className}`}>
+		<footer className={`w-full mx-auto py-8 ${className}`}>
 			<Container>
 				<hr className='w-full border-1 border-gray-200 dark:border-gray-700 mb-8' />
 				<div className='grid grid-cols-2 text-center | md:text-left md:grid-cols-4 gap-10'>
