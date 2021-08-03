@@ -1,3 +1,5 @@
+import React from 'react';
+
 /* eslint-disable react/require-default-props */
 export default function PageHeader({
 	title,
@@ -5,7 +7,7 @@ export default function PageHeader({
 	className = '',
 }: {
 	title: string;
-	intro: string | JSX.Element;
+	intro: string | JSX.Element | React.ReactNode;
 	className?: string;
 }): JSX.Element {
 	return (

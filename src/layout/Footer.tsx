@@ -73,10 +73,10 @@ export default function Footer({ className = '' }: { className: string }): JSX.E
 					))}
 					<Logo className='w-8 place-self-center' />
 				</div>
-				<div className='py-4 space-x-2 mt-4 grid md:grid-cols-3 gap-2 items-center justify-center'>
+				<div className='py-4 space-x-2 mt-4 grid md:grid-cols-3 gap-2 text-center md:text-left items-center justify-center'>
 					<p>© 2021, Jerry by @mathcrln</p>
 					<div />
-					<div className='flex space-x-2 text-center '>
+					<div className='flex space-x-2 text-center md:place-self-end'>
 						<Select
 							label='Change Language'
 							id='lang-selector'

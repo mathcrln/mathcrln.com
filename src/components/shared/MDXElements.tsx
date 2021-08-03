@@ -5,7 +5,7 @@ import Link from 'next/dist/client/link';
 const H2 = ({ children }: { children: string }): JSX.Element => {
 	const id = slugify(children, { lower: true, strict: true });
 	return (
-		<h2 id={id} className='text-3xl mt-14 mb-4 font-extrabold first-of-type:mt-0'>
+		<h2 id={`_${id}`} className='text-3xl mt-14 mb-4 font-extrabold first-of-type:mt-0'>
 			{children}
 		</h2>
 	);
@@ -14,7 +14,7 @@ const H2 = ({ children }: { children: string }): JSX.Element => {
 const H3 = ({ children }: { children: string }): JSX.Element => {
 	const id = slugify(children, { lower: true, strict: true });
 	return (
-		<h3 id={id} className='text-2xl mt-10 mb-4 font-extrabold first-of-type:mt-0'>
+		<h3 id={`_${id}`} className='text-2xl mt-10 mb-4 font-extrabold first-of-type:mt-0'>
 			{children}
 		</h3>
 	);

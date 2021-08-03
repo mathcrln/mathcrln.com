@@ -1,22 +1,17 @@
 import PageHeader from '@/components/shared/PageHeader';
 import { GetStaticProps } from 'next';
 import client from '@/graphql/apollo-client';
-import BLOGPAGE_POSTS from '@/graphql/queries/posts';
+import { BLOGPAGE_POSTS } from '@/graphql/queries/posts';
 import Page from '@/layout/Page';
-
-type IPost = {
-	title: string;
-};
+import PostCard, { IPost } from 'src/articles/components/PostCard';
 
 export default function Articles({ posts }: { posts: IPost[] }): JSX.Element {
 	return (
 		<Page title='Blog'>
-			<PageHeader title='Articles' intro='Sharing ideas and discoveries in a few words' />
-			<div className='blog-posts'>
-				{posts?.map((post) => (
-					<div key={post.title} className='blog-post'>
-						<h2>{post.title}</h2>
-					</div>
+			<PageHeader title='Articles' intro='Sharing ideas and discoveries in a few words' className='mb-20' />
+			<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10 '>
+				{posts?.map((post: IPost) => (
+					<PostCard key={post.title} post={post} />
 				))}
 			</div>
 		</Page>

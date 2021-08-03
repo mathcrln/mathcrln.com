@@ -21,7 +21,7 @@ export default function getTableOfContents(content: string): ITableOfContents {
 
 				return {
 					title: headingType === 'h2' ? headingText : `- ${headingText}`,
-					link: `#${headingLink}`,
+					link: `#_${headingLink}`,
 				};
 			});
 		}

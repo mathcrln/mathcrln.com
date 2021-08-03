@@ -16,7 +16,7 @@ export default function TableOfContents({ toc }: { toc: ITableOfContents }): JSX
 		<div>
 			<h2 className='font-bold text-xl border-b border-gray-600 pb-2 mb-3 max-w-max'>Table of Contents</h2>
 
-			<nav aria-label='ml-1 Table of contents'>
+			<nav aria-label='Table of contents'>
 				{toc.map((heading: IHeading) => (
 					<p className='my-2' key={heading.title}>
 						<Link href={heading.link} passHref>
