@@ -15,6 +15,8 @@ import getStrapiMedia from '@/utils/getStrapiMedia';
 import Page from '@/layout/Page';
 import { IPost } from 'src/articles/components/PostCard';
 import PageHeader from '@/components/shared/PageHeader';
+import { parseISO, format } from 'date-fns';
+import Image from 'next/image';
 
 type ProjectProps = {
 	post: IPost;
@@ -26,27 +28,37 @@ export default function Project({ post, source, toc }: ProjectProps): JSX.Elemen
 	if (typeof window !== 'undefined') {
 		smoothscroll.polyfill();
 	}
-
 	return (
 		<Page
 			title={post ? post.title : 'Project'}
 			description={post ? post.description : 'Here is a fun project I played with.'}
 			image=''
 		>
-			<main>
+			<section>
 				{!post && <p className='my-14 relative'>Seems like no post with this name has been found</p>}
 				{post && (
 					<div>
-						<div className='mb-20 md:grid-cols-2 grid gap-10 md:gap-20 items-center'>
-							<PageHeader title={post.title} intro={post.description} />
-							<ImageCard cover={getStrapiMedia(post.cover)} className='h-80 md:-mr-20' />
+						<div className='mb-20 lg:grid-cols-2 grid gap-10 md:gap-20 items-center'>
+							<div className='overflow-hidden'>
+								<PageHeader title={post.title} intro={post.description} />
+								<p className='flex items-center'>
+									<Image
+										alt='Mathieu Céraline'
+										height={24}
+										width={24}
+										src='/avatar.jpg'
+										className='rounded-full'
+									/>
+									<span className='ml-2'>
+										Mathieu Céraline • {format(parseISO(post.publishDate), 'MMMM dd, yyyy')}
+									</span>
+								</p>
+							</div>
+							<ImageCard cover={getStrapiMedia(post.cover)} className='h-80 xl:-mr-20 ' />
 						</div>
 						<PageWithLeftSidebar className='my-24'>
 							<Sidebar>
 								<TableOfContents toc={toc} />
-								<p className='text-gray-600 dark:text-gray-400 mt-5'>
-									Last updated: {relativeDate(new Date(post.updatedAt))}
-								</p>
 							</Sidebar>
 							<article>
 								<MDXRemote {...source} />
@@ -57,7 +69,7 @@ export default function Project({ post, source, toc }: ProjectProps): JSX.Elemen
 						</PageWithLeftSidebar>
 					</div>
 				)}
-			</main>
+			</section>
 		</Page>
 	);
 }
@@ -103,7 +115,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 			source: mdxSource,
 			toc,
 
-			revalidate: 1,
+			revalidate: 60,
 		},
 	};
 };

@@ -31,7 +31,7 @@ export default function Library(): JSX.Element {
 			<PageHeader title='Library' intro='Here are some of the books I have enjoyed and learned from lately.' />
 			<main className='mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5 gap-10'>
 				{BOOK.map((book) => (
-					<Link key={book.title} href={slugify(book.title)} passHref>
+					<Link key={book.title} href={`/library/${slugify(book.title)}`} passHref>
 						<a>
 							<BookCard book={book} />
 						</a>

@@ -26,6 +26,7 @@ const SINGLE_POST = gql`
 			content
 			slug
 			content
+			publishDate
 			cover {
 				height
 				width

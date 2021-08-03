@@ -14,7 +14,7 @@
 	}
 
 	#__next {
-		@apply h-full;
+		@apply h-full flex flex-col min-h-full;
 	}
 
 	h2,

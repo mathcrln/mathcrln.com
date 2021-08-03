@@ -9,8 +9,9 @@ import useDarkMode, { ThemeMode } from '@/hooks/useDarkMode';
 import Select from '@/components/shared/CustomElements/Select';
 import Container from './Container';
 
-export default function Footer({ className = '' }: { className: string }): JSX.Element {
+export default function Footer({ className = '' }: { className?: string }): JSX.Element {
 	const [, themeMode, selectThemeMode] = useDarkMode();
+
 	const [language, setLanguage] = useState('FR');
 
 	const languages = [

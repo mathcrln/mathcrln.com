@@ -14,7 +14,7 @@ export default function TableOfContents({ toc }: { toc: ITableOfContents }): JSX
 
 	return (
 		<div>
-			<h2 className='font-bold text-xl border-b border-gray-600 pb-2 mb-3 max-w-max'>Table of Contents</h2>
+			<h2 className='font-bold text-xl border-b border-gray-600 pb-2 mb-3'>Table of Contents</h2>
 
 			<nav aria-label='Table of contents'>
 				{toc.map((heading: IHeading) => (

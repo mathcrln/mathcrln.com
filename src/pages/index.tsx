@@ -12,7 +12,7 @@ import { BLOGPAGE_POSTS } from '@/graphql/queries/posts';
 const Intro = (): JSX.Element => (
 	<span>
 		I’m a Frontend Web Developer, Designer as well as a Software Engineering student at Polytechnique Montréal. You should{' '}
-		<Link href='/projects'>check out my latest works</Link>
+		<Link href='/projects'>check out my latest works </Link>
 		or <Link href='/about'>learn more about me</Link>.
 	</span>
 );
@@ -30,7 +30,7 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
 				</div> */}
 			</div>
 
-			<main className='my-24'>
+			<section className='my-24'>
 				<div>
 					<h2 className='text-2xl font-extrabold'>Recent posts</h2>
 					<p className='mt-2 mb-10 text-gray-600 dark:text-gray-300'>On design, code and creativity.</p>
@@ -47,7 +47,7 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
 					</p>
 					<p className='text-right'>- Stephen R. Covey</p>
 				</div>
-			</main>
+			</section>
 		</Page>
 	);
 }
@@ -60,7 +60,7 @@ export const getStaticProps: GetStaticProps = async () => {
 	return {
 		props: {
 			posts,
-			revalidate: 1,
+			revalidate: 60,
 		},
 	};
 };

@@ -42,7 +42,7 @@ export const getStaticProps: GetStaticProps<ProjectsProps & { revalidate: number
 		props: {
 			allProjects,
 			featured,
-			revalidate: 10,
+			revalidate: 60,
 		},
 	};
 };

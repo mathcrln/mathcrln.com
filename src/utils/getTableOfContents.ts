@@ -12,7 +12,6 @@ export default function getTableOfContents(content: string): ITableOfContents {
 
 	if (content) {
 		const headings = [...content.matchAll(regexp)];
-
 		if (headings.length) {
 			tableOfContents = headings.map((heading) => {
 				const headingText = heading[2].trim();
@@ -20,7 +19,7 @@ export default function getTableOfContents(content: string): ITableOfContents {
 				const headingLink = slugify(headingText, { lower: true, strict: true });
 
 				return {
-					title: headingType === 'h2' ? headingText : `- ${headingText}`,
+					title: headingType === 'h2' ? headingText : `  > ${headingText}`,
 					link: `#_${headingLink}`,
 				};
 			});

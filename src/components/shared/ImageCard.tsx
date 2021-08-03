@@ -15,12 +15,31 @@ export default function ImageCard({
 }): JSX.Element {
 	return (
 		<div
-			className={`${className} rounded-md relative transition duration-1000 ease-in-out transform hover:-translate-y-1 hover:scale-[1.025] dark:filter dark:brightness-75 dark:hover:brightness-90`}
+			className={`rounded-md relative duration-1000 hover:-translate-y-1 hover:scale-[1.025] dark:filter dark:brightness-75 dark:hover:brightness-90 ${className} `}
 		>
-			{!height && !width && <Image src={cover?.url} alt='' layout='fill' objectFit='cover' className='rounded-lg' />}
+			{!height && !width && (
+				<Image
+					src={cover?.url}
+					alt=''
+					layout='fill'
+					objectFit='cover'
+					className='rounded-lg'
+					placeholder='blur'
+					blurDataURL='data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAACwAQCdASoEAAMAAUAmJQBOgCHfwHHAAP7zZ0/8d0eL45D5Nm2VMQtDFHTlkgND5P3RFAhPRa7wrzvvmAAAAA=='
+				/>
+			)}
 
 			{height && width && (
-				<Image src={cover?.url} alt='' height={height} width={width} objectFit='cover' className='rounded-lg' />
+				<Image
+					src={cover?.url}
+					alt=''
+					height={height}
+					width={width}
+					objectFit='cover'
+					className='rounded-lg'
+					placeholder='blur'
+					blurDataURL='data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoEAAMAAUAmJZwCdAEO+KeoAADOP/6Huzkl0B/017+Gyofm+qb11/CcKS9dCAAA'
+				/>
 			)}
 
 			{tags.length > 0 && (

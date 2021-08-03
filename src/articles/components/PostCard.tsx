@@ -7,22 +7,23 @@ export type IPost = {
 	title: string;
 	cover: { url: string };
 	description: string;
+	publishDate: string;
 	tags: { name: string; icon: string }[];
 	updatedAt: string;
 };
 
 export default function PostCard({ post }: { post: IPost }): JSX.Element {
 	return (
-		<div className='relative hover:.test:translate-y-10'>
+		<div>
 			<Link href={`/blog/${post.slug}`} passHref>
 				<a>
 					<ImageCard cover={getStrapiMedia(post.cover)} tags={post.tags} className='h-64' />
 				</a>
 			</Link>
-			<h3 className='font-bold mt-4 text-xl'>
+			<h3 className='font-bold mt-4 text-xl  dark:hover:text-primary-dark'>
 				<Link href={`/blog/${post.slug}`}>{post.title}</Link>
 			</h3>
-			<p className='text-lg text-gray-600 dark:text-gray-500 mt-2'>{post.description}</p>
+			<p className='text-lg text-gray-600 dark:text-gray-500 mt-2 '>{post.description}</p>
 		</div>
 	);
 }

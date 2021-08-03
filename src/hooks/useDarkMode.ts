@@ -57,7 +57,7 @@ const useDarkMode = (): Readonly<[Theme, ThemeMode | null, (themeMode: ThemeMode
 			document.documentElement.classList.remove('dark');
 			setTheme(Theme.LIGHT);
 		}
-	}, [prefersDarkMode, themeMode, theme]);
+	}, [prefersDarkMode, themeMode]);
 
 	return [theme, themeMode, selectThemeMode];
 };
