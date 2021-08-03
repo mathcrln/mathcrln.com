@@ -9,7 +9,6 @@ import Skill from '@/components/shared/Skill';
 import { ISkill, IProject } from 'src/types';
 import TableOfContents from '@/components/shared/TableOfContents';
 import getTableOfContents, { ITableOfContents } from '@/utils/getTableOfContents';
-import { P, H2, H3, A, UL, LI } from '@/components/shared/MDXElements';
 import smoothscroll from 'smoothscroll-polyfill';
 import relativeDate from 'relative-date';
 import { LinkButton } from '@/components/shared/Button';
@@ -17,15 +16,6 @@ import PageWithLeftSidebar from '@/layout/PageWithLeftSidebar';
 import Sidebar from '@/layout/Sidebar';
 import getStrapiMedia from '@/utils/getStrapiMedia';
 import Page from '@/layout/Page';
-
-const components = {
-	h2: H2,
-	h3: H3,
-	p: P,
-	a: A,
-	ul: UL,
-	li: LI,
-};
 
 type ProjectProps = {
 	project: IProject;
@@ -76,7 +66,7 @@ export default function Project({ project, source, toc }: ProjectProps): JSX.Ele
 								<TableOfContents toc={toc} />
 							</Sidebar>
 							<article>
-								<MDXRemote {...source} components={components} />
+								<MDXRemote {...source} />
 								<p className='text-gray-600 dark:text-gray-400'>
 									Last updated: {relativeDate(new Date(project.updatedAt))}
 								</p>

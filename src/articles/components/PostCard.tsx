@@ -22,7 +22,7 @@ export default function PostCard({ post }: { post: IPost }): JSX.Element {
 			<h3 className='font-bold mt-4 text-xl'>
 				<Link href={`/blog/${post.slug}`}>{post.title}</Link>
 			</h3>
-			<p className='text-gray-600 dark:text-gray-500 mt-2'>{post.description}</p>
+			<p className='text-lg text-gray-600 dark:text-gray-500 mt-2'>{post.description}</p>
 		</div>
 	);
 }

@@ -3,24 +3,26 @@ import isInternalLink from '@/utils/isInternalLink';
 import Link from 'next/dist/client/link';
 
 const H2 = ({ children }: { children: string }): JSX.Element => {
-	const id = slugify(children, { lower: true, strict: true });
+	const id = slugify(children, { lower: true, remove: /[*+~.()'"!:@]/g, strict: true });
 	return (
-		<h2 id={`_${id}`} className='text-3xl mt-14 mb-4 font-extrabold first-of-type:mt-0'>
+		<h2 id={`_${id}`} className='text-4xl mt-14 mb-8 font-extrabold'>
 			{children}
 		</h2>
 	);
 };
 
 const H3 = ({ children }: { children: string }): JSX.Element => {
-	const id = slugify(children, { lower: true, strict: true });
+	const id = slugify(children, { lower: true, remove: /[*+~.()'"!:@]/g, strict: true });
 	return (
-		<h3 id={`_${id}`} className='text-2xl mt-10 mb-4 font-extrabold first-of-type:mt-0'>
+		<h3 id={`_${id}`} className='text-3xl mt-10 mb-8 font-extrabold'>
 			{children}
 		</h3>
 	);
 };
 
-const P = ({ children }: { children: JSX.Element }): JSX.Element => <p className='mb-5'>{children}</p>;
+const P = ({ children }: { children: JSX.Element }): JSX.Element => (
+	<p className='text-lg md:text-xl my-4 dark:text-[#CCCCCC]'>{children}</p>
+);
 
 const A = ({ href, children }: { href: string; children: string }): JSX.Element => {
 	const className =
@@ -41,8 +43,11 @@ const A = ({ href, children }: { href: string; children: string }): JSX.Element 
 	);
 };
 
-const UL = ({ children }: { children: JSX.Element }): JSX.Element => <ul className='mb-10 list-disc'>{children}</ul>;
+const UL = ({ children }: { children: JSX.Element }): JSX.Element => <ul className='mb-10 list-disc space-y-2'>{children}</ul>;
 
 const LI = ({ children }: { children: JSX.Element }): JSX.Element => <li className='list-inside'>{children}</li>;
+const OL = ({ children }: { children: JSX.Element }): JSX.Element => (
+	<ol className='mb-10 list-decimal space-y-2 text-lg'>{children}</ol>
+);
 
-export { H2, H3, P, A, UL, LI };
+export { H2, H3, P, A, UL, LI, OL };

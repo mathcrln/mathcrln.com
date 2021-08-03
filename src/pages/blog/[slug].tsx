@@ -7,7 +7,6 @@ import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { ALL_POSTS_SLUGS, SINGLE_POST } from '@/graphql/queries/posts';
 import TableOfContents from '@/components/shared/TableOfContents';
 import getTableOfContents, { ITableOfContents } from '@/utils/getTableOfContents';
-import { P, H2, H3, A, UL, LI } from '@/components/shared/MDXElements';
 import smoothscroll from 'smoothscroll-polyfill';
 import relativeDate from 'relative-date';
 import PageWithLeftSidebar from '@/layout/PageWithLeftSidebar';
@@ -16,15 +15,6 @@ import getStrapiMedia from '@/utils/getStrapiMedia';
 import Page from '@/layout/Page';
 import { IPost } from 'src/articles/components/PostCard';
 import PageHeader from '@/components/shared/PageHeader';
-
-const components = {
-	h2: H2,
-	h3: H3,
-	p: P,
-	a: A,
-	ul: UL,
-	li: LI,
-};
 
 type ProjectProps = {
 	post: IPost;
@@ -46,17 +36,20 @@ export default function Project({ post, source, toc }: ProjectProps): JSX.Elemen
 			<main>
 				{!post && <p className='my-14 relative'>Seems like no post with this name has been found</p>}
 				{post && (
-					<div className='relative'>
+					<div>
 						<div className='mb-20 md:grid-cols-2 grid gap-10 md:gap-20 items-center'>
 							<PageHeader title={post.title} intro={post.description} />
-							<ImageCard cover={getStrapiMedia(post.cover)} className='h-80 md:-mr-20 order-1' />
+							<ImageCard cover={getStrapiMedia(post.cover)} className='h-80 md:-mr-20' />
 						</div>
 						<PageWithLeftSidebar className='my-24'>
 							<Sidebar>
 								<TableOfContents toc={toc} />
+								<p className='text-gray-600 dark:text-gray-400 mt-5'>
+									Last updated: {relativeDate(new Date(post.updatedAt))}
+								</p>
 							</Sidebar>
 							<article>
-								<MDXRemote {...source} components={components} />
+								<MDXRemote {...source} />
 								<p className='text-gray-600 dark:text-gray-400'>
 									Last updated: {relativeDate(new Date(post.updatedAt))}
 								</p>
