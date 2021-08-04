@@ -41,7 +41,7 @@ export default function Project({ post, source, toc }: ProjectProps): JSX.Elemen
 						<div className='mb-20 lg:grid-cols-2 grid gap-10 md:gap-20 items-center'>
 							<div className='overflow-hidden'>
 								<PageHeader title={post.title} intro={post.description} />
-								<p className='flex items-center'>
+								<div className='flex items-center'>
 									<Image
 										alt='Mathieu Céraline'
 										height={24}
@@ -52,7 +52,7 @@ export default function Project({ post, source, toc }: ProjectProps): JSX.Elemen
 									<span className='ml-2'>
 										Mathieu Céraline • {format(parseISO(post.publishDate), 'MMMM dd, yyyy')}
 									</span>
-								</p>
+								</div>
 							</div>
 							<ImageCard cover={getStrapiMedia(post.cover)} className='h-80 xl:-mr-20 ' />
 						</div>
