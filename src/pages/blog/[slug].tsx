@@ -115,7 +115,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 			source: mdxSource,
 			toc,
 
-			revalidate: 60,
+			revalidate: 1,
 		},
 	};
 };
