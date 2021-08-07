@@ -1,6 +1,6 @@
 import { IPost } from '@/components/blog/PostCard';
 import { gql } from '@apollo/client';
-import { graphCMSClient } from '../apollo-client';
+import graphCMS from '../apollo-client';
 
 /**
  * GET POSTS BY SLUG
@@ -27,7 +27,7 @@ const getPostBySlug = async (slug: string): Promise<IPost> => {
 
 	try {
 		const { posts } = (
-			await graphCMSClient.query({
+			await graphCMS.query({
 				query: POST_BY_SLUG,
 				variables: {
 					postsWhere: { slug },
@@ -46,7 +46,7 @@ const getPostBySlug = async (slug: string): Promise<IPost> => {
 /**
  * Query to get the slugs of all the published posts.
  * */
-const ALL_POSTS_SLUGS = gql`
+const GET_POSTS_SLUGS = gql`
 	query AllPostsSlugs {
 		posts {
 			slug
@@ -56,8 +56,8 @@ const ALL_POSTS_SLUGS = gql`
 
 const getAllPostsSlugs = async (): Promise<Array<string>> => {
 	const { posts } = (
-		await graphCMSClient.query({
-			query: ALL_POSTS_SLUGS,
+		await graphCMS.query({
+			query: GET_POSTS_SLUGS,
 		})
 	).data;
 
@@ -78,12 +78,12 @@ const GET_POSTS_CARDS = gql`
 	}
 `;
 
-const getPosts = async (limit: number): Promise<Array<IPost>> => {
+const getPostsCards = async (limit: number): Promise<Array<IPost>> => {
 	let fetchedPosts = null;
 
 	try {
 		const { posts } = (
-			await graphCMSClient.query({
+			await graphCMS.query({
 				query: GET_POSTS_CARDS,
 				variables: {
 					postsFirst: limit,
@@ -98,23 +98,4 @@ const getPosts = async (limit: number): Promise<Array<IPost>> => {
 	return fetchedPosts;
 };
 
-const BLOGPAGE_POSTS = gql`
-	query BlogPosts {
-		posts {
-			title
-			description
-			content
-			slug
-			content
-			cover {
-				height
-				width
-				url
-				alternativeText
-			}
-			updated_at
-		}
-	}
-`;
-
-export { getPosts, getAllPostsSlugs, getPostBySlug };
+export { getPostsCards, getAllPostsSlugs, getPostBySlug };

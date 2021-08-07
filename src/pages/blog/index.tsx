@@ -1,6 +1,6 @@
 import PageHeader from '@/components/common/PageHeader';
 import { GetStaticProps } from 'next';
-import { getPosts } from '@/graphql/queries/posts';
+import { getPostsCards } from '@/graphql/queries/posts';
 import Page from '@/layout/Page';
 import PostCard, { IPost } from '@/components/blog/PostCard';
 
@@ -18,7 +18,7 @@ export default function Articles({ posts }: { posts: IPost[] }): JSX.Element {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const posts = await getPosts(6);
+	const posts = await getPostsCards(6);
 
 	return {
 		props: {

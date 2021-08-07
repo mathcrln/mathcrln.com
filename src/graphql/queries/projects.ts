@@ -1,102 +1,118 @@
 import { gql } from '@apollo/client';
+import { IProject } from 'src/types';
+import graphCMS from '../apollo-client';
 
 /**
- *
+ * GET POSTS BY SLUG
+ * Query to get a single project based on the current URL.
  * */
-const FEATURED_PROJECT = gql`
-	query Projects {
-		projects(sort: "published_at:desc", limit: 1, start: 0) {
+const PROJECT_BY_SLUG = gql`
+	query PostBySlug($projectsWhere: ProjectWhereInput) {
+		projects(where: $projectsWhere) {
 			name
-			id
+			slug
 			content
+			updatedAt
 			description
+			date
 			cover {
-				height
-				width
 				url
-				alternativeText
 			}
 			skills {
-				name
-				icon {
-					url
-					height
-					width
+				... on Skill {
+					name
+					icon {
+						url
+					}
 				}
-			}
-			slug
-			tags {
-				name
 			}
 		}
 	}
 `;
 
-const ALL_PROJECTS_SLUGS = gql`
-	query Projects {
+const getProjectBySlug = async (slug: string): Promise<IProject> => {
+	let project = null;
+
+	try {
+		const { projects } = (
+			await graphCMS.query({
+				query: PROJECT_BY_SLUG,
+				variables: {
+					projectsWhere: { slug },
+				},
+			})
+		).data;
+
+		[project] = projects;
+	} catch (e) {
+		throw new Error(e);
+	}
+
+	return project;
+};
+
+/**
+ * Query to get the slugs of all the published projects.
+ * */
+const GET_PROJECTS_SLUG = gql`
+	query AllProjectsSlugs {
 		projects {
 			slug
 		}
 	}
 `;
 
-const PROJECT_PAGE = gql`
-	query Project($projectsWhere: JSON) {
-		projects(where: $projectsWhere) {
+const getAllProjectsSlugs = async (): Promise<Array<string>> => {
+	const { projects } = (
+		await graphCMS.query({
+			query: GET_PROJECTS_SLUG,
+		})
+	).data;
+
+	const slugs = projects?.map((project: IProject) => `/projects/${project.slug}`);
+	return slugs;
+};
+
+const GET_PROJECTS_CARDS = gql`
+	query Query($projectsOrderBy: ProjectOrderByInput, $projectsFirst: Int) {
+		projects(orderBy: $projectsOrderBy, first: $projectsFirst) {
 			name
-			id
-			content
+
 			description
-			updated_at
+			slug
 			cover {
-				height
-				width
 				url
-				alternativeText
 			}
 			skills {
-				name
-				icon {
-					url
-					height
-					width
+				... on Skill {
+					name
+					icon {
+						url
+					}
 				}
-			}
-			slug
-			tags {
-				name
 			}
 		}
 	}
 `;
 
-const PROJECTS_EXCEPT_LAST = gql`
-	query Projects {
-		projects(sort: "published_at:desc", limit: 6, start: 1) {
-			name
-			id
-			content
-			description
-			cover {
-				height
-				width
-				url
-				alternativeText
-			}
-			skills {
-				name
-				icon {
-					url
-					height
-					width
-				}
-			}
-			slug
-			tags {
-				name
-			}
-		}
-	}
-`;
+const getProjectsCards = async (limit: number): Promise<Array<IProject>> => {
+	let fetchedProjects = null;
 
-export { FEATURED_PROJECT, ALL_PROJECTS_SLUGS, PROJECTS_EXCEPT_LAST, PROJECT_PAGE };
+	try {
+		const { projects } = (
+			await graphCMS.query({
+				query: GET_PROJECTS_CARDS,
+				variables: {
+					projectsFirst: limit,
+					projectsOrderBy: 'date_DESC',
+				},
+			})
+		).data;
+		fetchedProjects = projects;
+	} catch (e) {
+		throw new Error(e);
+	}
+	return fetchedProjects;
+};
+
+export { getAllProjectsSlugs, getProjectsCards, getProjectBySlug };

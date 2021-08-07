@@ -1,15 +1,14 @@
 import { GetStaticProps } from 'next';
 import { IProjectCard } from 'src/types/projects';
-import { FEATURED_PROJECT, PROJECTS_EXCEPT_LAST } from '@/graphql/queries/projects';
-import client from '@/graphql/apollo-client';
+import { getProjectsCards } from '@/graphql/queries/projects';
 import FeaturedProjectCard from '@/components/projects/FeaturedProjectCard';
 import ProjectGrid from '@/components/projects/ProjectGrid';
 import PageHeader from '@/components/common/PageHeader';
 import Page from '@/layout/Page';
 
-type ProjectsProps = { allProjects: IProjectCard[]; featured: IProjectCard };
+type ProjectsProps = { projects: IProjectCard[] };
 
-export default function Projects({ featured, allProjects }: ProjectsProps): JSX.Element {
+export default function Projects({ projects }: ProjectsProps): JSX.Element {
 	return (
 		<Page
 			title='Projects'
@@ -27,21 +26,19 @@ export default function Projects({ featured, allProjects }: ProjectsProps): JSX.
 				}
 			/>
 			<main className='my-20 space-y-16'>
-				{featured && <FeaturedProjectCard featured={featured} />}
-				{allProjects && <ProjectGrid projects={allProjects} />}
+				{projects.length > 0 && <FeaturedProjectCard featured={projects[0]} />}
+				{projects.length > 1 && <ProjectGrid projects={projects.slice(1)} />}
 			</main>
 		</Page>
 	);
 }
 
 export const getStaticProps: GetStaticProps<ProjectsProps & { revalidate: number }> = async () => {
-	const featured: IProjectCard = (await client.query({ query: FEATURED_PROJECT })).data.projects[0] || null;
-	const allProjects: IProjectCard[] = (await client.query({ query: PROJECTS_EXCEPT_LAST })).data.projects || null;
+	const projects: IProjectCard[] = await getProjectsCards(7);
 
 	return {
 		props: {
-			allProjects,
-			featured,
+			projects,
 			revalidate: 60,
 		},
 	};

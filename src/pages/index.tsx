@@ -3,7 +3,7 @@ import PageHeader from '@/components/common/PageHeader';
 import Page from '@/layout/Page';
 import Link from '@/components/common/CustomElements/Link';
 import PostCard, { IPost } from '@/components/blog/PostCard';
-import { getPosts } from '@/graphql/queries/posts';
+import { getPostsCards } from '@/graphql/queries/posts';
 
 const Intro = (): JSX.Element => (
 	<span>
@@ -45,7 +45,7 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const posts = await getPosts(3);
+	const posts = await getPostsCards(3);
 
 	return {
 		props: {
