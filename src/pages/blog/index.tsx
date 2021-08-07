@@ -1,9 +1,8 @@
 import PageHeader from '@/components/common/PageHeader';
 import { GetStaticProps } from 'next';
-import client from '@/graphql/apollo-client';
-import { BLOGPAGE_POSTS } from '@/graphql/queries/posts';
+import { getPosts } from '@/graphql/queries/posts';
 import Page from '@/layout/Page';
-import PostCard, { IPost } from '@/components/articles/components/PostCard';
+import PostCard, { IPost } from '@/components/blog/PostCard';
 
 export default function Articles({ posts }: { posts: IPost[] }): JSX.Element {
 	return (
@@ -19,7 +18,7 @@ export default function Articles({ posts }: { posts: IPost[] }): JSX.Element {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const posts = (await client.query({ query: BLOGPAGE_POSTS })).data.posts || null;
+	const posts = await getPosts(6);
 
 	return {
 		props: {

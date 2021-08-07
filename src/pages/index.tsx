@@ -2,9 +2,8 @@ import { GetStaticProps } from 'next';
 import PageHeader from '@/components/common/PageHeader';
 import Page from '@/layout/Page';
 import Link from '@/components/common/CustomElements/Link';
-import PostCard, { IPost } from '@/components/articles/components/PostCard';
-import client from '@/graphql/apollo-client';
-import { POSTS } from '@/graphql/queries/posts';
+import PostCard, { IPost } from '@/components/blog/PostCard';
+import { getPosts } from '@/graphql/queries/posts';
 
 const Intro = (): JSX.Element => (
 	<span>
@@ -46,15 +45,7 @@ export default function Home({ posts }: { posts: IPost[] }): JSX.Element {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const posts: IPost[] =
-		(
-			await client.query({
-				query: POSTS,
-				variables: {
-					limit: 3,
-				},
-			})
-		).data.posts || null;
+	const posts = await getPosts(3);
 
 	return {
 		props: {

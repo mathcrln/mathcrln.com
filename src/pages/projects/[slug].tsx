@@ -7,23 +7,18 @@ import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { ALL_PROJECTS_SLUGS, PROJECT_PAGE } from '@/graphql/queries/projects';
 import Skill from '@/components/common/Skill';
 import { ISkill, IProject } from 'src/types';
-import TableOfContents from '@/components/common/TableOfContents';
-import getTableOfContents, { ITableOfContents } from '@/utils/getTableOfContents';
 import smoothscroll from 'smoothscroll-polyfill';
 import relativeDate from 'relative-date';
 import { LinkButton } from '@/components/common/Button';
-import PageWithLeftSidebar from '@/layout/PageWithLeftSidebar';
-import Sidebar from '@/layout/Sidebar';
 import getStrapiMedia from '@/utils/getStrapiMedia';
 import Page from '@/layout/Page';
 
 type ProjectProps = {
 	project: IProject;
 	source: MDXRemoteSerializeResult;
-	toc: ITableOfContents;
 };
 
-export default function Project({ project, source, toc }: ProjectProps): JSX.Element {
+export default function Project({ project, source }: ProjectProps): JSX.Element {
 	if (typeof window !== 'undefined') {
 		smoothscroll.polyfill();
 	}
@@ -61,17 +56,12 @@ export default function Project({ project, source, toc }: ProjectProps): JSX.Ele
 								</div>
 							</div>
 						</div>
-						<PageWithLeftSidebar className='my-24'>
-							<Sidebar>
-								<TableOfContents toc={toc} />
-							</Sidebar>
-							<article>
-								<MDXRemote {...source} />
-								<p className='text-gray-600 dark:text-gray-400'>
-									Last updated: {relativeDate(new Date(project.updatedAt))}
-								</p>
-							</article>
-						</PageWithLeftSidebar>
+						<article>
+							<MDXRemote {...source} />
+							<p className='text-gray-600 dark:text-gray-400'>
+								Last updated: {relativeDate(new Date(project.updatedAt))}
+							</p>
+						</article>
 						{/* <div className='my:20 md:my-32 lg:w-5/6 xl:w-4/6 mx-auto'>
 							<h2 className='text-4xl  font-bold mb-14'>See more projects</h2>
 							<div className='grid md:grid-cols-2 gap-10 xl:gap-28'>
@@ -115,7 +105,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 type Props = {
 	project: IProject;
 	source: MDXRemoteSerializeResult;
-	toc: ITableOfContents;
 	revalidate: number;
 };
 
@@ -134,14 +123,12 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 	});
 
 	const content = query.data?.projects[0]?.content;
-	const toc = getTableOfContents(content);
 	const mdxSource = await serialize(content);
 
 	return {
 		props: {
 			project: { ...query.data.projects[0], updatedAt: query.data.projects[0].updated_at },
 			source: mdxSource,
-			toc,
 
 			revalidate: 1,
 		},
