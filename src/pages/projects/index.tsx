@@ -4,7 +4,7 @@ import { FEATURED_PROJECT, PROJECTS_EXCEPT_LAST } from '@/graphql/queries/projec
 import client from '@/graphql/apollo-client';
 import FeaturedProjectCard from '@/components/projects/FeaturedProjectCard';
 import ProjectGrid from '@/components/projects/ProjectGrid';
-import PageHeader from '@/components/shared/PageHeader';
+import PageHeader from '@/components/common/PageHeader';
 import Page from '@/layout/Page';
 
 type ProjectsProps = { allProjects: IProjectCard[]; featured: IProjectCard };

@@ -1,9 +1,9 @@
-import PageHeader from '@/components/shared/PageHeader';
+import PageHeader from '@/components/common/PageHeader';
 import { GetStaticProps } from 'next';
 import client from '@/graphql/apollo-client';
 import { BLOGPAGE_POSTS } from '@/graphql/queries/posts';
 import Page from '@/layout/Page';
-import PostCard, { IPost } from 'src/articles/components/PostCard';
+import PostCard, { IPost } from '@/components/articles/components/PostCard';
 
 export default function Articles({ posts }: { posts: IPost[] }): JSX.Element {
 	return (

@@ -1,7 +1,7 @@
 import getStrapiMedia from '@/utils/getStrapiMedia';
 import Link from 'next/dist/client/link';
 import { IProjectCard } from '../../types/projects';
-import ImageCard from '../shared/ImageCard';
+import ImageCard from '../common/ImageCard';
 import ProjectMetadata from './ProjectMetadata';
 
 export default function ProjectCard({ project }: { project: IProjectCard }): JSX.Element {

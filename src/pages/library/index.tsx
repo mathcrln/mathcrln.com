@@ -1,5 +1,5 @@
 import BookCard from '@/components/library/BookCard';
-import PageHeader from '@/components/shared/PageHeader';
+import PageHeader from '@/components/common/PageHeader';
 import Page from '@/layout/Page';
 import Link from 'next/link';
 import slugify from 'slugify';
@@ -29,7 +29,7 @@ export default function Library(): JSX.Element {
 	return (
 		<Page title='Library'>
 			<PageHeader title='Library' intro='Here are some of the books I have enjoyed and learned from lately.' />
-			<main className='mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5 gap-10'>
+			<div className='mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5 gap-10'>
 				{BOOK.map((book) => (
 					<Link key={book.title} href={`/library/${slugify(book.title)}`} passHref>
 						<a>
@@ -37,7 +37,7 @@ export default function Library(): JSX.Element {
 						</a>
 					</Link>
 				))}
-			</main>
+			</div>
 		</Page>
 	);
 }

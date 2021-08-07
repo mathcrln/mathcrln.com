@@ -18,6 +18,25 @@ const BLOGPAGE_POSTS = gql`
 		}
 	}
 `;
+const POSTS = gql`
+	query Posts($limit: Int) {
+		posts(limit: $limit) {
+			title
+			description
+			content
+			slug
+			content
+			cover {
+				height
+				width
+				url
+				alternativeText
+			}
+			updated_at
+		}
+	}
+`;
+
 const SINGLE_POST = gql`
 	query SinglePOst($postWhere: JSON) {
 		posts(where: $postWhere) {
@@ -37,6 +56,7 @@ const SINGLE_POST = gql`
 		}
 	}
 `;
+
 const ALL_POSTS_SLUGS = gql`
 	query Posts {
 		posts {
@@ -45,4 +65,4 @@ const ALL_POSTS_SLUGS = gql`
 	}
 `;
 
-export { BLOGPAGE_POSTS, ALL_POSTS_SLUGS, SINGLE_POST };
+export { BLOGPAGE_POSTS, ALL_POSTS_SLUGS, SINGLE_POST, POSTS };

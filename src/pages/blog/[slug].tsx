@@ -1,30 +1,25 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
-import client from '@/graphql/apollo-client';
-import ImageCard from '@/components/shared/ImageCard';
+import client, { graphCMSClient } from '@/graphql/apollo-client';
+import ImageCard from '@/components/common/ImageCard';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { ALL_POSTS_SLUGS, SINGLE_POST } from '@/graphql/queries/posts';
-import TableOfContents from '@/components/shared/TableOfContents';
-import getTableOfContents, { ITableOfContents } from '@/utils/getTableOfContents';
 import smoothscroll from 'smoothscroll-polyfill';
 import relativeDate from 'relative-date';
-import PageWithLeftSidebar from '@/layout/PageWithLeftSidebar';
-import Sidebar from '@/layout/Sidebar';
-import getStrapiMedia from '@/utils/getStrapiMedia';
 import Page from '@/layout/Page';
-import { IPost } from 'src/articles/components/PostCard';
-import PageHeader from '@/components/shared/PageHeader';
+import { IPost } from '@/components/articles/components/PostCard';
+import PageHeader from '@/components/common/PageHeader';
+import { gql } from '@apollo/client';
 import { parseISO, format } from 'date-fns';
 import Image from 'next/image';
 
 type ProjectProps = {
 	post: IPost;
 	source: MDXRemoteSerializeResult;
-	toc: ITableOfContents;
 };
 
-export default function Project({ post, source, toc }: ProjectProps): JSX.Element {
+export default function Project({ post, source }: ProjectProps): JSX.Element {
 	if (typeof window !== 'undefined') {
 		smoothscroll.polyfill();
 	}
@@ -39,7 +34,7 @@ export default function Project({ post, source, toc }: ProjectProps): JSX.Elemen
 				{post && (
 					<div>
 						<div className='mb-20 lg:grid-cols-2 grid gap-10 md:gap-20 items-center'>
-							<div className='overflow-hidden'>
+							<div>
 								<PageHeader title={post.title} intro={post.description} />
 								<div className='flex items-center'>
 									<Image
@@ -54,19 +49,15 @@ export default function Project({ post, source, toc }: ProjectProps): JSX.Elemen
 									</span>
 								</div>
 							</div>
-							<ImageCard cover={getStrapiMedia(post.cover)} className='h-80 xl:-mr-20 ' />
+							<ImageCard cover={post.cover} className='h-80 xl:-mr-20 ' />
 						</div>
-						<PageWithLeftSidebar className='my-24'>
-							<Sidebar>
-								<TableOfContents toc={toc} />
-							</Sidebar>
-							<article>
-								<MDXRemote {...source} />
-								<p className='text-gray-600 dark:text-gray-400'>
-									Last updated: {relativeDate(new Date(post.updatedAt))}
-								</p>
-							</article>
-						</PageWithLeftSidebar>
+
+						<article className='w-8/12 mx-auto my-24'>
+							<MDXRemote {...source} />
+							<p className='text-gray-600 dark:text-gray-400'>
+								Last updated: {relativeDate(new Date(post.updatedAt))}
+							</p>
+						</article>
 					</div>
 				)}
 			</section>
@@ -75,7 +66,18 @@ export default function Project({ post, source, toc }: ProjectProps): JSX.Elemen
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const { posts } = (await client.query({ query: ALL_POSTS_SLUGS })).data;
+	const { posts } = (
+		await graphCMSClient.query({
+			query: gql`
+				query BlogPosts {
+					posts {
+						slug
+					}
+				}
+			`,
+		})
+	).data;
+	console.log(posts);
 	const slugs = posts?.map((post: IPost) => `/blog/${post.slug}`);
 
 	return {
@@ -87,7 +89,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 type Props = {
 	post: IPost;
 	source: MDXRemoteSerializeResult;
-	toc: ITableOfContents;
 	revalidate: number;
 };
 
@@ -105,15 +106,39 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 		},
 	});
 
-	const content = query.data?.posts[0]?.content;
-	const toc = getTableOfContents(content);
+	const graphCMSQuery = await graphCMSClient.query({
+		query: gql`
+			query Query($postsWhere: PostWhereInput) {
+				posts(where: $postsWhere) {
+					title
+					slug
+					content
+					updatedAt
+					date
+					cover {
+						url
+					}
+				}
+			}
+		`,
+		variables: {
+			postsWhere: { slug },
+		},
+	});
+
+	console.log(graphCMSQuery.data.posts);
+
+	const content = graphCMSQuery?.data.posts[0]?.content;
 	const mdxSource = await serialize(content);
 
 	return {
 		props: {
-			post: { ...query.data.posts[0], updatedAt: query.data.posts[0].updated_at },
+			post: {
+				...graphCMSQuery.data.posts[0],
+				publishDate: graphCMSQuery.data.posts[0].date || null,
+				updatedAt: graphCMSQuery.data.posts[0].updatedAt,
+			},
 			source: mdxSource,
-			toc,
 
 			revalidate: 1,
 		},

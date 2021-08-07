@@ -2,11 +2,11 @@ import type { AppProps } from 'next/app';
 import '@/styles/globals.css';
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
-import { H2, H3, P, UL, LI, OL, HR } from '@/components/shared/MDXElements';
+import { H2, H3, P, UL, LI, OL, HR } from '@/components/common/MDXElements';
 import initializeObserver from '@/utils/polyfills';
 import Footer from '@/layout/Footer';
 import Header from '@/layout/Header';
-import CustomLink from '@/components/shared/CustomElements/Link';
+import CustomLink from '@/components/common/CustomElements/Link';
 
 initializeObserver();
 

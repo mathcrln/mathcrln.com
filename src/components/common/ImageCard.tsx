@@ -35,6 +35,7 @@ export default function ImageCard({
 					alt=''
 					height={height}
 					width={width}
+					layout='intrinsic'
 					objectFit='cover'
 					className='rounded-lg'
 					placeholder='blur'

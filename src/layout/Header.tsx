@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { LogoLink } from '@/components/assets/Logo';
-import MenuIcon from '@/components/assets/MenuIcon';
+import { LogoLink } from '@/components/icons/Logo';
+import MenuIcon from '@/components/icons/MenuIcon';
 import { NAV_LINKS } from '@/data/links';
 import Navigation from './Navigation';
 import Container from './Container';

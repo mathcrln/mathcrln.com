@@ -1,5 +1,5 @@
 import { IBookCard } from 'src/types/books';
-import ImageCard from '../shared/ImageCard';
+import ImageCard from '../common/ImageCard';
 
 type Props = {
 	book: IBookCard;

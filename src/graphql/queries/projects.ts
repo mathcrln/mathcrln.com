@@ -1,5 +1,8 @@
 import { gql } from '@apollo/client';
 
+/**
+ *
+ * */
 const FEATURED_PROJECT = gql`
 	query Projects {
 		projects(sort: "published_at:desc", limit: 1, start: 0) {

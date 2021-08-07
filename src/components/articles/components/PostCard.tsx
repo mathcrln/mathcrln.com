@@ -1,4 +1,4 @@
-import ImageCard from '@/components/shared/ImageCard';
+import ImageCard from '@/components/common/ImageCard';
 import getStrapiMedia from '@/utils/getStrapiMedia';
 import Link from 'next/link';
 
