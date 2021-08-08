@@ -13,6 +13,8 @@ const ARCHIVE_BY_SLUG = gql`
 			slug
 			content
 			updatedAt
+			type
+			author
 			description
 			cover {
 				url
@@ -72,6 +74,7 @@ const GET_ARCHIVES_CARDS = gql`
 			description
 			author
 			date
+			type
 			cover {
 				height
 				width

@@ -1,42 +1,10 @@
-import slugify from 'slugify';
+const H2 = ({ children }: { children: string }): JSX.Element => (
+	<h2 className='text-4xl mt-14 mb-8 font-extrabold'>{children}</h2>
+);
 
-type Markup = string | { props: { children: string } };
-
-const getStringFromMarkup = (markup: Markup): string => {
-	if (typeof markup === 'string') {
-		return markup;
-	}
-	return markup.props.children;
-};
-
-const H2 = ({ children }: { children: string }): JSX.Element => {
-	let id;
-	try {
-		id = slugify(getStringFromMarkup(children), { lower: true, remove: /[*+~.()'"!:@]/g, strict: true });
-	} catch (e) {
-		throw new Error(`Error: ${e}`);
-	}
-	return (
-		<h2 id={id && `_${id}`} className='text-4xl mt-14 mb-8 font-extrabold'>
-			{children}
-		</h2>
-	);
-};
-
-const H3 = ({ children }: { children: string }): JSX.Element => {
-	let id;
-	try {
-		id = slugify(getStringFromMarkup(children), { lower: true, remove: /[*+~.()'"!:@]/g, strict: true });
-	} catch (e) {
-		throw new Error(`Error: ${e}`);
-	}
-
-	return (
-		<h3 id={id && `_${id}`} className='text-3xl mt-10 mb-8 font-extrabold'>
-			{children}
-		</h3>
-	);
-};
+const H3 = ({ children }: { children: string }): JSX.Element => (
+	<h3 className='text-3xl mt-10 mb-8 font-extrabold'>{children}</h3>
+);
 
 const P = ({ children }: { children: JSX.Element }): JSX.Element => (
 	<p className='text-lg my-4 dark:text-[#CCCCCC]'>{children}</p>
