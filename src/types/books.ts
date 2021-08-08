@@ -3,11 +3,13 @@ export type IBook = IBookCard & {
 };
 
 export type IBookCard = {
-	title: string;
+	name: string;
 	author: string;
+	content: string;
 	cover: {
 		url: string;
 		height: number;
 		width: number;
 	};
+	slug: string;
 };
