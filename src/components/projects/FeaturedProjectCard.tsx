@@ -1,18 +1,17 @@
-import getStrapiMedia from '@/utils/getStrapiMedia';
 import Link from 'next/dist/client/link';
 import { IProjectCard } from '../../types/projects';
 import ImageCard from '../common/ImageCard';
 import ProjectMetadata from './ProjectMetadata';
 
-export default function FeaturedProjectCard({ featured }: { featured: IProjectCard }): JSX.Element {
+export default function FeaturedProjectCard({ project }: { project: IProjectCard }): JSX.Element {
 	return (
 		<article className='grid lg:grid-cols-[2fr,1fr] gap-10'>
-			<Link href={`/projects/${featured.slug}`} passHref>
+			<Link href={`/projects/${project.slug}`} passHref>
 				<a>
-					<ImageCard cover={getStrapiMedia(featured.cover)} className='h-80' />
+					<ImageCard cover={project.cover} className='h-80' />
 				</a>
 			</Link>
-			<ProjectMetadata project={featured} className='' />
+			<ProjectMetadata project={project} className='' />
 		</article>
 	);
 }

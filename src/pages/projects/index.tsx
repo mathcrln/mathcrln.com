@@ -23,7 +23,7 @@ export default function Projects({ projects }: ProjectsProps): JSX.Element {
 			</PageHeader>
 
 			<main className='my-20 space-y-16'>
-				{projects.length > 0 && <FeaturedProjectCard featured={projects[0]} />}
+				{projects.length > 0 && <FeaturedProjectCard project={projects[0]} />}
 				{projects.length > 1 && <ProjectGrid projects={projects.slice(1)} />}
 			</main>
 		</Page>
