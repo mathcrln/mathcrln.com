@@ -14,6 +14,7 @@ const ARCHIVE_BY_SLUG = gql`
 			content
 			updatedAt
 			type
+			date
 			author
 			description
 			cover {

@@ -7,7 +7,9 @@ import PostCard, { IPost } from '@/components/blog/PostCard';
 export default function Articles({ posts }: { posts: IPost[] }): JSX.Element {
 	return (
 		<Page title='Blog'>
-			<PageHeader title='Articles' intro='Sharing ideas and discoveries in a few words' className='mb-20' />
+			<PageHeader title='Articles' className='mb-20'>
+				<p>Sharing ideas and discoveries in a few words</p>
+			</PageHeader>
 			<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10 '>
 				{posts?.map((post: IPost) => (
 					<PostCard key={post.title} post={post} />

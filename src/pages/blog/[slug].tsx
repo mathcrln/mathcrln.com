@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
 import ImageCard from '@/components/common/ImageCard';
 import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import relativeDate from 'relative-date';
 import Page from '@/layout/Page';
 import { IPost } from '@/components/blog/PostCard';
@@ -10,6 +10,7 @@ import PageHeader from '@/components/common/PageHeader';
 import { parseISO, format } from 'date-fns';
 import Image from 'next/image';
 import { getAllPostsSlugs, getPostBySlug } from '@/graphql/queries/posts';
+import ContentArticle from '@/components/common/ContentArticle';
 
 export default function Project({ post, source }: Props): JSX.Element {
 	return (
@@ -20,7 +21,9 @@ export default function Project({ post, source }: Props): JSX.Element {
 					<div>
 						<div className='mb-20 lg:grid-cols-2 grid gap-10 md:gap-20 items-center'>
 							<div>
-								<PageHeader title={post.title} intro={post.excerpt} />
+								<PageHeader title={post.title}>
+									<p>{post.excerpt}</p>
+								</PageHeader>
 								<div className='flex items-center'>
 									<Image
 										alt='Mathieu Céraline'
@@ -38,7 +41,7 @@ export default function Project({ post, source }: Props): JSX.Element {
 						</div>
 
 						<article className='lg:w-8/12 mx-auto my-24'>
-							<MDXRemote {...source} />
+							<ContentArticle source={source} />
 
 							{post.updatedAt && (
 								<p className='text-gray-600 dark:text-gray-400'>
@@ -85,7 +88,6 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 type Props = {
 	post: IPost;
 	source: MDXRemoteSerializeResult;
-	revalidate: number;
 };
 
 interface Params extends ParsedUrlQuery {

@@ -7,19 +7,21 @@ import { serialize } from 'next-mdx-remote/serialize';
 import { getAllArchivesSlugs, getArchiveBySlug } from '@/graphql/queries/archives';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { IBook } from '@/types/books';
-import Content from '@/components/common/Content';
+import ContentArticle from '@/components/common/ContentArticle';
+import AuthorDate from '@/components/common/AuthorDate';
 
 export default function ArchivePage({ archive, source }: Props): JSX.Element {
 	return (
 		<Page title={archive.name}>
-			<div className='grid md:grid-cols-2'>
-				<ImageCard cover={archive.cover} height={454} width={301} className='h-initial place-self-center' />
-				<div>
-					<PageHeader title={archive.name} intro={archive.author} />
-					<p className='text-lg max-w-2xl md:text-xl font-extralight my-4 dark:text-[#CCCCCC]'>{archive.description}</p>
-				</div>
-			</div>
-			<Content source={source} />
+			<header className='grid md:grid-cols-[1fr,2fr]'>
+				<ImageCard cover={archive.cover} height={375} width={248} className='h-initial place-self-center' />
+				<PageHeader title={archive.name}>
+					<p className='block mb-5'>{archive.author}</p>
+					<p>{archive.description}</p>
+					<AuthorDate date={archive.date} />
+				</PageHeader>
+			</header>
+			<ContentArticle source={source} />
 		</Page>
 	);
 }

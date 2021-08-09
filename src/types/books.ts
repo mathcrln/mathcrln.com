@@ -1,5 +1,6 @@
 export type IBook = IBookCard & {
 	description: string;
+	date: string;
 };
 
 export type IBookCard = {

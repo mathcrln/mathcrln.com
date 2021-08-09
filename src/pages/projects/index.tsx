@@ -15,16 +15,13 @@ export default function Projects({ projects }: ProjectsProps): JSX.Element {
 			description="Here are all the projects I've been working on lately, in frontend development, software engineering, design, but not only."
 			image=''
 		>
-			<PageHeader
-				title='Projects'
-				intro={
-					<span>
-						I like to play, to experiment and discover new things and technologies.{' '}
-						<br className='hidden md:inline' />
-						If you’re curious, here are a few project I worked on recently.
-					</span>
-				}
-			/>
+			<PageHeader title='Projects'>
+				<p>
+					I like to play, to experiment and discover new things and technologies. <br className='hidden md:inline' />
+					If you’re curious, here are a few project I worked on recently.
+				</p>
+			</PageHeader>
+
 			<main className='my-20 space-y-16'>
 				{projects.length > 0 && <FeaturedProjectCard featured={projects[0]} />}
 				{projects.length > 1 && <ProjectGrid projects={projects.slice(1)} />}

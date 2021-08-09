@@ -30,7 +30,9 @@ import { IBook } from '@/types/books';
 export default function Library({ archives }: { archives: IBook[] }): JSX.Element {
 	return (
 		<Page title='Library'>
-			<PageHeader title='Library' intro='Here are some of the books I have enjoyed and learned from lately.' />
+			<PageHeader title='Library'>
+				<p>Here are some of the books I have enjoyed and learned from lately.</p>
+			</PageHeader>
 			<div className='mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5 gap-10'>
 				{archives.map((archive) => (
 					<Link key={archive.name} href={`/library/${archive.slug}`} passHref>

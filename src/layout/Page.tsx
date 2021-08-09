@@ -3,7 +3,7 @@ import SEO, { CustomMeta } from '@/components/common/Seo';
 import Container from './Container';
 
 type IPage = CustomMeta & {
-	children: JSX.Element | JSX.Element[];
+	children: JSX.Element | JSX.Element[] | React.ReactNode;
 	className?: string;
 };
 
