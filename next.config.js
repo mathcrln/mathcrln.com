@@ -5,5 +5,4 @@ module.exports = withMDX({
 	images: {
 		domains: ['res.cloudinary.com', 'source.unsplash.com', 'media.graphcms.com', 'localhost'],
 	},
-	pageExtensions: ['tsx', 'mdx'],
 });

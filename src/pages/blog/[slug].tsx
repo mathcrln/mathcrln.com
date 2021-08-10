@@ -40,15 +40,13 @@ export default function Project({ post, source }: Props): JSX.Element {
 							<ImageCard cover={post.cover} className='h-80 xl:-mr-20 ' />
 						</div>
 
-						<article className='lg:w-8/12 mx-auto my-24'>
-							<ContentArticle source={source} />
+						<ContentArticle source={source} />
 
-							{post.updatedAt && (
-								<p className='text-gray-600 dark:text-gray-400'>
-									Last updated: {relativeDate(new Date(post.updatedAt))}
-								</p>
-							)}
-						</article>
+						{post.updatedAt && (
+							<p className='text-gray-600 dark:text-gray-400'>
+								Last updated: {relativeDate(new Date(post.updatedAt))}
+							</p>
+						)}
 					</div>
 				)}
 			</section>

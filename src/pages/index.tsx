@@ -1,4 +1,5 @@
 import { GetStaticProps } from 'next';
+import useSWR from 'swr';
 import PageHeader from '@/components/common/PageHeader';
 import Page from '@/layout/Page';
 import Link from '@/components/common/CustomElements/Link';
@@ -12,8 +13,31 @@ import { IBookCard } from '@/types/books';
 import BookCard from '@/components/library/BookCard';
 import { getArchivesCards } from '@/graphql/queries/archives';
 import ImageCard from '@/components/common/ImageCard';
+import { format, parseISO } from 'date-fns';
+
+const fetcher = (url: string) =>
+	fetch(url)
+		.then((res) => {
+			if (res.status > 300) {
+				throw new Error('Server error');
+			} else {
+				return res.json();
+			}
+		})
+		.catch((err) => {
+			throw err;
+		});
+
+type Data = {
+	title: string;
+	lastEdited: string;
+	id: string;
+};
 
 export default function Home({ posts, project, book }: { posts: IPost[]; project: IProjectCard; book: IBookCard }): JSX.Element {
+	const { data } = useSWR('/api/notion', fetcher);
+	const seeds = data;
+
 	return (
 		<Page
 			title='Mathieu Céraline'
@@ -91,25 +115,29 @@ export default function Home({ posts, project, book }: { posts: IPost[]; project
 						My recent explorations on design, web development and creativty.
 					</p>
 					<div className='grid lg:grid-cols-[1fr,1fr,1fr] md:grid-cols-[1fr,1fr] gap-10 '>
-						<NextLink href='/playground' passHref>
-							<a>
-								<div className='dark:bg-darkGrey  rounded-lg p-4 flex flex-col justify-center border border-[#CCC] dark:border-[#202020] shadow-xl'>
-									<h3 className='text-md mb-2'>Best Accessibility Pratices for Web Developers</h3>
-									<div>
-										<span className='text-[#69AE22]'>
-											<span role='img' className='mr-1' aria-label='plant'>
-												🌱
-											</span>
-											{'  '}
-											Seeding
-										</span>
-										<span className='text-[#C4C4C4]'>
-											<span className='mx-3'>•</span>May 24th, 2021
-										</span>
-									</div>
-								</div>
-							</a>
-						</NextLink>
+						{seeds &&
+							seeds.map((seed: Data) => (
+								<NextLink href={`/blog/s/${seed.id}`} key={seed.title} passHref>
+									<a>
+										<div className='dark:bg-darkGrey  rounded-lg p-4 flex flex-col justify-center border border-[#CCC] dark:border-[#202020] shadow-xl'>
+											<h3 className='text-md mb-2'>{seed.title}</h3>
+											<div>
+												<span className='text-[#69AE22]'>
+													<span role='img' className='mr-1' aria-label='plant'>
+														🌱
+													</span>
+													{'  '}
+													Seeding
+												</span>
+												<span className='text-[#C4C4C4]'>
+													<span className='mx-3'>•</span>
+													{format(parseISO(seed.lastEdited), 'MMM dd, yy')}
+												</span>
+											</div>
+										</div>
+									</a>
+								</NextLink>
+							))}
 					</div>
 				</section>
 			</div>
