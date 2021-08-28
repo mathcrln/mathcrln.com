@@ -12,11 +12,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 	try {
 		if (typeof id !== 'undefined') {
 			const page = await notion.pages.retrieve({ page_id: id as string });
-
+			// console.log(page);
 			// const response = await notion.blocks.children.list({
 			// 	block_id: id as string,
 			// });
-			// console.log(response.results[7].paragraph.text);
+			// console.log(response);
+			// console.log(response.results[1].paragraph);
+			// if (response && response.results.length > 0) {
+			// 	const blocks = response.results.map((block) => {
+			// 		// if(
+			// 		// serialize(block);
+			// 	});
+			// }
+
 			// response.results.forEach((element) => {
 			// console.log(element);
 			// element.paragraph?.text?.forEach((paragraph) => console.log(paragraph));

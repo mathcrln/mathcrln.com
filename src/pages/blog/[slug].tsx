@@ -68,6 +68,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 	const post = await getPostBySlug(slug);
 
 	const { content } = post;
+
 	const mdxSource = await serialize(content);
 
 	return {

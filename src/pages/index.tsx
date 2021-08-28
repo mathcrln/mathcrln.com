@@ -114,7 +114,7 @@ export default function Home({ posts, project, book }: { posts: IPost[]; project
 					<p className='mt-2 mb-10 text-gray-600 dark:text-gray-300'>
 						My recent explorations on design, web development and creativty.
 					</p>
-					<div className='grid lg:grid-cols-[1fr,1fr,1fr] md:grid-cols-[1fr,1fr] gap-10 '>
+					<div className='grid lg:grid-cols-[auto,auto,auto] md:grid-cols-[1fr,1fr] gap-10 '>
 						{seeds &&
 							seeds.map((seed: Data) => (
 								<NextLink href={`/blog/s/${seed.id}`} key={seed.title} passHref>
