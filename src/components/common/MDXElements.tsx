@@ -9,6 +9,9 @@ const H3 = ({ children }: { children: string }): JSX.Element => (
 const P = ({ children }: { children: JSX.Element }): JSX.Element => (
 	<p className='text-lg my-4 dark:text-[#CCCCCC]'>{children}</p>
 );
+const BLOCKQUOTE = ({ children }: { children: JSX.Element }): JSX.Element => (
+	<blockquote className='border-l-2  my-10 py-1 pl-4 md:pl-10 border-primary-dark'>{children}</blockquote>
+);
 
 const UL = ({ children }: { children: JSX.Element }): JSX.Element => (
 	<ul className='mb-10 list-disc space-y-2 text-lg  my-4 dark:text-[#CCCCCC]'>{children}</ul>
@@ -20,4 +23,4 @@ const OL = ({ children }: { children: JSX.Element }): JSX.Element => (
 );
 const HR = (): JSX.Element => <hr className='my-20 w-1/2 mx-auto' />;
 
-export { H2, H3, P, UL, LI, OL, HR };
+export { H2, H3, P, UL, LI, OL, HR, BLOCKQUOTE };
