@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 const H2 = ({ children }: { children: string }): JSX.Element => (
 	<h2 className='text-4xl mt-14 mb-8 font-extrabold'>{children}</h2>
 );
@@ -23,4 +24,11 @@ const OL = ({ children }: { children: JSX.Element }): JSX.Element => (
 );
 const HR = (): JSX.Element => <hr className='my-20 w-1/2 mx-auto' />;
 
-export { H2, H3, P, UL, LI, OL, HR, BLOCKQUOTE };
+const IMG = ({ src, alt }: { src: string; alt: string }): JSX.Element => (
+	<figure className='my-10'>
+		<img className='rounded-md w-full' src={src} alt={alt} />
+		{alt && alt !== 'image' && <figcaption className='mt-6 text-center text-md text-gray-600'>{alt}</figcaption>}
+	</figure>
+);
+
+export { H2, H3, P, UL, LI, OL, HR, BLOCKQUOTE, IMG };

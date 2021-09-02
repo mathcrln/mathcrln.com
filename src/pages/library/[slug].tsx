@@ -16,8 +16,8 @@ export default function ArchivePage({ archive, source }: Props): JSX.Element {
 			<header className='grid md:grid-cols-[1fr,2fr]'>
 				<ImageCard cover={archive.cover} height={375} width={248} className='h-initial place-self-center' />
 				<PageHeader title={archive.name}>
-					<p className='block mb-5'>{archive.author}</p>
-					<p>{archive.description}</p>
+					<p className='block font-bold'>{archive.author}</p>
+					<p className='my-5 font-ligth'>{archive.description}</p>
 					<AuthorDate date={archive.date} />
 				</PageHeader>
 			</header>
