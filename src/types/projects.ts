@@ -9,6 +9,6 @@ export type IProjectCard = {
 };
 
 export type IProject = IProjectCard & {
-	content: JSON;
+	content: string;
 	updatedAt: Date;
 };

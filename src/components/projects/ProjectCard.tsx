@@ -1,7 +1,6 @@
-import getStrapiMedia from '@/utils/getStrapiMedia';
 import Link from 'next/dist/client/link';
 import { IProjectCard } from '../../types/projects';
-import ImageCard from '../shared/ImageCard';
+import ImageCard from '../common/ImageCard';
 import ProjectMetadata from './ProjectMetadata';
 
 export default function ProjectCard({ project }: { project: IProjectCard }): JSX.Element {
@@ -11,7 +10,7 @@ export default function ProjectCard({ project }: { project: IProjectCard }): JSX
 		<article>
 			<Link href={`/projects/${slug}`} passHref>
 				<a>
-					<ImageCard cover={getStrapiMedia(cover)} tags={tags} />
+					<ImageCard cover={cover} tags={tags} />
 				</a>
 			</Link>
 			<div className='mt-5'>

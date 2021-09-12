@@ -2,13 +2,10 @@ import type { AppProps } from 'next/app';
 import '@/styles/globals.css';
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
-import { H2, H3, P, UL, LI, OL, HR } from '@/components/shared/MDXElements';
-import initializeObserver from '@/utils/polyfills';
+import { H2, H3, P, UL, LI, OL, HR, IMG, BLOCKQUOTE } from '@/components/common/MDXElements';
 import Footer from '@/layout/Footer';
 import Header from '@/layout/Header';
-import CustomLink from '@/components/shared/CustomElements/Link';
-
-initializeObserver();
+import CustomLink from '@/components/common/CustomElements/Link';
 
 const components = {
 	h2: H2,
@@ -19,6 +16,8 @@ const components = {
 	li: LI,
 	ol: OL,
 	hr: HR,
+	blockquote: BLOCKQUOTE,
+	img: IMG,
 };
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {

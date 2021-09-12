@@ -3,7 +3,7 @@ export default function Container({
 	children,
 }: {
 	className?: string;
-	children: JSX.Element | JSX.Element[];
+	children: JSX.Element | JSX.Element[] | React.ReactNode;
 }): JSX.Element {
 	return <div className={`w-11/12 max-w-screen-xl mx-auto ${className || ''}`}>{children}</div>;
 }

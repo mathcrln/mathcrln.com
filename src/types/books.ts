@@ -1,13 +1,16 @@
 export type IBook = IBookCard & {
 	description: string;
+	date: string;
 };
 
 export type IBookCard = {
-	title: string;
+	name: string;
 	author: string;
+	content: string;
 	cover: {
 		url: string;
 		height: number;
 		width: number;
 	};
+	slug: string;
 };

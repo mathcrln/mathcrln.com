@@ -1,21 +1,19 @@
 import Image from 'next/image';
 import mathieu from '@/public/mathieu.jpg';
 import martinique from '@/public/martinique.jpg';
-import PageHeader from '@/components/shared/PageHeader';
+import PageHeader from '@/components/common/PageHeader';
 import Page from '@/layout/Page';
 
 export default function About(): JSX.Element {
 	return (
 		<Page title='About' description=''>
-			<PageHeader
-				title='Who am I?'
-				intro={
-					<span>
-						If you and I are to become friends, <br className='hidden md:inline' />I guess it’s about time I introduce
-						myself.
-					</span>
-				}
-			/>
+			<PageHeader title='Who am I?'>
+				<span>
+					If you and I are to become friends, <br className='hidden md:inline' />I guess it’s about time I introduce
+					myself.
+				</span>
+			</PageHeader>
+
 			<div className='mx-auto my-20 lg:max-w-[1200px]'>
 				<div className='grid lg:grid-cols-[1fr,1fr] gap-10 items-center'>
 					<Image

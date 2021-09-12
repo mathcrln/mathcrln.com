@@ -1,14 +1,15 @@
-import PageHeader from '@/components/shared/PageHeader';
+import PageHeader from '@/components/common/PageHeader';
 import { GetStaticProps } from 'next';
-import client from '@/graphql/apollo-client';
-import { BLOGPAGE_POSTS } from '@/graphql/queries/posts';
+import { getPostsCards } from '@/graphql/queries/posts';
 import Page from '@/layout/Page';
-import PostCard, { IPost } from 'src/articles/components/PostCard';
+import PostCard, { IPost } from '@/components/blog/PostCard';
 
 export default function Articles({ posts }: { posts: IPost[] }): JSX.Element {
 	return (
 		<Page title='Blog'>
-			<PageHeader title='Articles' intro='Sharing ideas and discoveries in a few words' className='mb-20' />
+			<PageHeader title='Articles' className='mb-20'>
+				<p>Sharing ideas and discoveries in a few words</p>
+			</PageHeader>
 			<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10 '>
 				{posts?.map((post: IPost) => (
 					<PostCard key={post.title} post={post} />
@@ -19,7 +20,7 @@ export default function Articles({ posts }: { posts: IPost[] }): JSX.Element {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const posts = (await client.query({ query: BLOGPAGE_POSTS })).data.posts || null;
+	const posts = await getPostsCards(6);
 
 	return {
 		props: {
