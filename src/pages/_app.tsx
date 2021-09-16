@@ -6,6 +6,7 @@ import { H2, H3, P, UL, LI, OL, HR, IMG, BLOCKQUOTE } from '@/components/common/
 import Footer from '@/layout/Footer';
 import Header from '@/layout/Header';
 import CustomLink from '@/components/common/CustomElements/Link';
+import TopBar from '@/components/common/TopBar';
 
 const components = {
 	h2: H2,
@@ -23,6 +24,7 @@ const components = {
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 	return (
 		<MDXProvider components={components}>
+			<TopBar />
 			<Header />
 			<Component {...pageProps} />
 			<Footer className='mt-auto' />
