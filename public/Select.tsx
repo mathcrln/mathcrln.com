@@ -1,4 +1,4 @@
-import UpDownArrows from '@/components/icons/SelectArrows';
+import UpDownArrows from '@/common/components/icons/SelectArrows';
 import React, { ChangeEvent, SyntheticEvent } from 'react';
 
 type IOption = {

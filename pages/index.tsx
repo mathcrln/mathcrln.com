@@ -1,16 +1,16 @@
 import { GetStaticProps } from 'next';
 import PageHeader from 'src/common/PageHeader';
 import Page from '@/layout/Page';
-import Link from 'src/common/CustomElements/Link';
-import PostCard, { IPost } from '@/components/blog/PostCard';
-import { getPostsCards } from '@/graphql/queries/posts';
-import { getProjectsCards } from '@/graphql/queries/projects';
-import { IProject } from '@/types/projects';
+import Link from '@/common/components/elements/Link';
+import PostCard, { IPost } from '@/modules/posts/components/PostCard';
+import { getPostsCards } from '@/modules/posts/graphql/posts';
+import { getProjectsCards } from '@/modules/projects/graphql/projects';
+import { IProject } from '@/modules/projects/models/projects';
 import React from 'react';
-import { IBookCard } from '@/types/books';
+import { IBookCard } from '@/modules/archives/models/books';
 import BookCard from '@/components/library/BookCard';
-import { getArchivesCards } from '@/graphql/queries/archives';
-import ProjectCard from '@/components/projects/ProjectCard';
+import { getArchivesCards } from '@/modules/archives/graphql/archives';
+import ProjectCard from '@/modules/projects/components/ProjectCard';
 
 export default function Home({
 	posts,

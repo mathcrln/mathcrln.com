@@ -3,7 +3,7 @@ import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { ParsedUrlQuery } from 'querystring';
 import ImageCard from 'src/common/ImageCard';
 import { serialize } from 'next-mdx-remote/serialize';
-import { getAllProjectsSlugs, getProjectBySlug } from '@/graphql/queries/projects';
+import { getAllProjectsSlugs, getProjectBySlug } from '@/modules/projects/graphql/projects';
 import Skill from 'src/common/Skill';
 import { ISkill, IProject } from 'src/types';
 import relativeDate from 'relative-date';

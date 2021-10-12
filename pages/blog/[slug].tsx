@@ -5,11 +5,11 @@ import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import relativeDate from 'relative-date';
 import Page from '@/layout/Page';
-import { IPost } from '@/components/blog/PostCard';
+import { IPost } from '@/modules/posts/components/PostCard';
 import PageHeader from 'src/common/PageHeader';
 import { parseISO, format } from 'date-fns';
 import Image from 'next/image';
-import { getAllPostsSlugs, getPostBySlug } from '@/graphql/queries/posts';
+import { getAllPostsSlugs, getPostBySlug } from '@/modules/posts/graphql/posts';
 import ContentArticle from 'src/common/ContentArticle';
 
 export default function Post({ post, source }: Props): JSX.Element {

@@ -1,8 +1,8 @@
 import { GetStaticProps } from 'next';
-import { IProjectCard } from 'src/types/projects';
-import { getProjectsCards } from '@/graphql/queries/projects';
-import FeaturedProjectCard from '@/components/projects/FeaturedProjectCard';
-import ProjectGrid from '@/components/projects/ProjectGrid';
+import { IProjectCard } from '@/modules/projects/models/projects';
+import { getProjectsCards } from '@/modules/projects/graphql/projects';
+import FeaturedProjectCard from '@/modules/projects/components/FeaturedProjectCard';
+import ProjectGrid from '@/modules/projects/components/ProjectGrid';
 import PageHeader from 'src/common/PageHeader';
 import Page from '@/layout/Page';
 

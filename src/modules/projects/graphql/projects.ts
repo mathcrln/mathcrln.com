@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 import { IProject } from 'src/types';
-import graphCMS from '../apollo-client';
+import graphCMS from '@/lib/apollo-client';
 
 /**
  * GET POSTS BY SLUG
@@ -45,7 +45,7 @@ const getProjectBySlug = async (slug: string): Promise<IProject> => {
 
 		[project] = projects;
 	} catch (e) {
-		throw new Error(e);
+		throw new Error(e as string);
 	}
 
 	return project;
@@ -110,7 +110,7 @@ const getProjectsCards = async (limit: number): Promise<Array<IProject>> => {
 		).data;
 		fetchedProjects = projects;
 	} catch (e) {
-		throw new Error(e);
+		throw new Error(e as string);
 	}
 	return fetchedProjects;
 };

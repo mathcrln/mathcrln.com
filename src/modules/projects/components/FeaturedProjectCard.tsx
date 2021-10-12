@@ -1,6 +1,6 @@
 import Link from 'next/dist/client/link';
-import { IProjectCard } from '../../types/projects';
-import ImageCard from '../../common/ImageCard';
+import { IProjectCard } from '../models/projects';
+import ImageCard from '../../../common/ImageCard';
 import ProjectMetadata from './ProjectMetadata';
 
 export default function FeaturedProjectCard({ project }: { project: IProjectCard }): JSX.Element {

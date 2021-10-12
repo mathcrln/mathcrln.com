@@ -5,7 +5,7 @@ import { MDXProvider } from '@mdx-js/react';
 import { H2, H3, P, UL, LI, OL, HR, IMG, BLOCKQUOTE } from 'src/common/MDXElements';
 import Footer from '@/layout/Footer';
 import Header from '@/layout/Header';
-import CustomLink from 'src/common/CustomElements/Link';
+import CustomLink from '@/common/components/elements/Link';
 import TopBar from 'src/common/TopBar';
 
 const components = {

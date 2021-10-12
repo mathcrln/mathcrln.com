@@ -4,9 +4,9 @@ import ImageCard from 'src/common/ImageCard';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { ParsedUrlQuery } from 'querystring';
 import { serialize } from 'next-mdx-remote/serialize';
-import { getAllArchivesSlugs, getArchiveBySlug } from '@/graphql/queries/archives';
+import { getAllArchivesSlugs, getArchiveBySlug } from '@/modules/archives/graphql/archives';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { IBook } from '@/types/books';
+import { IBook } from '@/modules/archives/models/books';
 import ContentArticle from 'src/common/ContentArticle';
 import AuthorDate from 'src/common/AuthorDate';
 

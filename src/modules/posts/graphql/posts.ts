@@ -1,6 +1,6 @@
-import { IPost } from '@/components/blog/PostCard';
+import { IPost } from '@/modules/posts/components/PostCard';
 import { gql } from '@apollo/client';
-import graphCMS from '../apollo-client';
+import graphCMS from '../../../lib/apollo-client';
 
 /**
  * GET POSTS BY SLUG
@@ -37,7 +37,7 @@ const getPostBySlug = async (slug: string): Promise<IPost> => {
 
 		[post] = posts;
 	} catch (e) {
-		throw new Error(e);
+		throw new Error(e as string);
 	}
 
 	return post;
@@ -93,7 +93,7 @@ const getPostsCards = async (limit: number): Promise<Array<IPost>> => {
 		).data;
 		fetchedPosts = posts;
 	} catch (e) {
-		throw new Error(e);
+		throw new Error(e as string);
 	}
 	return fetchedPosts;
 };

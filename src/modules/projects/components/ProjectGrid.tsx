@@ -1,5 +1,5 @@
 import ProjectCard from './ProjectCard';
-import { IProjectCard } from '../../types/projects';
+import { IProjectCard } from '../models/projects';
 
 export default function ProjectGrid({ projects }: { projects: IProjectCard[] }): JSX.Element {
 	return (

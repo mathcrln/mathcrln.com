@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
-import { IBook } from '@/types/books';
-import graphCMS from '../apollo-client';
+import { IBook } from '@/modules/archives/models/books';
+import graphCMS from '../../../lib/apollo-client';
 
 /**
  * GET ARCHIVE BY SLUG
@@ -38,8 +38,8 @@ const getArchiveBySlug = async (slug: string): Promise<IBook> => {
 		).data;
 
 		[archive] = archives;
-	} catch (e) {
-		throw new Error(e);
+	} catch (e: unknown) {
+		throw new Error(e as string);
 	}
 
 	return archive;
@@ -99,8 +99,8 @@ const getArchivesCards = async (limit: number): Promise<Array<IBook>> => {
 			})
 		).data;
 		fetchedArchives = archives;
-	} catch (e) {
-		throw new Error(e);
+	} catch (e: unknown) {
+		throw new Error(e as string);
 	}
 	return fetchedArchives;
 };

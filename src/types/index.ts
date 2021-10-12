@@ -1,3 +1,3 @@
 export * from './links';
 export * from './skill';
-export * from './projects';
+export * from '../modules/projects/models/projects';
