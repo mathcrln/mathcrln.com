@@ -1,4 +1,4 @@
-import PageHeader from 'src/common/PageHeader';
+import PageHeader from 'src/common/components/PageHeader';
 import Page from '@/layout/Page';
 import React from 'react';
 

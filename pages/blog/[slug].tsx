@@ -1,16 +1,16 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
-import ImageCard from 'src/common/ImageCard';
+import ImageCard from '@/common/components/ImageCard';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import relativeDate from 'relative-date';
 import Page from '@/layout/Page';
 import { IPost } from '@/modules/posts/components/PostCard';
-import PageHeader from 'src/common/PageHeader';
+import PageHeader from '@/common/components/PageHeader';
 import { parseISO, format } from 'date-fns';
 import Image from 'next/image';
 import { getAllPostsSlugs, getPostBySlug } from '@/modules/posts/graphql/posts';
-import ContentArticle from 'src/common/ContentArticle';
+import ContentArticle from '@/common/components/ContentArticle';
 
 export default function Post({ post, source }: Props): JSX.Element {
 	return (

@@ -1,5 +1,5 @@
-import ArrowRight from './components/icons/ArrowRight';
-import CustomLink from './components/elements/Link';
+import ArrowRight from '@/common/components/icons/ArrowRight';
+import CustomLink from '@/common/components/elements/Link';
 
 export default function TopBar(): JSX.Element {
 	return (

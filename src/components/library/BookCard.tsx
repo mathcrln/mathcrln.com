@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { IBookCard } from '@/modules/archives/models/books';
-import ImageCard from '../../common/ImageCard';
+import ImageCard from '@/common/components/ImageCard';
 
 type Props = {
 	book: IBookCard;

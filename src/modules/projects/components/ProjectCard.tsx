@@ -1,8 +1,8 @@
 import Link from 'next/dist/client/link';
+import Github from '@/common/components/icons/Github';
+import CustomLink from '@/common/components/elements/Link';
+import ImageCard from '@/common/components/ImageCard';
 import { IProjectCard } from '../models/projects';
-import Github from '../../../common/components/icons/Github';
-import CustomLink from '../../../common/components/elements/Link';
-import ImageCard from '../../../common/ImageCard';
 
 export default function ProjectCard({ project }: { project: IProjectCard }): JSX.Element {
 	const { name, cover, slug, tags } = project;

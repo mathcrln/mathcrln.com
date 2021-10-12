@@ -1,4 +1,4 @@
-import ImageCard from 'src/common/ImageCard';
+import ImageCard from '@/common/components/ImageCard';
 import Link from 'next/link';
 
 export type IPost = {

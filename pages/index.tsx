@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next';
-import PageHeader from 'src/common/PageHeader';
+import PageHeader from 'src/common/components/PageHeader';
 import Page from '@/layout/Page';
 import Link from '@/common/components/elements/Link';
 import PostCard, { IPost } from '@/modules/posts/components/PostCard';
