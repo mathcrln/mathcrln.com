@@ -8,7 +8,7 @@ export default function CustomLink({
 }: {
 	className?: string;
 	href: string;
-	children: JSX.Element | string;
+	children: JSX.Element | React.ReactNode | string;
 }): JSX.Element {
 	const styles = 'font-medium text-primary-light dark:text-primary-dark hover:underline';
 	if (isInternalLink(href))
