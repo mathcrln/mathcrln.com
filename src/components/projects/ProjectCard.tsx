@@ -5,10 +5,11 @@ import ProjectMetadata from './ProjectMetadata';
 
 export default function ProjectCard({ project }: { project: IProjectCard }): JSX.Element {
 	const { cover, slug, tags } = project;
+	const url = `/projects/${slug}`;
 
 	return (
 		<article>
-			<Link href={`/projects/${slug}`} passHref>
+			<Link href={url} passHref>
 				<a>
 					<ImageCard cover={cover} tags={tags} />
 				</a>

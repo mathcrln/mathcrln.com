@@ -12,8 +12,8 @@ import AuthorDate from '@/components/common/AuthorDate';
 
 export default function ArchivePage({ archive, source }: Props): JSX.Element {
 	return (
-		<Page title={archive.name}>
-			<header className='grid md:grid-cols-[1fr,2fr]'>
+		<Page title={archive.name} image={archive.cover.url} description={archive.description}>
+			<header className='grid md:grid-cols-[1fr,2fr] gap-10 items-center'>
 				<ImageCard cover={archive.cover} height={375} width={248} className='h-initial place-self-center' />
 				<PageHeader title={archive.name}>
 					<p className='block font-bold'>{archive.author}</p>

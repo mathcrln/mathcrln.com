@@ -12,14 +12,14 @@ import Image from 'next/image';
 import { getAllPostsSlugs, getPostBySlug } from '@/graphql/queries/posts';
 import ContentArticle from '@/components/common/ContentArticle';
 
-export default function Project({ post, source }: Props): JSX.Element {
+export default function Post({ post, source }: Props): JSX.Element {
 	return (
-		<Page title={post ? post.title : 'Project'} description={post ? post.excerpt : 'Here is a fun project I played with.'}>
+		<Page title={post ? post.title : ''} image={post.cover.url} description={post ? post.excerpt : ''}>
 			<section>
 				{!post && <p className='my-14 relative'>Seems like no post with this name has been found</p>}
 				{post && (
 					<div>
-						<div className='mb-20 lg:grid-cols-2 grid gap-10 md:gap-20 items-center'>
+						<div className='mb-20 lg:grid-cols-2 grid gap-10 md:gap-5 items-center'>
 							<div>
 								<PageHeader title={post.title}>
 									<p>{post.excerpt}</p>

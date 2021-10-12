@@ -15,10 +15,6 @@ const NAV_LINKS = [
 		title: 'Library',
 		slug: '/library',
 	},
-	{
-		title: 'Projects',
-		slug: '/projects',
-	},
 ];
 
 const FOOTER_LINKS = [
