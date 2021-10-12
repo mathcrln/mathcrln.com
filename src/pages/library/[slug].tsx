@@ -1,14 +1,14 @@
-import PageHeader from '@/components/common/PageHeader';
+import PageHeader from 'src/common/PageHeader';
 import Page from '@/layout/Page';
-import ImageCard from '@/components/common/ImageCard';
+import ImageCard from 'src/common/ImageCard';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { ParsedUrlQuery } from 'querystring';
 import { serialize } from 'next-mdx-remote/serialize';
 import { getAllArchivesSlugs, getArchiveBySlug } from '@/graphql/queries/archives';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { IBook } from '@/types/books';
-import ContentArticle from '@/components/common/ContentArticle';
-import AuthorDate from '@/components/common/AuthorDate';
+import ContentArticle from 'src/common/ContentArticle';
+import AuthorDate from 'src/common/AuthorDate';
 
 export default function ArchivePage({ archive, source }: Props): JSX.Element {
 	return (

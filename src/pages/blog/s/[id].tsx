@@ -1,4 +1,4 @@
-import PageHeader from '@/components/common/PageHeader';
+import PageHeader from 'src/common/PageHeader';
 import Page from '@/layout/Page';
 import { useRouter } from 'next/dist/client/router';
 import useSWR from 'swr';

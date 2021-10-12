@@ -6,7 +6,7 @@ import SystemComputer from '@/components/icons/Computer';
 import Link from 'next/link';
 import { FOOTER_LINKS } from '@/data/links';
 import useDarkMode, { ThemeMode } from '@/hooks/useDarkMode';
-import Select from '@/components/common/CustomElements/Select';
+import Select from 'src/common/CustomElements/Select';
 import Container from './Container';
 
 export default function Footer({ className = '' }: { className?: string }): JSX.Element {

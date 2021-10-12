@@ -2,11 +2,11 @@ import type { AppProps } from 'next/app';
 import '@/styles/globals.css';
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
-import { H2, H3, P, UL, LI, OL, HR, IMG, BLOCKQUOTE } from '@/components/common/MDXElements';
+import { H2, H3, P, UL, LI, OL, HR, IMG, BLOCKQUOTE } from 'src/common/MDXElements';
 import Footer from '@/layout/Footer';
 import Header from '@/layout/Header';
-import CustomLink from '@/components/common/CustomElements/Link';
-import TopBar from '@/components/common/TopBar';
+import CustomLink from 'src/common/CustomElements/Link';
+import TopBar from 'src/common/TopBar';
 
 const components = {
 	h2: H2,

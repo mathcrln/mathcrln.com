@@ -1,5 +1,5 @@
 import { useRouter } from 'next/dist/client/router';
-import SEO, { CustomMeta } from '@/components/common/Seo';
+import SEO, { CustomMeta } from 'src/common/Seo';
 import Container from './Container';
 
 type IPage = CustomMeta & {

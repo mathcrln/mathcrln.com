@@ -1,15 +1,15 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { ParsedUrlQuery } from 'querystring';
-import ImageCard from '@/components/common/ImageCard';
+import ImageCard from 'src/common/ImageCard';
 import { serialize } from 'next-mdx-remote/serialize';
 import { getAllProjectsSlugs, getProjectBySlug } from '@/graphql/queries/projects';
-import Skill from '@/components/common/Skill';
+import Skill from 'src/common/Skill';
 import { ISkill, IProject } from 'src/types';
 import relativeDate from 'relative-date';
-import { LinkButton } from '@/components/common/Button';
+import { LinkButton } from 'src/common/Button';
 import Page from '@/layout/Page';
-import ContentArticle from '@/components/common/ContentArticle';
+import ContentArticle from 'src/common/ContentArticle';
 
 type ProjectProps = {
 	project: IProject;

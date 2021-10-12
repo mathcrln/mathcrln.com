@@ -1,4 +1,4 @@
-import PageHeader from '@/components/common/PageHeader';
+import PageHeader from 'src/common/PageHeader';
 import { GetStaticProps } from 'next';
 import { getPostsCards } from '@/graphql/queries/posts';
 import Page from '@/layout/Page';

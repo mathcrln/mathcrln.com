@@ -1,9 +1,8 @@
 import Link from 'next/dist/client/link';
 import { IProjectCard } from '../../types/projects';
 import Github from '../icons/Github';
-import CustomLink from '../common/CustomElements/Link';
-import ImageCard from '../common/ImageCard';
-import ArrowRight from '../icons/ArrowRight';
+import CustomLink from '../../common/CustomElements/Link';
+import ImageCard from '../../common/ImageCard';
 
 export default function ProjectCard({ project }: { project: IProjectCard }): JSX.Element {
 	const { name, cover, slug, tags } = project;
@@ -22,7 +21,7 @@ export default function ProjectCard({ project }: { project: IProjectCard }): JSX
 				</h3>
 				<div className='mt-3 flex flex-col space-y-2'>
 					<CustomLink href='/log' className='flex items-center group'>
-						Demo{' '}
+						Demo
 						<svg
 							version='1.0'
 							xmlns='http://www.w3.org/2000/svg'

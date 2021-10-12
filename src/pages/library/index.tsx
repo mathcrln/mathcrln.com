@@ -1,5 +1,5 @@
 import BookCard from '@/components/library/BookCard';
-import PageHeader from '@/components/common/PageHeader';
+import PageHeader from 'src/common/PageHeader';
 import Page from '@/layout/Page';
 import { GetStaticProps } from 'next';
 import { getArchivesCards } from '@/graphql/queries/archives';

@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
-import PageHeader from '@/components/common/PageHeader';
+import PageHeader from 'src/common/PageHeader';
 import Page from '@/layout/Page';
-import Link from '@/components/common/CustomElements/Link';
+import Link from 'src/common/CustomElements/Link';
 import PostCard, { IPost } from '@/components/blog/PostCard';
 import { getPostsCards } from '@/graphql/queries/posts';
 import { getProjectsCards } from '@/graphql/queries/projects';

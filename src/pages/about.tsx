@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import mathieu from '@/public/mathieu.jpg';
 import martinique from '@/public/martinique.jpg';
-import PageHeader from '@/components/common/PageHeader';
+import PageHeader from 'src/common/PageHeader';
 import Page from '@/layout/Page';
 
 export default function About(): JSX.Element {
