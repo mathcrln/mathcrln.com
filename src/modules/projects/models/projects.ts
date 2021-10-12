@@ -6,6 +6,8 @@ export type IProjectCard = {
 	tags?: { name: string }[];
 	skills?: { name: string; icon: { url: string; height: number; width: number } }[];
 	slug: string;
+	previewUrl: string;
+	sourcesUrl: string;
 };
 
 export type IProject = IProjectCard & {

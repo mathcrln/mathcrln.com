@@ -80,6 +80,8 @@ const GET_PROJECTS_CARDS = gql`
 
 			description
 			slug
+			previewUrl
+			sourcesUrl
 			cover {
 				url
 			}

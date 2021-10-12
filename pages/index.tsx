@@ -30,20 +30,22 @@ export default function Home({
 			<PageHeader title='Hello, I’m Mathieu Céraline 👋🏾'>
 				<p>
 					I’m a Frontend Web Developer, Designer as well as a Software Engineering student at Polytechnique Montréal.
-					You should <Link href='/projects'>check out my latest works </Link>
+					You should <Link href='#projects'>check out my latest works </Link>
 					or <Link href='/about'>learn more about me</Link>.
 				</p>
 			</PageHeader>
 
 			<section className='my-24'>
-				<h2 className='text-2xl font-extrabold'>Recent posts</h2>
+				<h2 className='text-3xl font-extrabold'>Recent posts</h2>
 				<p className='mt-2 mb-10 text-gray-600 dark:text-gray-300'>On design, code and creativity.</p>
 				<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10'>
 					{posts ? posts.map((post) => <PostCard key={post.title} post={post} />) : <p>No post was found.</p>}
 				</div>
 			</section>
-			<section className='my-24'>
-				<h2 className='text-2xl font-extrabold'>What I've been working on</h2>
+			<section className='my-32'>
+				<h2 className='text-3xl font-extrabold' id='projects'>
+					Projects & Experiments
+				</h2>
 				<p className='mt-2 mb-10 text-gray-600 dark:text-gray-300'>
 					Here are some of the projects I had fun with lately.
 				</p>
@@ -63,8 +65,8 @@ export default function Home({
 				<p className='text-right'>- Stephen R. Covey</p>
 			</aside>
 
-			<section>
-				<h2 className='text-2xl font-extrabold'>Library</h2>
+			<section className='my-16'>
+				<h2 className='text-3xl font-extrabold'>Library</h2>
 				<p className='mt-2 mb-10 text-gray-600 dark:text-gray-300'>Here are some books I recently loved.</p>
 				<div className='grid grid-cols-2 md:grid-cols-4 gap-10'>
 					{books ? books.map((book) => <BookCard key={book.name} book={book} />) : <p>No book has been found.</p>}
@@ -76,7 +78,7 @@ export default function Home({
 
 export const getStaticProps: GetStaticProps = async () => {
 	const posts = await getPostsCards(3);
-	const projects = await getProjectsCards(3);
+	const projects = await getProjectsCards(6);
 	const books = await getArchivesCards(4);
 
 	return {
