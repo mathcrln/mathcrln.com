@@ -8,7 +8,7 @@ import { getProjectsCards } from '@/modules/projects/graphql/projects';
 import { IProject } from '@/modules/projects/models/projects';
 import React from 'react';
 import { IBookCard } from '@/modules/archives/models/books';
-import BookCard from '@/components/library/BookCard';
+import BookCard from '@/modules/archives/components/BookCard';
 import { getArchivesCards } from '@/modules/archives/graphql/archives';
 import ProjectCard from '@/modules/projects/components/ProjectCard';
 
@@ -43,13 +43,15 @@ export default function Home({
 				</div>
 			</section>
 			<section className='my-24'>
-				<h2 className='text-2xl font-extrabold'>What I'm working on</h2>
-				<p className='mt-2 mb-10 text-gray-600 dark:text-gray-300'>On design, code and creativity.</p>
+				<h2 className='text-2xl font-extrabold'>What I've been working on</h2>
+				<p className='mt-2 mb-10 text-gray-600 dark:text-gray-300'>
+					Here are some of the projects I had fun with lately.
+				</p>
 				<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10'>
 					{projects ? (
 						projects.map((project) => <ProjectCard key={project.name} project={project} />)
 					) : (
-						<p>No post was found.</p>
+						<p>No project was found.</p>
 					)}
 				</div>
 			</section>

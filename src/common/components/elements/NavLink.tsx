@@ -25,6 +25,7 @@ export default function NavLink({ href, title, className = '', handler }: LinkPr
 	);
 }
 
-NavLink.defaultProps = {
-	className: '',
+export type INavLink = {
+	title: string;
+	slug: string;
 };

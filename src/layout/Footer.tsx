@@ -4,7 +4,7 @@ import Sun from '@/common/components/icons/Sun';
 import Moon from '@/common/components/icons/Moon';
 import SystemComputer from '@/common/components/icons/Computer';
 import Link from 'next/link';
-import { FOOTER_LINKS } from '@/data/links';
+import { FOOTER_LINKS } from '@/data/LINKS';
 import useDarkMode, { ThemeMode } from '@/common/hooks/useDarkMode';
 import Select from '@/common/components/elements/Select';
 import Container from './Container';

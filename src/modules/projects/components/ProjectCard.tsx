@@ -19,7 +19,7 @@ export default function ProjectCard({ project }: { project: IProjectCard }): JSX
 				<h3 className='font-bold mt-4 text-xl  dark:hover:text-primary-dark'>
 					<Link href={`/projects/${slug}`}>{name}</Link>
 				</h3>
-				<div className='mt-3 flex flex-col space-y-2'>
+				<div className='mt-3 flex space-x-5'>
 					<CustomLink href='/log' className='flex items-center group'>
 						Demo
 						<svg

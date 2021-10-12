@@ -1,4 +1,4 @@
-import BookCard from '@/components/library/BookCard';
+import BookCard from '@/modules/archives/components/BookCard';
 import PageHeader from 'src/common/components/PageHeader';
 import Page from '@/layout/Page';
 import { GetStaticProps } from 'next';

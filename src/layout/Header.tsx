@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { LogoLink } from '@/common/components/icons/Logo';
 import MenuIcon from '@/common/components/icons/MenuIcon';
-import { NAV_LINKS } from '@/data/links';
+import { NAV_LINKS } from '@/data/LINKS';
 import Navigation from './Navigation';
 import Container from './Container';
 

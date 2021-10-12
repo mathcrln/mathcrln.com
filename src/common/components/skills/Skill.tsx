@@ -1,5 +1,4 @@
 import Image from 'next/dist/client/image';
-import { ISkill } from 'src/types/skill';
 
 type Props = {
 	skill: ISkill;
@@ -16,3 +15,12 @@ export default function Skill({ skill, className }: Props): JSX.Element {
 		</span>
 	);
 }
+
+export type ISkill = {
+	name: string;
+	icon: {
+		url: string;
+		height: number;
+		width: number;
+	};
+};

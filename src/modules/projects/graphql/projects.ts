@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
-import { IProject } from 'src/types';
 import graphCMS from '@/lib/apollo-client';
+import { IProject } from '../models/projects';
 
 /**
  * GET POSTS BY SLUG
