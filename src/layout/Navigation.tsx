@@ -1,6 +1,5 @@
 import React from 'react';
-import NavLink from '@/components/common/NavLink';
-import { INavLink } from 'src/types/links';
+import NavLink, { INavLink } from '@/common/components/elements/NavLink';
 
 type NavigationProps = {
 	links: Array<INavLink>;
