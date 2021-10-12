@@ -1,12 +1,12 @@
 import { useState, ChangeEvent } from 'react';
-import Logo from '@/components/icons/Logo';
-import Sun from '@/components/icons/Sun';
-import Moon from '@/components/icons/Moon';
-import SystemComputer from '@/components/icons/Computer';
+import Logo from '@/common/components/icons/Logo';
+import Sun from '@/common/components/icons/Sun';
+import Moon from '@/common/components/icons/Moon';
+import SystemComputer from '@/common/components/icons/Computer';
 import Link from 'next/link';
-import { FOOTER_LINKS } from '@/data/links';
-import useDarkMode, { ThemeMode } from '@/hooks/useDarkMode';
-import Select from '@/components/common/CustomElements/Select';
+import { FOOTER_LINKS } from '@/data/LINKS';
+import useDarkMode, { ThemeMode } from '@/common/hooks/useDarkMode';
+import Select from '@/common/components/elements/Select';
 import Container from './Container';
 
 export default function Footer({ className = '' }: { className?: string }): JSX.Element {
