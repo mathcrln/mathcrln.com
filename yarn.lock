@@ -3881,6 +3881,14 @@ regexpp@^3.1.0:
   resolved "https://registry.yarnpkg.com/regexpp/-/regexpp-3.2.0.tgz#0425a2768d8f23bad70ca4b90461fa2f1213e1b2"
   integrity sha512-pq2bWo9mVD43nbts2wGv17XLiNLya+GklZ8kaDLV2Z08gDCsGpnKn9BFMepvWuHCbyVvY7J5o5+BVvoQbmlJLg==
 
+rehype-code-title@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/rehype-code-title/-/rehype-code-title-1.0.0.tgz#d29a3a5ceb4e5d29758517898875c157efbecc0c"
+  integrity sha512-uwaUD6oLGTHCcE3ISg8kBvfJ1YZq/8qQL+24swUVRHctj2fwZLP16Hkw1EQ8Pw2TYP/RPPCuKRZhYKaMLEnTiA==
+  dependencies:
+    hastscript "^6.0.0"
+    unist-util-visit "^2.0.3"
+
 rehype-parse@^7.0.0, rehype-parse@^7.0.1:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/rehype-parse/-/rehype-parse-7.0.1.tgz#58900f6702b56767814afc2a9efa2d42b1c90c57"
@@ -4710,7 +4718,7 @@ unist-util-visit-parents@^3.0.0:
     "@types/unist" "^2.0.0"
     unist-util-is "^4.0.0"
 
-unist-util-visit@2.0.3, unist-util-visit@^2.0.0:
+unist-util-visit@2.0.3, unist-util-visit@^2.0.0, unist-util-visit@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-2.0.3.tgz#c3703893146df47203bb8a9795af47d7b971208c"
   integrity sha512-iJ4/RczbJMkD0712mGktuGpm/U4By4FfDonL7N/9tATGIF4imikjOuagyMY53tnZq3NP6BcmlrHhEKAfGWjh7Q==
