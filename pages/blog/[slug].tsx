@@ -15,6 +15,7 @@ import Twitter from '@/common/components/icons/Twitter';
 import Github from '@/common/components/icons/Github';
 import React from 'react';
 import Link from 'next/link';
+import mdxPrism from 'mdx-prism';
 
 export default function Post({ post, source }: Props): JSX.Element {
 	return (
@@ -84,7 +85,13 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 
 	const { content } = post;
 
-	const mdxSource = await serialize(content);
+	const mdxSource = await serialize(content, {
+		mdxOptions: {
+			// eslint-disable-next-line global-require
+			remarkPlugins: [require('remark-code-titles')],
+			rehypePlugins: [mdxPrism],
+		},
+	});
 
 	return {
 		props: {

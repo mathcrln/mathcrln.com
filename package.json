@@ -10,6 +10,7 @@
 	},
 	"dependencies": {
 		"@apollo/client": "^3.3.21",
+		"@graphcms/react-image": "^1.0.1",
 		"@mdx-js/loader": "^1.6.22",
 		"@mdx-js/react": "^1.6.22",
 		"@next/mdx": "^11.0.1",
@@ -18,13 +19,13 @@
 		"date-fns": "^2.23.0",
 		"eslint-plugin-import": "^2.22.1",
 		"graphql": "^15.5.1",
+		"mdx-prism": "^0.3.4",
 		"next": "11.0.1",
 		"next-mdx-remote": "^3.0.4",
 		"react": "17.0.2",
 		"react-dom": "17.0.2",
 		"relative-date": "^1.1.3",
-		"sharp": "^0.28.3",
-		"slugify": "^1.6.0",
+		"remark-code-titles": "^0.1.2",
 		"smoothscroll-polyfill": "^0.4.4",
 		"swr": "^0.5.6",
 		"tailwindcss": "^2.2.4"
