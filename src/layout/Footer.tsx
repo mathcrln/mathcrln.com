@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 import Logo from '@/common/components/icons/Logo';
 import Sun from '@/common/components/icons/Sun';
 import Moon from '@/common/components/icons/Moon';
@@ -12,38 +12,38 @@ import Container from './Container';
 export default function Footer({ className = '' }: { className?: string }): JSX.Element {
 	const [, themeMode, selectThemeMode] = useDarkMode();
 
-	const [language, setLanguage] = useState('FR');
+	// const [language, setLanguage] = useState('FR');
 
-	const languages = [
-		{
-			value: 'FR',
-			title: 'FR',
-			label: 'Français / French',
-			icon: (
-				<span role='img' aria-label='US Flag'>
-					🇫🇷
-				</span>
-			),
-		},
-		{
-			value: 'EN',
-			title: 'EN',
-			label: 'Anglais / English',
-			icon: (
-				<span role='img' aria-label='US Flag'>
-					🇺🇸
-				</span>
-			),
-		},
-	];
+	// const languages = [
+	// 	{
+	// 		value: 'FR',
+	// 		title: 'FR',
+	// 		label: 'Français / French',
+	// 		icon: (
+	// 			<span role='img' aria-label='US Flag'>
+	// 				🇫🇷
+	// 			</span>
+	// 		),
+	// 	},
+	// 	{
+	// 		value: 'EN',
+	// 		title: 'EN',
+	// 		label: 'Anglais / English',
+	// 		icon: (
+	// 			<span role='img' aria-label='US Flag'>
+	// 				🇺🇸
+	// 			</span>
+	// 		),
+	// 	},
+	// ];
 	const themeOptions = [
 		{ value: ThemeMode.SYSTEM, title: 'System', label: 'Follow System Settings', icon: <SystemComputer /> },
 		{ value: ThemeMode.DARK, title: 'Dark', label: 'Activate Dark Mode', icon: <Sun /> },
 		{ value: ThemeMode.LIGHT, title: 'Light', label: 'Activate Light Mode', icon: <Moon /> },
 	];
-	const handleLanguageChange = (e: ChangeEvent<HTMLSelectElement>) => {
-		setLanguage(e.target.value);
-	};
+	// const handleLanguageChange = (e: ChangeEvent<HTMLSelectElement>) => {
+	// 	setLanguage(e.target.value);
+	// };
 
 	const handleThemeChange = (e: ChangeEvent<HTMLSelectElement>) => {
 		const mode: ThemeMode = e.target.value as unknown as ThemeMode;
@@ -77,14 +77,14 @@ export default function Footer({ className = '' }: { className?: string }): JSX.
 				<div className='py-4 space-x-2 mt-4 grid md:grid-cols-3 gap-2 text-center md:text-left items-center justify-center'>
 					<p>© 2021, Jerry by @mathcrln</p>
 					<div />
-					<div className='flex space-x-2 text-center md:place-self-end'>
-						<Select
+					<div className='flex space-x-2 text-center justify-center md:place-self-end'>
+						{/* <Select
 							label='Change Language'
 							id='lang-selector'
 							options={languages}
 							selected={language}
 							onChange={handleLanguageChange}
-						/>
+						/> */}
 
 						<Select
 							label='Change Color Scheme'

@@ -54,7 +54,7 @@ export default function Post({ post, source }: Props): JSX.Element {
 									</a>
 								</div>
 							</div>
-							<ImageCard cover={post.cover} className='h-80 xl:-mr-20 ' />
+							<ImageCard cover={post.cover} className='h-80 xl:-mr-10' />
 						</div>
 						<ContentArticle source={source}>
 							{post.updatedAt && (
