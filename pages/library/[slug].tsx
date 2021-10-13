@@ -8,18 +8,23 @@ import { getAllArchivesSlugs, getArchiveBySlug } from '@/modules/archives/graphq
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { IBook } from '@/modules/archives/models/books';
 import ContentArticle from '@/common/components/ContentArticle';
-import AuthorDate from '@/common/components/AuthorDate';
+import Author from '@/common/components/Author';
+import ArchiveDate from '@/common/components/Date';
 
 export default function ArchivePage({ archive, source }: Props): JSX.Element {
 	return (
 		<Page title={archive.name} image={archive.cover.url} description={archive.description}>
 			<header className='grid md:grid-cols-[1fr,2fr] gap-10 items-center'>
 				<ImageCard cover={archive.cover} height={375} width={248} className='h-initial place-self-center' />
-				<PageHeader title={archive.name}>
-					<p className='block font-bold'>{archive.author}</p>
-					<p className='my-5 font-ligth'>{archive.description}</p>
-					<AuthorDate date={archive.date} />
-				</PageHeader>
+				<div>
+					<ArchiveDate date={archive.date} className='mb-3' />
+
+					<PageHeader title={archive.name}>
+						<p className='block font-bold'>{archive.author}</p>
+						<p className='my-5 font-ligth'>{archive.description}</p>
+						<Author />
+					</PageHeader>
+				</div>
 			</header>
 			<ContentArticle source={source} />
 		</Page>
