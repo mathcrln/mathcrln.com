@@ -16,6 +16,10 @@ module.exports = {
 			gray: colors.coolGray,
 			blue: colors.sky,
 			red: colors.rose,
+			green: colors.green,
+			purple: colors.purple,
+			yellow: colors.yellow,
+			pink: colors.pink,
 		},
 		fontFamily: {
 			sans: ['Mulish', 'ui-sans-serif', 'system-ui'],

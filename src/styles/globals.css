@@ -28,25 +28,69 @@
 		font-size: inherit;
 		line-height: inherit;
 	}
-	code {
-		@apply font-sans;
-	}
-	pre code {
-		@apply bg-primary-dark break-words;
-	}
-	pre code {
-		display: block;
-		background: none;
-		white-space: pre;
-		-webkit-overflow-scrolling: touch;
-		overflow-x: scroll;
-		max-width: 100%;
-		min-width: 100px;
-		padding: 0;
-	}
-	:root {
-		--select-border: #777;
-		--select-focus: blue;
-		--select-arrow: var(--select-border);
-	}
+}
+
+code {
+	@apply font-sans;
+}
+pre code {
+	@apply border-solid border  border-gray-300 bg-[#F8F9FA] dark:bg-[#121821] border-opacity-70 dark:border-opacity-20 text-[#3C3C3D] dark:text-white block whitespace-pre break-words max-w-full overflow-x-scroll p-4 rounded my-8 min-w-[100px];
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	@apply text-gray-700 dark:text-gray-400;
+}
+
+.token.punctuation {
+	@apply text-gray-700 dark:text-gray-400;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.console,
+.token.deleted {
+	@apply text-[#00B680] dark:text-blue-500;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	@apply text-[#8152F0] dark:text-white;
+}
+
+.token.operator {
+	@apply text-[#FB9328] dark:text-[#FF7B73];
+}
+
+.token.entity,
+.token.url,
+.token.keyword,
+.language-css .token.string,
+.style .token.string {
+	@apply text-[#2277F0] dark:text-[#FF7B73];
+}
+
+.token.atrule,
+.token.attr-value {
+	@apply dark:text-pink-600;
+}
+
+.token.function {
+	@apply text-[#F33F8E] dark:text-purple-400;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	@apply text-[#fb8532];
 }
