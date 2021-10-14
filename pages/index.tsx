@@ -77,7 +77,7 @@ export default function Home({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const posts = await getPostsCards(3);
+	const posts = await getPostsCards(6);
 	const projects = await getProjectsCards(6);
 	const books = await getArchivesCards(4);
 
@@ -86,7 +86,7 @@ export const getStaticProps: GetStaticProps = async () => {
 			posts,
 			projects: projects || null,
 			books: books || null,
-			revalidate: 60,
 		},
+		revalidate: 60,
 	};
 };

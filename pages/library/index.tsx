@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps = async () => {
 	return {
 		props: {
 			archives,
-			revalidate: 60,
 		},
+		revalidate: 60,
 	};
 };
