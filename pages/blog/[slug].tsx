@@ -49,33 +49,34 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 	return {
 		paths: slugs,
-		fallback: true,
+		fallback: false,
 	};
 };
 
 export const getStaticProps: GetStaticProps<Props, Params> = async (context) => {
 	const { slug } = context.params as Params;
 	const post = await getPostBySlug(slug);
+	const source =
+		post &&
+		(await serialize(post?.content, {
+			mdxOptions: {
+				// eslint-disable-next-line global-require
+				remarkPlugins: [require('remark-code-titles')],
+				rehypePlugins: [mdxPrism],
+			},
+		}));
 
-	const { content } = post;
-
-	const mdxSource = await serialize(content, {
-		mdxOptions: {
-			// eslint-disable-next-line global-require
-			remarkPlugins: [require('remark-code-titles')],
-			rehypePlugins: [mdxPrism],
-		},
-	});
+	const notFound = !post;
 
 	return {
 		props: {
 			post: {
 				...post,
-				publishDate: post.date || null,
+				publishDate: post?.date || null,
 			},
-			source: mdxSource,
-
+			source,
 			revalidate: 60,
+			notFound,
 		},
 	};
 };
