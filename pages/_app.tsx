@@ -7,7 +7,6 @@ import Footer from '@/layout/Footer';
 import Header from '@/layout/Header';
 import CustomLink from '@/common/components/elements/Link';
 import TopBar from '@/common/components/TopBar';
-import Github from '@/common/components/icons/Github';
 
 const components = {
 	h2: H2,
@@ -20,7 +19,6 @@ const components = {
 	hr: HR,
 	blockquote: BLOCKQUOTE,
 	img: IMG,
-	Github,
 };
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {

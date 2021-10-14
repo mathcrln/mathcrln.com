@@ -8,23 +8,18 @@ import { getAllArchivesSlugs, getArchiveBySlug } from '@/modules/archives/graphq
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { IBook } from '@/modules/archives/models/books';
 import ContentArticle from '@/common/components/ContentArticle';
-import Author from '@/common/components/Author';
-import ArchiveDate from '@/common/components/Date';
+import AuthorDate from '@/common/components/AuthorDate';
 
 export default function ArchivePage({ archive, source }: Props): JSX.Element {
 	return (
 		<Page title={archive.name} image={archive.cover.url} description={archive.description}>
 			<header className='grid md:grid-cols-[1fr,2fr] gap-10 items-center'>
 				<ImageCard cover={archive.cover} height={375} width={248} className='h-initial place-self-center' />
-				<div>
-					<ArchiveDate date={archive.date} className='mb-3' />
-
-					<PageHeader title={archive.name}>
-						<p className='block font-bold'>{archive.author}</p>
-						<p className='my-5 font-ligth'>{archive.description}</p>
-						<Author />
-					</PageHeader>
-				</div>
+				<PageHeader title={archive.name}>
+					<p className='block font-bold'>{archive.author}</p>
+					<p className='my-5 font-ligth'>{archive.description}</p>
+					<AuthorDate date={archive.date} />
+				</PageHeader>
 			</header>
 			<ContentArticle source={source} />
 		</Page>
@@ -36,7 +31,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 	return {
 		paths: slugs,
-		fallback: 'blocking',
+		fallback: false,
 	};
 };
 
@@ -44,22 +39,18 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 	const { slug } = context.params as Params;
 	const archive = await getArchiveBySlug(slug);
 
-	if (!archive) {
-		return {
-			notFound: true,
-		};
-	}
-
-	const source = archive && (await serialize(archive?.content));
+	const { content } = archive;
+	const mdxSource = await serialize(content);
 
 	return {
 		props: {
 			archive: {
 				...archive,
 			},
-			source,
+			source: mdxSource,
+
+			revalidate: 1,
 		},
-		revalidate: 60,
 	};
 };
 
