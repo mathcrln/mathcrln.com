@@ -15,7 +15,7 @@ import PostDate from '@/common/components/Date';
 
 export default function Post({ post, source }: Props): JSX.Element {
 	return (
-		<Page title={post ? post.title : ''} image={post.cover.url} description={post ? post.excerpt : ''}>
+		<Page title={post ? post?.title : ''} image={post?.cover?.url} description={post ? post?.excerpt : ''}>
 			<section>
 				{!post && <p className='my-14 relative'>Seems like no post with this name has been found</p>}
 				{post && (
@@ -49,13 +49,20 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 	return {
 		paths: slugs,
-		fallback: false,
+		fallback: 'blocking',
 	};
 };
 
 export const getStaticProps: GetStaticProps<Props, Params> = async (context) => {
 	const { slug } = context.params as Params;
 	const post = await getPostBySlug(slug);
+
+	if (!post) {
+		return {
+			notFound: true,
+		};
+	}
+
 	const source =
 		post &&
 		(await serialize(post?.content, {
@@ -66,8 +73,6 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 			},
 		}));
 
-	const notFound = !post;
-
 	return {
 		props: {
 			post: {
@@ -75,9 +80,8 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 				publishDate: post?.date || null,
 			},
 			source,
-			revalidate: 60,
-			notFound,
 		},
+		revalidate: 60,
 	};
 };
 

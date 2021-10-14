@@ -20,7 +20,7 @@ export default function Articles({ posts }: { posts: IPost[] }): JSX.Element {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const posts = await getPostsCards(6);
+	const posts = await getPostsCards(18);
 
 	return {
 		props: {

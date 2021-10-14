@@ -36,14 +36,20 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 	return {
 		paths: slugs,
-		fallback: false,
+		fallback: 'blocking',
 	};
 };
 
 export const getStaticProps: GetStaticProps<Props, Params> = async (context) => {
 	const { slug } = context.params as Params;
 	const archive = await getArchiveBySlug(slug);
-	const notFound = !archive;
+
+	if (!archive) {
+		return {
+			notFound: true,
+		};
+	}
+
 	const source = archive && (await serialize(archive?.content));
 
 	return {
@@ -52,9 +58,8 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 				...archive,
 			},
 			source,
-			revalidate: 60,
-			notFound,
 		},
+		revalidate: 60,
 	};
 };
 
