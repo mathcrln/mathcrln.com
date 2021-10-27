@@ -98,4 +98,34 @@ const getPostsCards = async (limit: number): Promise<Array<IPost>> => {
 	return fetchedPosts;
 };
 
-export { getPostsCards, getAllPostsSlugs, getPostBySlug };
+const getPreviewPostBySlug = async (slug: string): Promise<IPost> => {
+	let post = null;
+
+	try {
+		const { posts } = (
+			await graphCMS.query({
+				query: POST_BY_SLUG,
+				variables: {
+					postsWhere: { slug },
+				},
+				context: {
+					headers: {
+						Authorization: `Bearer ${
+							process.env.NODE_ENV === 'development'
+								? process.env.GRAPHCMS_DEV_AUTH_TOKEN
+								: process.env.GRAPHCMS_PROD_AUTH_TOKEN
+						}`,
+					},
+				},
+			})
+		).data;
+
+		[post] = posts;
+	} catch (e) {
+		throw new Error(e as string);
+	}
+
+	return post;
+};
+
+export { getPostsCards, getAllPostsSlugs, getPostBySlug, getPreviewPostBySlug };
