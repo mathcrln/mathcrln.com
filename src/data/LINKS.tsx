@@ -22,13 +22,13 @@ const FOOTER_LINKS = [
 		name: "What's next?",
 		links: [
 			{
-				title: 'Hire me',
-				slug: '/hire',
+				title: 'Resume',
+				slug: '/resume',
 				isInternal: true,
 			},
 			{
-				title: 'Chat over tea',
-				slug: '/tea',
+				title: 'Hire me',
+				slug: '/hire',
 				isInternal: true,
 			},
 			{
