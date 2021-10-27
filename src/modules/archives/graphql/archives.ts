@@ -105,4 +105,34 @@ const getArchivesCards = async (limit: number): Promise<Array<IBook>> => {
 	return fetchedArchives;
 };
 
-export { getArchiveBySlug, getAllArchivesSlugs, getArchivesCards };
+const getPreviewArchiveBySlug = async (slug: string): Promise<IBook> => {
+	let archive = null;
+
+	try {
+		const { archives } = (
+			await graphCMS.query({
+				query: ARCHIVE_BY_SLUG,
+				variables: {
+					archivesWhere: { slug },
+				},
+				context: {
+					headers: {
+						Authorization: `Bearer ${
+							process.env.NODE_ENV === 'development'
+								? process.env.GRAPHCMS_DEV_AUTH_TOKEN
+								: process.env.GRAPHCMS_PROD_AUTH_TOKEN
+						}`,
+					},
+				},
+			})
+		).data;
+
+		[archive] = archives;
+	} catch (e) {
+		throw new Error(e as string);
+	}
+
+	return archive;
+};
+
+export { getArchiveBySlug, getAllArchivesSlugs, getArchivesCards, getPreviewArchiveBySlug };
