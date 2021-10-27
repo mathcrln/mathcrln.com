@@ -8,7 +8,7 @@ import relativeDate from 'relative-date';
 import Page from '@/layout/Page';
 import { IPost } from '@/modules/posts/components/PostCard';
 import PageHeader from '@/common/components/PageHeader';
-import { getAllPostsSlugs, getPostBySlug } from '@/modules/posts/graphql/posts';
+import { getAllPostsSlugs, getPostBySlug, getPreviewPostBySlug } from '@/modules/posts/graphql/posts';
 import ContentArticle from '@/common/components/ContentArticle';
 import Author from '@/common/components/Author';
 import PostDate from '@/common/components/Date';
@@ -55,7 +55,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<Props, Params> = async (context) => {
 	const { slug } = context.params as Params;
-	const post = await getPostBySlug(slug);
+	const post = await (context.preview ? getPreviewPostBySlug(slug) : getPostBySlug(slug));
 
 	if (!post) {
 		return {

@@ -4,7 +4,7 @@ import ImageCard from '@/common/components/ImageCard';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { ParsedUrlQuery } from 'querystring';
 import { serialize } from 'next-mdx-remote/serialize';
-import { getAllArchivesSlugs, getArchiveBySlug } from '@/modules/archives/graphql/archives';
+import { getAllArchivesSlugs, getArchiveBySlug, getPreviewArchiveBySlug } from '@/modules/archives/graphql/archives';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { IBook } from '@/modules/archives/models/books';
 import ContentArticle from '@/common/components/ContentArticle';
@@ -37,7 +37,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<Props, Params> = async (context) => {
 	const { slug } = context.params as Params;
-	const archive = await getArchiveBySlug(slug);
+	const archive = await (context.preview ? getPreviewArchiveBySlug(slug) : getArchiveBySlug(slug));
 
 	const { content } = archive;
 	const mdxSource = await serialize(content);
