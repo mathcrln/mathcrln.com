@@ -4,13 +4,21 @@ import ImageCard from '@/common/components/ImageCard';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { ParsedUrlQuery } from 'querystring';
 import { serialize } from 'next-mdx-remote/serialize';
-import { getAllArchivesSlugs, getArchiveBySlug, getPreviewArchiveBySlug } from '@/modules/archives/graphql/archives';
+import {
+	getAllArchivesSlugs,
+	getArchiveBySlug,
+	getPreviewArchiveBySlug,
+	getArchivesCards,
+} from '@/modules/archives/graphql/archives';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { IBook } from '@/modules/archives/models/books';
 import ContentArticle from '@/common/components/ContentArticle';
 import AuthorDate from '@/common/components/AuthorDate';
+import React from 'react';
+import BookCard from '@/archives/components/BookCard';
+import { HR } from '@/common/components/MDXElements';
 
-export default function ArchivePage({ archive, source }: Props): JSX.Element {
+export default function ArchivePage({ archive, source, suggestions }: Props): JSX.Element {
 	return (
 		<Page title={archive.name} image={archive.cover.url} description={archive.description}>
 			<header className='grid md:grid-cols-[1fr,2fr] gap-10 items-center'>
@@ -22,6 +30,17 @@ export default function ArchivePage({ archive, source }: Props): JSX.Element {
 				</PageHeader>
 			</header>
 			<ContentArticle source={source} />
+			<HR />
+			{suggestions.length && (
+				<section>
+					<h2 className='font-bold text-3xl mb-10'>More like that...</h2>
+					<div className='grid grid-cols-2 md:grid-cols-5 gap-10'>
+						{suggestions.map((book) => (
+							<BookCard key={book.name} book={book} />
+						))}
+					</div>
+				</section>
+			)}
 		</Page>
 	);
 }
@@ -42,11 +61,12 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 	const { content } = archive;
 	const mdxSource = await serialize(content);
 
+	const suggestions = await getArchivesCards(5, { slug });
+
 	return {
 		props: {
-			archive: {
-				...archive,
-			},
+			archive,
+			suggestions,
 			source: mdxSource,
 
 			revalidate: 1,
@@ -56,6 +76,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 
 type Props = {
 	archive: IBook;
+	suggestions: IBook[];
 	source: MDXRemoteSerializeResult;
 };
 

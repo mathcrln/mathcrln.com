@@ -6,14 +6,14 @@ import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import relativeDate from 'relative-date';
 import Page from '@/layout/Page';
-import { IPost } from '@/modules/posts/components/PostCard';
+import PostCard, { IPost } from '@/modules/posts/components/PostCard';
 import PageHeader from '@/common/components/PageHeader';
-import { getAllPostsSlugs, getPostBySlug, getPreviewPostBySlug } from '@/modules/posts/graphql/posts';
+import { getAllPostsSlugs, getPostBySlug, getPostsCards, getPreviewPostBySlug } from '@/modules/posts/graphql/posts';
 import ContentArticle from '@/common/components/ContentArticle';
 import Author from '@/common/components/Author';
 import PostDate from '@/common/components/Date';
 
-export default function Post({ post, source }: Props): JSX.Element {
+export default function Post({ post, source, suggestions }: Props): JSX.Element {
 	return (
 		<Page title={post ? post?.title : ''} image={post?.cover?.url} description={post ? post?.excerpt : ''}>
 			<section>
@@ -37,6 +37,16 @@ export default function Post({ post, source }: Props): JSX.Element {
 								</p>
 							)}
 						</ContentArticle>
+						{suggestions.length && (
+							<section className='my-10'>
+								<h2 className='font-bold text-3xl mb-10'>More like that...</h2>
+								<div className='grid md:grid-cols-2 lg:grid-cols-2 gap-10'>
+									{suggestions.map((suggested) => (
+										<PostCard post={suggested} key={suggested.slug} />
+									))}
+								</div>
+							</section>
+						)}
 					</div>
 				)}
 			</section>
@@ -73,6 +83,8 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 			},
 		}));
 
+	const suggestions = await getPostsCards(2, { slug });
+
 	return {
 		props: {
 			post: {
@@ -80,6 +92,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 				publishDate: post?.date || null,
 			},
 			source,
+			suggestions,
 		},
 		revalidate: 60,
 	};
@@ -87,6 +100,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 
 type Props = {
 	post: IPost;
+	suggestions: IPost[];
 	source: MDXRemoteSerializeResult;
 };
 
