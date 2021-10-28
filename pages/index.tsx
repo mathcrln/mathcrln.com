@@ -39,11 +39,7 @@ export default function Home({
 			<section className='my-24'>
 				<div className='flex justify-between items-center'>
 					<h2 className='text-3xl font-extrabold'>Recent posts</h2>
-
-					<CustomLink href='/blog' className='inline-block group'>
-						<span>Browse all posts</span>
-						<ArrowRight className='transform group-hover:-rotate-45 duration-200 inline ease-in-out' />
-					</CustomLink>
+					<SeeMoreButton text='Browse all posts' href='/blog' />
 				</div>
 				<p className='mt-2 mb-10 text-gray-600 dark:text-gray-300'>On design, code and creativity.</p>
 				<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10'>
@@ -55,10 +51,7 @@ export default function Home({
 					<h2 className='text-3xl font-extrabold' id='projects'>
 						Projects & Experiments
 					</h2>
-					<CustomLink href='/projects' className='inline-block group'>
-						<span>Browse all projects</span>
-						<ArrowRight className='transform group-hover:-rotate-45 duration-200 inline ease-in-out' />
-					</CustomLink>
+					<SeeMoreButton text='Browse all projects' href='/projects' />
 				</div>
 				<p className='mt-2 mb-10 text-gray-600 dark:text-gray-300'>
 					Here are some of the projects I had fun with lately.
@@ -80,7 +73,10 @@ export default function Home({
 			</aside>
 
 			<section className='my-16'>
-				<h2 className='text-3xl font-extrabold'>Library</h2>
+				<div className='flex justify-between items-center'>
+					<h2 className='text-3xl font-extrabold'>Library</h2>
+					<SeeMoreButton text='Browse all books' href='/library' />
+				</div>
 				<p className='mt-2 mb-10 text-gray-600 dark:text-gray-300'>Here are some books I recently loved.</p>
 				<div className='grid grid-cols-2 md:grid-cols-4 gap-10'>
 					{books.length ? (
@@ -108,3 +104,12 @@ export const getStaticProps: GetStaticProps = async () => {
 		revalidate: 60,
 	};
 };
+
+function SeeMoreButton({ text, href }: { text: string; href: string }): JSX.Element {
+	return (
+		<CustomLink href={href} className='inline-block group'>
+			<span>{text}</span>
+			<ArrowRight className='transform group-hover:-rotate-45 duration-200 inline ease-in-out' />
+		</CustomLink>
+	);
+}
