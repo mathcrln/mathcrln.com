@@ -68,8 +68,8 @@ const getAllArchivesSlugs = async (): Promise<Array<string>> => {
 };
 
 const GET_ARCHIVES_CARDS = gql`
-	query Query($archivesOrderBy: ArchiveOrderByInput, $archivesFirst: Int) {
-		archives(orderBy: $archivesOrderBy, first: $archivesFirst) {
+	query Query($archivesOrderBy: ArchiveOrderByInput, $archivesFirst: Int, $exceptSlug: String) {
+		archives(orderBy: $archivesOrderBy, first: $archivesFirst, where: { NOT: { slug: $exceptSlug } }) {
 			name
 			slug
 			description
@@ -85,7 +85,7 @@ const GET_ARCHIVES_CARDS = gql`
 	}
 `;
 
-const getArchivesCards = async (limit: number): Promise<Array<IBook>> => {
+const getArchivesCards = async (limit: number, except?: { slug?: string }): Promise<Array<IBook>> => {
 	let fetchedArchives = null;
 
 	try {
@@ -95,6 +95,7 @@ const getArchivesCards = async (limit: number): Promise<Array<IBook>> => {
 				variables: {
 					archivesFirst: limit,
 					archivesOrderBy: 'date_DESC',
+					exceptSlug: except?.slug ?? '',
 				},
 			})
 		).data;

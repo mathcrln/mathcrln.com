@@ -66,8 +66,8 @@ const getAllPostsSlugs = async (): Promise<Array<string>> => {
 };
 
 const GET_POSTS_CARDS = gql`
-	query Query($postsOrderBy: PostOrderByInput, $postsFirst: Int) {
-		posts(orderBy: $postsOrderBy, first: $postsFirst) {
+	query Query($postsOrderBy: PostOrderByInput, $postsFirst: Int, $exceptSlug: String) {
+		posts(orderBy: $postsOrderBy, first: $postsFirst, where: { NOT: { slug: $exceptSlug } }) {
 			title
 			slug
 			excerpt
@@ -78,7 +78,7 @@ const GET_POSTS_CARDS = gql`
 	}
 `;
 
-const getPostsCards = async (limit: number): Promise<Array<IPost>> => {
+const getPostsCards = async (limit: number, except?: { slug?: string }): Promise<Array<IPost>> => {
 	let fetchedPosts = null;
 
 	try {
@@ -88,6 +88,7 @@ const getPostsCards = async (limit: number): Promise<Array<IPost>> => {
 				variables: {
 					postsFirst: limit,
 					postsOrderBy: 'date_DESC',
+					exceptSlug: except?.slug ?? '',
 				},
 			})
 		).data;

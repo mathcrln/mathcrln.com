@@ -17,7 +17,7 @@ export default function Header(): JSX.Element {
 	};
 
 	return (
-		<header className='sticky top-0 bg-white dark:bg-darkGrey z-50 '>
+		<header className='sticky top-0 bg-white dark:bg-darkGrey z-50'>
 			<Container className='flex justify-between py-6 md:py-6 '>
 				<LogoLink href='/' className='w-8 hover:filter hover:brightness-90' />
 				<Navigation links={NAV_LINKS} isMobileNavOpen={mobileNavOpen} mobileHandler={handleMobileNavClose} />
