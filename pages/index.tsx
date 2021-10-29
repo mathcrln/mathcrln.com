@@ -37,8 +37,8 @@ export default function Home({
 			</PageHeader>
 
 			<section className='my-24'>
-				<div className='flex justify-between items-center'>
-					<h2 className='text-3xl font-extrabold'>Recent posts</h2>
+				<div className='flex flex-wrap justify-between items-center'>
+					<h2 className='text-2xl md:text-3xl font-extrabold'>Recent posts</h2>
 					<SeeMoreButton text='Browse all posts' href='/blog' />
 				</div>
 				<p className='mt-2 mb-10 text-gray-600 dark:text-gray-300'>On design, code and creativity.</p>
@@ -47,9 +47,9 @@ export default function Home({
 				</div>
 			</section>
 			<section className='my-32'>
-				<div className='flex justify-between items-center'>
-					<h2 className='text-3xl font-extrabold' id='projects'>
-						Projects & Experiments
+				<div className='flex flex-wrap gap-2 justify-between items-center'>
+					<h2 className='text-2xl md:text-3xl font-extrabold' id='projects'>
+						Latest projects
 					</h2>
 					<SeeMoreButton text='Browse all projects' href='/projects' />
 				</div>
@@ -73,8 +73,8 @@ export default function Home({
 			</aside>
 
 			<section className='my-16'>
-				<div className='flex justify-between items-center'>
-					<h2 className='text-3xl font-extrabold'>Library</h2>
+				<div className='flex flex-wrap justify-between items-center'>
+					<h2 className='text-2xl md:text-3xl font-extrabold'>Library</h2>
 					<SeeMoreButton text='Browse all books' href='/library' />
 				</div>
 				<p className='mt-2 mb-10 text-gray-600 dark:text-gray-300'>Here are some books I recently loved.</p>
