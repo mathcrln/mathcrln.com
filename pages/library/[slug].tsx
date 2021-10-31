@@ -16,7 +16,6 @@ import ContentArticle from '@/common/components/ContentArticle';
 import AuthorDate from '@/common/components/AuthorDate';
 import React from 'react';
 import BookCard from '@/archives/components/BookCard';
-import { HR } from '@/common/components/MDXElements';
 
 export default function ArchivePage({ archive, source, suggestions }: Props): JSX.Element {
 	return (
@@ -30,8 +29,8 @@ export default function ArchivePage({ archive, source, suggestions }: Props): JS
 				</PageHeader>
 			</header>
 			<ContentArticle source={source} />
-			<HR />
-			{suggestions.length && (
+
+			{suggestions.length ? (
 				<section>
 					<h2 className='font-bold text-3xl mb-10'>More like that...</h2>
 					<div className='grid grid-cols-2 md:grid-cols-5 gap-10'>
@@ -40,6 +39,8 @@ export default function ArchivePage({ archive, source, suggestions }: Props): JS
 						))}
 					</div>
 				</section>
+			) : (
+				''
 			)}
 		</Page>
 	);

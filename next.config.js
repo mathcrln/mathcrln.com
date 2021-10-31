@@ -37,6 +37,11 @@ module.exports = withMDX({
 				destination: '/library/:path',
 				permanent: true,
 			},
+			{
+				source: '/featured/:path',
+				destination: '/blog/:path',
+				permanent: true,
+			},
 		];
 	},
 });
