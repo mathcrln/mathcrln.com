@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import React, { ChangeEvent } from 'react';
 import Logo from '@/common/components/icons/Logo';
 import Sun from '@/common/components/icons/Sun';
 import Moon from '@/common/components/icons/Moon';
@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { FOOTER_LINKS } from '@/data/LINKS';
 import useDarkMode, { ThemeMode } from '@/common/hooks/useDarkMode';
 import Select from '@/common/components/elements/Select';
+import CustomLink from '@/common/components/elements/Link';
 import Container from './Container';
 
 export default function Footer({ className = '' }: { className?: string }): JSX.Element {
@@ -75,7 +76,13 @@ export default function Footer({ className = '' }: { className?: string }): JSX.
 					<Logo className='w-8 place-self-center' />
 				</div>
 				<div className='py-4 space-x-2 mt-4 grid md:grid-cols-3 gap-2 text-center md:text-left items-center justify-center'>
-					<p>© 2021, Jerry by @mathcrln</p>
+					<p>
+						© 2021, Jerry by <CustomLink href='https://twitter.com/mathcrln'>@mathcrln</CustomLink> |{' '}
+						<CustomLink href='/log' className='inline-block group'>
+							Changelog
+						</CustomLink>
+						.
+					</p>
 					<div />
 					<div className='flex space-x-2 text-center justify-center md:place-self-end'>
 						{/* <Select

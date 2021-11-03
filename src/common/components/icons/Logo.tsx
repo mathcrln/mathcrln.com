@@ -35,7 +35,3 @@ export function LogoLink({ href, className = '' }: { href: string; className?: s
 		</Link>
 	);
 }
-
-Logo.defaultProps = {
-	className: '',
-};
