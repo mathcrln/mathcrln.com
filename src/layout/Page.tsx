@@ -29,7 +29,7 @@ export default function Page({ children, className, seo }: IPage): JSX.Element {
 			<NextSeo
 				title={seo.slogan ? `${seo.title} — ${seo.slogan}` : `${seo.title} — Mathieu Céraline`}
 				description={seo.description || `Front-end developer, Designer, Writer, and student at Polytechnique Montréal`}
-				canonical={seo.canonical || `https://mathcrln.com${router.asPath}`}
+				canonical={seo.canonical}
 				noindex={seo.noindex}
 				nofollow={seo.nofollow}
 				openGraph={{
@@ -47,8 +47,8 @@ export default function Page({ children, className, seo }: IPage): JSX.Element {
 					url: `https://mathieuceraline.com${router.asPath}`,
 					type: seo.type || 'website',
 					article: {
-						publishedTime: seo.publishedTime || undefined,
-						modifiedTime: seo.modifiedTime || undefined,
+						publishedTime: seo.publishedTime,
+						modifiedTime: seo.modifiedTime,
 					},
 				}}
 			/>
