@@ -11,9 +11,11 @@ type ProjectsProps = { projects: IProjectCard[] };
 export default function Projects({ projects }: ProjectsProps): JSX.Element {
 	return (
 		<Page
-			title='Projects'
-			description="Here are all the projects I've been working on lately, in frontend development, software engineering, design, but not only."
-			image=''
+			seo={{
+				title: 'Projects',
+				description:
+					"Here are all the projects I've been working on lately, in frontend development, software engineering, design, but not only.",
+			}}
 		>
 			<PageHeader title='Projects'>
 				<p>

@@ -10,9 +10,10 @@ import { IProject } from '@/modules/projects/models/projects';
 export default function ProjectPage({ project, source }: ProjectProps): JSX.Element {
 	return (
 		<Page
-			title={project ? project.name : 'Project'}
-			description={project ? project.description : 'Here is a fun project I played with.'}
-			image=''
+			seo={{
+				title: project ? project.name : 'Project',
+				description: project ? project.description : 'Here is a fun project I played with.',
+			}}
 		>
 			{!project && <p className='my-14 relative'>Seems like no project with this name has been found</p>}
 			{project && <SingleProjectLayout project={project} source={source} />}
