@@ -11,7 +11,12 @@ export default function WaitingPage({
 	description?: string;
 }): JSX.Element {
 	return (
-		<Page title={title} description={description}>
+		<Page
+			seo={{
+				title,
+				description,
+			}}
+		>
 			<PageHeader title='Work in progres... 🧰' centered>
 				<p>I'm still working on this page, what if you came back later?</p>
 			</PageHeader>

@@ -6,7 +6,13 @@ import Page from '@/layout/Page';
 
 export default function About(): JSX.Element {
 	return (
-		<Page title='About' description=''>
+		<Page
+			seo={{
+				title: 'About',
+				description:
+					'If you and I are to become friends, I guess it’s about time I introduce myself. Get to know more about me .',
+			}}
+		>
 			<PageHeader title='Who am I?'>
 				<span>
 					If you and I are to become friends, <br className='hidden md:inline' />I guess it’s about time I introduce

@@ -7,7 +7,12 @@ import { IBook } from '@/modules/archives/models/books';
 
 export default function Library({ archives }: { archives: IBook[] }): JSX.Element {
 	return (
-		<Page title='Library'>
+		<Page
+			seo={{
+				title: 'Library',
+				description: 'Here are some books I recently loved.',
+			}}
+		>
 			<PageHeader title='Library'>
 				<p>Here are some of the books I have enjoyed and learned from lately.</p>
 			</PageHeader>

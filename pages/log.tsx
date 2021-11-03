@@ -5,8 +5,10 @@ import React from 'react';
 export default function ChangeLog(): JSX.Element {
 	return (
 		<Page
-			title='Changelog'
-			description='Changelog of all new and updated features and developments on this personal website.'
+			seo={{
+				title: 'Changelog',
+				description: 'Changelog of all new and updated features and developments on this personal website.',
+			}}
 		>
 			<PageHeader title='Changelog'>
 				<p>Here is what changed around my personal website lately.</p>

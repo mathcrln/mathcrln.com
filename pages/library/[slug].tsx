@@ -19,7 +19,13 @@ import BookCard from '@/archives/components/BookCard';
 
 export default function ArchivePage({ archive, source, suggestions }: Props): JSX.Element {
 	return (
-		<Page title={archive.name} image={archive.cover.url} description={archive.description}>
+		<Page
+			seo={{
+				title: `${archive.name} by ${archive.author}`,
+				image: archive.cover.url,
+				description: archive.description,
+			}}
+		>
 			<header className='grid md:grid-cols-[1fr,2fr] gap-10 items-center'>
 				<ImageCard cover={archive.cover} height={375} width={248} className='h-initial place-self-center' />
 				<PageHeader title={archive.name}>

@@ -24,9 +24,11 @@ export default function Home({
 }): JSX.Element {
 	return (
 		<Page
-			title='Mathieu Céraline'
-			slogan='Frontend Web Developer, designer, writer.'
-			description='Frontend Web Developer, designer, writer.'
+			seo={{
+				title: 'Mathieu Céraline',
+				slogan: 'Frontend Web Developer, designer, writer.',
+				description: "I'm a Front-End Web Developer and Software Engineering Student at Polytechnique Montréal.",
+			}}
 		>
 			<PageHeader title='Hello, I’m Mathieu Céraline 👋🏾'>
 				<p>

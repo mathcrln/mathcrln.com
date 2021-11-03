@@ -1,30 +1,57 @@
+import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/dist/client/router';
-import SEO, { CustomMeta } from '@/common/components/Seo';
 import Container from './Container';
 
-type IPage = CustomMeta & {
+type SEO = {
+	title: string;
+	slogan?: string;
+	description?: string;
+	image?: string;
+	date?: string;
+	type?: string;
+	canonical?: string;
+	noindex?: boolean;
+	nofollow?: boolean;
+	publishedTime?: string;
+	modifiedTime?: string;
+};
+type IPage = {
 	children: JSX.Element | JSX.Element[] | React.ReactNode;
 	className?: string;
+	seo: SEO;
 };
 
-export default function Page({ children, className, title, slogan, description, image, type }: IPage): JSX.Element {
+export default function Page({ children, className, seo }: IPage): JSX.Element {
 	const router = useRouter();
-
-	const meta = {
-		title: slogan ? `${title} — ${slogan}` : `${title} — Mathieu Céraline`,
-		description: description || `Front-end developer, Designer, Writer, and student at Polytechnique Montréal`,
-		image: image || 'https://mathcrln.com/static/images/banner.png',
-		type: type || 'website',
-		favicon: '/favicon.ico',
-		url: `https://mathcrln.com${router.asPath}`,
-		date: '',
-		robots: 'noindex, nofollow',
-		twitter: '@mathcrln',
-	};
 
 	return (
 		<main id='content' role='main'>
-			<SEO meta={meta} />
+			<NextSeo
+				title={seo.slogan ? `${seo.title} — ${seo.slogan}` : `${seo.title} — Mathieu Céraline`}
+				description={seo.description || `Front-end developer, Designer, Writer, and student at Polytechnique Montréal`}
+				canonical={seo.canonical || `https://mathcrln.com${router.asPath}`}
+				noindex={seo.noindex}
+				nofollow={seo.nofollow}
+				openGraph={{
+					title: seo.title,
+					description: seo.description,
+					images: [
+						{
+							url: seo.image || '/mathieu.jpg',
+							width: 800,
+							height: 600,
+							alt: '',
+							type: 'image/jpeg',
+						},
+					],
+					url: `https://mathieuceraline.com${router.asPath}`,
+					type: seo.type || 'website',
+					article: {
+						publishedTime: seo.publishedTime || undefined,
+						modifiedTime: seo.modifiedTime || undefined,
+					},
+				}}
+			/>
 			<Container className={`my-14 ${className || ''}`}>{children}</Container>
 		</main>
 	);

@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app';
 import { MDXProvider } from '@mdx-js/react';
+import { DefaultSeo } from 'next-seo';
 import { useRouter } from 'next/router';
 import { H2, H3, H4, H5, H6, P, UL, LI, OL, HR, IMG, BLOCKQUOTE } from '@/common/components/MDXElements';
 import Footer from '@/layout/Footer';
@@ -8,6 +9,7 @@ import CustomLink from '@/common/components/elements/Link';
 import '@/styles/globals.css';
 import { useEffect } from 'react';
 import * as gAnalytics from '@/lib/google-analytics';
+import SEO from '@/lib/next-seo.config';
 
 const components = {
 	h2: H2,
@@ -40,6 +42,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 
 	return (
 		<MDXProvider components={components}>
+			<DefaultSeo {...SEO} />
 			<Header />
 			<Component {...pageProps} />
 			<Footer className='mt-auto' />

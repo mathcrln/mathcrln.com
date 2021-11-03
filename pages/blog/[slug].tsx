@@ -15,7 +15,14 @@ import PostDate from '@/common/components/Date';
 
 export default function Post({ post, source, suggestions }: Props): JSX.Element {
 	return (
-		<Page title={post ? post?.title : ''} image={post?.cover?.url} description={post ? post?.excerpt : ''}>
+		<Page
+			seo={{
+				title: post?.title || '',
+				image: post?.cover?.url,
+				description: post?.excerpt || '',
+				publishedTime: post?.date || undefined,
+			}}
+		>
 			<section>
 				{!post && <p className='my-14 relative'>Seems like no post with this name has been found</p>}
 				{post && (

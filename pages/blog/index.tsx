@@ -6,8 +6,13 @@ import PostCard, { IPost } from '@/modules/posts/components/PostCard';
 
 export default function Articles({ posts }: { posts: IPost[] }): JSX.Element {
 	return (
-		<Page title='Blog'>
-			<PageHeader title='Articles' className='mb-20'>
+		<Page
+			seo={{
+				title: 'Blog',
+				description: 'All my posts on web development, productivity, self-help and creativity.',
+			}}
+		>
+			<PageHeader title='Blog' className='mb-20'>
 				<p>Sharing ideas and discoveries in a few words</p>
 			</PageHeader>
 			<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10 '>
