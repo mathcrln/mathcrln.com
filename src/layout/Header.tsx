@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LogoBetaLink } from '@/common/components/icons/LogoBeta';
+import { LogoLink } from '@/common/components/icons/Logo';
 import MenuIcon from '@/common/components/icons/MenuIcon';
 import { NAV_LINKS } from '@/data/LINKS';
 import Navigation from './Navigation';
@@ -19,7 +19,7 @@ export default function Header(): JSX.Element {
 	return (
 		<header className='sticky top-0 bg-white dark:bg-darkGrey z-50'>
 			<Container className='flex justify-between py-6 md:py-6 '>
-				<LogoBetaLink href='/' className='w-24 hover:filter hover:brightness-90' />
+				<LogoLink href='/' className='w-24 hover:filter hover:brightness-90' />
 				<Navigation links={NAV_LINKS} isMobileNavOpen={mobileNavOpen} mobileHandler={handleMobileNavClose} />
 				<MenuIcon handleOpenMenu={handleOpenMenu} menuOpen={mobileNavOpen} />
 			</Container>

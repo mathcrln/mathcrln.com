@@ -12,7 +12,7 @@ export default function MenuIcon({ menuOpen, handleOpenMenu }: MenuIconProps): J
 	};
 
 	return (
-		<button type='button' className='md:hidden' onClick={handleOpenMenu}>
+		<button type='button' className='md:hidden' aria-label='Open Mobile Menu' onClick={handleOpenMenu}>
 			<span className={`${common} ${menuOpen ? transition.line1 : ''}`} />
 			<span className={`${common} ${menuOpen ? transition.line2 : ''}`} />
 		</button>

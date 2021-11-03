@@ -16,14 +16,14 @@ export default function PostCard({ post }: { post: IPost }): JSX.Element {
 	return (
 		<div>
 			<Link href={`/blog/${post.slug}`} passHref>
-				<a>
+				<a title={post.title}>
 					<ImageCard cover={post.cover} tags={post.tags} className='h-64' />
 				</a>
 			</Link>
 			<h3 className='font-bold mt-4 text-xl  hover:text-primary-light dark:hover:text-primary-dark'>
 				<Link href={`/blog/${post.slug}`}>{post.title}</Link>
 			</h3>
-			<p className='text-lg text-gray-600 dark:text-gray-500 mt-2 '>{post.excerpt}</p>
+			<p className='text-lg text-gray-600 dark:text-gray-400 mt-2 '>{post.excerpt}</p>
 		</div>
 	);
 }
