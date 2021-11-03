@@ -1,10 +1,13 @@
 import type { AppProps } from 'next/app';
-import '@/styles/globals.css';
 import { MDXProvider } from '@mdx-js/react';
+import { useRouter } from 'next/router';
 import { H2, H3, H4, H5, H6, P, UL, LI, OL, HR, IMG, BLOCKQUOTE } from '@/common/components/MDXElements';
 import Footer from '@/layout/Footer';
 import Header from '@/layout/Header';
 import CustomLink from '@/common/components/elements/Link';
+import '@/styles/globals.css';
+import { useEffect } from 'react';
+import * as gAnalytics from '@/lib/google-analytics';
 
 const components = {
 	h2: H2,
@@ -23,6 +26,18 @@ const components = {
 };
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+	const router = useRouter();
+
+	useEffect(() => {
+		const handleRouteChange = (url: URL) => {
+			gAnalytics.pageview(url);
+		};
+		router.events.on('routeChangeComplete', handleRouteChange);
+		return () => {
+			router.events.off('routeChangeComplete', handleRouteChange);
+		};
+	}, [router.events]);
+
 	return (
 		<MDXProvider components={components}>
 			<Header />

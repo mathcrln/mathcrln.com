@@ -20,7 +20,6 @@
 			"@/components/*": ["./src/components/*"],
 			"@/data/*": ["./src/data/*"],
 			"@/layout/*": ["./src/layout/*"],
-			"@/graphql/*": ["src/lib/*"],
 			"@/posts/*": ["src/modules/posts/*"],
 			"@/projects/*": ["src/modules/projects/*"],
 			"@/archives/*": ["src/modules/archives/*"],
