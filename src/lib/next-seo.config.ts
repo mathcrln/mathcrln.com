@@ -7,6 +7,15 @@ const SEO = {
 		locale: 'en_US',
 		url: 'https://mathieuceraline.com',
 		site_name: 'Mathieu Céraline',
+		images: [
+			{
+				url: 'https://mathieuceraline.com/mathieu.jpg',
+				width: 800,
+				height: 600,
+				alt: '',
+				type: 'image/jpeg',
+			},
+		],
 	},
 	twitter: {
 		handle: '@mathcrln',

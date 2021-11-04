@@ -1,5 +1,5 @@
 import { NextSeo } from 'next-seo';
-import { useRouter } from 'next/dist/client/router';
+// import { useRouter } from 'next/dist/client/router';
 import Container from './Container';
 
 type SEO = {
@@ -22,29 +22,30 @@ type IPage = {
 };
 
 export default function Page({ children, className, seo }: IPage): JSX.Element {
-	const router = useRouter();
-
+	// const router = useRouter();
+	const pageTitle = seo.slogan ? `${seo.title} — ${seo.slogan}` : `${seo.title} — Mathieu Céraline`;
+	const pageDescription = seo.description || `Front-end developer, Designer, Writer, and student at Polytechnique Montréal`;
 	return (
 		<main id='content' role='main'>
 			<NextSeo
-				title={seo.slogan ? `${seo.title} — ${seo.slogan}` : `${seo.title} — Mathieu Céraline`}
-				description={seo.description || `Front-end developer, Designer, Writer, and student at Polytechnique Montréal`}
+				title={pageTitle}
+				description={pageDescription}
 				canonical={seo.canonical}
 				noindex={seo.noindex}
 				nofollow={seo.nofollow}
 				openGraph={{
-					title: seo.title,
-					description: seo.description,
+					title: pageTitle,
+					description: pageDescription,
 					images: [
 						{
-							url: seo.image || '/mathieu.jpg',
+							url: seo.image || 'https://mathieuceraline.com/mathieu.jpg',
 							width: 800,
 							height: 600,
-							alt: '',
+							alt: seo.title || 'Mathieu Céraline',
 							type: 'image/jpeg',
 						},
 					],
-					url: `https://mathieuceraline.com${router.asPath}`,
+					// url: `https://mathieuceraline.com${router.asPath}`,
 					type: seo.type || 'website',
 					article: {
 						publishedTime: seo.publishedTime,
