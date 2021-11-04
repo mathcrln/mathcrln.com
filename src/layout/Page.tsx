@@ -48,9 +48,13 @@ export default function Page({ children, className, seo }: IPage): JSX.Element {
 					// url: `https://mathieuceraline.com${router.asPath}`,
 					type: seo.type || 'website',
 					article: {
+						authors: ['Mathieu Céraline'],
 						publishedTime: seo.publishedTime,
 						modifiedTime: seo.modifiedTime,
 					},
+				}}
+				twitter={{
+					cardType: 'summary_large_image',
 				}}
 			/>
 			<Container className={`my-14 ${className || ''}`}>{children}</Container>

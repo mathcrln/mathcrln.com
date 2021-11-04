@@ -20,7 +20,9 @@ export default function Post({ post, source, suggestions }: Props): JSX.Element 
 				title: post?.title || '',
 				image: post?.cover?.url,
 				description: post?.excerpt || '',
+				type: 'article',
 				publishedTime: post?.date || undefined,
+				modifiedTime: post?.updatedAt || undefined,
 			}}
 		>
 			<section>

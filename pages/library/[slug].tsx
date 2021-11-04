@@ -23,6 +23,7 @@ export default function ArchivePage({ archive, source, suggestions }: Props): JS
 			seo={{
 				title: `${archive.name} by ${archive.author}`,
 				image: archive.cover.url,
+				type: 'article',
 				description: archive.description,
 			}}
 		>

@@ -9,6 +9,7 @@ export type IPost = {
 	excerpt: string;
 	date: string;
 	tags: { name: string; icon: string }[];
+	publishedAt: string;
 	updatedAt: string;
 };
 
