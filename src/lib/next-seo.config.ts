@@ -5,7 +5,6 @@ const SEO = {
 	openGraph: {
 		type: 'website',
 		locale: 'en_US',
-		url: 'https://mathieuceraline.com',
 		site_name: 'Mathieu Céraline',
 		images: [
 			{
