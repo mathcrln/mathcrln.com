@@ -1,4 +1,4 @@
-import { GA_TRACKING_ID } from '@/lib/google-analytics';
+import { GA_TRACKING_ID } from 'lib/google-analytics';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {

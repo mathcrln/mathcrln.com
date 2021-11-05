@@ -1,4 +1,4 @@
-import WaitingPage from '@/common/components/WaitingPage';
+import WaitingPage from 'components/WaitingPage';
 
 export default function Resume(): JSX.Element {
 	return <WaitingPage title='Resume' />;

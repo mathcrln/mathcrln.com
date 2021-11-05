@@ -1,17 +1,17 @@
 import mdxPrism from 'mdx-prism';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
-import ImageCard from '@/common/components/ImageCard';
+import ImageCard from 'components/ImageCard';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import relativeDate from 'relative-date';
-import Page from '@/layout/Page';
-import PostCard, { IPost } from '@/modules/posts/components/PostCard';
-import PageHeader from '@/common/components/PageHeader';
-import { getAllPostsSlugs, getPostBySlug, getPostsCards, getPreviewPostBySlug } from '@/modules/posts/graphql/posts';
-import ContentArticle from '@/common/components/ContentArticle';
-import Author from '@/common/components/Author';
-import PostDate from '@/common/components/Date';
+import Page from 'components/layout/Page';
+import PostCard, { IPost } from 'features/posts/components/PostCard';
+import PageHeader from 'components/PageHeader';
+import { getAllPostsSlugs, getPostBySlug, getPostsCards, getPreviewPostBySlug } from 'features/posts/graphql/posts';
+import ContentArticle from 'components/ContentArticle';
+import Author from 'components/Author';
+import PostDate from 'components/Date';
 
 export default function Post({ post, source, suggestions }: Props): JSX.Element {
 	return (

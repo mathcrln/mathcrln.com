@@ -1,4 +1,4 @@
-import WaitingPage from '@/common/components/WaitingPage';
+import WaitingPage from 'components/WaitingPage';
 
 export default function Now(): JSX.Element {
 	return <WaitingPage title='Now' />;

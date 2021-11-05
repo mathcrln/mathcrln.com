@@ -1,5 +1,5 @@
-import PageHeader from 'src/common/components/PageHeader';
-import Page from '@/layout/Page';
+import PageHeader from 'components/PageHeader';
+import Page from '@/components/layout/Page';
 import React from 'react';
 
 export default function ChangeLog(): JSX.Element {

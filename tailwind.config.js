@@ -4,11 +4,10 @@ module.exports = {
 	mode: 'jit',
 	purge: [
 		'pages/**/*.{js,ts,jsx,tsx}',
-		'src/components/**/*.{js,ts,jsx,tsx}',
-		'src/layout/**/*.{js,ts,jsx,tsx}',
-		'src/common/**/*.{js,ts,jsx,tsx}',
-		'src/modules/**/*.{js,ts,jsx,tsx}',
-		'src/styles/**/*.{scss, css}',
+		'components/**/*.{js,ts,jsx,tsx}',
+		'components/layout/**/*.{js,ts,jsx,tsx}',
+		'features/**/*.{js,ts,jsx,tsx}',
+		'styles/**/*.{scss, css}',
 	],
 	darkMode: 'class',
 	theme: {

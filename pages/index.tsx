@@ -1,17 +1,17 @@
 import { GetStaticProps } from 'next';
-import PageHeader from 'src/common/components/PageHeader';
-import Page from '@/layout/Page';
-import PostCard, { IPost } from '@/modules/posts/components/PostCard';
-import { getPostsCards } from '@/modules/posts/graphql/posts';
-import { getProjectsCards } from '@/modules/projects/graphql/projects';
-import { IProject } from '@/modules/projects/models/projects';
+import PageHeader from 'components/PageHeader';
+import Page from '@/components/layout/Page';
+import PostCard, { IPost } from 'features/posts/components/PostCard';
+import { getPostsCards } from 'features/posts/graphql/posts';
+import { getProjectsCards } from 'features/projects/graphql/projects';
+import { IProject } from 'features/projects/models/projects';
 import React from 'react';
-import { IBookCard } from '@/modules/archives/models/books';
-import BookCard from '@/modules/archives/components/BookCard';
-import { getArchivesCards } from '@/modules/archives/graphql/archives';
-import ProjectCard from '@/modules/projects/components/ProjectCard';
-import CustomLink from '@/common/components/elements/Link';
-import ArrowRight from '@/common/components/icons/ArrowRight';
+import { IBookCard } from 'features/archives/models/books';
+import BookCard from 'features/archives/components/BookCard';
+import { getArchivesCards } from 'features/archives/graphql/archives';
+import ProjectCard from 'features/projects/components/ProjectCard';
+import CustomLink from 'components/elements/Link';
+import ArrowRight from 'components/icons/ArrowRight';
 
 export default function Home({
 	posts,

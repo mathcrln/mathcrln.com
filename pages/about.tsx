@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import mathieu from '@/public/mathieu.jpg';
 import martinique from '@/public/martinique.jpg';
-import PageHeader from 'src/common/components/PageHeader';
-import Page from '@/layout/Page';
+import PageHeader from 'components/PageHeader';
+import Page from '@/components/layout/Page';
 
 export default function About(): JSX.Element {
 	return (

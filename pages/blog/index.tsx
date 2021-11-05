@@ -1,8 +1,8 @@
-import PageHeader from '@/common/components/PageHeader';
+import PageHeader from 'components/PageHeader';
 import { GetStaticProps } from 'next';
-import { getPostsCards } from '@/modules/posts/graphql/posts';
-import Page from '@/layout/Page';
-import PostCard, { IPost } from '@/modules/posts/components/PostCard';
+import { getPostsCards } from 'features/posts/graphql/posts';
+import Page from '@/components/layout/Page';
+import PostCard, { IPost } from 'features/posts/components/PostCard';
 
 export default function Articles({ posts }: { posts: IPost[] }): JSX.Element {
 	return (
