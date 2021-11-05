@@ -1,28 +1,21 @@
-import Link from 'next/link';
-import ImageCard from 'components/ImageCard';
-import { IBookCard } from '../models/books';
+import CardText from '@/components/Cards/CardText';
+import { BookCoverLink } from './BookCover';
 
-type Props = {
-	book: IBookCard;
-};
-
-export default function BookCard({ book }: Props): JSX.Element {
-	const { name, author, cover, slug } = book;
-	const url = `/library/${slug}`;
-
+export default function BookCard({
+	coverSrc,
+	title = '',
+	author = '',
+	url = '#',
+}: {
+	title: string;
+	author: string;
+	coverSrc: string;
+	url: string;
+}): JSX.Element {
 	return (
 		<div className='flex flex-col items-start  max-w-max h-full'>
-			<Link href={url} passHref>
-				<a title={`${name} by ${author}`}>
-					<ImageCard cover={cover} height={454} width={301} className='h-initial' />
-				</a>
-			</Link>
-			<Link href={url} passHref>
-				<a>
-					<h3 className='mt-5 font-bold text-md hover:text-primary-light dark:hover:text-primary-dark'>{name}</h3>
-				</a>
-			</Link>
-			<p>{author}</p>
+			<BookCoverLink title={title} coverSrc={coverSrc} author={author} url={url} />
+			<CardText title={title} details={author} url={url} options={{ titleSize: 'lg' }} />
 		</div>
 	);
 }

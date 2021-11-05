@@ -16,7 +16,7 @@ export default function ProjectLayout({ project, source }: ProjectProps): JSX.El
 	return (
 		<div className='my-14 relative'>
 			<div className='grid lg:grid-cols-[2fr,2fr] gap-10 mb-20'>
-				<ImageCard cover={project.cover} className='h-80' />
+				<ImageCard src={project.cover.url} className='h-80' />
 
 				<div>
 					<div className='mb-10 flex items-center justify-between flex-wrap'>

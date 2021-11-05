@@ -18,11 +18,10 @@
 			"@/pages/*": ["pages/*"],
 			"@/components/*": ["components/*"],
 			"@/data/*": ["data/*"],
-			"@/posts/*": ["features/posts/*"],
+			"@/blog/*": ["features/blog/*"],
 			"@/projects/*": ["features/projects/*"],
 			"@/archives/*": ["features/archives/*"],
 			"@/styles/*": ["styles/*"],
-			"@/types/*": ["./src/types/*"],
 			"@/public/*": ["public/*"]
 		}
 	},

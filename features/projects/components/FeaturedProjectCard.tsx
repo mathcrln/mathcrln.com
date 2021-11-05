@@ -8,7 +8,7 @@ export default function FeaturedProjectCard({ project }: { project: IProjectCard
 		<article className='grid lg:grid-cols-[2fr,1fr] gap-10'>
 			<Link href={`/projects/${project.slug}`} passHref>
 				<a>
-					<ImageCard cover={project.cover} className='h-80' />
+					<ImageCard src={project.cover.url} className='h-80' />
 				</a>
 			</Link>
 			<ProjectMetadata project={project} className='' />

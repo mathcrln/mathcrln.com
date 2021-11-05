@@ -1,8 +1,8 @@
 import { GetStaticProps } from 'next';
 import PageHeader from 'components/PageHeader';
 import Page from '@/components/layout/Page';
-import PostCard, { IPost } from 'features/posts/components/PostCard';
-import { getPostsCards } from 'features/posts/graphql/posts';
+import PostCard, { IPost } from 'features/blog/components/PostCard';
+import { getPostsCards } from 'features/blog/graphql/posts';
 import { getProjectsCards } from 'features/projects/graphql/projects';
 import { IProject } from 'features/projects/models/projects';
 import React from 'react';
@@ -82,7 +82,15 @@ export default function Home({
 				<p className='mt-2 mb-10 text-gray-600 dark:text-gray-300'>Here are some books I recently loved.</p>
 				<div className='grid grid-cols-2 md:grid-cols-4 gap-10'>
 					{books.length ? (
-						books.map((book) => <BookCard key={book.name} book={book} />)
+						books.map((book) => (
+							<BookCard
+								key={book.name}
+								coverSrc={book.cover.url}
+								title={book.name}
+								author={book.author}
+								url={`/library/${book.slug}`}
+							/>
+						))
 					) : (
 						<p>No book has been found.</p>
 					)}

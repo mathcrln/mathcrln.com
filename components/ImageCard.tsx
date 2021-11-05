@@ -1,13 +1,13 @@
 import Image from 'next/dist/client/image';
 
 export default function ImageCard({
-	cover,
+	src,
 	className = 'h-64',
 	height,
 	width,
 	tags = [],
 }: {
-	cover: { url: string };
+	src: string;
 	className?: string;
 	height?: number;
 	width?: number;
@@ -19,7 +19,7 @@ export default function ImageCard({
 		>
 			{!height && !width && (
 				<Image
-					src={cover?.url}
+					src={src}
 					alt=''
 					layout='fill'
 					objectFit='cover'
@@ -31,7 +31,7 @@ export default function ImageCard({
 
 			{height && width && (
 				<Image
-					src={cover?.url}
+					src={src}
 					alt=''
 					height={height}
 					width={width}

@@ -1,5 +1,4 @@
-import isInternalLink from 'utils/isInternalLink';
-import NextLink from 'next/dist/client/link';
+import LinkWrapper from './LinkWrapper';
 
 export default function CustomLink({
 	className = '',
@@ -11,15 +10,10 @@ export default function CustomLink({
 	children: JSX.Element | React.ReactNode | string;
 }): JSX.Element {
 	const styles = 'font-medium text-primary-light dark:text-primary-dark hover:underline';
-	if (isInternalLink(href))
-		return (
-			<NextLink href={href} passHref>
-				<a className={`${styles} ${className}`}>{children}</a>
-			</NextLink>
-		);
+
 	return (
-		<a href={href} title='title' target='_blank' rel='noreferrer' className={`${styles} ${className}`}>
+		<LinkWrapper href={href} className={`${styles} ${className}`}>
 			{children}
-		</a>
+		</LinkWrapper>
 	);
 }

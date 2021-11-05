@@ -6,9 +6,9 @@ import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import relativeDate from 'relative-date';
 import Page from 'components/layout/Page';
-import PostCard, { IPost } from 'features/posts/components/PostCard';
+import PostCard, { IPost } from 'features/blog/components/PostCard';
 import PageHeader from 'components/PageHeader';
-import { getAllPostsSlugs, getPostBySlug, getPostsCards, getPreviewPostBySlug } from 'features/posts/graphql/posts';
+import { getAllPostsSlugs, getPostBySlug, getPostsCards, getPreviewPostBySlug } from 'features/blog/graphql/posts';
 import ContentArticle from 'components/ContentArticle';
 import Author from 'components/Author';
 import PostDate from 'components/Date';
@@ -37,7 +37,7 @@ export default function Post({ post, source, suggestions }: Props): JSX.Element 
 								</PageHeader>
 								<Author />
 							</div>
-							<ImageCard cover={post.cover} className='h-80 xl:-mr-10' />
+							<ImageCard src={post.cover.url} className='h-80 xl:-mr-10' />
 						</div>
 						<ContentArticle source={source}>
 							{post.updatedAt && (

@@ -1,5 +1,5 @@
 const isInternalLink = (link: string): boolean => {
-	const isInternal = link.startsWith('/') || link.startsWith('#');
+	const isInternal = link?.startsWith('/') || link?.startsWith('#');
 	return isInternal;
 };
 
