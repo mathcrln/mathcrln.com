@@ -3,7 +3,7 @@
 const HR = (): JSX.Element => <hr className='my-20 w-1/2 mx-auto' />;
 
 const IMG = ({ src, alt }: { src: string; alt: string }): JSX.Element => (
-	<span className='block my-10'>
+	<span className='block my-8'>
 		<img className='rounded-md w-full' src={src} alt={alt} />
 		{alt && alt !== 'image' && <span className='mt-6 block text-center text-md text-gray-600'>{alt}</span>}
 	</span>

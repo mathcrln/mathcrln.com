@@ -5,12 +5,14 @@ export default function ImageCard({
 	className = 'h-64',
 	height,
 	width,
+	alt,
 	tags = [],
 }: {
 	src: string;
 	className?: string;
 	height?: number;
 	width?: number;
+	alt?: string;
 	tags?: { name: string }[];
 }): JSX.Element {
 	return (
@@ -20,7 +22,7 @@ export default function ImageCard({
 			{!height && !width && (
 				<Image
 					src={src}
-					alt=''
+					alt={alt}
 					layout='fill'
 					objectFit='cover'
 					className='rounded-lg'
@@ -32,7 +34,7 @@ export default function ImageCard({
 			{height && width && (
 				<Image
 					src={src}
-					alt=''
+					alt={alt}
 					height={height}
 					width={width}
 					layout='intrinsic'
