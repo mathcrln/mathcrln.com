@@ -47,7 +47,7 @@ export default function PaginatedPosts({ posts, nbOfPages, pageNumber, hasNextPa
 				))}
 			</div>
 			<Pagination
-				className='my-14 border-t border-b dark:border-gray-700'
+				className='my-14 py-3 dark:border-gray-700 max-w-max mx-auto'
 				pageNumber={pageNumber}
 				hasPreviousPage={hasPreviousPage}
 				hasNextPage={hasNextPage}

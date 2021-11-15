@@ -38,7 +38,13 @@ export default function Articles({
 					<PostCard key={post.title} post={post} />
 				))}
 			</div>
-			<Pagination pageNumber={1} hasPreviousPage={false} hasNextPage={hasNextPage} />
+			<Pagination
+				className='my-14 py-3 dark:border-gray-700 max-w-max mx-auto'
+				pageNumber={1}
+				hasPreviousPage={false}
+				hasNextPage={hasNextPage}
+				verbose
+			/>
 		</Page>
 	);
 }
