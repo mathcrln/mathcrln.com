@@ -30,7 +30,7 @@ export default function Articles({
 					<p>
 						<span className='text-2xl md:text-4xl'>1</span> of {nbOfPages}
 					</p>
-					<Pagination pageNumber={1} hasPreviousPage={false} hasNextPage={hasNextPage} className='md:mt-2 ' />
+					<Pagination pageNumber={1} hasPreviousPage={false} hasNextPage={hasNextPage} className='md:mt-2 self-end' />
 				</div>
 			</div>
 			<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10 '>

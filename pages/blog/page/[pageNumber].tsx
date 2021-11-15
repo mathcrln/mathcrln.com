@@ -36,7 +36,7 @@ export default function PaginatedPosts({ posts, nbOfPages, pageNumber, hasNextPa
 						pageNumber={pageNumber}
 						hasPreviousPage={hasPreviousPage}
 						hasNextPage={hasNextPage}
-						className='md:mt-2'
+						className='md:mt-2  self-end'
 					/>
 				</div>
 			</div>
@@ -47,7 +47,7 @@ export default function PaginatedPosts({ posts, nbOfPages, pageNumber, hasNextPa
 				))}
 			</div>
 			<Pagination
-				className='my-14 border-t border-b dark:border-gray-500'
+				className='my-14 border-t border-b dark:border-gray-700'
 				pageNumber={pageNumber}
 				hasPreviousPage={hasPreviousPage}
 				hasNextPage={hasNextPage}
