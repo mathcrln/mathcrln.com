@@ -1,9 +1,13 @@
 export default function Arrow({
 	className,
 	direction = 'right',
+	animate = false,
+	size = 'sm',
 }: {
 	className?: string;
 	direction?: 'left' | 'right' | 'up' | 'down';
+	size?: 'sm' | 'md' | 'lg';
+	animate?: boolean;
 }): JSX.Element {
 	let baseRotation = '';
 	let animation = '';
@@ -33,14 +37,15 @@ export default function Arrow({
 		<svg
 			xmlns='http://www.w3.org/2000/svg'
 			viewBox='0 0 24 24'
-			height='24'
-			width='24'
-			className={`fill-current transform duration-200 inline ease-in-out ${className} ${baseRotation} ${animation}`}
+			className={`fill-current transform duration-200 inline ease-in-out ${className} ${baseRotation} ${
+				animate && animation
+			}
+            ${size === 'sm' && 'h-[24px] w-[24px]'}
+            ${size === 'md' && 'h-[28px] w-[28px]'}
+            ${size === 'lg' && 'h-[32px] w-[32px]'}
+            `}
 		>
-			<path
-				d='m18.707 12.707-3 3a1 1 0 0 1-1.414-1.414L15.586 13H6a1 1 0 0 1 0-2h9.586l-1.293-1.293a1 1 0 0 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414z'
-				data-name='Up Right'
-			/>
+			<path d='m18.707 12.707-3 3a1 1 0 0 1-1.414-1.414L15.586 13H6a1 1 0 0 1 0-2h9.586l-1.293-1.293a1 1 0 0 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414z' />
 		</svg>
 	);
 }
