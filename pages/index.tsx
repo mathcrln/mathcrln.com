@@ -11,7 +11,7 @@ import BookCard from 'features/archives/components/BookCard';
 import { getArchivesCards } from 'features/archives/graphql/archives';
 import ProjectCard from 'features/projects/components/ProjectCard';
 import CustomLink from 'components/elements/Link';
-import ArrowRight from 'components/icons/ArrowRight';
+import Arrow from '@/components/icons/Arrow';
 
 export default function Home({
 	posts,
@@ -119,7 +119,7 @@ function SeeMoreButton({ text, href }: { text: string; href: string }): JSX.Elem
 	return (
 		<CustomLink href={href} className='inline-block group'>
 			<span>{text}</span>
-			<ArrowRight className='transform group-hover:-rotate-45 duration-200 inline ease-in-out' />
+			<Arrow direction='right' className='transform group-hover:-rotate-45 duration-200 inline ease-in-out' />
 		</CustomLink>
 	);
 }

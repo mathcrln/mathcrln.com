@@ -1,10 +1,11 @@
 import PageHeader from 'components/PageHeader';
 import { GetStaticProps } from 'next';
-import { getPostsCards } from 'features/blog/graphql/posts';
+import { getPaginatedPostsCards } from 'features/blog/graphql/posts';
 import Page from '@/components/layout/Page';
 import PostCard, { IPost } from 'features/blog/components/PostCard';
+import Pagination from '@/components/Pagination';
 
-export default function Articles({ posts }: { posts: IPost[] }): JSX.Element {
+export default function Articles({ posts, hasNextPage }: { posts: IPost[]; hasNextPage: boolean }): JSX.Element {
 	return (
 		<Page
 			seo={{
@@ -20,16 +21,20 @@ export default function Articles({ posts }: { posts: IPost[] }): JSX.Element {
 					<PostCard key={post.title} post={post} />
 				))}
 			</div>
+			<Pagination pageNumber={1} hasPreviousPage={false} hasNextPage={hasNextPage} />
 		</Page>
 	);
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const posts = await getPostsCards(50);
+	const currentPage = await getPaginatedPostsCards(9);
+	const posts = currentPage?.edges?.map((edge) => edge.node);
+	const { hasNextPage } = currentPage?.pageInfo;
 
 	return {
 		props: {
 			posts,
+			hasNextPage,
 		},
 		revalidate: 60,
 	};
