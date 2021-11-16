@@ -40,13 +40,21 @@ export default function Footer({ className = '' }: { className?: string }): JSX.
 					<Logo className='w-8 place-self-center' />
 				</div>
 				<div className='py-4 space-x-2 mt-4 grid md:grid-cols-3 gap-2 text-center md:text-left items-center justify-center'>
-					<p>
-						© 2021, Jerry by <CustomLink href='https://twitter.com/mathcrln'>@mathcrln</CustomLink> |{' '}
-						<CustomLink href='/log' className='inline-block group'>
-							Changelog
-						</CustomLink>
-						.
-					</p>
+					<div>
+						<p>
+							© 2021, Jerry by <CustomLink href='https://twitter.com/mathcrln'>@mathcrln</CustomLink>{' '}
+						</p>
+						<div className='flex space-x-2'>
+							<CustomLink href='/log' className='inline-block group'>
+								Changelog
+							</CustomLink>
+							<span className='block'>|</span>
+							<CustomLink href='/legal' className='inline-block group'>
+								Legal Notice
+							</CustomLink>
+						</div>
+					</div>
+
 					<div />
 					<div className='flex space-x-2 text-center justify-center md:place-self-end'>
 						<ThemeSelect selected={themeMode} onChange={handleThemeChange} />

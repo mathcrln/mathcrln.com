@@ -17,7 +17,7 @@ export default function WaitingPage({
 				description,
 			}}
 		>
-			<PageHeader title='Work in progres... 🧰' centered>
+			<PageHeader title='Work in progress... 🧰' centered>
 				<p>I'm still working on this page, what if you came back later?</p>
 			</PageHeader>
 			<div className='block mx-auto mt-10 text-center'>
