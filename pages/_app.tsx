@@ -10,6 +10,7 @@ import 'styles/globals.css';
 import { useEffect } from 'react';
 import * as gAnalytics from 'lib/google-analytics';
 import SEO from 'lib/next-seo.config';
+import YouTubePlayer from '@/components/YouTubePlayer';
 
 const components = {
 	h2: H2,
@@ -25,6 +26,7 @@ const components = {
 	hr: HR,
 	blockquote: BLOCKQUOTE,
 	img: IMG,
+	YouTubePlayer,
 };
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
