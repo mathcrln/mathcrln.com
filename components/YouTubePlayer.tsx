@@ -1,3 +1,5 @@
+// This component is used in multiple posts in the CMS. Do not modify the API without taking that into account.
+
 export default function YouTubePlayer({ id }: { id: string }): JSX.Element {
 	return (
 		<div style={{ aspectRatio: '16/9' }} className='my-10'>

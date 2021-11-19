@@ -32,7 +32,7 @@ export default function Library({ archives }: { archives: IBook[] }): JSX.Elemen
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const archives = await getArchivesCards(11);
+	const archives = await getArchivesCards(30);
 
 	return {
 		props: {
