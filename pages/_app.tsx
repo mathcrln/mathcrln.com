@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 import * as gAnalytics from 'lib/google-analytics';
 import SEO from 'lib/next-seo.config';
 import YouTubePlayer from '@/components/YouTubePlayer';
+import Gallery from '@/components/Gallery';
 
 const components = {
 	h2: H2,
@@ -27,6 +28,7 @@ const components = {
 	blockquote: BLOCKQUOTE,
 	img: IMG,
 	YouTubePlayer,
+	Gallery,
 };
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {

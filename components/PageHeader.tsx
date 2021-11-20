@@ -1,6 +1,5 @@
 import React from 'react';
 
-/* eslint-disable react/require-default-props */
 export default function PageHeader({
 	title,
 	className = '',
