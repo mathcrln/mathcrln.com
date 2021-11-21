@@ -1,21 +1,37 @@
+import uuid from 'react-uuid';
+import LinkWrapper from './elements/LinkWrapper';
+
 /* eslint-disable @next/next/no-img-element */
 export default function Gallery({
 	images,
 	cols = 4,
 }: {
-	images: { slug: string; alt?: string; rowsSpan?: number; colsSpan?: number }[];
+	images: { slug: string; alt?: string; rowsSpan?: number; colsSpan?: number; linkURL?: string }[];
 	cols?: number;
 }): JSX.Element {
 	return (
-		<div className={`grid grid-cols-2 gap-10 ${getCols(cols)} md:gap-5 my-10 items-center md:items-stretch justify-center`}>
-			{images.map(({ slug, alt, rowsSpan, colsSpan }) => (
-				<img
-					key={slug}
-					src={slug}
-					alt={alt}
-					className={`rounded ${getRowsSpan(rowsSpan)} ${getColsSpan(colsSpan)} `}
-					title={alt}
-				/>
+		<div className={`grid grid-cols-2 gap-5 ${getCols(cols)} md:gap-5 my-10 items-stretch justify-center`}>
+			{images.map(({ slug, alt, rowsSpan, colsSpan, linkURL }) => (
+				<span key={uuid()}>
+					{linkURL && (
+						<LinkWrapper href={linkURL as string}>
+							<img
+								src={slug}
+								alt={alt}
+								className={`rounded ${getRowsSpan(rowsSpan)} ${getColsSpan(colsSpan)} place-self-auto`}
+								title={alt}
+							/>
+						</LinkWrapper>
+					)}
+					{!linkURL && (
+						<img
+							src={slug}
+							alt={alt}
+							className={`rounded ${getRowsSpan(rowsSpan)} ${getColsSpan(colsSpan)} place-self-auto`}
+							title={alt}
+						/>
+					)}
+				</span>
 			))}
 		</div>
 	);
@@ -29,6 +45,10 @@ function getCols(cols: number | undefined): string {
 			return 'md:grid-cols-3';
 		case 4:
 			return 'md:grid-cols-4';
+		case 5:
+			return 'md:grid-cols-5';
+		case 6:
+			return 'md:grid-cols-6';
 		default:
 			return 'md:grid-cols-4';
 	}

@@ -23,7 +23,7 @@ const H5 = ({ children }: { children: string }): JSX.Element => <h5 className='t
 const H6 = ({ children }: { children: string }): JSX.Element => <h5 className='text-md mt-10 mb-2 font-semibold'>{children}</h5>;
 
 const P = ({ children }: { children: JSX.Element }): JSX.Element =>
-	children?.props?.mdxType ? (
+	children?.props?.mdxType === 'img' ? (
 		<IMG src={children?.props?.src} alt={children?.props?.alt} />
 	) : (
 		<p className='text-lg my-4 dark:text-[#CCCCCC]'>{children}</p>
