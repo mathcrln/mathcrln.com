@@ -10,11 +10,11 @@ export default function Library({ archives }: { archives: IBook[] }): JSX.Elemen
 		<Page
 			seo={{
 				title: 'Library',
-				description: 'Here are some books I recently loved.',
+				description: 'Here are some books, movies or articles I recently loved.',
 			}}
 		>
 			<PageHeader title='Library'>
-				<p>Here are some of the books I have enjoyed and learned from lately.</p>
+				<p>Here are some of the books, movies or articles that I have enjoyed and learned from lately.</p>
 			</PageHeader>
 			<div className='mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5 gap-10'>
 				{archives.map((archive) => (

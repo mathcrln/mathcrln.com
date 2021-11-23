@@ -1,10 +1,10 @@
-import { GetStaticProps } from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import ContentArticle from '@/components/ContentArticle';
 import Page from '@/components/layout/Page';
 import PageHeader from '@/components/PageHeader';
-import { getPageBySlug } from 'features/common/graphql/pages';
+import { getAllpageSlugs, getPageBySlug } from 'features/common/graphql/pages';
 import relativeDate from 'relative-date';
 import { IPage } from 'features/common/models/pages';
 
@@ -27,8 +27,17 @@ export default function Now({ page, source }: { page: IPage; source: MDXRemoteSe
 	);
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-	const page = await getPageBySlug('now');
+export const getStaticPaths: GetStaticPaths = async () => {
+	const pages: IPage[] = await getAllpageSlugs();
+	return {
+		paths: pages.map((page) => ({ params: { slug: page.slug } })),
+		fallback: false,
+	};
+};
+
+export const getStaticProps: GetStaticProps = async (context) => {
+	const slug = context.params?.slug as string;
+	const page = await getPageBySlug(slug);
 
 	if (!page) {
 		return {

@@ -14,6 +14,31 @@ const PAGE_BY_SLUG = gql`
 	}
 `;
 
+const GET_ALL_PAGE_SLUGS = gql`
+	query AllPageSlugs {
+		pages {
+			slug
+		}
+	}
+`;
+
+const getAllpageSlugs = async (): Promise<IPage[]> => {
+	let allPages = null;
+
+	try {
+		const { pages } = (
+			await graphCMS.query({
+				query: GET_ALL_PAGE_SLUGS,
+			})
+		).data;
+
+		allPages = pages;
+	} catch (e) {
+		throw new Error(e as string);
+	}
+
+	return allPages;
+};
 const getPageBySlug = async (slug: string): Promise<IPage> => {
 	let page = null;
 
@@ -35,4 +60,4 @@ const getPageBySlug = async (slug: string): Promise<IPage> => {
 	return page;
 };
 
-export { getPageBySlug, PAGE_BY_SLUG };
+export { getPageBySlug, getAllpageSlugs };

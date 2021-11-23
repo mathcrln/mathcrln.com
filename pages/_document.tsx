@@ -29,6 +29,7 @@ class MyDocument extends Document {
                             `,
 						}}
 					/>
+					<script defer data-domain='mathieuceraline.com' src='https://plausible.io/js/plausible.js' />
 				</Head>
 				<body>
 					<Main />
