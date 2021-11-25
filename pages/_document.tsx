@@ -15,11 +15,13 @@ class MyDocument extends Document {
 					{process.env.NODE_ENV === 'production' ? <script async src='https://cdn.splitbee.io/sb.js' /> : null}
 
 					{/* Global Site Tag (gtag.js) - Google Analytics */}
-					<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
-					<script
-						// eslint-disable-next-line react/no-danger
-						dangerouslySetInnerHTML={{
-							__html: `
+					{process.env.NODE_ENV === 'production' && (
+						<>
+							<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
+							<script
+								// eslint-disable-next-line react/no-danger
+								dangerouslySetInnerHTML={{
+									__html: `
                                 window.dataLayer = window.dataLayer || [];
                                 function gtag(){dataLayer.push(arguments);}
                                 gtag('js', new Date());
@@ -27,9 +29,11 @@ class MyDocument extends Document {
                                     page_path: window.location.pathname,
                                 });
                             `,
-						}}
-					/>
-					<script defer data-domain='mathieuceraline.com' src='https://plausible.io/js/plausible.js' />
+								}}
+							/>
+							<script defer data-domain='mathcrln.com' src='https://plausible.io/js/plausible.js' />
+						</>
+					)}
 				</Head>
 				<body>
 					<Main />

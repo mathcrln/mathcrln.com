@@ -38,14 +38,13 @@ export default function Page({ children, className, seo }: IPage): JSX.Element {
 					description: pageDescription,
 					images: [
 						{
-							url: seo.image || 'https://mathieuceraline.com/mathieu.jpg',
+							url: seo.image || 'https://mathcrln.com/mathieu.jpg',
 							width: 800,
 							height: 600,
 							alt: seo.title || 'Mathieu Céraline',
 							type: 'image/jpeg',
 						},
 					],
-					// url: `https://mathieuceraline.com${router.asPath}`,
 					type: seo.type || 'website',
 					article: {
 						authors: ['Mathieu Céraline'],

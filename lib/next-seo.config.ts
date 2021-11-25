@@ -1,14 +1,14 @@
 const SEO = {
-	dangerouslySetAllPagesToNoIndex: true,
-	dangerouslySetAllPagesToNoFollow: true,
-	dangerouslyDisableGooglebot: true,
+	dangerouslySetAllPagesToNoIndex: process.env.NODE_ENV !== 'production',
+	dangerouslySetAllPagesToNoFollow: process.env.NODE_ENV !== 'production',
+	dangerouslyDisableGooglebot: process.env.NODE_ENV !== 'production',
 	openGraph: {
 		type: 'website',
 		locale: 'en_US',
 		site_name: 'Mathieu Céraline',
 		images: [
 			{
-				url: 'https://mathieuceraline.com/mathieu.jpg',
+				url: 'https://mathclrn.com/mathieu.jpg',
 				width: 800,
 				height: 600,
 				alt: '',
