@@ -7,11 +7,12 @@ import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 import CustomLink from 'components/elements/Link';
 import 'styles/globals.css';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import * as gAnalytics from 'lib/google-analytics';
 import SEO from 'lib/next-seo.config';
 import YouTubePlayer from '@/components/YouTubePlayer';
 import Gallery from '@/components/Gallery';
+import PlausibleProvider from 'next-plausible';
 
 const components = {
 	h2: H2,
@@ -45,12 +46,14 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 	}, [router.events]);
 
 	return (
-		<MDXProvider components={components}>
-			<DefaultSeo {...SEO} />
-			<Header />
-			<Component {...pageProps} />
-			<Footer className='mt-auto' />
-		</MDXProvider>
+		<PlausibleProvider domain='example.com'>
+			<MDXProvider components={components}>
+				<DefaultSeo {...SEO} />
+				<Header />
+				<Component {...pageProps} />
+				<Footer className='mt-auto' />
+			</MDXProvider>
+		</PlausibleProvider>
 	);
 }
 export default MyApp;
