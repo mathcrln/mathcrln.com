@@ -8,7 +8,7 @@ const SEO = {
 		site_name: 'Mathieu Céraline',
 		images: [
 			{
-				url: 'https://mathcrln.com/mathieu.jpg',
+				url: 'https://mathclrn.com/mathieu.jpg',
 				width: 800,
 				height: 600,
 				alt: '',

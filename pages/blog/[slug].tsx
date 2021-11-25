@@ -1,21 +1,30 @@
 import mdxPrism from 'mdx-prism';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
-import ImageCard from '@/common/components/ImageCard';
+import ImageCard from 'components/ImageCard';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import relativeDate from 'relative-date';
-import Page from '@/layout/Page';
-import PostCard, { IPost } from '@/modules/posts/components/PostCard';
-import PageHeader from '@/common/components/PageHeader';
-import { getAllPostsSlugs, getPostBySlug, getPostsCards, getPreviewPostBySlug } from '@/modules/posts/graphql/posts';
-import ContentArticle from '@/common/components/ContentArticle';
-import Author from '@/common/components/Author';
-import PostDate from '@/common/components/Date';
+import Page from 'components/layout/Page';
+import PostCard, { IPost } from 'features/blog/components/PostCard';
+import PageHeader from 'components/PageHeader';
+import { getAllPostsSlugs, getPostBySlug, getPostsCards, getPreviewPostBySlug } from 'features/blog/graphql/posts';
+import ContentArticle from 'components/ContentArticle';
+import Author from 'components/Author';
+import PostDate from 'components/Date';
 
 export default function Post({ post, source, suggestions }: Props): JSX.Element {
 	return (
-		<Page title={post ? post?.title : ''} image={post?.cover?.url} description={post ? post?.excerpt : ''}>
+		<Page
+			seo={{
+				title: post?.title || '',
+				image: post?.cover?.url,
+				description: post?.excerpt || '',
+				type: 'article',
+				publishedTime: post?.date || undefined,
+				modifiedTime: post?.updatedAt || undefined,
+			}}
+		>
 			<section>
 				{!post && <p className='my-14 relative'>Seems like no post with this name has been found</p>}
 				{post && (
@@ -28,7 +37,7 @@ export default function Post({ post, source, suggestions }: Props): JSX.Element 
 								</PageHeader>
 								<Author />
 							</div>
-							<ImageCard cover={post.cover} className='h-80 xl:-mr-10' />
+							<ImageCard src={post.cover.url} className='h-80 xl:-mr-10' />
 						</div>
 						<ContentArticle source={source}>
 							{post.updatedAt && (

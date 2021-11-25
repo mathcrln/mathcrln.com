@@ -1,10 +1,17 @@
 import type { AppProps } from 'next/app';
-import '@/styles/globals.css';
 import { MDXProvider } from '@mdx-js/react';
-import { H2, H3, H4, H5, H6, P, UL, LI, OL, HR, IMG, BLOCKQUOTE } from '@/common/components/MDXElements';
-import Footer from '@/layout/Footer';
-import Header from '@/layout/Header';
-import CustomLink from '@/common/components/elements/Link';
+import { DefaultSeo } from 'next-seo';
+import { useRouter } from 'next/router';
+import { H2, H3, H4, H5, H6, P, UL, LI, OL, HR, IMG, BLOCKQUOTE } from 'components/MDXElements';
+import Footer from '@/components/layout/Footer';
+import Header from '@/components/layout/Header';
+import CustomLink from 'components/elements/Link';
+import 'styles/globals.css';
+import { useEffect } from 'react';
+import * as gAnalytics from 'lib/google-analytics';
+import SEO from 'lib/next-seo.config';
+import YouTubePlayer from '@/components/YouTubePlayer';
+import Gallery from '@/components/Gallery';
 
 const components = {
 	h2: H2,
@@ -20,11 +27,26 @@ const components = {
 	hr: HR,
 	blockquote: BLOCKQUOTE,
 	img: IMG,
+	YouTubePlayer,
+	Gallery,
 };
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+	const router = useRouter();
+
+	useEffect(() => {
+		const handleRouteChange = (url: URL) => {
+			gAnalytics.pageview(url);
+		};
+		router.events.on('routeChangeComplete', handleRouteChange);
+		return () => {
+			router.events.off('routeChangeComplete', handleRouteChange);
+		};
+	}, [router.events]);
+
 	return (
 		<MDXProvider components={components}>
+			<DefaultSeo {...SEO} />
 			<Header />
 			<Component {...pageProps} />
 			<Footer className='mt-auto' />

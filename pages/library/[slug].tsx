@@ -1,6 +1,6 @@
-import PageHeader from '@/common/components/PageHeader';
-import Page from '@/layout/Page';
-import ImageCard from '@/common/components/ImageCard';
+import PageHeader from 'components/PageHeader';
+import Page from '@/components/layout/Page';
+import ImageCard from 'components/ImageCard';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { ParsedUrlQuery } from 'querystring';
 import { serialize } from 'next-mdx-remote/serialize';
@@ -9,19 +9,26 @@ import {
 	getArchiveBySlug,
 	getPreviewArchiveBySlug,
 	getArchivesCards,
-} from '@/modules/archives/graphql/archives';
+} from 'features/archives/graphql/archives';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { IBook } from '@/modules/archives/models/books';
-import ContentArticle from '@/common/components/ContentArticle';
-import AuthorDate from '@/common/components/AuthorDate';
+import { IBook } from 'features/archives/models/books';
+import ContentArticle from 'components/ContentArticle';
+import AuthorDate from 'components/AuthorDate';
 import React from 'react';
-import BookCard from '@/archives/components/BookCard';
+import BookCard from 'features/archives/components/BookCard';
 
 export default function ArchivePage({ archive, source, suggestions }: Props): JSX.Element {
 	return (
-		<Page title={archive.name} image={archive.cover.url} description={archive.description}>
+		<Page
+			seo={{
+				title: `${archive.name} by ${archive.author}`,
+				image: archive.cover.url,
+				type: 'article',
+				description: archive.description,
+			}}
+		>
 			<header className='grid md:grid-cols-[1fr,2fr] gap-10 items-center'>
-				<ImageCard cover={archive.cover} height={375} width={248} className='h-initial place-self-center' />
+				<ImageCard src={archive.cover.url} height={375} width={248} className='h-initial place-self-center' />
 				<PageHeader title={archive.name}>
 					<p className='block font-bold'>{archive.author}</p>
 					<p className='my-5 font-ligth'>{archive.description}</p>
@@ -35,7 +42,13 @@ export default function ArchivePage({ archive, source, suggestions }: Props): JS
 					<h2 className='font-bold text-3xl mb-10'>More like that...</h2>
 					<div className='grid grid-cols-2 md:grid-cols-5 gap-10'>
 						{suggestions.map((book) => (
-							<BookCard key={book.name} book={book} />
+							<BookCard
+								key={book.name}
+								coverSrc={book.cover.url}
+								title={book.name}
+								author={book.author}
+								url={`/library/${book.slug}`}
+							/>
 						))}
 					</div>
 				</section>
