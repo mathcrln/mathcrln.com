@@ -71,10 +71,6 @@ module.exports = withMDX({
 				source: '/lib/plausible.js',
 				destination: 'https://plausible.io/js/plausible.js',
 			},
-			{
-				source: '/api/plausible-event',
-				destination: 'https://plausible.io/api/event',
-			},
 		];
 	},
 });
