@@ -1,12 +1,18 @@
 import Image from 'next/image';
 import mathieu from '@/public/mathieu.jpg';
 import martinique from '@/public/martinique.jpg';
-import PageHeader from 'src/common/components/PageHeader';
-import Page from '@/layout/Page';
+import PageHeader from 'components/PageHeader';
+import Page from '@/components/layout/Page';
 
 export default function About(): JSX.Element {
 	return (
-		<Page title='About' description=''>
+		<Page
+			seo={{
+				title: 'About',
+				description:
+					'If you and I are to become friends, I guess it’s about time I introduce myself. Get to know more about me .',
+			}}
+		>
 			<PageHeader title='Who am I?'>
 				<span>
 					If you and I are to become friends, <br className='hidden md:inline' />I guess it’s about time I introduce

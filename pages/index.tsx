@@ -1,17 +1,17 @@
 import { GetStaticProps } from 'next';
-import PageHeader from 'src/common/components/PageHeader';
-import Page from '@/layout/Page';
-import PostCard, { IPost } from '@/modules/posts/components/PostCard';
-import { getPostsCards } from '@/modules/posts/graphql/posts';
-import { getProjectsCards } from '@/modules/projects/graphql/projects';
-import { IProject } from '@/modules/projects/models/projects';
+import PageHeader from 'components/PageHeader';
+import Page from '@/components/layout/Page';
+import PostCard, { IPost } from 'features/blog/components/PostCard';
+import { getPostsCards } from 'features/blog/graphql/posts';
+import { getProjectsCards } from 'features/projects/graphql/projects';
+import { IProject } from 'features/projects/models/projects';
 import React from 'react';
-import { IBookCard } from '@/modules/archives/models/books';
-import BookCard from '@/modules/archives/components/BookCard';
-import { getArchivesCards } from '@/modules/archives/graphql/archives';
-import ProjectCard from '@/modules/projects/components/ProjectCard';
-import CustomLink from '@/common/components/elements/Link';
-import ArrowRight from '@/common/components/icons/ArrowRight';
+import { IBookCard } from 'features/archives/models/books';
+import BookCard from 'features/archives/components/BookCard';
+import { getArchivesCards } from 'features/archives/graphql/archives';
+import ProjectCard from 'features/projects/components/ProjectCard';
+import CustomLink from 'components/elements/Link';
+import Arrow from '@/components/icons/Arrow';
 
 export default function Home({
 	posts,
@@ -24,9 +24,11 @@ export default function Home({
 }): JSX.Element {
 	return (
 		<Page
-			title='Mathieu Céraline'
-			slogan='Frontend Web Developer, designer, writer.'
-			description='Frontend Web Developer, designer, writer.'
+			seo={{
+				title: 'Mathieu Céraline',
+				slogan: 'Frontend Web Developer, designer, writer.',
+				description: "I'm a Front-End Web Developer and Software Engineering Student at Polytechnique Montréal.",
+			}}
 		>
 			<PageHeader title='Hello, I’m Mathieu Céraline 👋🏾'>
 				<p>
@@ -41,7 +43,7 @@ export default function Home({
 					<h2 className='text-2xl md:text-3xl font-extrabold'>Recent posts</h2>
 					<SeeMoreButton text='Browse all posts' href='/blog' />
 				</div>
-				<p className='mt-2 mb-10 text-gray-600 dark:text-gray-300'>On design, code and creativity.</p>
+				<p className='mt-2 mb-10 text-gray-600 dark:text-gray-300 text-lg'>On design, code, lifestyle and creativity.</p>
 				<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10'>
 					{posts.length ? posts.map((post) => <PostCard key={post.title} post={post} />) : <p>No post was found.</p>}
 				</div>
@@ -77,12 +79,22 @@ export default function Home({
 					<h2 className='text-2xl md:text-3xl font-extrabold'>Library</h2>
 					<SeeMoreButton text='Browse all books' href='/library' />
 				</div>
-				<p className='mt-2 mb-10 text-gray-600 dark:text-gray-300'>Here are some books I recently loved.</p>
+				<p className='mt-2 mb-10 text-gray-600 dark:text-gray-300 text-lg'>
+					Here are some books, movies or articles I recently loved.
+				</p>
 				<div className='grid grid-cols-2 md:grid-cols-4 gap-10'>
 					{books.length ? (
-						books.map((book) => <BookCard key={book.name} book={book} />)
+						books.map((book) => (
+							<BookCard
+								key={book.name}
+								coverSrc={book.cover.url}
+								title={book.name}
+								author={book.author}
+								url={`/library/${book.slug}`}
+							/>
+						))
 					) : (
-						<p>No book has been found.</p>
+						<p>No book was found.</p>
 					)}
 				</div>
 			</section>
@@ -109,7 +121,7 @@ function SeeMoreButton({ text, href }: { text: string; href: string }): JSX.Elem
 	return (
 		<CustomLink href={href} className='inline-block group'>
 			<span>{text}</span>
-			<ArrowRight className='transform group-hover:-rotate-45 duration-200 inline ease-in-out' />
+			<Arrow direction='right' className='transform group-hover:-rotate-45 duration-200 inline ease-in-out' />
 		</CustomLink>
 	);
 }
