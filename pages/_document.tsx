@@ -12,11 +12,11 @@ class MyDocument extends Document {
 						href='https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,500&display=swap'
 						rel='stylesheet'
 					/>
-					{process.env.NODE_ENV === 'production' ? <script async src='https://cdn.splitbee.io/sb.js' /> : null}
 
 					{/* Global Site Tag (gtag.js) - Google Analytics */}
 					{process.env.NODE_ENV === 'production' && (
 						<>
+							<script async src='https://cdn.splitbee.io/sb.js' />
 							<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
 							<script
 								// eslint-disable-next-line react/no-danger
@@ -31,6 +31,7 @@ class MyDocument extends Document {
                             `,
 								}}
 							/>
+							<script defer data-domain='mathcrln.com' src='/lib/plausible.js' />
 						</>
 					)}
 				</Head>

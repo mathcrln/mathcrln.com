@@ -12,7 +12,6 @@ import * as gAnalytics from 'lib/google-analytics';
 import SEO from 'lib/next-seo.config';
 import YouTubePlayer from '@/components/YouTubePlayer';
 import Gallery from '@/components/Gallery';
-import PlausibleProvider from 'next-plausible';
 
 const components = {
 	h2: H2,
@@ -46,14 +45,12 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 	}, [router.events]);
 
 	return (
-		<PlausibleProvider domain='example.com'>
-			<MDXProvider components={components}>
-				<DefaultSeo {...SEO} />
-				<Header />
-				<Component {...pageProps} />
-				<Footer className='mt-auto' />
-			</MDXProvider>
-		</PlausibleProvider>
+		<MDXProvider components={components}>
+			<DefaultSeo {...SEO} />
+			<Header />
+			<Component {...pageProps} />
+			<Footer className='mt-auto' />
+		</MDXProvider>
 	);
 }
 export default MyApp;
