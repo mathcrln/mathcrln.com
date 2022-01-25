@@ -9,7 +9,7 @@ export default function ContentArticle({
 	children?: React.ReactNode;
 }): JSX.Element {
 	return (
-		<article className='lg:w-8/12 mx-auto my-24'>
+		<article className='mx-auto my-24 lg:w-8/12'>
 			<MDXRemote {...source} />
 			{children}
 		</article>

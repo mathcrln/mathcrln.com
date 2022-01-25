@@ -14,7 +14,7 @@
 	}
 
 	#__next {
-		@apply h-full flex flex-col min-h-full;
+		@apply flex h-full min-h-full flex-col;
 	}
 
 	h2,
@@ -23,7 +23,7 @@
 	}
 
 	select {
-		@apply bg-transparent appearance-none border-none cursor-pointer font-sans w-full;
+		@apply w-full cursor-pointer appearance-none border-none bg-transparent font-sans;
 		font-family: inherit;
 		font-size: inherit;
 		line-height: inherit;
@@ -34,7 +34,7 @@ code {
 	@apply font-sans;
 }
 pre code {
-	@apply border-solid border  border-gray-300 bg-[#F8F9FA] dark:bg-[#121821] border-opacity-70 dark:border-opacity-20 text-[#3C3C3D] dark:text-white block whitespace-pre break-words max-w-full overflow-x-scroll p-4 rounded my-8 min-w-[100px];
+	@apply my-8 block  min-w-[100px] max-w-full overflow-x-scroll whitespace-pre break-words rounded border border-solid border-gray-300 border-opacity-70 bg-[#F8F9FA] p-4 text-[#3C3C3D] dark:border-opacity-20 dark:bg-[#121821] dark:text-white;
 }
 
 .token.comment,

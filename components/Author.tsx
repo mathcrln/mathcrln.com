@@ -12,7 +12,7 @@ export default function Author(): JSX.Element {
 				</a>
 			</Link>
 			<a href='https://twitter.com/mathcrln' target='_blank' rel='noreferrer'>
-				<Twitter className='w-[22px] h-[22px] mx-3 hover:text-primary-light dark:hover:text-primary-dark transform hover:rotate-12 duration-200 inline ease-in-out' />
+				<Twitter className='mx-3 inline h-[22px] w-[22px] transform duration-200 ease-in-out hover:rotate-12 hover:text-primary-light dark:hover:text-primary-dark' />
 			</a>
 			{/* <a href='https://github.com/mathcrln' target='_blank' rel='noreferrer'>
             <Github className='w-[22px] h-[22px] mx-3 hover:text-primary-light text-white dark:hover:text-primary-dark transform hover:rotate-12 duration-200 inline ease-in-out' />

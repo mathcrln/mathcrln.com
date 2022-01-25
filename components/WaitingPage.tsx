@@ -20,7 +20,7 @@ export default function WaitingPage({
 			<PageHeader title='Work in progress... 🧰' centered>
 				<p>I'm still working on this page, what if you came back later?</p>
 			</PageHeader>
-			<div className='block mx-auto mt-10 text-center'>
+			<div className='mx-auto mt-10 block text-center'>
 				<Image
 					src='/earth-closed.gif'
 					width={536}

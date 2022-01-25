@@ -18,7 +18,7 @@ export default function NavLink({ href, title, className = '', handler }: LinkPr
 	// const handleKeyPress =
 	return (
 		<Link href={href} passHref>
-			<a className={`dark:text-white mx-3 max-w-max ${activeStyles} ${className}`} {...(handler && { onClick: handler })}>
+			<a className={`mx-3 max-w-max dark:text-white ${activeStyles} ${className}`} {...(handler && { onClick: handler })}>
 				{title}
 			</a>
 		</Link>

@@ -37,7 +37,7 @@ export default function Arrow({
 		<svg
 			xmlns='http://www.w3.org/2000/svg'
 			viewBox='0 0 24 24'
-			className={`fill-current transform duration-200 inline ease-in-out ${className} ${baseRotation} ${
+			className={`inline transform fill-current duration-200 ease-in-out ${className} ${baseRotation} ${
 				animate && animation
 			}
             ${size === 'sm' && 'h-[24px] w-[24px]'}

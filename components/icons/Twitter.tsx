@@ -1,7 +1,7 @@
 export default function Twitter({ className = '' }: { className?: string }): JSX.Element {
 	return (
 		<svg
-			className={`fill-current text-black flex items-center justify-center dark:text-white ${className}`}
+			className={`text-black flex items-center justify-center fill-current dark:text-white ${className}`}
 			xmlns='http://www.w3.org/2000/svg'
 			viewBox='0 0 50 50'
 		>

@@ -21,7 +21,7 @@ export default function About(): JSX.Element {
 			</PageHeader>
 
 			<div className='mx-auto my-20 lg:max-w-[1200px]'>
-				<div className='grid lg:grid-cols-[1fr,1fr] gap-10 items-center'>
+				<div className='grid items-center gap-10 lg:grid-cols-[1fr,1fr]'>
 					<Image
 						src={mathieu}
 						height={308}
@@ -29,10 +29,10 @@ export default function About(): JSX.Element {
 						alt=''
 						placeholder='blur'
 						layout='responsive'
-						className='rounded-xl order-last md:order-first'
+						className='order-last rounded-xl md:order-first'
 					/>
 					<div className='text-md space-y-6 '>
-						<h2 className='text-2xl mb-8'>
+						<h2 className='mb-8 text-2xl'>
 							Hello there{' '}
 							<span role='img' aria-label='waving hand'>
 								👋🏾
@@ -57,9 +57,9 @@ export default function About(): JSX.Element {
 				</div>
 			</div>
 			<div className=' mx-auto my-20 lg:max-w-[1200px]'>
-				<div className='grid lg:grid-cols-[1fr,1fr] gap-10 items-center'>
+				<div className='grid items-center gap-10 lg:grid-cols-[1fr,1fr]'>
 					<div className='text-md space-y-6 '>
-						<h2 className='text-2xl mb-8'>
+						<h2 className='mb-8 text-2xl'>
 							Do you know Martinique? I grew up there
 							<span role='img' aria-label='waving hand'>
 								🌴
@@ -92,7 +92,7 @@ export default function About(): JSX.Element {
 						alt=''
 						placeholder='blur'
 						layout='responsive'
-						className='rounded-xl order-last md:order-first'
+						className='order-last rounded-xl md:order-first'
 					/>
 				</div>
 			</div>

@@ -4,7 +4,7 @@ export function GithubLogo({ className = '', href }: { className?: string; href:
 	return (
 		<a href={href} target='_BLANK' rel='noreferrer'>
 			<svg
-				className={`fill-current text-black dark:text-white ${SIZE} ${className}`}
+				className={`text-black fill-current dark:text-white ${SIZE} ${className}`}
 				xmlns='http://www.w3.org/2000/svg'
 				viewBox='0 0 45 45'
 			>
@@ -22,7 +22,7 @@ export function LinkedinLogo({ className = '', href }: { className?: string; hre
 	return (
 		<a href={href} target='_BLANK' rel='noreferrer'>
 			<svg
-				className={`fill-current text-black dark:text-white ${SIZE} ${className}`}
+				className={`text-black fill-current dark:text-white ${SIZE} ${className}`}
 				xmlns='http://www.w3.org/2000/svg'
 				viewBox='0 0 50 50'
 			>
@@ -40,7 +40,7 @@ export function TwitterLogo({ className = '', href }: { className?: string; href
 	return (
 		<a href={href} target='_BLANK' rel='noreferrer'>
 			<svg
-				className={`w-[30px] h-[30px] fill-current text-black dark:text-white ${SIZE} ${className}`}
+				className={`text-black h-[30px] w-[30px] fill-current dark:text-white ${SIZE} ${className}`}
 				xmlns='http://www.w3.org/2000/svg'
 				viewBox='0 0 50 50'
 			>

@@ -6,7 +6,7 @@ export default function YouTubePlayer({ id }: { id: string }): JSX.Element {
 			<iframe
 				title='YouTube video player'
 				src={`https://www.youtube-nocookie.com/embed/${id}`}
-				className='w-full ml-auto h-full'
+				className='ml-auto h-full w-full'
 				frameBorder='0'
 				allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
 				allowFullScreen

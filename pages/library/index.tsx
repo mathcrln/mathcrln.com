@@ -16,7 +16,7 @@ export default function Library({ archives }: { archives: IBook[] }): JSX.Elemen
 			<PageHeader title='Library'>
 				<p>Here are some of the books, movies or articles that I have enjoyed and learned from lately.</p>
 			</PageHeader>
-			<div className='mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5 gap-10'>
+			<div className='mt-16 grid grid-cols-2 gap-10 md:grid-cols-3  lg:grid-cols-4 xl:grid-cols-5'>
 				{archives.map((archive) => (
 					<BookCard
 						key={archive.name}

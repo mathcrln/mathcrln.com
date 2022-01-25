@@ -17,7 +17,7 @@ export default function ImageCard({
 }): JSX.Element {
 	return (
 		<div
-			className={`rounded-md relative duration-1000 hover:-translate-y-1 hover:scale-[1.025] dark:filter dark:brightness-75 dark:hover:brightness-90 ${className} `}
+			className={`relative rounded-md duration-1000 hover:-translate-y-1 hover:scale-[1.025] dark:brightness-75 dark:filter dark:hover:brightness-90 ${className} `}
 		>
 			{!height && !width && (
 				<Image
@@ -48,7 +48,7 @@ export default function ImageCard({
 			{tags.length > 0 && (
 				<div className='absolute bottom-3 left-3 flex space-x-2'>
 					{tags.map((tag) => (
-						<div key={tag.name} className='text-white bg-gray-900 px-5 py-2 rounded-lg'>
+						<div key={tag.name} className='rounded-lg bg-gray-900 px-5 py-2 text-white'>
 							{tag.name}
 						</div>
 					))}

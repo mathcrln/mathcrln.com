@@ -18,10 +18,10 @@ export default function Header(): JSX.Element {
 	};
 
 	return (
-		<header className='sticky top-0 bg-white dark:bg-darkGrey z-50'>
+		<header className='sticky top-0 z-50 bg-white dark:bg-darkGrey'>
 			<SkipToContent />
 			<Container className='flex justify-between py-6 md:py-6 '>
-				<LogoLink href='/' className='w-24 hover:filter hover:brightness-90' />
+				<LogoLink href='/' className='w-24 hover:brightness-90 hover:filter' />
 				<Navigation links={NAV_LINKS} isMobileNavOpen={mobileNavOpen} mobileHandler={handleMobileNavClose} />
 				<MenuIcon handleOpenMenu={handleOpenMenu} menuOpen={mobileNavOpen} />
 			</Container>

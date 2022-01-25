@@ -39,18 +39,18 @@ export default function Home({
 			</PageHeader>
 
 			<section className='my-24'>
-				<div className='flex flex-wrap justify-between items-center'>
-					<h2 className='text-2xl md:text-3xl font-extrabold'>Recent posts</h2>
+				<div className='flex flex-wrap items-center justify-between'>
+					<h2 className='text-2xl font-extrabold md:text-3xl'>Recent posts</h2>
 					<SeeMoreButton text='Browse all posts' href='/blog' />
 				</div>
-				<p className='mt-2 mb-10 text-gray-600 dark:text-gray-300 text-lg'>On design, code, lifestyle and creativity.</p>
-				<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10'>
+				<p className='mt-2 mb-10 text-lg text-gray-600 dark:text-gray-300'>On design, code, lifestyle and creativity.</p>
+				<div className='grid gap-10 md:grid-cols-2 lg:grid-cols-3'>
 					{posts.length ? posts.map((post) => <PostCard key={post.title} post={post} />) : <p>No post was found.</p>}
 				</div>
 			</section>
 			<section className='my-32'>
-				<div className='flex flex-wrap gap-2 justify-between items-center'>
-					<h2 className='text-2xl md:text-3xl font-extrabold' id='projects'>
+				<div className='flex flex-wrap items-center justify-between gap-2'>
+					<h2 className='text-2xl font-extrabold md:text-3xl' id='projects'>
 						Latest projects
 					</h2>
 					<SeeMoreButton text='Browse all projects' href='/projects' />
@@ -58,7 +58,7 @@ export default function Home({
 				<p className='mt-2 mb-10 text-gray-600 dark:text-gray-300'>
 					Here are some of the projects I had fun with lately.
 				</p>
-				<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10'>
+				<div className='grid gap-10 md:grid-cols-2 lg:grid-cols-3'>
 					{projects.length ? (
 						projects.map((project) => <ProjectCard key={project.name} project={project} />)
 					) : (
@@ -66,8 +66,8 @@ export default function Home({
 					)}
 				</div>
 			</section>
-			<aside className='my-32 md:w-4/6 lg:w-3/6 mx-auto'>
-				<p className='text-2xl font-bold italic mb-2 text-center dark:text-gray-500 mt-2'>
+			<aside className='my-32 mx-auto md:w-4/6 lg:w-3/6'>
+				<p className='mb-2 mt-2 text-center text-2xl font-bold italic dark:text-gray-500'>
 					"The most important ingredient we put into any relationship is not what we say or what we do, but what we
 					are."
 				</p>
@@ -75,14 +75,14 @@ export default function Home({
 			</aside>
 
 			<section className='my-16'>
-				<div className='flex flex-wrap justify-between items-center'>
-					<h2 className='text-2xl md:text-3xl font-extrabold'>Library</h2>
+				<div className='flex flex-wrap items-center justify-between'>
+					<h2 className='text-2xl font-extrabold md:text-3xl'>Library</h2>
 					<SeeMoreButton text='Browse all books' href='/library' />
 				</div>
-				<p className='mt-2 mb-10 text-gray-600 dark:text-gray-300 text-lg'>
+				<p className='mt-2 mb-10 text-lg text-gray-600 dark:text-gray-300'>
 					Here are some books, movies or articles I recently loved.
 				</p>
-				<div className='grid grid-cols-2 md:grid-cols-4 gap-10'>
+				<div className='grid grid-cols-2 gap-10 md:grid-cols-4'>
 					{books.length ? (
 						books.map((book) => (
 							<BookCard
@@ -119,9 +119,9 @@ export const getStaticProps: GetStaticProps = async () => {
 
 function SeeMoreButton({ text, href }: { text: string; href: string }): JSX.Element {
 	return (
-		<CustomLink href={href} className='inline-block group'>
+		<CustomLink href={href} className='group inline-block'>
 			<span>{text}</span>
-			<Arrow direction='right' className='transform group-hover:-rotate-45 duration-200 inline ease-in-out' />
+			<Arrow direction='right' className='inline transform duration-200 ease-in-out group-hover:-rotate-45' />
 		</CustomLink>
 	);
 }

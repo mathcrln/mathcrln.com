@@ -22,24 +22,24 @@ export default function Articles({
 				description: 'All my posts on web development, productivity, self-help and creativity.',
 			}}
 		>
-			<div className='flex flex-col md:flex-row justify-between mb-14'>
+			<div className='mb-14 flex flex-col justify-between md:flex-row'>
 				<PageHeader title='Blog'>
 					<p>Sharing ideas and discoveries in a few words.</p>
 				</PageHeader>
-				<div className='text-center flex justify-between md:justify-start items-center md:flex-col'>
+				<div className='flex items-center justify-between text-center md:flex-col md:justify-start'>
 					<p>
 						<span className='text-2xl md:text-4xl'>1</span> of {nbOfPages}
 					</p>
-					<Pagination pageNumber={1} hasPreviousPage={false} hasNextPage={hasNextPage} className='md:mt-2 self-end' />
+					<Pagination pageNumber={1} hasPreviousPage={false} hasNextPage={hasNextPage} className='self-end md:mt-2' />
 				</div>
 			</div>
-			<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10 '>
+			<div className='grid gap-10 md:grid-cols-2 lg:grid-cols-3 '>
 				{posts?.map((post: IPost) => (
 					<PostCard key={post.title} post={post} />
 				))}
 			</div>
 			<Pagination
-				className='my-14 py-3 dark:border-gray-700 max-w-max mx-auto'
+				className='my-14 mx-auto max-w-max py-3 dark:border-gray-700'
 				pageNumber={1}
 				hasPreviousPage={false}
 				hasNextPage={hasNextPage}

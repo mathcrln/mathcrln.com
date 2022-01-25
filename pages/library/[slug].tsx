@@ -27,11 +27,11 @@ export default function ArchivePage({ archive, source, suggestions }: Props): JS
 				description: archive.description,
 			}}
 		>
-			<header className='grid md:grid-cols-[1fr,2fr] gap-10 items-center'>
+			<header className='grid items-center gap-10 md:grid-cols-[1fr,2fr]'>
 				<ImageCard src={archive.cover.url} height={375} width={248} className='h-initial place-self-center' />
 				<PageHeader title={archive.name}>
 					<p className='block font-bold'>{archive.author}</p>
-					<p className='my-5 font-ligth'>{archive.description}</p>
+					<p className='font-ligth my-5'>{archive.description}</p>
 					<AuthorDate date={archive.date} />
 				</PageHeader>
 			</header>
@@ -39,8 +39,8 @@ export default function ArchivePage({ archive, source, suggestions }: Props): JS
 
 			{suggestions.length ? (
 				<section>
-					<h2 className='font-bold text-3xl mb-10'>More like that...</h2>
-					<div className='grid grid-cols-2 md:grid-cols-5 gap-10'>
+					<h2 className='mb-10 text-3xl font-bold'>More like that...</h2>
+					<div className='grid grid-cols-2 gap-10 md:grid-cols-5'>
 						{suggestions.map((book) => (
 							<BookCard
 								key={book.name}

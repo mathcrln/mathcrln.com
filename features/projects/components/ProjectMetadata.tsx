@@ -6,7 +6,7 @@ export default function ProjectMetadata({ project, className }: { project: IProj
 		<div className={`space-y-5 ${className}`}>
 			<h2 className='text-3xl font-bold'>{project?.name}</h2>
 			<p>{project?.description}</p>
-			<div className='flex space-x-4 items-center'>
+			<div className='flex items-center space-x-4'>
 				<span>Built with</span>
 				{project.skills &&
 					project?.skills?.map((skill: ISkill) => (

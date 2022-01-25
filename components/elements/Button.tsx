@@ -16,7 +16,7 @@ type IActionButton = IButton & {
 
 function Button({ title, className }: IButton): JSX.Element {
 	return (
-		<span className={`bg-primary-light dark:bg-primary-dark rounded-lg py-3 px-6 font-medium text-white ${className}`}>
+		<span className={`rounded-lg bg-primary-light py-3 px-6 font-medium text-white dark:bg-primary-dark ${className}`}>
 			{title}
 		</span>
 	);

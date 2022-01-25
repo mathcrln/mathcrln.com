@@ -10,7 +10,7 @@ export default function Gallery({
 	cols?: number;
 }): JSX.Element {
 	return (
-		<div className={`grid grid-cols-2 gap-5 ${getCols(cols)} md:gap-5 my-10 items-stretch justify-center`}>
+		<div className={`grid grid-cols-2 gap-5 ${getCols(cols)} my-10 items-stretch justify-center md:gap-5`}>
 			{images.map(({ slug, alt, rowsSpan, colsSpan, linkURL }) => (
 				<span key={uuid()}>
 					{linkURL && (

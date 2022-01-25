@@ -15,10 +15,10 @@ export default function Footer({ className = '' }: { className?: string }): JSX.
 	};
 
 	return (
-		<footer className={`w-full mx-auto py-8 ${className}`}>
+		<footer className={`mx-auto w-full py-8 ${className}`}>
 			<Container>
-				<hr className='w-full border-1 border-gray-200 dark:border-gray-700 mb-8' />
-				<div className='grid grid-cols-2 text-center | md:text-left md:grid-cols-4 gap-10'>
+				<hr className='border-1 mb-8 w-full border-gray-200 dark:border-gray-700' />
+				<div className='| grid grid-cols-2 gap-10 text-center md:grid-cols-4 md:text-left'>
 					{FOOTER_LINKS.map((column) => (
 						<div key={column.name} className='space-y-3'>
 							<p className='font-bold'>{column.name}</p>
@@ -39,24 +39,24 @@ export default function Footer({ className = '' }: { className?: string }): JSX.
 					))}
 					<Logo className='w-8 place-self-center' />
 				</div>
-				<div className='py-4 space-x-2 mt-4 grid md:grid-cols-3 gap-2 text-center md:text-left items-center justify-center'>
+				<div className='mt-4 grid items-center justify-center gap-2 space-x-2 py-4 text-center md:grid-cols-3 md:text-left'>
 					<div>
 						<p>
 							© 2021, Jerry by <CustomLink href='https://twitter.com/mathcrln'>@mathcrln</CustomLink>{' '}
 						</p>
 						<div className='flex space-x-2'>
-							<CustomLink href='/log' className='inline-block group'>
+							<CustomLink href='/log' className='group inline-block'>
 								Changelog
 							</CustomLink>
 							<span className='block'>|</span>
-							<CustomLink href='/legal' className='inline-block group'>
+							<CustomLink href='/legal' className='group inline-block'>
 								Legal Notice
 							</CustomLink>
 						</div>
 					</div>
 
 					<div />
-					<div className='flex space-x-2 text-center justify-center md:place-self-end'>
+					<div className='flex justify-center space-x-2 text-center md:place-self-end'>
 						<ThemeSelect selected={themeMode} onChange={handleThemeChange} />
 					</div>
 				</div>

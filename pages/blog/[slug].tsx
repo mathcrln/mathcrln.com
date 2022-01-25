@@ -26,10 +26,10 @@ export default function Post({ post, source, suggestions }: Props): JSX.Element 
 			}}
 		>
 			<section>
-				{!post && <p className='my-14 relative'>Seems like no post with this name has been found</p>}
+				{!post && <p className='relative my-14'>Seems like no post with this name has been found</p>}
 				{post && (
 					<div>
-						<div className='mb-20 lg:grid-cols-2 grid gap-10 md:gap-5 items-center'>
+						<div className='mb-20 grid items-center gap-10 md:gap-5 lg:grid-cols-2'>
 							<div className='space-y-5'>
 								<PostDate date={post.date} />
 								<PageHeader title={post.title}>
@@ -48,8 +48,8 @@ export default function Post({ post, source, suggestions }: Props): JSX.Element 
 						</ContentArticle>
 						{suggestions.length && (
 							<section className='my-10'>
-								<h2 className='font-bold text-3xl mb-10'>More like that...</h2>
-								<div className='grid md:grid-cols-2 lg:grid-cols-2 gap-10'>
+								<h2 className='mb-10 text-3xl font-bold'>More like that...</h2>
+								<div className='grid gap-10 md:grid-cols-2 lg:grid-cols-2'>
 									{suggestions.map((suggested) => (
 										<PostCard post={suggested} key={suggested.slug} />
 									))}

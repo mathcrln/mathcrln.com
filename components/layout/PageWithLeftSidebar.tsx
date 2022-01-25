@@ -4,5 +4,5 @@ type IPageWithLeftSidebar = {
 };
 
 export default function PageWithLeftSidebar({ children, className }: IPageWithLeftSidebar): JSX.Element {
-	return <div className={`grid gap-8 | xl:gap-14 md:grid-cols-[2fr,5fr] ${className}`}>{children}</div>;
+	return <div className={`| grid gap-8 md:grid-cols-[2fr,5fr] xl:gap-14 ${className}`}>{children}</div>;
 }

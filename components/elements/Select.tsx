@@ -22,10 +22,10 @@ function Select({ options, id, label, className, onBlur, onChange, selected }: I
 	const selectedOption = options.find((option) => option.value === selected);
 	return (
 		<div
-			className={`${className} border relative flex items-center text-black dark:text-gray-300 rounded-md border-gray-300 dark:border-gray-600 dark:hover:border-gray-400  space-x-2  justify-center group group-focus:ring-2 cursor-pointer`}
+			className={`${className} text-black group relative flex cursor-pointer items-center justify-center space-x-2 rounded-md border  border-gray-300  group-focus:ring-2 dark:border-gray-600 dark:text-gray-300 dark:hover:border-gray-400`}
 		>
 			{selectedOption && (
-				<span className='inline-flex absolute pointer-events-none transition-colors duration-75 ease-in left-[12px]'>
+				<span className='pointer-events-none absolute left-[12px] inline-flex transition-colors duration-75 ease-in'>
 					{selectedOption.icon}
 				</span>
 			)}
@@ -33,7 +33,7 @@ function Select({ options, id, label, className, onBlur, onChange, selected }: I
 				name='theme'
 				id={id || undefined}
 				aria-label={label}
-				className='appearance-none focus:outline-none dark:appearance-none h-[32px] px-[calc(1.5*24px)]'
+				className='focus:outline-none h-[32px] appearance-none px-[calc(1.5*24px)] dark:appearance-none'
 				onChange={onChange || undefined}
 				onBlur={onBlur || undefined}
 				value={selected || undefined}
@@ -44,7 +44,7 @@ function Select({ options, id, label, className, onBlur, onChange, selected }: I
 					</option>
 				))}
 			</select>
-			<UpDownArrows className='inline-flex absolute pointer-events-none transition-colors duration-75 ease-in right-[12px] hover:text-primary-dark' />
+			<UpDownArrows className='pointer-events-none absolute right-[12px] inline-flex transition-colors duration-75 ease-in hover:text-primary-dark' />
 		</div>
 	);
 }

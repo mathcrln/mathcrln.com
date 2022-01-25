@@ -20,14 +20,14 @@ export default function ProjectCard({ project }: { project: IProjectCard }): JSX
 						{previewUrl && (
 							<CustomLink href={previewUrl} className=''>
 								Demo
-								<Planet className='ml-2 h-[20px] w-[20px] fill-current transform group-hover:rotate-12 duration-200 inline ease-in-out' />
+								<Planet className='ml-2 inline h-[20px] w-[20px] transform fill-current duration-200 ease-in-out group-hover:rotate-12' />
 							</CustomLink>
 						)}
 
 						{sourcesUrl && (
-							<CustomLink href={sourcesUrl} className='flex items-center group'>
+							<CustomLink href={sourcesUrl} className='group flex items-center'>
 								Browse Code
-								<Github className='ml-2 h-[20px] w-[20px] transform group-hover:rotate-12 duration-200 inline ease-in-out' />
+								<Github className='ml-2 inline h-[20px] w-[20px] transform duration-200 ease-in-out group-hover:rotate-12' />
 							</CustomLink>
 						)}
 					</span>

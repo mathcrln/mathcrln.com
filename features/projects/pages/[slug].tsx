@@ -15,7 +15,7 @@ export default function ProjectPage({ project, source }: ProjectProps): JSX.Elem
 				description: project ? project.description : 'Here is a fun project I played with.',
 			}}
 		>
-			{!project && <p className='my-14 relative'>Seems like no project with this name has been found</p>}
+			{!project && <p className='relative my-14'>Seems like no project with this name has been found</p>}
 			{project && <SingleProjectLayout project={project} source={source} />}
 		</Page>
 	);

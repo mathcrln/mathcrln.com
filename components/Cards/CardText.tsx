@@ -15,11 +15,11 @@ export default function CardText({ title, details, url, options }: ICardInfos): 
 	return (
 		<>
 			<LinkWrapper href={url}>
-				<h3 className={`mt-5 font-bold text-xl hover:text-primary-light dark:hover:text-primary-dark ${titleStyle}`}>
+				<h3 className={`mt-5 text-xl font-bold hover:text-primary-light dark:hover:text-primary-dark ${titleStyle}`}>
 					{title}
 				</h3>
 			</LinkWrapper>
-			{details ? <p className='text-lg text-gray-600 dark:text-gray-400 mt-2'>{details}</p> : null}
+			{details ? <p className='mt-2 text-lg text-gray-600 dark:text-gray-400'>{details}</p> : null}
 		</>
 	);
 }
