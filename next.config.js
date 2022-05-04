@@ -3,7 +3,7 @@ const withMDX = require('@next/mdx')();
 module.exports = withMDX({
 	reactStrictMode: true,
 	images: {
-		domains: ['media.graphcms.com', 'localhost'],
+		domains: ['media.graphassets.com', 'localhost'],
 	},
 	swcMinify: true,
 	async redirects() {
