@@ -1,6 +1,6 @@
 export const GA_TRACKING_ID =
 	process.env.NODE_ENV === 'production'
-		? process.env.NEXT_PUBLIC_GA_PRODC_TRACKING_ID
+		? process.env.NEXT_PUBLIC_GA_PROD_TRACKING_ID
 		: process.env.NEXT_PUBLIC_GA_DEV_TRACKING_ID;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

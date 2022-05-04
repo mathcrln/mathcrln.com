@@ -8,7 +8,7 @@ import { getAllpageSlugs, getPageBySlug } from 'features/common/graphql/pages';
 import relativeDate from 'relative-date';
 import { IPage } from 'features/common/models/pages';
 
-export default function Now({ page, source }: { page: IPage; source: MDXRemoteSerializeResult }): JSX.Element {
+export default function Pages({ page, source }: { page: IPage; source: MDXRemoteSerializeResult }): JSX.Element {
 	return (
 		<Page
 			seo={{

@@ -16,7 +16,8 @@ class MyDocument extends Document {
 					{/* Global Site Tag (gtag.js) - Google Analytics */}
 					{process.env.NODE_ENV === 'production' && (
 						<>
-							<script async src='https://cdn.splitbee.io/sb.js' />
+							<script async data-api='/_hive' src='/bee.js' />
+
 							<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
 							<script
 								// eslint-disable-next-line react/no-danger

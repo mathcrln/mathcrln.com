@@ -71,6 +71,18 @@ module.exports = withMDX({
 				source: '/lib/plausible.js',
 				destination: 'https://plausible.io/js/plausible.js',
 			},
+			{
+				source: '/lib/api/event',
+				destination: 'https://plausible.io/api/event',
+			},
+			{
+				source: '/bee.js',
+				destination: 'https://cdn.splitbee.io/sb.js',
+			},
+			{
+				source: '/_hive/:slug',
+				destination: 'https://hive.splitbee.io/:slug',
+			},
 		];
 	},
 });
