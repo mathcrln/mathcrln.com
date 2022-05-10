@@ -12,6 +12,7 @@ import * as gAnalytics from 'lib/google-analytics';
 import SEO from 'lib/next-seo.config';
 import YouTubePlayer from '@/components/YouTubePlayer';
 import Gallery from '@/components/Gallery';
+import useFathom from '@/hooks/useFathom';
 
 const components = {
 	h2: H2,
@@ -33,7 +34,7 @@ const components = {
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 	const router = useRouter();
-
+	useFathom();
 	useEffect(() => {
 		const handleRouteChange = (url: URL) => {
 			gAnalytics.pageview(url);
