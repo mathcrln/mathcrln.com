@@ -68,14 +68,6 @@ module.exports = withMDX({
 	async rewrites() {
 		return [
 			{
-				source: '/lib/plausible.js',
-				destination: 'https://plausible.io/js/plausible.js',
-			},
-			{
-				source: '/lib/api/event',
-				destination: 'https://plausible.io/api/event',
-			},
-			{
 				source: '/bee.js',
 				destination: 'https://cdn.splitbee.io/sb.js',
 			},

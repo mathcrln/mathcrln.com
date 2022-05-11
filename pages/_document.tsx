@@ -13,7 +13,6 @@ class MyDocument extends Document {
 						rel='stylesheet'
 					/>
 
-					{/* Global Site Tag (gtag.js) - Google Analytics */}
 					{process.env.NODE_ENV === 'production' && (
 						<>
 							<script async data-api='/_hive' src='/bee.js' />
@@ -32,7 +31,6 @@ class MyDocument extends Document {
                             `,
 								}}
 							/>
-							<script defer data-domain='mathcrln.com' src='/lib/plausible.js' />
 						</>
 					)}
 				</Head>

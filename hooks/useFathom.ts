@@ -7,8 +7,7 @@ const FATHOM_ID = process.env.NEXT_PUBLIC_FATHOM_ID || '';
 export default function useFathom(): void {
 	useEffect(() => {
 		Fathom.load(FATHOM_ID, {
-			url: 'https://sample.mathcrln.com',
-			includedDomains: ['mathcrln.com', 'dev.mathcrln.com'],
+			includedDomains: ['mathcrln.com'],
 		});
 
 		function onRouteChangeComplete() {
