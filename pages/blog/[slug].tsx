@@ -103,7 +103,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 			source,
 			suggestions,
 		},
-		revalidate: 60,
+		revalidate: 3600 * 24 * 7,
 	};
 };
 

@@ -62,6 +62,6 @@ export const getStaticProps: GetStaticProps = async () => {
 			hasNextPage,
 			nbOfPages,
 		},
-		revalidate: 60,
+		revalidate: 3600 * 24,
 	};
 };
