@@ -4,18 +4,13 @@ import ImageCard from 'components/ImageCard';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { ParsedUrlQuery } from 'querystring';
 import { serialize } from 'next-mdx-remote/serialize';
-import {
-	getAllArchivesSlugs,
-	getArchiveBySlug,
-	getPreviewArchiveBySlug,
-	getArchivesCards,
-} from 'features/archives/graphql/archives';
+import { getAllArchivesSlugs, getArchiveBySlug, getPreviewArchiveBySlug, getArchivesCards } from 'src/archives/graphql/archives';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { IBook } from 'features/archives/models/books';
+import { IBook } from 'src/archives/models/books';
 import ContentArticle from 'components/ContentArticle';
 import AuthorDate from 'components/AuthorDate';
 import React from 'react';
-import BookCard from 'features/archives/components/BookCard';
+import BookCard from 'src/archives/components/BookCard';
 
 export default function ArchivePage({ archive, source, suggestions }: Props): JSX.Element {
 	return (

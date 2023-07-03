@@ -3,7 +3,7 @@ import { Logo } from 'components/icons';
 import Link from 'next/link';
 import { FOOTER_LINKS } from 'data/LINKS';
 import CustomLink from 'components/elements/Link';
-import ThemeSelect, { useDarkMode, ThemeMode } from 'features/themes';
+import ThemeSelect, { useDarkMode, ThemeMode } from 'src/themes';
 import Container from './Container';
 
 export default function Footer({ className = '' }: { className?: string }): JSX.Element {
@@ -15,7 +15,7 @@ export default function Footer({ className = '' }: { className?: string }): JSX.
 	};
 
 	return (
-        <footer className={`mx-auto w-full py-8 ${className}`}>
+		<footer className={`mx-auto w-full py-8 ${className}`}>
 			<Container>
 				<hr className='border-1 mb-8 w-full border-gray-200 dark:border-gray-700' />
 				<div className='| grid grid-cols-2 gap-10 text-center md:grid-cols-4 md:text-left'>
@@ -62,5 +62,5 @@ export default function Footer({ className = '' }: { className?: string }): JSX.
 				</div>
 			</Container>
 		</footer>
-    );
+	);
 }

@@ -1,5 +1,5 @@
 import { gql } from '@apollo/client';
-import { IBook } from 'features/archives/models/books';
+import { IBook } from 'src/archives/models/books';
 import graphCMS from 'lib/apollo-client';
 
 /**

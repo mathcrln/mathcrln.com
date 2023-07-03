@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { getPreviewPostBySlug } from 'features/blog/graphql/posts';
+import { getPreviewPostBySlug } from '@/blog/graphql/posts';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void> {
 	// Check the secret and next parameters

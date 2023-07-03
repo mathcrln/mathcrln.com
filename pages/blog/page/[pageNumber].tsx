@@ -1,9 +1,9 @@
 import PageHeader from 'components/PageHeader';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { getNumberOfPosts, getPaginatedPostsCards } from 'features/blog/graphql/posts';
+import { getNumberOfPosts, getPaginatedPostsCards } from '@/blog/graphql/posts';
 import { ParsedUrlQuery } from 'querystring';
 import Page from '@/components/layout/Page';
-import PostCard, { IPost } from 'features/blog/components/PostCard';
+import PostCard, { IPost } from '@/blog/components/PostCard';
 import Pagination from '@/components/Pagination';
 import { CARDS_PER_PAGE } from 'site.config';
 

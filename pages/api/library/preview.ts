@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { getPreviewArchiveBySlug } from '@/archives/graphql/archives';
+import { getPreviewArchiveBySlug } from 'src/archives/graphql/archives';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void> {
 	// Check the secret and next parameters

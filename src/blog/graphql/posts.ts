@@ -1,4 +1,4 @@
-import { IPost } from 'features/blog/components/PostCard';
+import { IPost } from '@/blog/components/PostCard';
 import { gql } from '@apollo/client';
 import graphCMS from '../../../lib/apollo-client';
 
