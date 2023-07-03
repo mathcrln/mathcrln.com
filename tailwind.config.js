@@ -1,10 +1,10 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-	mode: 'jit',
-	purge: [
+	content: [
 		'pages/**/*.{js,ts,jsx,tsx}',
 		'components/**/*.{js,ts,jsx,tsx}',
+		'components/icons/**/*.{js,ts,jsx,tsx}',
 		'components/layout/**/*.{js,ts,jsx,tsx}',
 		'features/**/*.{js,ts,jsx,tsx}',
 		'styles/**/*.{scss, css}',
@@ -12,7 +12,7 @@ module.exports = {
 	darkMode: 'class',
 	theme: {
 		colors: {
-			gray: colors.coolGray,
+			gray: colors.gray,
 			blue: colors.sky,
 			red: colors.rose,
 			green: colors.green,
@@ -45,9 +45,6 @@ module.exports = {
 				lines: "url('/lines.png')",
 			},
 		},
-	},
-	variants: {
-		extend: {},
 	},
 	plugins: [],
 };
