@@ -1,10 +1,10 @@
-import PageHeader from 'components/PageHeader';
+import PageHeader from '@/common/components/PageHeader';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { getNumberOfPosts, getPaginatedPostsCards } from '@/blog/graphql/posts';
 import { ParsedUrlQuery } from 'querystring';
-import Page from '@/components/layout/Page';
+import Page from '@/common/components/layout/Page';
 import PostCard, { IPost } from '@/blog/components/PostCard';
-import Pagination from '@/components/Pagination';
+import Pagination from '@/common/components/Pagination';
 import { CARDS_PER_PAGE } from 'site.config';
 
 type Props = {

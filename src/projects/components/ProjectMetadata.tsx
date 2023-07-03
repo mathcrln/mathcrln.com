@@ -1,5 +1,5 @@
 import { IProjectCard } from '@/projects/models/projects';
-import Skill, { ISkill } from 'components/skills/Skill';
+import Skill, { ISkill } from '@/common/components/skills/Skill';
 
 export default function ProjectMetadata({ project, className }: { project: IProjectCard; className?: string }): JSX.Element {
 	return (

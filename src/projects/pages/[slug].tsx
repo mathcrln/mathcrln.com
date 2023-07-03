@@ -3,7 +3,7 @@ import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import { ParsedUrlQuery } from 'querystring';
 import { getAllProjectsSlugs, getProjectBySlug } from '@/projects/graphql/projects';
-import Page from '@/components/layout/Page';
+import Page from '@/common/components/layout/Page';
 import SingleProjectLayout, { ProjectProps } from '@/projects/layouts/SingleProjectLayout';
 import { IProject } from '@/projects/models/projects';
 

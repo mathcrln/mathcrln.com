@@ -1,5 +1,5 @@
-import LinkWrapper from '@/components/elements/LinkWrapper';
-import ImageCard from 'components/ImageCard';
+import LinkWrapper from '@/common/components/elements/LinkWrapper';
+import ImageCard from '@/common/components/ImageCard';
 
 export function BookCover({ coverSrc }: { coverSrc: string }): JSX.Element {
 	return <ImageCard src={coverSrc || '/book-placeholder.png'} height={454} width={301} className='h-initial' />;

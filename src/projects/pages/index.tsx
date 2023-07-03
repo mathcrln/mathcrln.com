@@ -3,8 +3,8 @@ import { IProjectCard } from '@/projects/models/projects';
 import { getProjectsCards } from '@/projects/graphql/projects';
 import FeaturedProjectCard from '@/projects/components/FeaturedProjectCard';
 import ProjectGrid from '@/projects/components/ProjectGrid';
-import PageHeader from 'components/PageHeader';
-import Page from '@/components/layout/Page';
+import PageHeader from '@/common/components/PageHeader';
+import Page from '@/common/components/layout/Page';
 
 type ProjectsProps = { projects: IProjectCard[] };
 

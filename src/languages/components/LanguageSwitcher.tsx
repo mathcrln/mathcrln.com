@@ -1,4 +1,4 @@
-import Select, { IOption } from '@/components/elements/Select';
+import Select, { IOption } from '@/common/components/elements/Select';
 
 type ILanguageSwitcher = {
 	languages: IOption[];

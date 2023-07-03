@@ -2,17 +2,17 @@ import type { AppProps } from 'next/app';
 import { MDXProvider } from '@mdx-js/react';
 import { DefaultSeo } from 'next-seo';
 import { useRouter } from 'next/router';
-import { H2, H3, H4, H5, H6, P, UL, LI, OL, HR, IMG, BLOCKQUOTE } from 'components/MDXElements';
-import Footer from '@/components/layout/Footer';
-import Header from '@/components/layout/Header';
-import CustomLink from 'components/elements/Link';
+import { H2, H3, H4, H5, H6, P, UL, LI, OL, HR, IMG, BLOCKQUOTE } from '@/common/components/MDXElements';
+import Footer from '@/common/components/layout/Footer';
+import Header from '@/common/components/layout/Header';
+import CustomLink from '@/common/components/elements/Link';
 import 'styles/globals.css';
 import React, { useEffect } from 'react';
 import * as gAnalytics from 'lib/google-analytics';
 import SEO from 'lib/next-seo.config';
-import YouTubePlayer from '@/components/YouTubePlayer';
-import Gallery from '@/components/Gallery';
-import Analytics from '@/components/Analytics';
+import YouTubePlayer from '@/common/components/YouTubePlayer';
+import Gallery from '@/common/components/Gallery';
+import Analytics from '@/common/components/Analytics';
 
 const components = {
 	h2: H2,

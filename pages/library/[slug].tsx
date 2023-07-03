@@ -1,14 +1,14 @@
-import PageHeader from 'components/PageHeader';
-import Page from '@/components/layout/Page';
-import ImageCard from 'components/ImageCard';
+import PageHeader from '@/common/components/PageHeader';
+import Page from '@/common/components/layout/Page';
+import ImageCard from '@/common/components/ImageCard';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { ParsedUrlQuery } from 'querystring';
 import { serialize } from 'next-mdx-remote/serialize';
 import { getAllArchivesSlugs, getArchiveBySlug, getPreviewArchiveBySlug, getArchivesCards } from 'src/archives/graphql/archives';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { IBook } from 'src/archives/models/books';
-import ContentArticle from 'components/ContentArticle';
-import AuthorDate from 'components/AuthorDate';
+import ContentArticle from '@/common/components/ContentArticle';
+import AuthorDate from '@/common/components/AuthorDate';
 import React from 'react';
 import BookCard from 'src/archives/components/BookCard';
 

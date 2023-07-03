@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from 'react';
-import Select from '@/components/elements/Select';
-import SystemComputer from '@/components/icons/Computer';
-import { Moon, Sun } from '@/components/icons';
+import Select from '@/common/components/elements/Select';
+import SystemComputer from '@/common/components/icons/Computer';
+import { Moon, Sun } from '@/common/components/icons';
 import { ThemeMode } from '../theme.model';
 
 const themeOptions = [

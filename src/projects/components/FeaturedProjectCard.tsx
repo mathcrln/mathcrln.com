@@ -1,5 +1,5 @@
 import Link from 'next/dist/client/link';
-import ImageCard from 'components/ImageCard';
+import ImageCard from '@/common/components/ImageCard';
 import ProjectMetadata from './ProjectMetadata';
 import { IProjectCard } from '../models/projects';
 

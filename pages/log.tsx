@@ -1,4 +1,4 @@
-import WaitingPage from '@/components/WaitingPage';
+import WaitingPage from '@/common/components/WaitingPage';
 
 export default function ChangeLog(): JSX.Element {
 	return <WaitingPage title='Newsletter' />;

@@ -1,8 +1,8 @@
 import relativeDate from 'relative-date';
-import ContentArticle from 'components/ContentArticle';
-import { LinkButton } from 'components/elements/Button';
-import ImageCard from 'components/ImageCard';
-import Skill, { ISkill } from 'components/skills/Skill';
+import ContentArticle from '@/common/components/ContentArticle';
+import { LinkButton } from '@/common/components/elements/Button';
+import ImageCard from '@/common/components/ImageCard';
+import Skill, { ISkill } from '@/common/components/skills/Skill';
 import React from 'react';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { IProject } from '../models/projects';

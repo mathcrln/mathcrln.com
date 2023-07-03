@@ -1,8 +1,8 @@
-import Image from "next/legacy/image";
+import Image from 'next/legacy/image';
 import mathieu from '@/public/mathieu.jpg';
 import martinique from '@/public/martinique.jpg';
-import PageHeader from 'components/PageHeader';
-import Page from '@/components/layout/Page';
+import PageHeader from '@/common/components/PageHeader';
+import Page from '@/common/components/layout/Page';
 
 export default function About(): JSX.Element {
 	return (

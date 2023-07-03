@@ -1,4 +1,4 @@
-import CardText from '@/components/Cards/CardText';
+import CardText from '@/common/components/Cards/CardText';
 import { BookCoverLink } from './BookCover';
 
 export default function BookCard({

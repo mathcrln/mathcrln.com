@@ -1,8 +1,8 @@
-import Github from 'components/icons/Github';
-import CustomLink from 'components/elements/Link';
-import ImageCard from 'components/ImageCard';
-import Planet from 'components/icons/Planet';
-import CardText from '@/components/Cards/CardText';
+import Github from '@/common/components/icons/Github';
+import CustomLink from '@/common/components/elements/Link';
+import ImageCard from '@/common/components/ImageCard';
+import Planet from '@/common/components/icons/Planet';
+import CardText from '@/common/components/Cards/CardText';
 import { IProjectCard } from '../models/projects';
 
 export default function ProjectCard({ project }: { project: IProjectCard }): JSX.Element {

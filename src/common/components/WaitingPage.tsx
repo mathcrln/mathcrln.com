@@ -1,5 +1,5 @@
-import Page from '@/components/layout/Page';
-import Image from "next/legacy/image";
+import Page from '@/common/components/layout/Page';
+import Image from 'next/legacy/image';
 import React from 'react';
 import PageHeader from './PageHeader';
 

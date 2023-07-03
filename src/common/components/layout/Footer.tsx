@@ -1,11 +1,72 @@
 import React, { ChangeEvent } from 'react';
-import { Logo } from 'components/icons';
+import { Logo } from '@/common/components/icons';
 import Link from 'next/link';
-import { FOOTER_LINKS } from 'data/LINKS';
-import CustomLink from 'components/elements/Link';
+import CustomLink from '@/common/components/elements/Link';
 import ThemeSelect, { useDarkMode, ThemeMode } from 'src/themes';
 import Container from './Container';
 
+const FOOTER_LINKS = [
+	{
+		name: "What's next?",
+		links: [
+			{
+				title: 'Resume',
+				slug: '/resume',
+				isInternal: true,
+			},
+			{
+				title: 'Hire me',
+				slug: '/hire',
+				isInternal: true,
+			},
+			{
+				title: 'Newsletter',
+				slug: '/newsletter',
+				isInternal: true,
+			},
+		],
+	},
+	{
+		name: 'Connect',
+		links: [
+			{
+				title: 'Twitter',
+				slug: 'https://twitter.com/mathcrln',
+				isInternal: false,
+			},
+			{
+				title: 'Github',
+				slug: 'https://github.com/mathcrln',
+				isInternal: false,
+			},
+			{
+				title: 'Linkedin',
+				slug: 'https://linkedin.com/in/mathieu-ceraline',
+				isInternal: false,
+			},
+		],
+	},
+	{
+		name: 'Resources',
+		links: [
+			{
+				title: 'Stack',
+				slug: '/stack',
+				isInternal: true,
+			},
+			{
+				title: 'Now',
+				slug: '/now',
+				isInternal: true,
+			},
+			{
+				title: 'Inspirations',
+				slug: '/inspirations',
+				isInternal: true,
+			},
+		],
+	},
+];
 export default function Footer({ className = '' }: { className?: string }): JSX.Element {
 	const [, themeMode, selectThemeMode] = useDarkMode();
 

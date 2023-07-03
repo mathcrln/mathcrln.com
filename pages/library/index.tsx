@@ -1,6 +1,6 @@
 import BookCard from 'src/archives/components/BookCard';
-import PageHeader from 'components/PageHeader';
-import Page from '@/components/layout/Page';
+import PageHeader from '@/common/components/PageHeader';
+import Page from '@/common/components/layout/Page';
 import { GetStaticProps } from 'next';
 import { getArchivesCards } from 'src/archives/graphql/archives';
 import { IBook } from 'src/archives/models/books';
