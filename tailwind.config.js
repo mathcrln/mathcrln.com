@@ -12,6 +12,7 @@ module.exports = {
 	darkMode: 'class',
 	theme: {
 		colors: {
+			current: 'currentColor',
 			gray: colors.gray,
 			blue: colors.sky,
 			red: colors.rose,
