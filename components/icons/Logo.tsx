@@ -75,10 +75,10 @@ export function LogoBeta({ className = '' }: { className?: string }): JSX.Elemen
 
 export function LogoLink({ href, className = '' }: { href: string; className?: string }): JSX.Element {
 	return (
-		<Link href={href} passHref>
-			<a title='Home — Mathieu Céraline'>
-				<LogoBeta className={className} />
-			</a>
-		</Link>
-	);
+        (<Link href={href} passHref title='Home — Mathieu Céraline'>
+
+            <LogoBeta className={className} />
+
+        </Link>)
+    );
 }

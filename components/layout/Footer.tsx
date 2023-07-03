@@ -15,7 +15,7 @@ export default function Footer({ className = '' }: { className?: string }): JSX.
 	};
 
 	return (
-		<footer className={`mx-auto w-full py-8 ${className}`}>
+        <footer className={`mx-auto w-full py-8 ${className}`}>
 			<Container>
 				<hr className='border-1 mb-8 w-full border-gray-200 dark:border-gray-700' />
 				<div className='| grid grid-cols-2 gap-10 text-center md:grid-cols-4 md:text-left'>
@@ -25,8 +25,8 @@ export default function Footer({ className = '' }: { className?: string }): JSX.
 							{column.links.map((link) => (
 								<p className='text-gray-600 dark:text-gray-400' key={link.title}>
 									{link.isInternal ? (
-										<Link href={link.slug}>
-											<a title={link.title}>{link.title}</a>
+										<Link href={link.slug} title={link.title}>
+											{link.title}
 										</Link>
 									) : (
 										<a href={link.slug} title={link.title} target='_blank' rel='noreferrer'>
@@ -62,5 +62,5 @@ export default function Footer({ className = '' }: { className?: string }): JSX.
 				</div>
 			</Container>
 		</footer>
-	);
+    );
 }

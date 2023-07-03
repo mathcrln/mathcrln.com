@@ -14,10 +14,8 @@ export default function LinkWrapper({
 }): JSX.Element {
 	if (isInternalLink(href))
 		return (
-			<Link href={href} passHref>
-				<a className={className} title={title}>
-					{children}
-				</a>
+			<Link href={href} className={className} title={title} passHref>
+				{children}
 			</Link>
 		);
 	return (

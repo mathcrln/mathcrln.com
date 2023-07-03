@@ -16,13 +16,13 @@ export type IPost = {
 
 export default function PostCard({ post }: { post: IPost }): JSX.Element {
 	return (
-		<div>
+        <div>
 			<Link href={`/blog/${post.slug}`} passHref>
-				<a>
-					<ImageCard alt={post.title} src={post.cover.url} tags={post.tags} className='h-64' />
-				</a>
-			</Link>
+
+                <ImageCard alt={post.title} src={post.cover.url} tags={post.tags} className='h-64' />
+
+            </Link>
 			<CardText title={post.title} details={post.excerpt} url={`/blog/${post.slug}`} options={{ titleSize: 'xl' }} />
 		</div>
-	);
+    );
 }
