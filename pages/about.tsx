@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import mathieu from '@/public/mathieu.jpg';
 import martinique from '@/public/martinique.jpg';
 import PageHeader from 'components/PageHeader';

@@ -1,5 +1,5 @@
 import { format, parseISO } from 'date-fns';
-import Image from 'next/dist/client/image';
+import Image from 'next/legacy/image';
 
 export default function AuthorDate({ date }: { date: string }): JSX.Element {
 	return (

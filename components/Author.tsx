@@ -1,4 +1,4 @@
-import Image from 'next/dist/client/image';
+import Image from 'next/legacy/image';
 import Link from 'next/link';
 import Twitter from 'components/icons/Twitter';
 

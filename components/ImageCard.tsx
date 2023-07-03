@@ -1,4 +1,4 @@
-import Image from 'next/dist/client/image';
+import Image from 'next/legacy/image';
 
 export default function ImageCard({
 	src,
