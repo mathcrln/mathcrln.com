@@ -1,6 +1,6 @@
-import { LinkButton } from 'components/elements/Button';
-import PageHeader from 'components/PageHeader';
-import Page from '@/components/layout/Page';
+import { LinkButton } from '@/common/components/elements/Button';
+import PageHeader from '@/common/components/PageHeader';
+import Page from '@/common/components/layout/Page';
 
 export default function Page404(): JSX.Element {
 	return (

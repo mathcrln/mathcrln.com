@@ -1,17 +1,17 @@
 import { GetStaticProps } from 'next';
-import PageHeader from 'components/PageHeader';
-import Page from '@/components/layout/Page';
-import PostCard, { IPost } from 'features/blog/components/PostCard';
-import { getPostsCards } from 'features/blog/graphql/posts';
-import { getProjectsCards } from 'features/projects/graphql/projects';
-import { IProject } from 'features/projects/models/projects';
+import PageHeader from '@/common/components/PageHeader';
+import Page from '@/common/components/layout/Page';
+import PostCard, { IPost } from '@/blog/components/PostCard';
+import { getPostsCards } from '@/blog/graphql/posts';
+import { getProjectsCards } from '@/projects/graphql/projects';
+import { IProject } from '@/projects/models/projects';
 import React from 'react';
-import { IBookCard } from 'features/archives/models/books';
-import BookCard from 'features/archives/components/BookCard';
-import { getArchivesCards } from 'features/archives/graphql/archives';
-import ProjectCard from 'features/projects/components/ProjectCard';
-import CustomLink from 'components/elements/Link';
-import Arrow from '@/components/icons/Arrow';
+import { IBookCard } from 'src/archives/models/books';
+import BookCard from 'src/archives/components/BookCard';
+import { getArchivesCards } from 'src/archives/graphql/archives';
+import ProjectCard from '@/projects/components/ProjectCard';
+import CustomLink from '@/common/components/elements/Link';
+import Arrow from '@/common/components/icons/Arrow';
 
 export default function Home({
 	posts,

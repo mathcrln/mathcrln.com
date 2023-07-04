@@ -15,16 +15,14 @@
 		"jsx": "preserve",
 		"baseUrl": ".",
 		"paths": {
+			"@/*": ["src/*"],
 			"@/pages/*": ["pages/*"],
-			"@/components/*": ["components/*"],
+			"@/components/*": ["src/common/components/*"],
 			"@/data/*": ["data/*"],
-			"@/blog/*": ["features/blog/*"],
-			"@/projects/*": ["features/projects/*"],
-			"@/archives/*": ["features/archives/*"],
 			"@/styles/*": ["styles/*"],
-			"@/public/*": ["public/*"],
-			"@/hooks/*": ["hooks/*"]
-		}
+			"@/public/*": ["public/*"]
+		},
+		"incremental": true
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
 	"exclude": ["node_modules"]

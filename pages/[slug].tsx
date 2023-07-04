@@ -1,12 +1,12 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
-import ContentArticle from '@/components/ContentArticle';
-import Page from '@/components/layout/Page';
-import PageHeader from '@/components/PageHeader';
-import { getAllpageSlugs, getPageBySlug } from 'features/common/graphql/pages';
+import ContentArticle from '@/common/components/ContentArticle';
+import Page from '@/common/components/layout/Page';
+import PageHeader from '@/common/components/PageHeader';
+import { getAllpageSlugs, getPageBySlug } from '@/common/graphql/pages';
 import relativeDate from 'relative-date';
-import { IPage } from 'features/common/models/pages';
+import { IPage } from '@/common/models/pages';
 
 export default function Pages({ page, source }: { page: IPage; source: MDXRemoteSerializeResult }): JSX.Element {
 	return (

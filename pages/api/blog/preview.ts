@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { getPreviewPostBySlug } from 'features/blog/graphql/posts';
+import { getPreviewPostBySlug } from '@/blog/graphql/posts';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void> {
+export default async function handler(req: NextApiRequest, res: NextApiResponse): Promise<NextApiResponse | void> {
 	// Check the secret and next parameters
 	if (req.query.secret !== process.env.GRAPHCMS_PREVIEW_SECRET || !req.query.slug) {
 		return res.status(401).json({ message: 'Invalid token' });

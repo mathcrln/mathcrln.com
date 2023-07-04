@@ -1,18 +1,12 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-	mode: 'jit',
-	purge: [
-		'pages/**/*.{js,ts,jsx,tsx}',
-		'components/**/*.{js,ts,jsx,tsx}',
-		'components/layout/**/*.{js,ts,jsx,tsx}',
-		'features/**/*.{js,ts,jsx,tsx}',
-		'styles/**/*.{scss, css}',
-	],
+	content: ['pages/**/*.{js,ts,jsx,tsx}', 'src/**/*.{js,ts,jsx,tsx}', 'styles/**/*.{scss, css}'],
 	darkMode: 'class',
 	theme: {
 		colors: {
-			gray: colors.coolGray,
+			current: 'currentColor',
+			gray: colors.gray,
 			blue: colors.sky,
 			red: colors.rose,
 			green: colors.green,
@@ -45,9 +39,6 @@ module.exports = {
 				lines: "url('/lines.png')",
 			},
 		},
-	},
-	variants: {
-		extend: {},
 	},
 	plugins: [],
 };

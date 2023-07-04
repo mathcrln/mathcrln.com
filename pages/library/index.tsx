@@ -1,9 +1,9 @@
-import BookCard from 'features/archives/components/BookCard';
-import PageHeader from 'components/PageHeader';
-import Page from '@/components/layout/Page';
+import BookCard from 'src/archives/components/BookCard';
+import PageHeader from '@/common/components/PageHeader';
+import Page from '@/common/components/layout/Page';
 import { GetStaticProps } from 'next';
-import { getArchivesCards } from 'features/archives/graphql/archives';
-import { IBook } from 'features/archives/models/books';
+import { getArchivesCards } from 'src/archives/graphql/archives';
+import { IBook } from 'src/archives/models/books';
 
 export default function Library({ archives }: { archives: IBook[] }): JSX.Element {
 	return (
