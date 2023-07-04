@@ -4,6 +4,7 @@ import Link from 'next/link';
 import CustomLink from '@/common/components/elements/Link';
 import ThemeSelect, { useDarkMode, ThemeMode } from 'src/themes';
 import Container from './Container';
+import LanguageSwitcher from '@/languages/components/LanguageSwitcher';
 
 const FOOTER_LINKS = [
 	{
@@ -68,12 +69,8 @@ const FOOTER_LINKS = [
 	},
 ];
 export default function Footer({ className = '' }: { className?: string }): JSX.Element {
-	const [, themeMode, selectThemeMode] = useDarkMode();
 
-	const handleThemeChange = (e: ChangeEvent<HTMLSelectElement>) => {
-		const mode: ThemeMode = e.target.value as unknown as ThemeMode;
-		selectThemeMode(mode);
-	};
+
 
 	return (
 		<footer className={`mx-auto w-full py-8 ${className}`}>
@@ -118,7 +115,8 @@ export default function Footer({ className = '' }: { className?: string }): JSX.
 
 					<div />
 					<div className='flex justify-center space-x-2 text-center md:place-self-end'>
-						<ThemeSelect selected={themeMode} onChange={handleThemeChange} />
+<LanguageSwitcher />
+						<ThemeSelect />
 					</div>
 				</div>
 			</Container>

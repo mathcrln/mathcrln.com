@@ -1,11 +1,18 @@
-import Select, { IOption } from '@/common/components/elements/Select';
+import { ChangeEvent } from 'react';
+import Select from '@/common/components/elements/Select';
+import { useRouter } from 'next/router';
 
-type ILanguageSwitcher = {
-	languages: IOption[];
-	language: string;
-	onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
-};
+export default function LanguageSwitcher(): JSX.Element {
+	const router = useRouter();
+	const languages = [
+		{ value: 'en', title: 'English', label: 'Switch to english', icon: <span>🇺🇸</span> },
+		{ value: 'fr', title: 'Français', label: 'Passer au français', icon: <span>🇫🇷</span> },
+		{ value: 'es', title: 'Español', label: 'Cambiar por español', icon: <span>🇲🇽</span> },
+	];
+	const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
+		const locale = e.target.value;
+		router.push(router.pathname, router.asPath, { locale });
+	};
 
-export default function LanguageSwitcher({ languages, language, onChange }: ILanguageSwitcher): JSX.Element {
-	return <Select label='Change Language' id='lang-selector' options={languages} selected={language} onChange={onChange} />;
+	return <Select label='Change Language' id='lang-selector' options={languages} selected={router.locale} onChange={onChange} />;
 }
