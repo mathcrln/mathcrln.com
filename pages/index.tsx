@@ -12,6 +12,7 @@ import { getArchivesCards } from 'src/archives/graphql/archives';
 import ProjectCard from '@/projects/components/ProjectCard';
 import CustomLink from '@/common/components/elements/Link';
 import Arrow from '@/common/components/icons/Arrow';
+import useTranslation from 'next-translate/useTranslation';
 
 export default function Home({
 	posts,
@@ -22,6 +23,8 @@ export default function Home({
 	projects: IProject[];
 	books: IBookCard[];
 }): JSX.Element {
+	const { t } = useTranslation('home');
+
 	return (
 		<Page
 			seo={{
@@ -32,9 +35,9 @@ export default function Home({
 		>
 			<PageHeader title='Hello, I’m Mathieu Céraline 👋🏾'>
 				<p>
-					I’m a Frontend Web Developer, Designer as well as a Software Engineering student at Polytechnique Montréal.
-					You should <CustomLink href='#projects'>check out my latest works </CustomLink>
-					or <CustomLink href='/about'>learn more about me</CustomLink>.
+					{t('introduction.me')}. {t('introduction.you-should')}{' '}
+					<CustomLink href='#projects'>{t('introduction.check-out-work')}</CustomLink> {t('introduction.or')}{' '}
+					<CustomLink href='/about'>{t('introduction.learn-about-me')}</CustomLink>.
 				</p>
 			</PageHeader>
 

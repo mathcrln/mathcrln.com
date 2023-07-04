@@ -69,7 +69,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
 	const { pageNumber } = context.params as any;
-	const currentPage = await getPaginatedPostsCards(CARDS_PER_PAGE, { skip: (parseInt(pageNumber, 10) - 1) * CARDS_PER_PAGE });
+	const currentPage = await getPaginatedPostsCards(CARDS_PER_PAGE, {
+		skip: (parseInt(pageNumber, 10) - 1) * CARDS_PER_PAGE,
+	});
 	const nbOfPosts = await getNumberOfPosts();
 	const nbOfPages = await Math.ceil(nbOfPosts / CARDS_PER_PAGE);
 	const posts = currentPage?.edges?.map((edge) => edge.node);

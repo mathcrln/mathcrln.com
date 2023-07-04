@@ -1,10 +1,11 @@
-import React, { ChangeEvent } from 'react';
+import React from 'react';
 import { Logo } from '@/common/components/icons';
 import Link from 'next/link';
 import CustomLink from '@/common/components/elements/Link';
-import ThemeSelect, { useDarkMode, ThemeMode } from 'src/themes';
+import ThemeSelect from 'src/themes';
 import Container from './Container';
 import LanguageSwitcher from '@/languages/components/LanguageSwitcher';
+import useTranslation from 'next-translate/useTranslation';
 
 const FOOTER_LINKS = [
 	{
@@ -69,8 +70,7 @@ const FOOTER_LINKS = [
 	},
 ];
 export default function Footer({ className = '' }: { className?: string }): JSX.Element {
-
-
+	const { t } = useTranslation('common');
 
 	return (
 		<footer className={`mx-auto w-full py-8 ${className}`}>
@@ -108,14 +108,14 @@ export default function Footer({ className = '' }: { className?: string }): JSX.
 							</CustomLink>
 							<span className='block'>|</span>
 							<CustomLink href='/legal' className='group inline-block'>
-								Legal Notice
+								{t('legal-notice')}
 							</CustomLink>
 						</div>
 					</div>
 
 					<div />
 					<div className='flex justify-center space-x-2 text-center md:place-self-end'>
-<LanguageSwitcher />
+						<LanguageSwitcher />
 						<ThemeSelect />
 					</div>
 				</div>

@@ -124,7 +124,10 @@ const GET_PAGINATED_POSTS_CARDS = gql`
 const getPaginatedPostsCards = async (
 	limit: number,
 	options?: { skip?: number; exceptSlug?: string }
-): Promise<{ pageInfo: { hasNextPage: boolean; hasPreviousPage: boolean }; edges: { node: IPost }[] }> => {
+): Promise<{
+	pageInfo: { hasNextPage: boolean; hasPreviousPage: boolean };
+	edges: { node: IPost }[];
+}> => {
 	let page = null;
 
 	try {

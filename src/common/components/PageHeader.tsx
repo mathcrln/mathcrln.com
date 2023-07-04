@@ -7,7 +7,7 @@ export default function PageHeader({
 	centered = false,
 }: {
 	title: string;
-	children?: JSX.Element | JSX.Element[];
+	children?: JSX.Element | JSX.Element[] | string;
 	className?: string;
 	centered?: boolean;
 }): JSX.Element {

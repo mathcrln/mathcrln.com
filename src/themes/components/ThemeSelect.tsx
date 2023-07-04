@@ -8,9 +8,24 @@ import useDarkMode from '../hooks/useDarkMode';
 export default function ThemeSelect(): JSX.Element {
 	const [, themeMode, selectThemeMode] = useDarkMode();
 	const themeOptions = [
-		{ value: ThemeMode.SYSTEM, title: 'System', label: 'Follow System Settings', icon: <SystemComputer /> },
-		{ value: ThemeMode.DARK, title: 'Dark', label: 'Activate Dark Mode', icon: <Sun /> },
-		{ value: ThemeMode.LIGHT, title: 'Light', label: 'Activate Light Mode', icon: <Moon /> },
+		{
+			value: ThemeMode.SYSTEM,
+			title: 'System',
+			label: 'Follow System Settings',
+			icon: <SystemComputer />,
+		},
+		{
+			value: ThemeMode.DARK,
+			title: 'Dark',
+			label: 'Activate Dark Mode',
+			icon: <Sun />,
+		},
+		{
+			value: ThemeMode.LIGHT,
+			title: 'Light',
+			label: 'Activate Light Mode',
+			icon: <Moon />,
+		},
 	];
 	const handleThemeChange = (e: ChangeEvent<HTMLSelectElement>) => {
 		const mode: ThemeMode = e.target.value as unknown as ThemeMode;

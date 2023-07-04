@@ -6,7 +6,13 @@ export default function Gallery({
 	images,
 	cols = 4,
 }: {
-	images: { slug: string; alt?: string; rowsSpan?: number; colsSpan?: number; linkURL?: string }[];
+	images: {
+		slug: string;
+		alt?: string;
+		rowsSpan?: number;
+		colsSpan?: number;
+		linkURL?: string;
+	}[];
 	cols?: number;
 }): JSX.Element {
 	return (
