@@ -1,7 +1,6 @@
 import PageHeader from '@/common/components/PageHeader';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { getNumberOfPosts, getPaginatedPostsCards } from '@/blog/graphql/posts';
-import { ParsedUrlQuery } from 'querystring';
 import Page from '@/common/components/layout/Page';
 import PostCard, { IPost } from '@/blog/components/PostCard';
 import Pagination from '@/common/components/Pagination';
@@ -69,7 +68,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-	const { pageNumber } = context.params as Params;
+	const { pageNumber } = context.params as any;
 	const currentPage = await getPaginatedPostsCards(CARDS_PER_PAGE, { skip: (parseInt(pageNumber, 10) - 1) * CARDS_PER_PAGE });
 	const nbOfPosts = await getNumberOfPosts();
 	const nbOfPages = await Math.ceil(nbOfPosts / CARDS_PER_PAGE);
@@ -87,7 +86,3 @@ export const getStaticProps: GetStaticProps = async (context) => {
 		revalidate: 3600 * 24 * 7,
 	};
 };
-
-interface Params extends ParsedUrlQuery {
-	pageNumber: string;
-}

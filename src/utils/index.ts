@@ -3,4 +3,4 @@ const isInternalLink = (link: string): boolean => {
 	return isInternal;
 };
 
-export default isInternalLink;
+export { isInternalLink };

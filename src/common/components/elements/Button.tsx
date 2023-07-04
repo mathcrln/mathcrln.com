@@ -1,4 +1,4 @@
-import isInternalLink from 'utils/isInternalLink';
+import { isInternalLink } from '@/utils';
 import Link from 'next/link';
 
 type IButton = {
@@ -25,12 +25,10 @@ function Button({ title, className }: IButton): JSX.Element {
 function LinkButton({ title, url, className }: ILinkButton): JSX.Element {
 	if (isInternalLink(url))
 		return (
-            (<Link href={url} passHref title={title}>
-
-                <Button title={title} className={className} />
-
-            </Link>)
-        );
+			<Link href={url} passHref title={title}>
+				<Button title={title} className={className} />
+			</Link>
+		);
 	return (
 		<a href={url} title='title' target='_blank' rel='noreferrer'>
 			<Button title={title} className={className} />

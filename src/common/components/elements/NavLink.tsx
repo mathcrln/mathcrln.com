@@ -17,16 +17,15 @@ export default function NavLink({ href, title, className = '', handler }: LinkPr
 			: 'font-light';
 	// const handleKeyPress =
 	return (
-        (<Link
-            href={href}
-            passHref
-            className={`mx-3 max-w-max dark:text-white ${activeStyles} ${className}`}
-            {...(handler && { onClick: handler })}>
-
-            {title}
-
-        </Link>)
-    );
+		<Link
+			href={href}
+			passHref
+			className={`mx-3 max-w-max dark:text-white ${activeStyles} ${className}`}
+			{...(handler && { onClick: handler })}
+		>
+			{title}
+		</Link>
+	);
 }
 
 export type INavLink = {

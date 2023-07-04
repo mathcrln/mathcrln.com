@@ -8,7 +8,6 @@ import Header from '@/common/components/layout/Header';
 import CustomLink from '@/common/components/elements/Link';
 import 'styles/globals.css';
 import React, { useEffect } from 'react';
-import * as gAnalytics from 'lib/google-analytics';
 import SEO from 'lib/next-seo.config';
 import YouTubePlayer from '@/common/components/YouTubePlayer';
 import Gallery from '@/common/components/Gallery';
@@ -32,18 +31,7 @@ const components = {
 	Gallery,
 };
 
-function MyApp({ Component, pageProps }: AppProps): JSX.Element {
-	const router = useRouter();
-	useEffect(() => {
-		const handleRouteChange = (url: URL) => {
-			gAnalytics.pageview(url);
-		};
-		router.events.on('routeChangeComplete', handleRouteChange);
-		return () => {
-			router.events.off('routeChangeComplete', handleRouteChange);
-		};
-	}, [router.events]);
-
+function App({ Component, pageProps }: AppProps): JSX.Element {
 	return (
 		<MDXProvider components={components}>
 			<DefaultSeo {...SEO} />
@@ -54,4 +42,4 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
 		</MDXProvider>
 	);
 }
-export default MyApp;
+export default App;

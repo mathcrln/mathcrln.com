@@ -1,4 +1,4 @@
-import isInternalLink from 'utils/isInternalLink';
+import { isInternalLink } from '@/utils';
 import Link from 'next/dist/client/link';
 
 export default function LinkWrapper({

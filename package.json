@@ -14,7 +14,6 @@
 		"@mdx-js/loader": "^1.6.22",
 		"@mdx-js/react": "^1.6.22",
 		"@next/mdx": "^11.0.1",
-		"@notionhq/client": "^0.2.4",
 		"@types/mdx-js__react": "^1.5.4",
 		"date-fns": "^2.23.0",
 		"eslint-plugin-import": "^2.22.1",
@@ -24,6 +23,7 @@
 		"next-mdx-remote": "^3.0.4",
 		"next-seo": "^4.28.1",
 		"next-sitemap": "^1.6.203",
+		"querystring": "^0.2.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-uuid": "^1.0.2",
@@ -31,12 +31,10 @@
 		"relative-date": "^1.1.3",
 		"remark-code-titles": "^0.1.2",
 		"sharp": "^0.29.2",
-		"swr": "^0.5.6",
 		"tailwindcss": "^3.3.2"
 	},
 	"devDependencies": {
-		"@tailwindcss/jit": "^0.1.18",
-		"@types/gtag.js": "^0.0.7",
+		"@types/node": "20.3.3",
 		"@types/react": "17.0.14",
 		"@typescript-eslint/eslint-plugin": "^4.28.3",
 		"@typescript-eslint/parser": "^4.28.5",
@@ -58,6 +56,95 @@
 		"plugins": {
 			"tailwindcss": {},
 			"autoprefixer": {}
+		}
+	},
+	"prettier": {
+		"useTabs": true,
+		"trailingComma": "es5",
+		"tabWidth": 4,
+		"printWidth": 130,
+		"semi": true,
+		"singleQuote": true,
+		"jsxSingleQuote": true
+	},
+	"eslintConfig": {
+		"extends": [
+			"prettier",
+			"plugin:jsx-a11y/recommended",
+			"plugin:@typescript-eslint/recommended",
+			"plugin:import/errors",
+			"plugin:import/warnings",
+			"plugin:import/typescript",
+			"next",
+			"next/core-web-vitals"
+		],
+		"plugins": [
+			"prettier",
+			"jsx-a11y",
+			"@typescript-eslint"
+		],
+		"parser": "@typescript-eslint/parser",
+		"parserOptions": {
+			"ecmaVersion": 6,
+			"sourceType": "module",
+			"ecmaFeatures": {
+				"jsx": true
+			}
+		},
+		"rules": {
+			"import/no-unresolved": "error",
+			"@typescript-eslint/no-var-requires": "off",
+			"no-console": [
+				"warn",
+				{
+					"allow": [
+						"warn",
+						"error"
+					]
+				}
+			],
+			"no-shadow": "off",
+			"@typescript-eslint/no-shadow": "error",
+			"@typescript-eslint/no-explicit-any": "off",
+			"react/jsx-filename-extension": [
+				1,
+				{
+					"extensions": [
+						".ts",
+						".tsx",
+						".jsx"
+					]
+				}
+			],
+			"import/extensions": "off",
+			"react/prop-types": "off",
+			"react/require-default-props": 0,
+			"react/button-has-type": 0,
+			"jsx-a11y/anchor-is-valid": "off",
+			"react/jsx-props-no-spreading": [
+				"error",
+				{
+					"custom": "ignore"
+				}
+			],
+			"prettier/prettier": "warn",
+			"react/no-unescaped-entities": "off",
+			"import/no-cycle": [
+				0,
+				{
+					"ignoreExternal": true
+				}
+			],
+			"prefer-const": "off",
+			"no-use-before-define": "off",
+			"@typescript-eslint/no-use-before-define": [
+				"error",
+				{
+					"functions": false,
+					"classes": false,
+					"variables": true
+				}
+			]
 		}
 	}
 }
