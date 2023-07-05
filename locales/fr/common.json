@@ -1,4 +1,18 @@
 {
 	"legal-notice": "Mentions Légales",
-	"Changelog": "Changelog"
+	"Changelog": "Changelog",
+	"navigation": {
+		"Home": "Accueil",
+		"About": "À propos",
+		"Blog": "Blog",
+		"Library": "Bibliothèque"
+	},
+	"library": {
+		"title": "Bibliothèque",
+		"description": "Voici quelques livres, films ou articles que j'ai appréciés et appris récemment."
+	},
+	"blog": {
+		"title": "Blog",
+		"description": "Mes idées et découvertes en quelques mots."
+	}
 }

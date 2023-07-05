@@ -4,29 +4,11 @@ import MenuIcon from '@/common/components/icons/MenuIcon';
 import SkipToContent from '@/common/components/SkipToContent';
 import Navigation from './Navigation';
 import Container from './Container';
-
-const NAV_LINKS = [
-	{
-		title: 'Home',
-		slug: '/',
-	},
-	{
-		title: 'About',
-		slug: '/about',
-	},
-	{
-		title: 'Blog',
-		slug: '/blog',
-	},
-	{
-		title: 'Library',
-		slug: '/library',
-	},
-];
+import useTranslation from 'next-translate/useTranslation';
 
 export default function Header(): JSX.Element {
 	const [mobileNavOpen, setMobileNavOpen] = useState(false);
-
+	const { t } = useTranslation('common');
 	const handleOpenMenu = () => {
 		setMobileNavOpen(!mobileNavOpen);
 	};
@@ -34,6 +16,25 @@ export default function Header(): JSX.Element {
 	const handleMobileNavClose = () => {
 		setMobileNavOpen(false);
 	};
+
+	const NAV_LINKS = [
+		{
+			title: t('navigation.Home'),
+			slug: '/',
+		},
+		{
+			title: t('navigation.About'),
+			slug: '/about',
+		},
+		{
+			title: t('navigation.Blog'),
+			slug: '/blog',
+		},
+		{
+			title: t('navigation.Library'),
+			slug: '/library',
+		},
+	];
 
 	return (
 		<header className='sticky top-0 z-50 bg-white dark:bg-darkGrey'>

@@ -1,4 +1,18 @@
 {
 	"legal-notice": "Legal Notice",
-	"Changelog": "Changelog"
+	"Changelog": "Changelog",
+	"navigation": {
+		"Home": "Home",
+		"About": "About",
+		"Blog": "Blog",
+		"Library": "Library"
+	},
+	"library": {
+		"title": "Library",
+		"description": "Here are some of the books, movies or articles that I have enjoyed and learned from lately."
+	},
+	"blog": {
+		"title": "Blog",
+		"description": "Sharing ideas and discoveries in a few words."
+	}
 }

@@ -5,6 +5,7 @@ import Page from '@/common/components/layout/Page';
 import PostCard, { IPost } from '@/blog/components/PostCard';
 import Pagination from '@/common/components/Pagination';
 import { CARDS_PER_PAGE } from 'site.config';
+import useTranslation from 'next-translate/useTranslation';
 
 export default function Articles({
 	posts,
@@ -15,16 +16,18 @@ export default function Articles({
 	hasNextPage: boolean;
 	nbOfPages: number;
 }): JSX.Element {
+	const { t } = useTranslation('common');
+
 	return (
 		<Page
 			seo={{
-				title: 'Blog',
-				description: 'All my posts on web development, productivity, self-help and creativity.',
+				title: t('blog.title'),
+				description: t('blog.description'),
 			}}
 		>
 			<div className='mb-14 flex flex-col justify-between md:flex-row'>
-				<PageHeader title='Blog'>
-					<p>Sharing ideas and discoveries in a few words.</p>
+				<PageHeader title={t('blog.title')}>
+					<p>{t('blog.description')}</p>
 				</PageHeader>
 				<div className='flex items-center justify-between text-center md:flex-col md:justify-start'>
 					<p>
