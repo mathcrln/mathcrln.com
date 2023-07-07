@@ -52,6 +52,5 @@ export const getStaticProps: GetStaticProps = async (context) => {
 			page,
 			source,
 		},
-		revalidate: 60,
 	};
 };

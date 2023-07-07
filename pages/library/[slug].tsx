@@ -83,8 +83,6 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 			archive,
 			suggestions,
 			source: mdxSource,
-
-			revalidate: 1,
 		},
 	};
 };

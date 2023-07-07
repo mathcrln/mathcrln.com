@@ -32,13 +32,12 @@ export default function Projects({ projects }: ProjectsProps): JSX.Element {
 	);
 }
 
-export const getStaticProps: GetStaticProps<ProjectsProps & { revalidate: number }> = async () => {
+export const getStaticProps: GetStaticProps<ProjectsProps> = async () => {
 	const projects: IProjectCard[] = await getProjectsCards(7);
 
 	return {
 		props: {
 			projects,
-			revalidate: 60,
 		},
 	};
 };

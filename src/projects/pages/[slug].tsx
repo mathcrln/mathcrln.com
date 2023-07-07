@@ -33,7 +33,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 type Props = {
 	project: IProject;
 	source: MDXRemoteSerializeResult;
-	revalidate: number;
 };
 
 interface Params extends ParsedUrlQuery {
@@ -50,7 +49,6 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 		props: {
 			project,
 			source: mdxSource,
-			revalidate: 1,
 		},
 	};
 };

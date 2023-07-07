@@ -38,6 +38,5 @@ export const getStaticProps: GetStaticProps = async () => {
 		props: {
 			archives,
 		},
-		revalidate: 60,
 	};
 };
