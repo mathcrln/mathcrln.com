@@ -5,6 +5,7 @@ import Page from '@/common/components/layout/Page';
 import PostCard, { IPost } from '@/blog/components/PostCard';
 import Pagination from '@/common/components/Pagination';
 import { CARDS_PER_PAGE } from 'site.config';
+import { getResources } from '@/helpers/markdown';
 
 type Props = {
 	posts: IPost[];
@@ -69,20 +70,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
 	const { pageNumber } = context.params as any;
-	const currentPage = await getPaginatedPostsCards(CARDS_PER_PAGE, { skip: (parseInt(pageNumber, 10) - 1) * CARDS_PER_PAGE });
-	const nbOfPosts = await getNumberOfPosts();
-	const nbOfPages = await Math.ceil(nbOfPosts / CARDS_PER_PAGE);
-	const posts = currentPage?.edges?.map((edge) => edge.node);
-	const { hasNextPage, hasPreviousPage } = currentPage?.pageInfo;
+	const { pages, hasPreviousPage, hasNextPage, data } = getResources('./public/indexes/posts.json', {
+		pageNumber: parseInt(pageNumber as string, 10),
+		limit: CARDS_PER_PAGE,
+	});
 
 	return {
 		props: {
-			posts,
+			posts: data,
 			pageNumber: parseInt(pageNumber as string, 10),
 			hasNextPage,
-			nbOfPages,
+			nbOfPages: pages,
 			hasPreviousPage,
 		},
-		revalidate: 3600 * 24 * 7,
 	};
 };

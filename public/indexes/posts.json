@@ -1,0 +1,699 @@
+{
+	"lastUpdated": "2023-07-07T04:42:35.826Z",
+	"total": 77,
+	"data": [
+		{
+			"title": "What content do I want to create?",
+			"slug": "what-content-do-i-want-to-create",
+			"cover": "https://media.graphassets.com/pibOvQaoRHKTpAWNMff4",
+			"description": "After a long and unforeseen hiatus, I finally feel ready to address the causes that prevented me to write and feel creative. ",
+			"updatedAt": "2022-05-15T16:47:06.622Z",
+			"date": "2022-05-15T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Meet Jerry, my personal Portfolio",
+			"slug": "meet-jerry",
+			"cover": "https://media.graphassets.com/ag7ZTpmsS3GlpaZqatV2",
+			"description": "Code named Jerry, and built with Next.js, Tailwind and GraphCMS, this is my first attempt at fully defining my online presence and branding. ",
+			"updatedAt": "2021-11-25T18:06:16.485Z",
+			"date": "2021-11-25T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "How to get started in web development",
+			"slug": "how-to-get-started-in-web-development",
+			"cover": "https://media.graphassets.com/GJc6J82Q7ino6MREJk3g",
+			"description": "Here are some tips and ressources to get started quickly in web development.",
+			"updatedAt": "2021-11-04T12:59:58.368Z",
+			"date": "2021-10-10T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "2021, a year of growth",
+			"slug": "2021",
+			"cover": "https://media.graphassets.com/8FOD8xC8SMezWBnNqps6",
+			"description": "This year, I want to learn and create through fast iterations, removing the fear barrier.",
+			"updatedAt": "2021-11-03T20:22:13.470Z",
+			"date": "2021-01-02T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Looking back on 2020",
+			"slug": "looking-back-on-2020",
+			"cover": "https://media.graphassets.com/2TOl0IvQRX6dK6Du9y5Q",
+			"description": "Before happily diving into new projects in 2021, here is what I have been up to in 2020.",
+			"updatedAt": "2021-11-21T02:56:45.934Z",
+			"date": "2020-12-29T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "August 2020, Monthly Wrap-Up",
+			"slug": "august-2020",
+			"cover": "https://media.graphassets.com/RLXueAx3TRev59AVKXMA",
+			"description": "If I didn't get to travel this summer, I still did my best to enjoy, learn, and create. Here is what I've been up to in August 2020.",
+			"updatedAt": "2021-11-05T03:22:15.496Z",
+			"date": "2020-09-06T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "How I’m getting ready for a new semester at Uni with COVID-19",
+			"slug": "university-fall-semester-2020",
+			"cover": "https://media.graphassets.com/3LEFxt8uRt6RR5shJU4Q",
+			"description": "I’m finally ready to make my way back to University for the fall semester... or am I?",
+			"updatedAt": "2021-10-29T20:41:23.327Z",
+			"date": "2020-09-04T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "On changing mindset",
+			"slug": "on-changing-mindset",
+			"cover": "https://media.graphassets.com/p5EkCx96T8mQsnSILlrO",
+			"description": "In many ways, changing the way you see yourself is changing who you are, and how other people see you.",
+			"updatedAt": "2021-11-15T01:03:30.827Z",
+			"date": "2020-08-16T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Stop overthinking, time is your ally",
+			"slug": "time-is-your-ally",
+			"cover": "https://media.graphassets.com/js9wudbT8akANxDcPSj7",
+			"description": "It's 1:00 AM, you would like to sleep but you can't. Despite having been awake for 18 hours already, your brain doesn't let you fall into a slumber...",
+			"updatedAt": "2021-10-29T17:54:47.935Z",
+			"date": "2020-08-06T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "How I use Notion to learn and create more effectively",
+			"slug": "how-i-use-notion-to-learn-and-create-more-effectively",
+			"cover": "https://media.graphassets.com/v1kOqPcIRt2D8aL7XNTz",
+			"description": "I use Notion.so to make sure I remember what I read and to help me learn and create more effectively every day. Here is a dive into my system.",
+			"updatedAt": "2021-10-30T02:42:30.268Z",
+			"date": "2020-08-02T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "June & July 2020, Monthly Wrap-Up",
+			"slug": "june-july-2020-monthly-wrap-up",
+			"cover": "https://media.graphassets.com/HeaNROPPSCq3I8bPgPcB",
+			"description": "Here is what I have been up to in the last two months of June and July 2020. What about you, what's up?",
+			"updatedAt": "2021-11-13T22:09:39.859Z",
+			"date": "2020-07-26T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "10 apps I couldn’t live without",
+			"slug": "10-apps-i-couldnt-live-without",
+			"cover": "https://media.graphassets.com/ILWcfyEAThi2j84GuXf5",
+			"description": "Notion, Things 3, Spotify, or Spendee? In this post, I’ll introduce you to my favorite apps for all platforms.",
+			"updatedAt": "2021-10-30T02:26:42.939Z",
+			"date": "2020-06-14T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "When all hope seems lost",
+			"slug": "when-all-hope-seems-lost",
+			"cover": "https://media.graphassets.com/qL3k0DiR5G7IUZJND4Yr",
+			"description": "We can no longer turn a blind eye and choose ignorance in the face of reality. Not when ignorance leads to the end of the destruction of so many lives.",
+			"updatedAt": "2021-11-04T17:27:48.038Z",
+			"date": "2020-06-07T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "May 2020, Monthly Wrap-Up",
+			"slug": "monthly-wrap-up",
+			"cover": "https://media.graphassets.com/wQdUHxRS3yu72R6SsJQh",
+			"description": "May 2020 in itself was a nice month, I think I learned a lot, mostly about myself and the way I work. Here is what I've been up to this month.",
+			"updatedAt": "2021-11-17T03:20:00.058Z",
+			"date": "2020-05-31T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Begin with the end in mind",
+			"slug": "begin-with-the-end-in-mind",
+			"cover": "https://media.graphassets.com/6KBJEregTZ2kFu00bLRJ",
+			"description": "Do all the things that give you anxiety every day really align with what you believe in, with your own values and principles?",
+			"updatedAt": "2021-11-01T17:45:30.634Z",
+			"date": "2020-05-17T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "How to avoid creative block",
+			"slug": "how-to-avoid-creative-block",
+			"cover": "https://media.graphassets.com/GVkByfZtRUqbcrNjEYeE",
+			"description": "Whether you’re only an occasional creator or that it's the way you make a living, we have all been confronted with creative block.",
+			"updatedAt": "2021-10-30T01:53:45.757Z",
+			"date": "2020-05-10T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "The joy of leaving footprints",
+			"slug": "leaving-footprints",
+			"cover": "https://media.graphassets.com/J2cZnz4VTbm5cgenBLC8",
+			"description": "I value the idea of leaving footprints of what I do and think so I can come back to them later. Here is why I think you should too!",
+			"updatedAt": "2021-10-29T20:02:26.721Z",
+			"date": "2020-05-03T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "April 2020, Monthly Wrap-Up",
+			"slug": "april-2020-monthly-wrap-up",
+			"cover": "https://media.graphassets.com/135bikHJR5WXHXDvRrTe",
+			"description": "I hope you have been alright this month. On my end? Here is what I've been up to in April 2020, amid COVID-19 restrictions.",
+			"updatedAt": "2021-11-14T03:43:13.570Z",
+			"date": "2020-04-30T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Here’s my Personal Mission Statement",
+			"slug": "personal-mission-statement",
+			"cover": "https://media.graphassets.com/049iaH5SQYC9I4MMxTKN",
+			"description": "One of the key takeaways from The 7 Habits of Highly Effective People is the importance of writing and living by a Personal Mission Statement.",
+			"updatedAt": "2021-11-01T17:57:24.258Z",
+			"date": "2020-04-26T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "The story of the Golden Egg",
+			"slug": "the-story-of-the-golden-egg",
+			"cover": "https://media.graphassets.com/woZqm2TPSsmFHSnkmjlZ",
+			"description": "When your chick can lay Golden Eggs, what should you focus on the most, the miraculous chick, or the golden eggs she can lay?",
+			"updatedAt": "2021-11-01T18:05:02.694Z",
+			"date": "2020-04-19T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "11 things I learned in 22 years on Earth",
+			"slug": "11-things-i-learned",
+			"cover": "https://media.graphassets.com/Hvqjlv0QoyPxbOUAaGOg",
+			"description": "I really wanted to come back on some lessons I gathered over the years. Here are 11 things I learned in 22 years on Earth. ",
+			"updatedAt": "2021-11-14T05:49:29.178Z",
+			"date": "2020-04-07T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Don’t forget how to play",
+			"slug": "dont-forget-how-to-play",
+			"cover": "https://media.graphassets.com/l2OL44LTPNfSdm0zonQ5",
+			"description": "We can’t allow ourselves to forget how to play, to forget what it feels like to be so passionate about something that you forget everything else.",
+			"updatedAt": "2021-10-29T18:28:20.138Z",
+			"date": "2020-04-05T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "11 things I achieved in 22 years on Earth",
+			"slug": "11-things-achieved",
+			"cover": "https://media.graphassets.com/bi3VGu1QpGg5U6jaD6uR",
+			"description": "It’s my birthday! As today marks the beginning of my 22nd year, I thought I would think of all I have learned and achieved so far.",
+			"updatedAt": "2021-11-14T05:38:02.657Z",
+			"date": "2020-03-30T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "March 2020, Monthly Wrap-Up",
+			"slug": "march-2020",
+			"cover": "https://media.graphassets.com/lrdPCsQxTCqSMSeQO2Tb",
+			"description": "Although I’m not sure there is much to say about 15 (and still going) days in isolation, here is what I've been up to in March 2020.",
+			"updatedAt": "2021-11-14T03:52:14.217Z",
+			"date": "2020-03-29T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "To-Do Lists: 5 apps to stay organized as a student",
+			"slug": "todo-lists-apps-for-students",
+			"cover": "https://media.graphassets.com/A89PY3gTRw6Qzz5sOPzq",
+			"description": "As a student, it’s rather easy to get overwhelmed by the amount of work that needs to get done. Here's why you should use To-Do Lists!",
+			"updatedAt": "2021-10-29T20:28:59.447Z",
+			"date": "2020-03-22T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Why you should (and how to) make learning a priority in 2020",
+			"slug": "learning-in-2020",
+			"cover": "https://media.graphassets.com/m7i1um9BRwCRy5XfrWy7",
+			"description": "Picture yourself a few years down the road. What would you like to have accomplished, where would you like to be?",
+			"updatedAt": "2021-11-01T18:15:08.966Z",
+			"date": "2020-03-15T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "You can't always plan everything",
+			"slug": "you-cant-always-plan-everything",
+			"cover": "https://media.graphassets.com/2l7hfhCRyWraLfOJ8cWw",
+			"description": "Some days you will feel on top of your world and some other days, merely getting out of your bed is a victory in itself. ",
+			"updatedAt": "2021-10-29T17:58:09.321Z",
+			"date": "2020-03-08T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Monthly Wrap-Up, February 2020",
+			"slug": "monthly-wrap-up-february-2020",
+			"cover": "https://media.graphassets.com/SvjF6AS0SemQwa3qqovO",
+			"description": "As expected, although January felt too long, February was quite a short month. I will admit that this last month was not the easiest for me.",
+			"updatedAt": "2021-11-04T16:09:22.295Z",
+			"date": "2020-03-01T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "The fear of missing out (FOMO)",
+			"slug": "fomo",
+			"cover": "https://media.graphassets.com/qHtE3i0BReSwhB6hcGrs",
+			"description": "Also known as FOMO, the Fear of Missing Out is this intrinsic feeling we all have that somehow, someway we must missing on something that could be valuable to us right now.",
+			"updatedAt": "2021-11-02T16:32:35.349Z",
+			"date": "2020-02-23T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Where and how to start blogging",
+			"slug": "where-and-how-to-start-blogging",
+			"cover": "https://media.graphassets.com/bE7756ggQLiJRB7L3ugY",
+			"description": "It’s finally time to start and to get your hands on your first blog. But... there are so many possibilities. Where should you start?",
+			"updatedAt": "2021-10-31T02:29:41.245Z",
+			"date": "2020-02-16T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Life is a journey, not a race",
+			"slug": "life-is-a-journey-not-a-race",
+			"cover": "https://media.graphassets.com/9AvFglM7QTFXKNjRubZw",
+			"description": "More often than not (at least in my situation), our lives are an addition of things that happen to us or are forced upon us: we don't live, we survive.",
+			"updatedAt": "2021-11-02T16:27:35.379Z",
+			"date": "2020-02-05T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "January 2020, Monthly Wrap-Up",
+			"slug": "january-2020",
+			"cover": "https://media.graphassets.com/N7HokJnQ1Ok9TQT45FOT",
+			"description": "Welcome to this new year, to this new decade! This month was quite exciting for me so, here’s what I’ve been up to in January 2020!",
+			"updatedAt": "2021-11-04T14:41:28.657Z",
+			"date": "2020-01-31T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Are Standing Desks worth it?",
+			"slug": "are-standing-desks-worth-it",
+			"cover": "https://media.graphassets.com/j75bgPhT7yZ4bayzlmXG",
+			"description": "Over the course of the last few weeks, I tried out the Manual Standing Desk Converter by Anthrodesk, and here is what I thought about it!",
+			"updatedAt": "2021-11-03T01:44:55.564Z",
+			"date": "2020-01-29T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "How to Study when you can’t focus",
+			"slug": "how-to-study-when-you-cant-focus",
+			"cover": "https://media.graphassets.com/9ACRbAhT1iyvonanHzFi",
+			"description": "If you have a hard time focusing to study, whether in the library, at home or anywhere else, then this post is for you.",
+			"updatedAt": "2021-11-03T00:10:35.996Z",
+			"date": "2020-01-26T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Why you should build your own blog",
+			"slug": "why-you-should-build-your-own-blog",
+			"cover": "https://media.graphassets.com/4PMaYVKIRXGaugW5D9Ge",
+			"description": "So you have finally decided to start your creative journey, but you don’t yet know where to start, what to do or expect? Well, first of all, congratulations!",
+			"updatedAt": "2021-10-30T02:07:35.882Z",
+			"date": "2020-01-22T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "5 Self-Help books that changed the way I think",
+			"slug": "self-help-books",
+			"cover": "https://media.graphassets.com/l4VC0tsKRJmkBZQMIkA1",
+			"description": "Whether from fiction or non-fiction, I’m among those who find a lot of value in books. Here are 5 books that changed the way I see the world.",
+			"updatedAt": "2021-11-19T22:49:40.482Z",
+			"date": "2020-01-19T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "How I’ve conditioned myself to reach my goals in 2020",
+			"slug": "reach-goals-2020",
+			"cover": "https://media.graphassets.com/THWx9OVSQzihzip9wGr7",
+			"description": "I decided to improve my systems, to condition myself to reach my goals this year, without relying on motivation or chance. Here's how I did it.",
+			"updatedAt": "2021-11-03T01:09:13.742Z",
+			"date": "2020-01-15T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "How waking up at 6am everyday changed my life",
+			"slug": "waking-up-early",
+			"cover": "https://media.graphassets.com/hdfZjB5fSNeD96p2hLZ5",
+			"description": "For the past couple of years, I have been waking up at 6 am every day and following a morning routine. Discover what I do in the morning.",
+			"updatedAt": "2021-11-03T01:23:56.076Z",
+			"date": "2020-01-10T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Welcome to New York City, baby!",
+			"slug": "new-york-city-2019",
+			"cover": "https://media.graphassets.com/X3MLUPINQBCCMWQCjj6e",
+			"description": "After Paris, Berlin, London, and Montréal, here is the story of my first adventure in the Big Apple! New York City, here I am.",
+			"updatedAt": "2021-11-21T05:06:23.846Z",
+			"date": "2020-01-08T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "2020, a year of creativity",
+			"slug": "2020",
+			"cover": "https://media.graphassets.com/HnUzDLKoR4C5YNuIioER",
+			"description": "New decade, new year, new beginning: as we slowly settle into this new era, I want to think about and publicly state what will be my priorities for the next 365 days.",
+			"updatedAt": "2021-11-03T20:31:29.819Z",
+			"date": "2020-01-05T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "4 ways to reset before 2020",
+			"slug": "4-ways-to-reset-before-2020",
+			"cover": "https://media.graphassets.com/mPQcOxQ4RZat5lZUyKBS",
+			"description": "It is time to reflect back on what the past year has brought us, what we are proud of, what we regret, and overall, what we accomplished.",
+			"updatedAt": "2021-11-02T23:52:48.254Z",
+			"date": "2019-12-22T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Bye 2019, thank you for everything.",
+			"slug": "bye-2019",
+			"cover": "https://media.graphassets.com/DuAL7ASRjC1lZM72b1rq",
+			"description": "Oh 2019, a year of hardship and experiences, I don’t think I’ll forget you anytime soon. Bye 2019, thank you for everything.",
+			"updatedAt": "2021-11-04T17:19:03.166Z",
+			"date": "2019-12-20T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "We all have 24 hours",
+			"slug": "we-all-have-24-hours",
+			"cover": "https://media.graphassets.com/njxVRW6LQDymt8VVlbGv",
+			"description": "As Seneca puts it: « It is not that we have a short time to live, but that we waste a lot of it. [...] Life is long if you know how to use it. »",
+			"updatedAt": "2021-11-02T16:40:07.707Z",
+			"date": "2019-12-15T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Am I creative enough?",
+			"slug": "am-i-creative",
+			"cover": "https://media.graphassets.com/fhPIKAjQdbYxKdoY9xUA",
+			"description": "Here is a piece I had written a little while ago about my story with creativity. ",
+			"updatedAt": "2021-11-03T20:18:35.313Z",
+			"date": "2019-12-08T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "4 things every procrastinator should do",
+			"slug": "4-things-every-procrastinator-should-do",
+			"cover": "https://media.graphassets.com/NcbyiraUQiajcuNk4tsz",
+			"description": "If you often find yourself wanting a lot but never really achieving anything, but there are 4 things every procrastinator should do.",
+			"updatedAt": "2021-11-03T00:13:42.029Z",
+			"date": "2019-12-01T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "You need to find your way back to yourself",
+			"slug": "find-your-way-back-to-yourself",
+			"cover": "https://media.graphassets.com/BcqnX4AzQDCOf0CqeBNK",
+			"description": "When you stress more than you even breathe, it’s not just a regular problem you need to fix, it’s a chronic illness.",
+			"updatedAt": "2021-11-02T16:07:33.534Z",
+			"date": "2019-11-24T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Should you try audiobooks?",
+			"slug": "should-you-try-audiobooks",
+			"cover": "https://media.graphassets.com/DQ0hNp8ERViZ0ht1GPMu",
+			"description": "Have you ever tried audiobooks? If the answer is no, here are a few reasons why you should try the experience (+ recommendations).",
+			"updatedAt": "2021-11-01T01:42:37.335Z",
+			"date": "2019-11-17T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Here’s why I stopped watching Netflix",
+			"slug": "netflix-subscription",
+			"cover": "https://media.graphassets.com/IaxOu7jXRBCbWxQjcUbA",
+			"description": "It's hard to break from the \"Netflix and Chill\" lifestyle. Yet, earlier this year I canceled my subscription. Here's why.",
+			"updatedAt": "2021-11-03T01:37:30.125Z",
+			"date": "2019-11-03T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Allow yourself to dream again",
+			"slug": "allow-yourself-to-dream-again",
+			"cover": "https://media.graphassets.com/latUpAjQa6ogruhMYM1Q",
+			"description": " It's nice to look at space but what if you were not born to reach the stars?",
+			"updatedAt": "2021-11-02T23:59:56.865Z",
+			"date": "2019-10-13T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "What is Design ? — Meet Sebastian",
+			"slug": "meet-sebastian",
+			"cover": "https://media.graphassets.com/6GPafmBJSdikRYN2MWW6",
+			"description": "Sebastian is the first writer of the Creativity Guest Post Event. Meet him in this post, right here!",
+			"updatedAt": "2021-11-03T19:53:28.252Z",
+			"date": "2019-06-04T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Monthly Wrap-Up, February 2019",
+			"slug": "february-2019",
+			"cover": "https://media.graphassets.com/6hwlrIciTNKPM6DIS6jW",
+			"description": "I'm back with the Monthly Wrap-Up posts! What have you been up to in February 2019? Here is what happened in my little corner of the world.",
+			"updatedAt": "2021-11-14T04:12:43.256Z",
+			"date": "2019-03-04T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Should you try an e-reader ?",
+			"slug": "should-you-buy-an-e-reader",
+			"cover": "https://media.graphassets.com/eWIWWauQiKrU0v6AqRPU",
+			"description": "As I learned to love my e-reader in the last 2 years, here is why I think you should make the jump too!",
+			"updatedAt": "2021-11-14T05:13:40.462Z",
+			"date": "2019-02-12T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "The best time to start creating is today",
+			"slug": "start-creating",
+			"cover": "https://media.graphassets.com/rOsKBXcLSaX668Ik6bGC",
+			"description": "The best time to start creating was actually yesterday to be honest. But the second best time? It’s today.",
+			"updatedAt": "2021-10-30T02:58:30.340Z",
+			"date": "2019-02-05T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Why you should prioritize learning in 2019",
+			"slug": "prioritize-learning",
+			"cover": "https://media.graphassets.com/RRiJe7jPRqWFeDb05Jdd",
+			"description": "All geared up to make the best out of 2019 yet? Well if you aren't, here are a few reasons why you should dedicate your life to learning.",
+			"updatedAt": "2021-11-03T00:51:42.522Z",
+			"date": "2019-01-20T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Berlin: how I spent New Year's eve in Germany",
+			"slug": "berlin-2019",
+			"cover": "https://media.graphassets.com/kfElyElTuWzQcFiU2M5X",
+			"description": "Traveling light and in good company — I was out to discover the World. More than just any random city, I was eager to discover Berlin.",
+			"updatedAt": "2021-11-05T04:54:53.823Z",
+			"date": "2019-01-13T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "2019, a year of challenge.",
+			"slug": "2019",
+			"cover": "https://media.graphassets.com/DBpWJfPbSUi3AIucTH5O",
+			"description": "Just like Monday marks the beginning of a new week, I believe new years open the door to a new life, for those who are ready to take it!",
+			"updatedAt": "2021-11-13T22:53:48.853Z",
+			"date": "2019-01-07T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "What is it all for?",
+			"slug": "what-is-it-all-for",
+			"cover": "https://media.graphassets.com/Jeb0c0ZSSxSAZGyqD7vV",
+			"description": "Why do I want to keep on writing and creating content? In our current race toward \"doing everything at once\", I want to slow down and simply wonder \"Why?\".",
+			"updatedAt": "2021-10-29T18:15:35.479Z",
+			"date": "2018-11-29T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Meisia, wonderful little “game-bar”, in the heart of Paris",
+			"slug": "meisia-game-bar",
+			"cover": "https://media.graphassets.com/LBekABVgQpSELkZ2sYjt",
+			"description": "Let's discover this wonderful game bar in the center of Paris, France. 🇫🇷",
+			"updatedAt": "2021-11-14T05:00:22.820Z",
+			"date": "2018-10-23T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "What are you working on? ",
+			"slug": "what-are-you-working-on",
+			"cover": "https://media.graphassets.com/NgkqKhUDQCe7e8zsq9YH",
+			"description": "If you have ever wanted to make progress in a project but failed to find the time, Here's why you should think about what you prioritize.",
+			"updatedAt": "2021-10-30T03:31:05.604Z",
+			"date": "2018-10-11T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "The myth of “I’m not creative”",
+			"slug": "creativity-myth",
+			"cover": "https://media.graphassets.com/8VKFWiE1RWyRSrJsmcku",
+			"description": "Time and time again have I caught myself saying this four words sentence: “I’m not creative”. But am I really not?",
+			"updatedAt": "2021-10-30T01:22:03.932Z",
+			"date": "2018-10-04T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Monthly Wrap-Up, September 2018",
+			"slug": "monthly-wrap-up-september-2018",
+			"cover": "https://media.graphassets.com/eQDQaJjDTHmL0roosclG",
+			"description": "September was easily the best month of the year for me. ",
+			"updatedAt": "2021-11-20T02:10:58.678Z",
+			"date": "2018-09-27T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "I am overwhelmed.",
+			"slug": "i-am-overwhelmed",
+			"cover": "https://media.graphassets.com/JV9qCVmtQCSTmS80obBv",
+			"description": "Have you ever felt overwhelmed by the world around you and, most of all, by your own clutter? Well, I have. And, here is how I started to deal with it.",
+			"updatedAt": "2021-11-03T00:57:32.140Z",
+			"date": "2018-09-09T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Monthly Wrap-Up, Summer 2018",
+			"slug": "summer-2018-wrap-up",
+			"cover": "https://media.graphassets.com/XTHNwjw7RwCUywKk7JHO",
+			"description": "Yes, I'm back! And, here are all the things I have been up to during the time I was gone. Here is my Monthly Wrap-Up, Summer 2018 Edition.",
+			"updatedAt": "2021-11-14T04:24:43.507Z",
+			"date": "2018-09-05T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "5 books I am planning to read this summer 📚",
+			"slug": "books-summer-2018",
+			"cover": "https://media.graphassets.com/mtKD5dBQ3e1dEZMWgMQ1",
+			"description": "I thought it would be interesting to share with you some of the books I am planning to read before the end of the summer, in September.",
+			"updatedAt": "2021-11-19T23:02:00.575Z",
+			"date": "2018-07-17T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "5 movie soundtracks to read, chill and work 🎶",
+			"slug": "movie-soundtracks",
+			"cover": "https://media.graphassets.com/VhU9P9B4Rpaj3Rvn4ql7",
+			"description": "Have you ever tried reading with soundtracks? Whether you have or not, get your headphones ready because here are my movie soundtracks recommendations!",
+			"updatedAt": "2021-11-17T03:36:08.922Z",
+			"date": "2018-07-12T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Monthly Wrap-Up, June 2018",
+			"slug": "monthly-wrap-up-june-2018",
+			"cover": "https://media.graphassets.com/mAxVe0soSD20j4dJOTBh",
+			"description": "June was original. Not the typical kind of months I would expect.",
+			"updatedAt": "2021-11-20T01:10:28.556Z",
+			"date": "2018-07-09T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Monthly Wrap-Up, May 2018",
+			"slug": "monthly-wrap-up-may-2018",
+			"cover": "https://media.graphassets.com/e9YhutuuR7Yt1XVnnDLA",
+			"description": "I'm back at it! Between music, movies, books, and life adventures, I have been up to quite a lot of things for this 5th month of the year. Here is my Monthly Wrap-up for May 2018. What have you been up to?",
+			"updatedAt": "2021-11-17T03:44:37.203Z",
+			"date": "2018-05-31T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "How to organize your blog life 📝",
+			"slug": "organize-your-blog-life",
+			"cover": "https://media.graphassets.com/xLfqWIzTlq4udxhh5MZB",
+			"description": "With all the day-to-day distractions and obligations, it's not always easy to find the time to blog and build an online community. ",
+			"updatedAt": "2021-10-30T03:15:42.952Z",
+			"date": "2018-05-24T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Monthly Wrap-Up, January to April 2018",
+			"slug": "monthly-wrap-up-january-april-2018",
+			"cover": "https://media.graphassets.com/zZsVeCQRXCxoPLBB4pMg",
+			"description": "Books, movies, music and ideas: as my first Monthly Wrap-Up ever, I'm telling you what happened in my life in the first quarter of the year 2018.",
+			"updatedAt": "2021-11-19T21:46:45.838Z",
+			"date": "2018-05-14T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "I feel lost.",
+			"slug": "i-feel-lost",
+			"cover": "https://media.graphassets.com/8DS1ZMZ0ThGsPWH2pkRA",
+			"description": " I was lost and couldn't find my way out. Today, and for once, I have the guts to say it: I'm not okay and I can't handle everything.",
+			"updatedAt": "2021-11-03T19:57:28.410Z",
+			"date": "2018-04-22T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "I am stressed.",
+			"slug": "i-am-stressed",
+			"cover": "https://media.graphassets.com/sRILAJaIQgWerNiZHlhz",
+			"description": "Stress became an internal part of my body. It melted into my cells like a virus, no longer allowing me to distinguish between before and after, stress or calm.",
+			"updatedAt": "2021-11-02T16:49:01.304Z",
+			"date": "2018-03-11T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "4 best books I read in 2017",
+			"slug": "4-best-books-of-2017",
+			"cover": "https://media.graphassets.com/mtKD5dBQ3e1dEZMWgMQ1",
+			"description": "I read some pretty great books last year and it would be a shame not to share the best of them with you.",
+			"updatedAt": "2021-11-19T23:10:18.646Z",
+			"date": "2018-01-31T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "9 things you don’t know about me",
+			"slug": "9-things-you-dont-know-about-me",
+			"cover": "https://media.graphassets.com/CGCwggxJSFK3XBeYQGNQ",
+			"description": "If you are new on the blog or you would just like to know me a little better, I put up together 9 things you probably don’t know about me.",
+			"updatedAt": "2021-11-03T20:00:19.719Z",
+			"date": "2018-01-17T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "2018, a year of change",
+			"slug": "2018-a-year-of-change",
+			"cover": "https://media.graphassets.com/UNgYp0pbSP2GaGBbpgMG",
+			"description": "Before thinking of what I want to achieve in 2018, I want to tell you about what happened in 2017.",
+			"updatedAt": "2021-11-03T20:40:04.562Z",
+			"date": "2018-01-11T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "5 days in London 🇬🇧",
+			"slug": "5-days-in-london",
+			"cover": "https://media.graphassets.com/40XaWEz0Q5ik3HhWzQpI",
+			"description": "For some reason, it seems that the British Capitale has made it to my heart.",
+			"updatedAt": "2021-11-21T01:58:26.238Z",
+			"date": "2017-11-19T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Why you should read more and make reading a habit ",
+			"slug": "why-you-should-read-more",
+			"cover": "https://media.graphassets.com/SJuIaW0ThuAttAcTyVQf",
+			"description": "Whether you are a lost reader or just a curious mind, this article is for you. Here are some methods to find the time to read more.",
+			"updatedAt": "2021-10-31T02:11:11.317Z",
+			"date": "2017-11-17T00:00:00.000Z",
+			"type": "post"
+		},
+		{
+			"title": "Why you should watch TV Shows about politics 👑",
+			"slug": "tv-shows-about-politics",
+			"cover": "https://media.graphassets.com/1z8sWxzVSguw1ocqiPUO",
+			"description": "Between political manipulations, lobbies, and duty of responsibility, these TV Shows will show you what really hides behind the scenes of politics.",
+			"updatedAt": "2021-11-19T21:50:44.414Z",
+			"date": "2017-06-09T00:00:00.000Z",
+			"type": "post"
+		}
+	]
+}

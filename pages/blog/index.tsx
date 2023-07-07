@@ -1,10 +1,10 @@
 import PageHeader from '@/common/components/PageHeader';
 import { GetStaticProps } from 'next';
-import { getNumberOfPosts, getPaginatedPostsCards } from '@/blog/graphql/posts';
 import Page from '@/common/components/layout/Page';
 import PostCard, { IPost } from '@/blog/components/PostCard';
 import Pagination from '@/common/components/Pagination';
 import { CARDS_PER_PAGE } from 'site.config';
+import { getResources } from '@/helpers/markdown';
 
 export default function Articles({
 	posts,
@@ -50,17 +50,13 @@ export default function Articles({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const currentPage = await getPaginatedPostsCards(CARDS_PER_PAGE);
-	const posts = currentPage?.edges?.map((edge) => edge.node);
-	const nbOfPosts = await getNumberOfPosts();
-	const nbOfPages = await Math.ceil(nbOfPosts / CARDS_PER_PAGE);
-	const { hasNextPage } = currentPage?.pageInfo;
+	const { pages, hasNextPage, data } = getResources('./public/indexes/posts.json', { limit: CARDS_PER_PAGE });
 
 	return {
 		props: {
-			posts,
+			posts: data,
 			hasNextPage,
-			nbOfPages,
+			nbOfPages: pages,
 		},
 		revalidate: 3600 * 24,
 	};

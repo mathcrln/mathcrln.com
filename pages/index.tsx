@@ -12,6 +12,7 @@ import { getArchivesCards } from 'src/archives/graphql/archives';
 import ProjectCard from '@/projects/components/ProjectCard';
 import CustomLink from '@/common/components/elements/Link';
 import Arrow from '@/common/components/icons/Arrow';
+import { getResources } from '@/helpers/markdown';
 
 export default function Home({
 	posts,
@@ -103,7 +104,10 @@ export default function Home({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const posts = await getPostsCards(3);
+	const { data: posts } = getResources('./public/indexes/posts.json', {
+		pageNumber: 0,
+		limit: 3,
+	});
 	const projects = await getProjectsCards(3);
 	const books = await getArchivesCards(4);
 

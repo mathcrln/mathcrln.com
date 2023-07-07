@@ -5,9 +5,9 @@ import Link from 'next/link';
 export type IPost = {
 	slug: string;
 	title: string;
-	cover: { url: string };
+	cover: string;
 	content: string;
-	excerpt: string;
+	description: string;
 	date: string;
 	tags: { name: string; icon: string }[];
 	publishedAt: string;
@@ -18,9 +18,9 @@ export default function PostCard({ post }: { post: IPost }): JSX.Element {
 	return (
 		<div>
 			<Link href={`/blog/${post.slug}`} passHref>
-				<ImageCard alt={post.title} src={post.cover.url} tags={post.tags} className='h-64' />
+				<ImageCard alt={post.title} src={post.cover} tags={post.tags} className='h-64' />
 			</Link>
-			<CardText title={post.title} details={post.excerpt} url={`/blog/${post.slug}`} options={{ titleSize: 'xl' }} />
+			<CardText title={post.title} details={post.description} url={`/blog/${post.slug}`} options={{ titleSize: 'xl' }} />
 		</div>
 	);
 }

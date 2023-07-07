@@ -1,0 +1,136 @@
+---
+title: 'How to get started in web development'
+slug: 'how-to-get-started-in-web-development'
+cover: 'https://media.graphassets.com/GJc6J82Q7ino6MREJk3g'
+description: 'Here are some tips and ressources to get started quickly in web development.'
+updatedAt: '2021-11-04T12:59:58.368Z'
+date: '2021-10-10T00:00:00.000Z'
+type: 'post'
+---
+
+So, you have decided to become a Web Developer, huh?
+
+When you’re just starting out with Web Development, it’s rather easy to get lost with the sheer amount of things there are to learn. Where should you start and, what should you focus on? In this post, I will share with you important concepts you should understand when starting out as well as resources to learn more.
+
+## Foundations
+
+### HTML, CSS and Javascript
+
+If it’s your very first time experimenting with Web Development, it’s important to start with the basics: learning what are HTML, CSS, and JavaScript, why we need all three, and how you can use them.
+
+-   **HTML**, for _HyperText Markup Language,_ is the first pillar of every website, the skeleton. HTML tells the browser **what** there is on a page. So, it focuses on defining the content: titles, paragraphes, images, buttons, etc. It doesn’t bother with styles or interactions.
+-   **CSS**, for Cascading Style Sheets, brings the content explicited in HTML to a whole new level, with styles ! With the skeleton metaphor, CSS adds the skin. It accesses elements defined in the HTML through tags, classes or IDs and say both **where they should go** and **what they should look like**.
+-   Lastly, **Javascript (JS)** adds both the nerves and the muscles to bring interactions and behavior. It manipulates both CSS and HTML to define **what should happen based on what action** (whether from the User, the OS or the browser).
+
+That’s it! Those three are the foundations of the web and pretty much every website you have ever browsed in your life either use all three or a combination of the three.
+
+Here is a full example of a very basic web page mixing HTML, CSS and Javascript :
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			h1{
+				color: red;
+				font-size: 2rem;
+			}
+			.intro{
+				color: white;
+				background: green;
+			}
+
+		</style>
+	</head>
+	<body>
+			<h1>Hello World!</h1>
+			<p class="intro">This is a paragraph in HTML</p>
+			<button onClick="changeIntro()">
+
+			<script>
+			function changeIntro(){
+				const intro = document.querySelector(".intro);
+				intro.innerHTML = "This paragraph was changed!";
+			}
+			</script>
+	</body>
+</html>
+```
+
+A good place to start is usually FreeCodeCamp’s [Responsive Web Design Course](https://www.freecodecamp.org/learn/responsive-web-design/#basic-html-and-html5) which is completely free. Many people who earn 6 figures salaries now and work some of the biggest companies in the world have started there.
+
+### Complementary base knowledge
+
+Now, although these three languages are key, there are more things you should learn in your first few months when it comes to Web Development. Here are some of them:
+
+-   **Accessibility** — How to build websites that are accessible for everyone?
+-   **Browser** — What is a browser and how does it work? How can you use it?
+-   **Git** — Learn how to keep versions of your work and work collaboratively.
+-   **DOM** — What is the Document Object Model and how can you manipulate it with JS?
+-   **Network basics** — In simple words, how does the internet work?
+-   **Responsiveness** — How to make websites that perform well on mobile?
+-   **SEO** — How to make sure you’re found in search engines like Google?
+
+For most of these, you don’t need to understand everything just yet. Actually, **you need to realize that you can’t possibly understand everything**, and it’s okay. What matters for today is to **know enough to be dangerous**.
+
+## Advanced Javascript knowledge
+
+Once you are rather comfortable with the basics, and know how to manipulate the DOM, it’s time to move on to advanced concepts with JS.
+
+-   API (REST / GraphQ / CRUD)
+-   Closure
+-   Promises (Async, Await / Callbacks)
+-   Javascript ES6
+-   Data types, coercion & strict comparison
+-   Design Patterns
+-   Debugging
+-   Events (Bubble/Capture, DOM Events)
+-   Error Handling
+-   Modules
+-   Object-Oriented Programming
+-   Spread Operators
+-   Web Components
+
+Again, bear in mind that **you don’t need to understand everything at once**. Many senior developers in the industry still don’t have a perfect mastery of them all. And, it’s okay. As humans, we learn by doing so you’re bound to master these concepts once you have a good project to practice them !
+
+Here are some great resources to keep at arm’s reach in your career:
+
+-   [Javascript.info](https://javascript.info)
+-   [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+-   [Google](http://google.com)
+-   [StackOverflow](https://stackoverflow.com)
+
+## Javascript frameworks
+
+I imagine that you have already heard about Angular, React, Vue, Svelte and you might be wondering exactly what they are when you should learn them? These technologies are what we consider to be « Javascript frameworks » (or library, in the case of React).
+
+They are opinionated approaches to using modern Javascript for moder needs (complex apps, like Facebook or Twitter). At the core, they are still translated to plain HTML, CSS, and Javascript for the browser to understand them, but they offer a better Developer Experience (DX), particularly when working in large teams on the same codebase.
+
+Although they pretty much answer all the same needs, their approach is slightly different and they the choice to make usually depend on the use-case. As of 2021, the most popular are Angular and React.
+
+### Should you learn a JS Framework when getting start?
+
+If you’re just getting started, I would suggest focusing on the basics. Having a good understanding of HTML, CSS and JS before learning a framework will only make your experience better when finally jumping to it.
+
+However, you don’t need to wait until you’re 100% proficient. In my personal experience, working with React and Angular helped me a lot in perfecting my knowledge of JavaScript. What really matters is to use these technologies to build real world projects so you can learn faster.
+
+## Backend technologies
+
+Web development doesn’t stop at what happens on the client (in the browser of the user). A great part of the work is relegated to the backend, particularly for heavy calculation, authentification, access to databases, etc.
+
+I won’t get much into details about backend technologies in this post just yet, but here is an open-source [step-by-step guide to become a backend dev](https://roadmap.sh/backend).
+
+## Opinionated resources to go further
+
+Here are some resources or instructors that have been helpful to me along the way and help me learn web development. May they be useful to you as well!
+
+-   [The Complete Web Developer in 2021: Zero to Mastery](https://www.udemy.com/course/the-complete-web-developer-zero-to-mastery/) by Andrei Neagoie
+-   [Modern JavaScript from the beginning](https://www.udemy.com/course/modern-javascript-from-the-beginning/) by Brad Traversy
+-   [Overreacted](https://overreacted.io) by Dan Abramov
+-   [Just Javascript](https://justjavascript.com) by Dan Abramov & Maggie Appleton
+-   Josh Comeau’s [delightful blog posts](https://www.joshwcomeau.com) and his [CSS-For-JS dev](https://css-for-js.dev) course
+-   Lee Robinson’s [blog posts](https://leerob.io/blog) and [YouTube channel](https://youtube.com/user/MaStaleee)
+-   Zero to Mastery’s [Developer Monthly newsletter](https://zerotomastery.io/blog/)
+-   Frontend Mentor’s [challenges to practice web dev](https://www.frontendmentor.io) at all levels
+
+That’s it for the day. I hope this post will be useful to you in your path. Good luck 🚀

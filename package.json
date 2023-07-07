@@ -5,6 +5,7 @@
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
+		"create-index": "node ./src/helpers/create-index.js && yarn prettier --write ./public/indexes/",
 		"start": "next start",
 		"lint": "next lint",
 		"postbuild": "next-sitemap"
@@ -18,6 +19,7 @@
 		"date-fns": "^2.23.0",
 		"eslint-plugin-import": "^2.22.1",
 		"graphql": "^15.5.1",
+		"gray-matter": "^4.0.3",
 		"mdx-prism": "^0.3.4",
 		"next": "^13.4.8",
 		"next-mdx-remote": "^3.0.4",

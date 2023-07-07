@@ -1,13 +1,11 @@
 import type { AppProps } from 'next/app';
 import { MDXProvider } from '@mdx-js/react';
 import { DefaultSeo } from 'next-seo';
-import { useRouter } from 'next/router';
 import { H2, H3, H4, H5, H6, P, UL, LI, OL, HR, IMG, BLOCKQUOTE } from '@/common/components/MDXElements';
 import Footer from '@/common/components/layout/Footer';
 import Header from '@/common/components/layout/Header';
 import CustomLink from '@/common/components/elements/Link';
 import 'styles/globals.css';
-import React, { useEffect } from 'react';
 import SEO from 'lib/next-seo.config';
 import YouTubePlayer from '@/common/components/YouTubePlayer';
 import Gallery from '@/common/components/Gallery';

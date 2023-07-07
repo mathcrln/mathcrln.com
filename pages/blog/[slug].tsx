@@ -8,18 +8,19 @@ import relativeDate from 'relative-date';
 import Page from '@/common/components/layout/Page';
 import PostCard, { IPost } from '@/blog/components/PostCard';
 import PageHeader from '@/common/components/PageHeader';
-import { getAllPostsSlugs, getPostBySlug, getPostsCards, getPreviewPostBySlug } from '@/blog/graphql/posts';
+import { getAllPostsSlugs, getPostsCards } from '@/blog/graphql/posts';
 import ContentArticle from '@/common/components/ContentArticle';
 import Author from '@/common/components/Author';
 import PostDate from '@/common/components/Date';
+import { getResource } from '@/helpers/markdown';
 
 export default function Post({ post, source, suggestions }: Props): JSX.Element {
 	return (
 		<Page
 			seo={{
 				title: post?.title || '',
-				image: post?.cover?.url,
-				description: post?.excerpt || '',
+				image: post?.cover,
+				description: post?.description || '',
 				type: 'article',
 				publishedTime: post?.date || undefined,
 				modifiedTime: post?.updatedAt || undefined,
@@ -33,11 +34,11 @@ export default function Post({ post, source, suggestions }: Props): JSX.Element 
 							<div className='space-y-5'>
 								<PostDate date={post.date} />
 								<PageHeader title={post.title}>
-									<p>{post.excerpt}</p>
+									<p>{post.description}</p>
 								</PageHeader>
 								<Author />
 							</div>
-							<ImageCard src={post.cover.url} className='h-80 xl:-mr-10' />
+							<ImageCard src={post.cover} className='h-80 xl:-mr-10' />
 						</div>
 						<ContentArticle source={source}>
 							{post.updatedAt && (
@@ -65,6 +66,9 @@ export default function Post({ post, source, suggestions }: Props): JSX.Element 
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const slugs = await getAllPostsSlugs();
+	// const items = getItemsPathsByType({ type: 'blog' });
+
+	// const source = fs.readFileSync(`content/blog/${items[0].params.slug}.mdx`, 'utf8');
 
 	return {
 		paths: slugs,
@@ -74,7 +78,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<Props, Params> = async (context) => {
 	const { slug } = context.params as Params;
-	const post = await (context.preview ? getPreviewPostBySlug(slug) : getPostBySlug(slug));
+	// const post = await (context.preview ? getPreviewPostBySlug(slug) : getPostBySlug(slug));
+	const post = getResource<IPost>({ slug, dir: 'content/posts' });
 
 	if (!post) {
 		return {
