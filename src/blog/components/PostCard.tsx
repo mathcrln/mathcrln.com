@@ -1,20 +1,9 @@
 import CardText from '@/common/components/Cards/CardText';
 import ImageCard from '@/common/components/ImageCard';
 import Link from 'next/link';
+import { PostMetadata } from '../types';
 
-export type IPost = {
-	slug: string;
-	title: string;
-	cover: string;
-	content: string;
-	description: string;
-	date: string;
-	tags: { name: string; icon: string }[];
-	publishedAt: string;
-	updatedAt: string;
-};
-
-export default function PostCard({ post }: { post: IPost }): JSX.Element {
+export function PostCard({ post }: { post: PostMetadata }): JSX.Element {
 	return (
 		<div>
 			<Link href={`/blog/${post.slug}`} passHref>

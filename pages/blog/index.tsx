@@ -1,17 +1,17 @@
 import PageHeader from '@/common/components/PageHeader';
 import { GetStaticProps } from 'next';
 import Page from '@/common/components/layout/Page';
-import PostCard, { IPost } from '@/blog/components/PostCard';
+import { PostCard, Post } from '@/blog';
 import Pagination from '@/common/components/Pagination';
 import { CARDS_PER_PAGE } from 'site.config';
-import { getResources } from '@/helpers/markdown';
+import { getPostsCards } from '@/blog/repository';
 
 export default function Articles({
 	posts,
 	hasNextPage,
 	nbOfPages,
 }: {
-	posts: IPost[];
+	posts: Post[];
 	hasNextPage: boolean;
 	nbOfPages: number;
 }): JSX.Element {
@@ -34,7 +34,7 @@ export default function Articles({
 				</div>
 			</div>
 			<div className='grid gap-10 md:grid-cols-2 lg:grid-cols-3 '>
-				{posts?.map((post: IPost) => (
+				{posts?.map((post: Post) => (
 					<PostCard key={post.title} post={post} />
 				))}
 			</div>
@@ -50,11 +50,11 @@ export default function Articles({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const { pages, hasNextPage, data } = getResources('./public/indexes/posts.json', { limit: CARDS_PER_PAGE });
+	const { pages, hasNextPage, posts } = getPostsCards({ limit: CARDS_PER_PAGE });
 
 	return {
 		props: {
-			posts: data,
+			posts,
 			hasNextPage,
 			nbOfPages: pages,
 		},

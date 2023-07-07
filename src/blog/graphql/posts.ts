@@ -1,4 +1,4 @@
-import { IPost } from '@/blog/components/PostCard';
+import { Post } from '../types';
 import { gql } from '@apollo/client';
 import graphCMS from '../../../lib/apollo-client';
 
@@ -43,7 +43,7 @@ const POST_BY_SLUG = gql`
 	}
 `;
 
-const getPostBySlug = async (slug: string): Promise<IPost> => {
+const getPostBySlug = async (slug: string): Promise<Post> => {
 	let post = null;
 
 	try {
@@ -82,7 +82,7 @@ const getAllPostsSlugs = async (): Promise<Array<string>> => {
 		})
 	).data;
 
-	const slugs = posts?.map((post: IPost) => `/blog/${post.slug}`);
+	const slugs = posts?.map((post: Post) => `/blog/${post.slug}`);
 	return slugs;
 };
 
@@ -124,7 +124,7 @@ const GET_PAGINATED_POSTS_CARDS = gql`
 const getPaginatedPostsCards = async (
 	limit: number,
 	options?: { skip?: number; exceptSlug?: string }
-): Promise<{ pageInfo: { hasNextPage: boolean; hasPreviousPage: boolean }; edges: { node: IPost }[] }> => {
+): Promise<{ pageInfo: { hasNextPage: boolean; hasPreviousPage: boolean }; edges: { node: Post }[] }> => {
 	let page = null;
 
 	try {
@@ -145,7 +145,7 @@ const getPaginatedPostsCards = async (
 	return page;
 };
 
-const getPostsCards = async (limit: number, except?: { slug?: string }): Promise<Array<IPost>> => {
+const getPostsCards = async (limit: number, except?: { slug?: string }): Promise<Array<Post>> => {
 	let fetchedPosts = null;
 
 	try {
@@ -166,7 +166,7 @@ const getPostsCards = async (limit: number, except?: { slug?: string }): Promise
 	return fetchedPosts;
 };
 
-const getPreviewPostBySlug = async (slug: string): Promise<IPost> => {
+const getPreviewPostBySlug = async (slug: string): Promise<Post> => {
 	let post = null;
 
 	try {

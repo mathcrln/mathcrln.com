@@ -1,20 +1,16 @@
-import mdxPrism from 'mdx-prism';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
 import ImageCard from '@/common/components/ImageCard';
-import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import relativeDate from 'relative-date';
 import Page from '@/common/components/layout/Page';
-import PostCard, { IPost } from '@/blog/components/PostCard';
+import { PostCard, Post, PostMetadata, SerializedPost } from '@/blog';
 import PageHeader from '@/common/components/PageHeader';
-import { getAllPostsSlugs, getPostsCards } from '@/blog/graphql/posts';
 import ContentArticle from '@/common/components/ContentArticle';
 import Author from '@/common/components/Author';
 import PostDate from '@/common/components/Date';
-import { getResource } from '@/helpers/markdown';
+import { getPost, getPostsStaticPaths, getSuggestions } from '@/blog/repository';
 
-export default function Post({ post, source, suggestions }: Props): JSX.Element {
+export default function Post({ post, suggestions }: Props): JSX.Element {
 	return (
 		<Page
 			seo={{
@@ -40,7 +36,7 @@ export default function Post({ post, source, suggestions }: Props): JSX.Element 
 							</div>
 							<ImageCard src={post.cover} className='h-80 xl:-mr-10' />
 						</div>
-						<ContentArticle source={source}>
+						<ContentArticle source={post.content}>
 							{post.updatedAt && (
 								<p className='text-gray-600 dark:text-gray-400'>
 									Last updated: {relativeDate(new Date(post.updatedAt))}
@@ -65,7 +61,7 @@ export default function Post({ post, source, suggestions }: Props): JSX.Element 
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const slugs = await getAllPostsSlugs();
+	const slugs = await getPostsStaticPaths();
 	// const items = getItemsPathsByType({ type: 'blog' });
 
 	// const source = fs.readFileSync(`content/blog/${items[0].params.slug}.mdx`, 'utf8');
@@ -78,44 +74,25 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<Props, Params> = async (context) => {
 	const { slug } = context.params as Params;
-	// const post = await (context.preview ? getPreviewPostBySlug(slug) : getPostBySlug(slug));
-	const post = getResource<IPost>({ slug, dir: 'content/posts' });
 
-	if (!post) {
+	try {
+		const post = await getPost(slug);
+		const suggestions = getSuggestions(slug, 2);
+
 		return {
-			notFound: true,
+			props: {
+				post,
+				suggestions,
+			},
 		};
+	} catch (error: any) {
+		return { notFound: true };
 	}
-
-	const source =
-		post &&
-		(await serialize(post?.content, {
-			mdxOptions: {
-				// eslint-disable-next-line global-require
-				remarkPlugins: [require('remark-code-titles')],
-				rehypePlugins: [mdxPrism],
-			},
-		}));
-
-	const suggestions = await getPostsCards(2, { slug });
-
-	return {
-		props: {
-			post: {
-				...post,
-				publishDate: post?.date || null,
-			},
-			source,
-			suggestions,
-		},
-		revalidate: 3600 * 24 * 7,
-	};
 };
 
 type Props = {
-	post: IPost;
-	suggestions: IPost[];
-	source: MDXRemoteSerializeResult;
+	post: SerializedPost;
+	suggestions: PostMetadata[];
 };
 
 interface Params extends ParsedUrlQuery {

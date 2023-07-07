@@ -1,14 +1,14 @@
 import PageHeader from '@/common/components/PageHeader';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { getNumberOfPosts, getPaginatedPostsCards } from '@/blog/graphql/posts';
+import { getNumberOfPosts } from '@/blog/graphql/posts';
 import Page from '@/common/components/layout/Page';
-import PostCard, { IPost } from '@/blog/components/PostCard';
+import { PostCard, Post } from '@/blog';
 import Pagination from '@/common/components/Pagination';
 import { CARDS_PER_PAGE } from 'site.config';
-import { getResources } from '@/helpers/markdown';
+import { getPostsCards } from '@/blog/repository';
 
 type Props = {
-	posts: IPost[];
+	posts: Post[];
 	pageNumber: number;
 	nbOfPages: number;
 	hasNextPage: boolean;
@@ -42,7 +42,7 @@ export default function PaginatedPosts({ posts, nbOfPages, pageNumber, hasNextPa
 			</div>
 
 			<div className='grid gap-10 md:grid-cols-2 lg:grid-cols-3 '>
-				{posts?.map((post: IPost) => (
+				{posts?.map((post: Post) => (
 					<PostCard key={post.title} post={post} />
 				))}
 			</div>
@@ -70,14 +70,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
 	const { pageNumber } = context.params as any;
-	const { pages, hasPreviousPage, hasNextPage, data } = getResources('./public/indexes/posts.json', {
-		pageNumber: parseInt(pageNumber as string, 10),
-		limit: CARDS_PER_PAGE,
-	});
+	const { pages, hasPreviousPage, hasNextPage, posts } = getPostsCards({ pageNumber: pageNumber, limit: CARDS_PER_PAGE });
 
 	return {
 		props: {
-			posts: data,
+			posts,
 			pageNumber: parseInt(pageNumber as string, 10),
 			hasNextPage,
 			nbOfPages: pages,
