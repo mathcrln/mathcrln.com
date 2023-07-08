@@ -1,6 +1,7 @@
 const withMDX = require('@next/mdx')();
 
-module.exports = withMDX({
+/** @type {import('next').NextConfig} */
+const nextConfig = {
 	reactStrictMode: true,
 	images: {
 		domains: ['media.graphassets.com', 'localhost'],
@@ -65,4 +66,6 @@ module.exports = withMDX({
 			},
 		];
 	},
-});
+};
+
+module.exports = withMDX(nextConfig);
