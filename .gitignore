@@ -33,6 +33,6 @@ yarn-error.log*
 
 # vercel
 .vercel
-
+.obsidian
 
 public/sitemap*.xml

@@ -4,7 +4,7 @@ const withMDX = require('@next/mdx')();
 const nextConfig = {
 	reactStrictMode: true,
 	images: {
-		domains: ['media.graphassets.com', 'localhost'],
+		domains: ['media.graphassets.com', 'd3n92f24kh3qcr.cloudfront.net'],
 	},
 	swcMinify: true,
 	async redirects() {
