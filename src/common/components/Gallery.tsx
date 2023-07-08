@@ -1,4 +1,3 @@
-import uuid from 'react-uuid';
 import LinkWrapper from './elements/LinkWrapper';
 
 /* eslint-disable @next/next/no-img-element */
@@ -12,7 +11,7 @@ export default function Gallery({
 	return (
 		<div className={`grid grid-cols-2 gap-5 ${getCols(cols)} my-10 items-stretch justify-center md:gap-5`}>
 			{images.map(({ slug, alt, rowsSpan, colsSpan, linkURL }) => (
-				<span key={uuid()}>
+				<span key={slug}>
 					{linkURL && (
 						<LinkWrapper href={linkURL as string}>
 							<img
