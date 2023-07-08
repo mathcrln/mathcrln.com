@@ -11,14 +11,14 @@
 		"postbuild": "next-sitemap"
 	},
 	"dependencies": {
-		"@apollo/client": "^3.7.16",
+		"@apollo/client": "^3.7.17",
 		"@mdx-js/loader": "^2.3.0",
 		"@mdx-js/react": "^2.3.0",
 		"@next/mdx": "^13.4.9",
 		"@types/mdx": "^2.0.5",
 		"date-fns": "^2.30.0",
 		"eslint-plugin-import": "^2.27.2",
-		"graphql": "^15.5.1",
+		"graphql": "^16.7.1",
 		"gray-matter": "^4.0.3",
 		"mdx-prism": "^0.3.4",
 		"next": "^13.4.9",
