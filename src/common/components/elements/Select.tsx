@@ -33,7 +33,7 @@ function Select({ options, id, label, className, onBlur, onChange, selected }: I
 				name='theme'
 				id={id || undefined}
 				aria-label={label}
-				className='focus:outline-none h-[32px] appearance-none px-[calc(1.5*24px)] dark:appearance-none'
+				className='h-[32px] appearance-none px-[calc(1.5*24px)] focus:outline-none dark:appearance-none'
 				onChange={onChange || undefined}
 				onBlur={onBlur || undefined}
 				value={selected || undefined}

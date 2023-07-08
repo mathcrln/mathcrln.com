@@ -20,7 +20,7 @@ export default function Logo({ className = '' }: { className?: string }): JSX.El
 			<path
 				d='M17.53 243H9C6.23858 243 4 240.761 4 238V77.4598C4 73.656 8.07884 71.2452 11.4111 73.0795L110.589 127.673C112.09 128.499 113.91 128.499 115.411 127.673L214.589 73.0795C217.921 71.2452 222 73.6559 222 77.4597V238C222 240.761 219.761 243 217 243H208.47C205.709 243 203.47 240.761 203.47 238V112.768C203.47 108.998 199.457 106.584 196.127 108.351L115.343 151.211C113.878 151.989 112.122 151.989 110.657 151.211L29.8734 108.351C26.5432 106.584 22.53 108.998 22.53 112.768V238C22.53 240.761 20.2914 243 17.53 243Z'
 				fill='white'
-				className=' fill-primary-light opacity-50 dark:stroke-0 dark:fill-white dark:opacity-100'
+				className=' fill-primary-light opacity-50 dark:fill-white dark:stroke-0 dark:opacity-100'
 			/>
 		</svg>
 	);
@@ -45,7 +45,7 @@ export function LogoBeta({ className = '' }: { className?: string }): JSX.Elemen
 				<path
 					d='M4.17931 65.8614H0.835694C0.374154 65.8614 0 65.4872 0 65.0257V20.1162C0 19.4803 0.68217 19.0773 1.23914 19.3843L29.0965 34.741C29.3477 34.8794 29.6523 34.8794 29.9035 34.741L57.7608 19.3843C58.3179 19.0773 59 19.4803 59 20.1162V65.0257C59 65.4872 58.6258 65.8614 58.1643 65.8614H54.8207C54.3592 65.8614 53.985 65.4872 53.985 65.0257V29.7011C53.985 29.0707 53.3138 28.6674 52.7572 28.963L29.8921 41.112C29.6469 41.2424 29.3531 41.2424 29.1079 41.112L6.24282 28.963C5.6862 28.6674 5.015 29.0707 5.015 29.7011V65.0257C5.015 65.4872 4.64084 65.8614 4.17931 65.8614Z'
 					fill='white'
-					className=' fill-primary-light opacity-50 dark:stroke-0 dark:fill-white dark:opacity-100'
+					className=' fill-primary-light opacity-50 dark:fill-white dark:stroke-0 dark:opacity-100'
 				/>
 				<rect
 					x='83'
@@ -53,7 +53,7 @@ export function LogoBeta({ className = '' }: { className?: string }): JSX.Elemen
 					width='111'
 					height='51'
 					rx='5'
-					className=' fill-white opacity-50 dark:stroke-2 dark:fill-darkGrey dark:opacity-100'
+					className=' fill-white opacity-50 dark:fill-darkGrey dark:stroke-2 dark:opacity-100'
 				/>
 				<rect
 					x='83.5'
@@ -61,7 +61,7 @@ export function LogoBeta({ className = '' }: { className?: string }): JSX.Elemen
 					width='110'
 					height='50'
 					rx='4.5'
-					className='stroke-current stroke-primary-light opacity-50 dark:stroke-2 dark:stroke-primary-dark dark:opacity-100'
+					className='stroke-current stroke-primary-light opacity-50 dark:stroke-primary-dark dark:stroke-2 dark:opacity-100'
 					strokeOpacity='0.45'
 				/>
 				<path

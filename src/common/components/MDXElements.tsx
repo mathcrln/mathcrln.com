@@ -2,7 +2,7 @@
 
 import { ReactNode } from 'react';
 
-const HR = (): JSX.Element => <hr className='my-20 mx-auto w-1/2' />;
+const HR = (): JSX.Element => <hr className='mx-auto my-20 w-1/2' />;
 
 const IMG = ({ src, alt }: { src?: string; alt?: string }): JSX.Element => (
 	<span className='my-8 block'>
@@ -14,20 +14,20 @@ const IMG = ({ src, alt }: { src?: string; alt?: string }): JSX.Element => (
 const H2 = ({ children }: { children?: ReactNode }): JSX.Element => (
 	<>
 		<HR />
-		<h2 className='mt-14 mb-8 text-3xl font-bold'>{children}</h2>
+		<h2 className='mb-8 mt-14 text-3xl font-bold'>{children}</h2>
 	</>
 );
 
-const H3 = ({ children }: { children?: ReactNode }): JSX.Element => <h3 className='mt-10 mb-8 text-2xl font-bold'>{children}</h3>;
+const H3 = ({ children }: { children?: ReactNode }): JSX.Element => <h3 className='mb-8 mt-10 text-2xl font-bold'>{children}</h3>;
 
 const H4 = ({ children }: { children?: ReactNode }): JSX.Element => (
-	<h4 className='mt-10 mb-6 text-xl font-semibold'>{children}</h4>
+	<h4 className='mb-6 mt-10 text-xl font-semibold'>{children}</h4>
 );
 const H5 = ({ children }: { children?: ReactNode }): JSX.Element => (
-	<h5 className='mt-10 mb-4 text-lg font-semibold'>{children}</h5>
+	<h5 className='mb-4 mt-10 text-lg font-semibold'>{children}</h5>
 );
 const H6 = ({ children }: { children?: ReactNode }): JSX.Element => (
-	<h5 className='text-md mt-10 mb-2 font-semibold'>{children}</h5>
+	<h5 className='text-md mb-2 mt-10 font-semibold'>{children}</h5>
 );
 
 const P = ({ children }: { children?: any }): JSX.Element =>

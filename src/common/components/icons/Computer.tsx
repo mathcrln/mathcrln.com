@@ -2,7 +2,7 @@ export default function SystemComputer({ className = '' }: { className?: string 
 	return (
 		<svg
 			viewBox='0 0 24 24'
-			className={`stroke-red stroke-gray-200 h-[16px] w-[16px] ${className}`}
+			className={`stroke-red h-[16px] w-[16px] stroke-gray-200 ${className}`}
 			strokeWidth='1.5'
 			strokeLinecap='round'
 			strokeLinejoin='round'

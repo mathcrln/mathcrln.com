@@ -39,7 +39,7 @@ export default function Articles({
 				))}
 			</div>
 			<Pagination
-				className='my-14 mx-auto max-w-max py-3 dark:border-gray-700'
+				className='mx-auto my-14 max-w-max py-3 dark:border-gray-700'
 				pageNumber={1}
 				hasPreviousPage={false}
 				hasNextPage={hasNextPage}

@@ -18,7 +18,7 @@ export default function Pagination({ pageNumber, hasNextPage, hasPreviousPage, v
 			{hasPreviousPage && (
 				<Link
 					href={pageNumber === 2 ? '/blog' : `/blog/page/${pageNumber - 1}`}
-					className={`${styles} ${verbose ? 'rounded-sm py-2 px-4' : 'pr-1'}`}
+					className={`${styles} ${verbose ? 'rounded-sm px-4 py-2' : 'pr-1'}`}
 					title={`Browse to page ${pageNumber - 1}`}
 				>
 					<Arrow direction='left' size='lg' />
@@ -28,7 +28,7 @@ export default function Pagination({ pageNumber, hasNextPage, hasPreviousPage, v
 			{hasNextPage && (
 				<Link
 					href={`/blog/page/${pageNumber + 1}`}
-					className={`${styles} ${verbose ? 'rounded-sm py-2 px-4' : 'pl-1'}`}
+					className={`${styles} ${verbose ? 'rounded-sm px-4 py-2' : 'pl-1'}`}
 					title={`Browse to page ${pageNumber + 1}`}
 				>
 					{verbose && <span>Older posts</span>}
