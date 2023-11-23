@@ -43,7 +43,7 @@ export default function Home({
 					<h2 className='text-2xl font-extrabold md:text-3xl'>Recent posts</h2>
 					<SeeMoreButton text='Browse all posts' href='/blog' />
 				</div>
-				<p className='mt-2 mb-10 text-lg text-gray-600 dark:text-gray-300'>On design, code, lifestyle and creativity.</p>
+				<p className='mb-10 mt-2 text-lg text-gray-600 dark:text-gray-300'>On design, code, lifestyle and creativity.</p>
 				<div className='grid gap-10 md:grid-cols-2 lg:grid-cols-3'>
 					{posts.length ? posts.map((post) => <PostCard key={post.title} post={post} />) : <p>No post was found.</p>}
 				</div>
@@ -55,7 +55,7 @@ export default function Home({
 					</h2>
 					<SeeMoreButton text='Browse all projects' href='/projects' />
 				</div>
-				<p className='mt-2 mb-10 text-gray-600 dark:text-gray-300'>
+				<p className='mb-10 mt-2 text-gray-600 dark:text-gray-300'>
 					Here are some of the projects I had fun with lately.
 				</p>
 				<div className='grid gap-10 md:grid-cols-2 lg:grid-cols-3'>
@@ -66,7 +66,7 @@ export default function Home({
 					)}
 				</div>
 			</section>
-			<aside className='my-32 mx-auto md:w-4/6 lg:w-3/6'>
+			<aside className='mx-auto my-32 md:w-4/6 lg:w-3/6'>
 				<p className='mb-2 mt-2 text-center text-2xl font-bold italic dark:text-gray-500'>
 					"The most important ingredient we put into any relationship is not what we say or what we do, but what we
 					are."
@@ -79,7 +79,7 @@ export default function Home({
 					<h2 className='text-2xl font-extrabold md:text-3xl'>Library</h2>
 					<SeeMoreButton text='Browse all books' href='/library' />
 				</div>
-				<p className='mt-2 mb-10 text-lg text-gray-600 dark:text-gray-300'>
+				<p className='mb-10 mt-2 text-lg text-gray-600 dark:text-gray-300'>
 					Here are some books, movies or articles I recently loved.
 				</p>
 				<div className='grid grid-cols-2 gap-10 md:grid-cols-4'>
@@ -104,7 +104,7 @@ export default function Home({
 
 export const getStaticProps: GetStaticProps = async () => {
 	const posts = await getPostsCards(3);
-	const projects = await getProjectsCards(3);
+	const projects = await getProjectsCards(6);
 	const books = await getArchivesCards(4);
 
 	return {
