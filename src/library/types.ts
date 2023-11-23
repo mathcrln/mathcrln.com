@@ -1,6 +1,6 @@
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
-export type PostMetadata = {
+export type LibraryItemMetadata = {
 	slug: string;
 	title: string;
 	cover: string;
@@ -11,10 +11,10 @@ export type PostMetadata = {
 	updatedAt: string;
 };
 
-export type Post = PostMetadata & {
+export type Post = LibraryItemMetadata & {
 	content: string;
 };
-export type SerializedPost = PostMetadata & {
+export type SerializedLibraryItem = LibraryItemMetadata & {
 	content: MDXRemoteSerializeResult;
 };
 
@@ -22,5 +22,5 @@ export type PostsCardsData = {
 	pages: number;
 	hasPreviousPage: boolean;
 	hasNextPage: boolean;
-	posts: PostMetadata[];
+	posts: LibraryItemMetadata[];
 };

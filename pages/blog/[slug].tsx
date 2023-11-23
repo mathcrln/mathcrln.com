@@ -84,6 +84,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async (context) => 
 				post,
 				suggestions,
 			},
+			revalidate: 3600,
 		};
 	} catch (error: any) {
 		return { notFound: true };
